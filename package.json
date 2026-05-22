@@ -28,16 +28,34 @@
     "zustand": "^5.0.13"
   },
   "devDependencies": {
+    "@react-native/jest-preset": "^0.85.3",
     "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "^13.3.3",
     "@types/react": "~19.2.2",
+    "jest": "^29.7.0",
+    "jest-expo": "^56.0.4",
     "typescript": "~6.0.3"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transform": {
+      "\\.[jt]sx?$": [
+        "babel-jest",
+        {
+          "configFile": "./babel.config.test.js"
+        }
+      ]
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg)"
+    ]
   },
   "private": true
 }
