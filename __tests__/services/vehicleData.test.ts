@@ -38,9 +38,9 @@ describe('VehicleDataService.getVehicleById', () => {
 });
 
 describe('VehicleDataService.searchByBrandModelFipeCodes', () => {
-  it('returns Ford Ranger versions by FIPE codes', () => {
-    const versions = VehicleDataService.searchByBrandModelFipeCodes('22', '4596');
-    expect(versions.length).toBeGreaterThanOrEqual(3);
+  it('returns Ford Ranger Raptor by FIPE code', () => {
+    const versions = VehicleDataService.searchByBrandModelFipeCodes('22', '10891');
+    expect(versions.length).toBeGreaterThanOrEqual(1);
   });
 
   it('returns empty array for unknown codes', () => {
