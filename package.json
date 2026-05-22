@@ -3,15 +3,19 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "axios": "^1.16.1",
     "expo": "~56.0.3",
     "expo-constants": "~56.0.14",
     "expo-font": "~56.0.5",
+    "expo-haptics": "~56.0.3",
     "expo-linking": "~56.0.11",
     "expo-router": "~56.2.5",
     "expo-splash-screen": "~56.0.9",
     "expo-status-bar": "~56.0.4",
     "expo-symbols": "~56.0.5",
     "expo-web-browser": "~56.0.5",
+    "nativewind": "^4.2.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-native": "0.85.3",
@@ -19,9 +23,13 @@
     "react-native-safe-area-context": "~5.7.0",
     "react-native-screens": "4.25.1",
     "react-native-web": "~0.21.0",
-    "react-native-worklets": "0.8.3"
+    "react-native-worklets": "0.8.3",
+    "tailwindcss": "^3.4.19",
+    "zustand": "^5.0.13"
   },
   "devDependencies": {
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^13.3.3",
     "@types/react": "~19.2.2",
     "typescript": "~6.0.3"
   },
