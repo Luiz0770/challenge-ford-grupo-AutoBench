@@ -1,30 +1,34 @@
-import { Feather } from '@expo/vector-icons';
-import * as Haptics from 'expo-haptics';
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import React, { useEffect } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { LivePulse } from '../../components/ui/LivePulse';
-import { SectionLabel } from '../../components/ui/SectionLabel';
-import { Wordmark } from '../../components/ui/Wordmark';
-import { MarketBand } from '../../components/vehicle/MarketBand';
-import { SpecsMatrix } from '../../components/vehicle/SpecsMatrix';
-import { colors, fonts } from '../../constants/colors';
-import { useFipePrice } from '../../hooks/useFipePrice';
-import { CatalogService } from '../../services/catalog';
-import { VehicleDataService } from '../../services/vehicleData';
-import { useUserStore } from '../../store/userStore';
-import { fmtBRLFromReais } from '../../utils/format';
+import { Feather } from "@expo/vector-icons";
+import * as Haptics from "expo-haptics";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import React, { useEffect } from "react";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { LivePulse } from "../../components/ui/LivePulse";
+import { SectionLabel } from "../../components/ui/SectionLabel";
+import { Wordmark } from "../../components/ui/Wordmark";
+import { MarketBand } from "../../components/vehicle/MarketBand";
+import { SpecsMatrix } from "../../components/vehicle/SpecsMatrix";
+import { colors, fonts } from "../../constants/colors";
+import { useFipePrice } from "../../hooks/useFipePrice";
+import { CatalogService } from "../../services/catalog";
+import { VehicleDataService } from "../../services/vehicleData";
+import { useUserStore } from "../../store/userStore";
 
 export default function VehicleScreen() {
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();
-  const vehicleId = Array.isArray(id) ? id[0] : id ?? '';
+  const vehicleId = Array.isArray(id) ? id[0] : (id ?? "");
   const vehicle = VehicleDataService.getVehicleById(vehicleId);
   const meta = CatalogService.getVehicleMeta(vehicleId);
-  const { price: fipePrice, loading: fipeLoading, error: fipeError } = useFipePrice(vehicle);
+  const {
+    price: fipePrice,
+    loading: fipeLoading,
+    error: fipeError,
+  } = useFipePrice(vehicle);
 
-  const { isFavorite, addFavorite, removeFavorite, addHistory } = useUserStore();
+  const { isFavorite, addFavorite, removeFavorite, addHistory } =
+    useUserStore();
 
   useEffect(() => {
     if (vehicle) {
@@ -39,9 +43,17 @@ export default function VehicleScreen() {
   if (!vehicle) {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
           <Feather name="alert-circle" size={32} color={colors.text.muted} />
-          <Text style={{ fontFamily: fonts.sans, color: colors.text.secondary, marginTop: 8 }}>
+          <Text
+            style={{
+              fontFamily: fonts.sans,
+              color: colors.text.secondary,
+              marginTop: 8,
+            }}
+          >
             Veículo não encontrado.
           </Text>
         </View>
@@ -52,7 +64,9 @@ export default function VehicleScreen() {
   const saved = isFavorite(vehicle.id);
   const toggleFavorite = () => {
     Haptics.impactAsync(
-      saved ? Haptics.ImpactFeedbackStyle.Light : Haptics.ImpactFeedbackStyle.Medium
+      saved
+        ? Haptics.ImpactFeedbackStyle.Light
+        : Haptics.ImpactFeedbackStyle.Medium,
     ).catch(() => {});
     if (saved) {
       removeFavorite(vehicle.id);
@@ -67,7 +81,10 @@ export default function VehicleScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-      <SafeAreaView edges={['top']} style={{ backgroundColor: colors.brand.navy }}>
+      <SafeAreaView
+        edges={["top"]}
+        style={{ backgroundColor: colors.brand.navy }}
+      >
         <View
           style={{
             backgroundColor: colors.brand.navy,
@@ -77,9 +94,9 @@ export default function VehicleScreen() {
         >
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
               paddingHorizontal: 16,
               paddingBottom: 14,
             }}
@@ -90,15 +107,19 @@ export default function VehicleScreen() {
                 width: 34,
                 height: 34,
                 borderRadius: 17,
-                backgroundColor: 'rgba(255,255,255,0.10)',
+                backgroundColor: "rgba(255,255,255,0.10)",
                 borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.14)',
-                alignItems: 'center',
-                justifyContent: 'center',
+                borderColor: "rgba(255,255,255,0.14)",
+                alignItems: "center",
+                justifyContent: "center",
                 opacity: pressed ? 0.7 : 1,
               })}
             >
-              <Feather name="chevron-left" size={16} color={colors.bg.surface} />
+              <Feather
+                name="chevron-left"
+                size={16}
+                color={colors.bg.surface}
+              />
             </Pressable>
 
             <Wordmark small light />
@@ -109,84 +130,67 @@ export default function VehicleScreen() {
                 width: 34,
                 height: 34,
                 borderRadius: 17,
-                backgroundColor: saved ? colors.brand.blue : 'rgba(255,255,255,0.10)',
+                backgroundColor: saved
+                  ? colors.brand.blue
+                  : "rgba(255,255,255,0.10)",
                 borderWidth: 1,
-                borderColor: saved ? colors.brand.blue : 'rgba(255,255,255,0.14)',
-                alignItems: 'center',
-                justifyContent: 'center',
+                borderColor: saved
+                  ? colors.brand.blue
+                  : "rgba(255,255,255,0.14)",
+                alignItems: "center",
+                justifyContent: "center",
                 opacity: pressed ? 0.7 : 1,
               })}
             >
-              <Feather
-                name="bookmark"
-                size={15}
-                color={colors.bg.surface}
-              />
+              <Feather name="bookmark" size={15} color={colors.bg.surface}/>
             </Pressable>
           </View>
 
           <View style={{ paddingHorizontal: 20 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 6 }}>
-              <Text
-                style={{
-                  fontFamily: fonts.monoMedium,
-                  fontSize: 9,
-                  color: 'rgba(255,255,255,0.55)',
-                  letterSpacing: 1.4,
-                  textTransform: 'uppercase',
-                }}
-              >
-                {meta?.segment ?? 'Picape'}
-              </Text>
-              <Text style={{ color: 'rgba(255,255,255,0.4)' }}>·</Text>
-              <Text
-                style={{
-                  fontFamily: fonts.monoMedium,
-                  fontSize: 9,
-                  color: 'rgba(255,255,255,0.55)',
-                  letterSpacing: 1.4,
-                  textTransform: 'uppercase',
-                }}
-              >
-                {meta?.bodyStyle ?? 'Cabine Dupla'}
-              </Text>
-            </View>
             <Text
               style={{
                 fontFamily: fonts.monoMedium,
                 fontSize: 10,
-                color: 'rgba(255,255,255,0.6)',
+                color: "rgba(255,255,255,0.6)",
                 letterSpacing: 1,
-                textTransform: 'uppercase',
+                textTransform: "uppercase",
                 marginBottom: 4,
               }}
             >
               {vehicle.brand}
             </Text>
-            <Text
-              style={{
-                fontFamily: fonts.sansBold,
-                fontSize: 26,
-                color: colors.bg.surface,
-                letterSpacing: -0.8,
-                lineHeight: 28,
-              }}
-            >
-              {vehicle.model}{' '}
-              <Text style={{ fontFamily: fonts.sansMedium, color: 'rgba(255,255,255,0.78)' }}>
-                {vehicle.version}
+            <View>
+              <Text
+                style={{
+                  fontFamily: fonts.sansBold,
+                  fontSize: 26,
+                  color: colors.bg.surface,
+                  letterSpacing: -0.8,
+                  lineHeight: 28,
+                }}
+              >
+                {vehicle.model}{" "}
+                <Text
+                  style={{
+                    fontFamily: fonts.sansMedium,
+                    color: "rgba(255,255,255,0.78)",
+                  }}
+                >
+                  {vehicle.version}
+                </Text>
               </Text>
-            </Text>
+            </View>
+
             <View
               style={{
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: "row",
+                alignItems: "center",
                 gap: 6,
-                alignSelf: 'flex-start',
+                alignSelf: "flex-start",
                 marginTop: 10,
-                backgroundColor: 'rgba(255,255,255,0.08)',
+                backgroundColor: "rgba(255,255,255,0.08)",
                 borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.12)',
+                borderColor: "rgba(255,255,255,0.12)",
                 paddingHorizontal: 10,
                 paddingVertical: 4,
                 borderRadius: 999,
@@ -200,16 +204,6 @@ export default function VehicleScreen() {
                 }}
               >
                 {vehicle.year}
-              </Text>
-              <Text style={{ color: 'rgba(255,255,255,0.4)' }}>·</Text>
-              <Text
-                style={{
-                  fontFamily: fonts.mono,
-                  fontSize: 11,
-                  color: 'rgba(255,255,255,0.75)',
-                }}
-              >
-                FIPE {meta ? fmtBRLFromReais(meta.market.fipeAvg) : '—'}
               </Text>
             </View>
           </View>
@@ -231,12 +225,14 @@ export default function VehicleScreen() {
               borderColor: colors.bg.border,
               paddingHorizontal: 12,
               paddingVertical: 8,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
             }}
           >
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 8 }}
+            >
               <LivePulse color={colors.status.success} size={6} />
               <Text
                 style={{
@@ -245,52 +241,56 @@ export default function VehicleScreen() {
                   color: colors.text.primary,
                 }}
               >
-                Confiança da fonte:{' '}
-                <Text style={{ fontFamily: fonts.sansSemibold, color: colors.status.success }}>
+                Confiança da fonte:{" "}
+                <Text
+                  style={{
+                    fontFamily: fonts.sansSemibold,
+                    color: colors.status.success,
+                  }}
+                >
                   {meta.sources.confidence}
                 </Text>
               </Text>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
+            >
               <Feather name="info" size={11} color={colors.text.secondary} />
-              <Text style={{ fontFamily: fonts.mono, fontSize: 9.5, color: colors.text.secondary }}>
+              <Text
+                style={{
+                  fontFamily: fonts.mono,
+                  fontSize: 9.5,
+                  color: colors.text.secondary,
+                }}
+              >
                 {meta.sources.cross} fontes cruzadas
               </Text>
             </View>
           </View>
         )}
 
-        <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: 10,
-            }}
-          >
-            <SectionLabel>Matriz de Especificações</SectionLabel>
-            <Text style={{ fontFamily: fonts.mono, fontSize: 9.5, color: colors.text.muted }}>
-              Determinístico
-            </Text>
-          </View>
-          <SpecsMatrix vehicle={vehicle} />
-        </View>
-
         {meta && (
           <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
             <View
               style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
                 marginBottom: 10,
               }}
             >
               <SectionLabel>Mercado · FIPE API</SectionLabel>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+              <View
+                style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
+              >
                 <LivePulse color={colors.status.success} size={5} />
-                <Text style={{ fontFamily: fonts.mono, fontSize: 9.5, color: colors.text.secondary }}>
+                <Text
+                  style={{
+                    fontFamily: fonts.mono,
+                    fontSize: 9.5,
+                    color: colors.text.secondary,
+                  }}
+                >
                   ao vivo
                 </Text>
               </View>
@@ -305,6 +305,29 @@ export default function VehicleScreen() {
             />
           </View>
         )}
+
+        <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginBottom: 10,
+            }}
+          >
+            <SectionLabel>Matriz de Especificações</SectionLabel>
+            <Text
+              style={{
+                fontFamily: fonts.mono,
+                fontSize: 9.5,
+                color: colors.text.muted,
+              }}
+            >
+              Determinístico
+            </Text>
+          </View>
+          <SpecsMatrix vehicle={vehicle} />
+        </View>
       </ScrollView>
     </View>
   );

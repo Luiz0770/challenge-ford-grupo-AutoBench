@@ -1,42 +1,53 @@
-import { Feather } from '@expo/vector-icons';
-import React, { useMemo, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { CompareMatrix } from '../../components/compare/CompareMatrix';
-import { SwapSheet } from '../../components/compare/SwapSheet';
-import { VehicleSlot } from '../../components/compare/VehicleSlot';
-import { VerdictCard } from '../../components/compare/VerdictCard';
-import { SectionLabel } from '../../components/ui/SectionLabel';
-import { colors, fonts } from '../../constants/colors';
-import { CatalogService } from '../../services/catalog';
-import { VehicleDataService } from '../../services/vehicleData';
-import type { CategoryVehicleEntry, CompareCategoryId, Vehicle } from '../../types';
+import { Feather } from "@expo/vector-icons";
+import React, { useMemo, useState } from "react";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { CompareMatrix } from "../../components/compare/CompareMatrix";
+import { SwapSheet } from "../../components/compare/SwapSheet";
+import { VehicleSlot } from "../../components/compare/VehicleSlot";
+import { VerdictCard } from "../../components/compare/VerdictCard";
+import { SectionLabel } from "../../components/ui/SectionLabel";
+import { colors, fonts } from "../../constants/colors";
+import { useFipePrice } from "../../hooks/useFipePrice";
+import { CatalogService } from "../../services/catalog";
+import { VehicleDataService } from "../../services/vehicleData";
+import type {
+  CategoryVehicleEntry,
+  CompareCategoryId,
+  Vehicle,
+} from "../../types";
 
-const CATEGORY_TABS: { id: CompareCategoryId; label: string; icon: keyof typeof Feather.glyphMap }[] = [
-  { id: 'motorizacao', label: 'Motorização', icon: 'activity' },
-  { id: 'dimensoes',   label: 'Dimensões',   icon: 'maximize-2' },
-  { id: 'tecnologia',  label: 'Tecnologia',  icon: 'cpu' },
-  { id: 'seguranca',   label: 'Segurança',   icon: 'shield' },
+const CATEGORY_TABS: {
+  id: CompareCategoryId;
+  label: string;
+  icon: keyof typeof Feather.glyphMap;
+}[] = [
+  { id: "motorizacao", label: "Motorização", icon: "activity" },
+  { id: "dimensoes", label: "Dimensões", icon: "maximize-2" },
+  { id: "tecnologia", label: "Tecnologia", icon: "cpu" },
+  { id: "seguranca", label: "Segurança", icon: "shield" },
 ];
 
 export default function CompareScreen() {
   const defaultPair = CatalogService.getCompareDefaultPair();
   const [a, setA] = useState<Vehicle | null>(defaultPair.a);
   const [b, setB] = useState<Vehicle | null>(defaultPair.b);
-  const [cat, setCat] = useState<CompareCategoryId>('motorizacao');
-  const [swap, setSwap] = useState<'a' | 'b' | null>(null);
+  const [cat, setCat] = useState<CompareCategoryId>("motorizacao");
+  const [swap, setSwap] = useState<"a" | "b" | null>(null);
 
   const verdict = useMemo(
     () => (a && b ? CatalogService.getCompareVerdict(a.id, b.id) : null),
-    [a?.id, b?.id]
+    [a?.id, b?.id],
   );
   const rows = useMemo(
     () => (a && b ? CatalogService.buildCompareRows(cat, a, b) : []),
-    [cat, a?.id, b?.id]
+    [cat, a?.id, b?.id],
   );
 
   const aMarket = a ? CatalogService.getVehicleMeta(a.id) : null;
   const bMarket = b ? CatalogService.getVehicleMeta(b.id) : null;
+  const { price: aPrice } = useFipePrice(a);
+  const { price: bPrice } = useFipePrice(b);
 
   const handlePick = (entry: CategoryVehicleEntry) => {
     const v = VehicleDataService.getVehicleById(entry.vehicleId);
@@ -44,23 +55,34 @@ export default function CompareScreen() {
       setSwap(null);
       return;
     }
-    if (swap === 'a') setA(v);
-    if (swap === 'b') setB(v);
+    if (swap === "a") setA(v);
+    if (swap === "b") setB(v);
     setSwap(null);
   };
 
   if (!a || !b || !verdict) {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24 }}>
-          <Feather name="git-pull-request" size={32} color={colors.text.muted} />
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 24,
+          }}
+        >
+          <Feather
+            name="git-pull-request"
+            size={32}
+            color={colors.text.muted}
+          />
           <Text
             style={{
               fontFamily: fonts.sansSemibold,
               fontSize: 15,
               color: colors.text.primary,
               marginTop: 14,
-              textAlign: 'center',
+              textAlign: "center",
             }}
           >
             Comparar em breve
@@ -71,7 +93,7 @@ export default function CompareScreen() {
               fontSize: 13,
               color: colors.text.secondary,
               marginTop: 6,
-              textAlign: 'center',
+              textAlign: "center",
               lineHeight: 18,
             }}
           >
@@ -84,45 +106,32 @@ export default function CompareScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-      <SafeAreaView edges={['top']} style={{ backgroundColor: colors.brand.navy }}>
+      <SafeAreaView
+        edges={["top"]}
+        style={{ backgroundColor: colors.brand.navy }}
+      >
         <View
           style={{
             backgroundColor: colors.brand.navy,
-            paddingTop: 8,
+            paddingTop: 18,
             paddingBottom: 18,
           }}
         >
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingHorizontal: 16,
-              paddingBottom: 4,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <View
-              style={{
-                width: 34,
-                height: 34,
-                borderRadius: 17,
-                backgroundColor: 'rgba(255,255,255,0.10)',
-                borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.14)',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Feather name="git-pull-request" size={16} color={colors.bg.surface} />
-            </View>
-            <View style={{ alignItems: 'center' }}>
+            <View style={{ alignItems: "center" }}>
               <Text
                 style={{
                   fontFamily: fonts.monoMedium,
                   fontSize: 9,
-                  color: 'rgba(255,255,255,0.55)',
+                  color: "rgba(255,255,255,0.55)",
                   letterSpacing: 1.4,
-                  textTransform: 'uppercase',
+                  textTransform: "uppercase",
                 }}
               >
                 Análise lado-a-lado
@@ -139,21 +148,6 @@ export default function CompareScreen() {
                 Comparar
               </Text>
             </View>
-            <Pressable
-              style={({ pressed }) => ({
-                width: 34,
-                height: 34,
-                borderRadius: 17,
-                backgroundColor: 'rgba(255,255,255,0.10)',
-                borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.14)',
-                alignItems: 'center',
-                justifyContent: 'center',
-                opacity: pressed ? 0.7 : 1,
-              })}
-            >
-              <Feather name="plus" size={16} color={colors.bg.surface} />
-            </Pressable>
           </View>
         </View>
       </SafeAreaView>
@@ -165,19 +159,29 @@ export default function CompareScreen() {
         <View
           style={{
             paddingHorizontal: 16,
-            marginTop: -12,
-            flexDirection: 'row',
+            marginTop: 12,
+            flexDirection: "row",
             gap: 8,
-            alignItems: 'stretch',
+            alignItems: "stretch",
           }}
         >
-          <VehicleSlot vehicle={a} side="A" onSwap={() => setSwap('a')} fipeAvg={aMarket?.market.fipeAvg} />
-          <VehicleSlot vehicle={b} side="B" onSwap={() => setSwap('b')} fipeAvg={bMarket?.market.fipeAvg} />
+          <VehicleSlot
+            vehicle={a}
+            side="A"
+            onSwap={() => setSwap("a")}
+            fipeAvg={aPrice?.valor ?? aMarket?.market.fipeAvg}
+          />
+          <VehicleSlot
+            vehicle={b}
+            side="B"
+            onSwap={() => setSwap("b")}
+            fipeAvg={bPrice?.valor ?? bMarket?.market.fipeAvg}
+          />
           <View
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
+              position: "absolute",
+              top: "50%",
+              left: "50%",
               transform: [{ translateX: -14 }, { translateY: -14 }],
               width: 28,
               height: 28,
@@ -185,9 +189,9 @@ export default function CompareScreen() {
               backgroundColor: colors.bg.surface,
               borderWidth: 1,
               borderColor: colors.bg.border,
-              alignItems: 'center',
-              justifyContent: 'center',
-              shadowColor: '#101828',
+              alignItems: "center",
+              justifyContent: "center",
+              shadowColor: "#101828",
               shadowOpacity: 0.1,
               shadowRadius: 6,
               shadowOffset: { width: 0, height: 2 },
@@ -206,44 +210,18 @@ export default function CompareScreen() {
           </View>
         </View>
 
-        <View style={{ paddingHorizontal: 16, paddingTop: 20 }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: 10,
-              paddingHorizontal: 4,
-            }}
-          >
-            <SectionLabel>Veredito do Oráculo</SectionLabel>
-            <Text
-              style={{
-                fontFamily: fonts.monoSemibold,
-                fontSize: 9.5,
-                color: colors.brand.blue,
-              }}
-            >
-              BETA
-            </Text>
-          </View>
-          <VerdictCard verdict={verdict} />
-        </View>
-
+        {/* Matriz comparativa */}
         <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
               marginBottom: 10,
               paddingHorizontal: 4,
             }}
           >
             <SectionLabel>Matriz comparativa</SectionLabel>
-            <Text style={{ fontFamily: fonts.mono, fontSize: 9.5, color: colors.text.muted }}>
-              Determinístico
-            </Text>
           </View>
 
           <ScrollView
@@ -258,15 +236,19 @@ export default function CompareScreen() {
                   key={c.id}
                   onPress={() => setCat(c.id)}
                   style={({ pressed }) => ({
-                    flexDirection: 'row',
-                    alignItems: 'center',
+                    flexDirection: "row",
+                    alignItems: "center",
                     gap: 6,
                     paddingHorizontal: 12,
                     paddingVertical: 8,
                     borderRadius: 10,
-                    backgroundColor: isActive ? colors.brand.navy : colors.bg.surface,
+                    backgroundColor: isActive
+                      ? colors.brand.navy
+                      : colors.bg.surface,
                     borderWidth: 1,
-                    borderColor: isActive ? colors.brand.navy : colors.bg.borderStrong,
+                    borderColor: isActive
+                      ? colors.brand.navy
+                      : colors.bg.borderStrong,
                     opacity: pressed ? 0.85 : 1,
                   })}
                 >
@@ -296,12 +278,38 @@ export default function CompareScreen() {
           />
         </View>
 
+        {/* Veredito do Oráculo */}
+        <View style={{ paddingHorizontal: 16, paddingTop: 20 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginBottom: 10,
+              paddingHorizontal: 4,
+            }}
+          >
+            <SectionLabel>Veredito do Oráculo</SectionLabel>
+            <Text
+              style={{
+                fontFamily: fonts.monoSemibold,
+                fontSize: 9.5,
+                color: colors.brand.blue,
+              }}
+            >
+              BETA
+            </Text>
+          </View>
+          <VerdictCard verdict={verdict} />
+        </View>
+
+        {/* Rodapé técnico */}
         <View
           style={{
             paddingHorizontal: 20,
             paddingTop: 20,
-            flexDirection: 'row',
-            alignItems: 'center',
+            flexDirection: "row",
+            alignItems: "center",
             gap: 8,
           }}
         >

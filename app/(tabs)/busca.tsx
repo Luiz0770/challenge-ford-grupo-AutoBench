@@ -148,7 +148,7 @@ export default function BuscaScreen() {
               marginTop: 6,
             }}
           >
-            12 segmentos · 508 veículos catalogados
+            12 segmentos
           </Text>
         </View>
 

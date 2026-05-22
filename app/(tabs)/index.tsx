@@ -8,7 +8,9 @@ import { Chip } from '../../components/ui/Chip';
 import { SectionLabel } from '../../components/ui/SectionLabel';
 import { Wordmark } from '../../components/ui/Wordmark';
 import { colors, fonts } from '../../constants/colors';
+import { useFipePrice } from '../../hooks/useFipePrice';
 import { CatalogService } from '../../services/catalog';
+import { VehicleDataService } from '../../services/vehicleData';
 import { useUserStore } from '../../store/userStore';
 import { fmtBRLFromReais } from '../../utils/format';
 
@@ -41,20 +43,6 @@ export default function HomeScreen() {
           }}
         >
           <Wordmark />
-          <View
-            style={{
-              width: 36,
-              height: 36,
-              borderRadius: 18,
-              backgroundColor: colors.bg.surface,
-              borderWidth: 1,
-              borderColor: colors.bg.border,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Feather name="user" size={17} color={colors.brand.navy} />
-          </View>
         </View>
 
         <View style={{ paddingHorizontal: 20, paddingBottom: 18 }}>
@@ -69,10 +57,6 @@ export default function HomeScreen() {
             }}
           >
             Qual veículo{'\n'}vamos analisar hoje?
-          </Text>
-          <Text style={{ fontFamily: fonts.sans, fontSize: 14, color: colors.text.secondary, lineHeight: 20 }}>
-            Especificações determinísticas + sinais preditivos do{' '}
-            <Text style={{ fontFamily: fonts.sansSemibold, color: colors.brand.navy }}>Oráculo</Text>.
           </Text>
         </View>
 
@@ -167,7 +151,7 @@ export default function HomeScreen() {
               marginBottom: 10,
             }}
           >
-            <SectionLabel>Favoritos · sincronizados</SectionLabel>
+            <SectionLabel>Favoritos</SectionLabel>
             <Text style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.text.secondary }}>
               {favorites.length}
             </Text>
@@ -252,28 +236,6 @@ export default function HomeScreen() {
             </Card>
           </View>
         )}
-
-        <View
-          style={{
-            paddingHorizontal: 20,
-            paddingTop: 28,
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: 8,
-          }}
-        >
-          <Feather name="database" size={11} color={colors.text.muted} />
-          <Text
-            style={{
-              fontFamily: fonts.mono,
-              fontSize: 9.5,
-              color: colors.text.muted,
-              letterSpacing: 0.4,
-            }}
-          >
-            12.847 veículos · FIPE · ANFAVEA · OEMs
-          </Text>
-        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -284,8 +246,10 @@ const FavoriteTile: React.FC<{ vehicleId: string; name: string; onPress: () => v
   name,
   onPress,
 }) => {
+  const vehicle = VehicleDataService.getVehicleById(vehicleId);
+  const { price, loading } = useFipePrice(vehicle);
   const meta = CatalogService.getVehicleMeta(vehicleId);
-  const fipe = meta?.market.fipeAvg ?? 0;
+  const fipe = price?.valor ?? meta?.market.fipeAvg ?? 0;
   const parts = name.split(' ');
   const brand = parts[0] ?? '';
   const rest = parts.slice(1).join(' ');
@@ -356,7 +320,7 @@ const FavoriteTile: React.FC<{ vehicleId: string; name: string; onPress: () => v
             color: colors.text.primary,
           }}
         >
-          {fipe ? fmtBRLFromReais(fipe) : '—'}
+          {loading ? '...' : fipe ? fmtBRLFromReais(fipe) : '—'}
         </Text>
       </View>
     </Card>

@@ -17,11 +17,6 @@ export const Wordmark: React.FC<WordmarkProps> = ({ small = false, light = false
 
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: small ? 6 : 8 }}>
-      <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-        <Rect x="2" y="2" width="20" height="20" rx="5" fill={accentColor} />
-        <Path d="M7 16V8h4.5a2.5 2.5 0 0 1 0 5H9" stroke={innerColor} strokeWidth="2" strokeLinecap="square" />
-        <Circle cx="16" cy="14.5" r="1.5" fill={dotColor} />
-      </Svg>
       <View>
         <Text
           style={{
