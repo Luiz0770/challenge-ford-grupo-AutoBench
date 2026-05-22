@@ -45,6 +45,11 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/\\.expo/",
+      "babel\\.config"
+    ],
     "transform": {
       "\\.[jt]sx?$": [
         "babel-jest",
