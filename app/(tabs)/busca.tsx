@@ -166,7 +166,8 @@ export default function BuscaScreen() {
           ))}
         </View>
 
-        <View style={{ paddingHorizontal: 20, paddingTop: 28 }}>
+        {/* Implementacao Futura para busca por Marcas */}
+        {/* <View style={{ paddingHorizontal: 20, paddingTop: 28 }}>
           <View
             style={{
               flexDirection: 'row',
@@ -226,29 +227,7 @@ export default function BuscaScreen() {
               </View>
             ))}
           </View>
-        </View>
-
-        <View
-          style={{
-            paddingHorizontal: 20,
-            paddingTop: 24,
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: 8,
-          }}
-        >
-          <Feather name="database" size={11} color={colors.text.muted} />
-          <Text
-            style={{
-              fontFamily: fonts.mono,
-              fontSize: 9.5,
-              color: colors.text.muted,
-              letterSpacing: 0.4,
-            }}
-          >
-            Catálogo determinístico · sincronizado há 4 min
-          </Text>
-        </View>
+        </View> */}
       </ScrollView>
     </SafeAreaView>
   );

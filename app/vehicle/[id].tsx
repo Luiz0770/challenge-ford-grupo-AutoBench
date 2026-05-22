@@ -8,9 +8,9 @@ import { LivePulse } from '../../components/ui/LivePulse';
 import { SectionLabel } from '../../components/ui/SectionLabel';
 import { Wordmark } from '../../components/ui/Wordmark';
 import { MarketBand } from '../../components/vehicle/MarketBand';
-import { PredictiveCard } from '../../components/vehicle/PredictiveCard';
 import { SpecsMatrix } from '../../components/vehicle/SpecsMatrix';
 import { colors, fonts } from '../../constants/colors';
+import { useFipePrice } from '../../hooks/useFipePrice';
 import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
 import { useUserStore } from '../../store/userStore';
@@ -22,6 +22,7 @@ export default function VehicleScreen() {
   const vehicleId = Array.isArray(id) ? id[0] : id ?? '';
   const vehicle = VehicleDataService.getVehicleById(vehicleId);
   const meta = CatalogService.getVehicleMeta(vehicleId);
+  const { price: fipePrice, loading: fipeLoading, error: fipeError } = useFipePrice(vehicle);
 
   const { isFavorite, addFavorite, removeFavorite, addHistory } = useUserStore();
 
@@ -286,31 +287,6 @@ export default function VehicleScreen() {
                 marginBottom: 10,
               }}
             >
-              <SectionLabel>Inteligência preditiva</SectionLabel>
-              <Text
-                style={{
-                  fontFamily: fonts.monoSemibold,
-                  fontSize: 9.5,
-                  color: colors.brand.blue,
-                }}
-              >
-                BETA
-              </Text>
-            </View>
-            <PredictiveCard ai={meta.ai} />
-          </View>
-        )}
-
-        {meta && (
-          <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginBottom: 10,
-              }}
-            >
               <SectionLabel>Mercado · FIPE API</SectionLabel>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
                 <LivePulse color={colors.status.success} size={5} />
@@ -320,9 +296,12 @@ export default function VehicleScreen() {
               </View>
             </View>
             <MarketBand
-              market={meta.market}
-              fipeCode={meta.fipe.code}
-              fipeMonth={meta.fipe.month}
+              fipeCode={fipePrice?.codigoFipe ?? meta.fipe.code}
+              fipeMonth={fipePrice?.mesReferencia ?? meta.fipe.month}
+              fipeAvg={fipePrice?.valor ?? meta.market.fipeAvg}
+              modelo={fipePrice?.modelo}
+              loading={fipeLoading}
+              error={fipeError}
             />
           </View>
         )}

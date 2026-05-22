@@ -46,9 +46,22 @@ export interface FipeModel {
   nome: string;
 }
 
+export interface FipeYear {
+  codigo: string;
+  nome: string;
+}
+
 export interface FipeModelsResponse {
   modelos: FipeModel[];
-  anos: { codigo: string; nome: string }[];
+  anos: FipeYear[];
+}
+
+export interface FipePrice {
+  valor: number;
+  codigoFipe: string;
+  mesReferencia: string;
+  modelo: string;
+  anoModelo: number;
 }
 
 export interface HistoryEntry {
