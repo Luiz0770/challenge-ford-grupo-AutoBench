@@ -1,48 +1,54 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { colors } from '../../constants/colors';
+import { Platform } from 'react-native';
+import { colors, fonts } from '../../constants/colors';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        headerShown: false,
         tabBarStyle: {
-          backgroundColor: colors.bg.surface,
-          borderTopColor: colors.bg.border,
+          backgroundColor: 'rgba(255,255,255,0.96)',
+          borderTopColor: 'rgba(0,28,70,0.06)',
           borderTopWidth: 1,
+          height: Platform.OS === 'ios' ? 78 : 64,
+          paddingTop: 8,
+          paddingBottom: Platform.OS === 'ios' ? 22 : 10,
         },
-        tabBarActiveTintColor: colors.accent.amber,
+        tabBarActiveTintColor: colors.brand.navy,
         tabBarInactiveTintColor: colors.text.muted,
-        headerStyle: { backgroundColor: colors.bg.primary },
-        headerTintColor: colors.text.primary,
-        headerTitleStyle: { fontWeight: '700' },
+        tabBarLabelStyle: {
+          fontFamily: fonts.sansMedium,
+          fontSize: 10,
+          letterSpacing: -0.1,
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Oráculo',
-          tabBarLabel: 'Busca',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" size={size} color={color} />
+          title: 'Início',
+          tabBarIcon: ({ color, focused }) => (
+            <Feather name="home" size={20} color={color} strokeWidth={focused ? 2.4 : 2} />
           ),
         }}
       />
       <Tabs.Screen
-        name="favorites"
+        name="busca"
         options={{
-          title: 'Favoritos',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart" size={size} color={color} />
+          title: 'Busca',
+          tabBarIcon: ({ color, focused }) => (
+            <Feather name="search" size={20} color={color} strokeWidth={focused ? 2.4 : 2} />
           ),
         }}
       />
       <Tabs.Screen
-        name="history"
+        name="comparar"
         options={{
-          title: 'Histórico',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="time" size={size} color={color} />
+          title: 'Comparar',
+          tabBarIcon: ({ color, focused }) => (
+            <Feather name="git-pull-request" size={20} color={color} strokeWidth={focused ? 2.4 : 2} />
           ),
         }}
       />

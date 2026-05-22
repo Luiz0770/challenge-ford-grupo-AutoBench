@@ -5,24 +5,35 @@ import { colors } from '../../constants/colors';
 interface CardProps {
   children: React.ReactNode;
   onPress?: () => void;
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
 }
 
-export const Card: React.FC<CardProps> = ({ children, onPress, style }) => {
-  const containerStyle: ViewStyle = {
-    backgroundColor: colors.bg.surface,
-    borderRadius: 16,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: colors.bg.border,
-  };
+const baseStyle: ViewStyle = {
+  backgroundColor: colors.bg.surface,
+  borderRadius: 12,
+  borderWidth: 1,
+  borderColor: colors.bg.border,
+  shadowColor: '#101828',
+  shadowOpacity: 0.04,
+  shadowRadius: 2,
+  shadowOffset: { width: 0, height: 1 },
+  elevation: 1,
+};
 
+export const Card: React.FC<CardProps> = ({ children, onPress, style }) => {
   if (onPress) {
     return (
-      <Pressable onPress={onPress} style={({ pressed }) => [{ opacity: pressed ? 0.85 : 1 }]}>
-        <View style={[containerStyle, style]}>{children}</View>
+      <Pressable
+        onPress={onPress}
+        style={({ pressed }) => [
+          baseStyle,
+          { opacity: pressed ? 0.92 : 1, transform: pressed ? [{ scale: 0.99 }] : [{ scale: 1 }] },
+          style as ViewStyle,
+        ]}
+      >
+        {children}
       </Pressable>
     );
   }
-  return <View style={[containerStyle, style]}>{children}</View>;
+  return <View style={[baseStyle, style as ViewStyle]}>{children}</View>;
 };

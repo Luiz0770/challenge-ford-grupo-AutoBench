@@ -1,0 +1,43 @@
+{
+  "categories": [
+    { "id": "suv",         "label": "SUV",         "code": "SUV", "count": 124, "color": "#1E293B", "accent": "#94A3B8" },
+    { "id": "picape",      "label": "Picape",      "code": "PCP", "count": 38,  "color": "#14532D", "accent": "#86EFAC" },
+    { "id": "sedan",       "label": "Sedan",       "code": "SDN", "count": 87,  "color": "#001C46", "accent": "#60A5FA" },
+    { "id": "hatch",       "label": "Hatch",       "code": "HCH", "count": 64,  "color": "#B45309", "accent": "#FCD34D" },
+    { "id": "crossover",   "label": "Crossover",   "code": "CRX", "count": 51,  "color": "#0F766E", "accent": "#5EEAD4" },
+    { "id": "cupe",        "label": "Cupê",        "code": "CPE", "count": 22,  "color": "#581C87", "accent": "#D8B4FE" },
+    { "id": "esportivo",   "label": "Esportivo",   "code": "SPT", "count": 19,  "color": "#991B1B", "accent": "#FCA5A5" },
+    { "id": "compacto",    "label": "Compacto",    "code": "CMP", "count": 45,  "color": "#475569", "accent": "#CBD5E1" },
+    { "id": "eletrico",    "label": "Elétrico",    "code": "EV",  "count": 33,  "color": "#0066CC", "accent": "#BFDBFE" },
+    { "id": "hibrido",     "label": "Híbrido",     "code": "HEV", "count": 28,  "color": "#0F172A", "accent": "#94A3B8" },
+    { "id": "conversivel", "label": "Conversível", "code": "CAB", "count": 11,  "color": "#7F1D1D", "accent": "#FDA4AF" },
+    { "id": "minivan",     "label": "Minivan",     "code": "MPV", "count": 16,  "color": "#18181B", "accent": "#A1A1AA" }
+  ],
+  "trendingBrands": [
+    { "name": "Volkswagen", "count": 32 },
+    { "name": "Chevrolet",  "count": 26 },
+    { "name": "Ford",       "count": 24 },
+    { "name": "Hyundai",    "count": 22 },
+    { "name": "Toyota",     "count": 21 },
+    { "name": "Renault",    "count": 19 },
+    { "name": "Fiat",       "count": 18 },
+    { "name": "Honda",      "count": 14 },
+    { "name": "Peugeot",    "count": 14 },
+    { "name": "Jeep",       "count": 12 },
+    { "name": "Nissan",     "count": 11 },
+    { "name": "Citroën",    "count": 8 }
+  ],
+  "categoryVehicles": {
+    "picape": [
+      { "vehicleId": "ford-ranger-raptor-2024", "brand": "Ford", "model": "Ranger", "version": "Raptor V6 3.0 Bi-Turbo", "year": 2024, "fipe": 499000 },
+      { "vehicleId": "ford-ranger-limited-2024", "brand": "Ford", "model": "Ranger", "version": "Limited 2.0 Bi-Turbo Diesel", "year": 2024, "fipe": 349000 },
+      { "vehicleId": "ford-ranger-xls-2024", "brand": "Ford", "model": "Ranger", "version": "XLS 2.2 TD Diesel", "year": 2024, "fipe": 259000 }
+    ]
+  },
+  "suggestions": [
+    { "brand": "Ford", "model": "Ranger", "vehicleId": "ford-ranger-raptor-2024" },
+    { "brand": "Ford", "model": "Raptor", "vehicleId": "ford-ranger-raptor-2024" },
+    { "brand": "Ford", "model": "Limited", "vehicleId": "ford-ranger-limited-2024" },
+    { "brand": "Ford", "model": "XLS", "vehicleId": "ford-ranger-xls-2024" }
+  ]
+}

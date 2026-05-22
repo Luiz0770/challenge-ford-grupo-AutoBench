@@ -1,0 +1,118 @@
+{
+  "byVehicleId": {
+    "ford-ranger-raptor-2024": {
+      "segment": "Picape Off-Road Premium",
+      "bodyStyle": "Cabine Dupla 4 portas",
+      "fipe": { "code": "003504-1", "month": "Mai/2026" },
+      "sources": { "primary": "Ficha técnica do fabricante", "secondary": "Tabela FIPE API", "confidence": "Alta", "cross": 2 },
+      "market": {
+        "fipeAvg": 499000,
+        "delta30": 2.3,
+        "delta90": 4.1,
+        "offers": 32,
+        "offerMin": 478000,
+        "offerMax": 524500,
+        "sparkline": [12, 13, 11, 14, 13, 15, 14, 17, 16, 18, 19, 18],
+        "ranking": { "position": 1, "total": 4, "segment": "Picape Off-Road Premium" },
+        "competitors": [
+          { "name": "Toyota Hilux GR-Sport",  "delta": 1.2,  "fipe": 412000 },
+          { "name": "VW Amarok V6 Highline",   "delta": -0.8, "fipe": 398000 },
+          { "name": "Chevrolet S10 High Country", "delta": 0.6, "fipe": 348000 }
+        ]
+      },
+      "ai": {
+        "title": "Análise Preditiva de Mercado",
+        "engine": "Oráculo IA",
+        "confidence": 89,
+        "severity": "high",
+        "timeframe": "30 dias",
+        "summary": "Probabilidade de 89% de descontenting no próximo facelift.",
+        "detail": "Padrão histórico: remoção de materiais soft-touch nas portas e redução da multimídia de 12\" para 10\" nas versões de entrada após o primeiro ano de venda.",
+        "action": "Sugestão tática: reforçar comunicação de 'Acabamento Premium Sem Cortes' no estoque atual.",
+        "signals": [
+          { "label": "Cadeia Tier-1",       "value": "+3 sinais",  "weight": 0.41 },
+          { "label": "Patentes ativas",     "value": "2 novas",    "weight": 0.22 },
+          { "label": "Listagens fornecedor","value": "−18% SKUs",  "weight": 0.26 },
+          { "label": "Análise NLP imprensa","value": "11 menções", "weight": 0.11 }
+        ],
+        "lastRun": "há 4 horas"
+      }
+    },
+    "ford-ranger-limited-2024": {
+      "segment": "Picape Média Premium",
+      "bodyStyle": "Cabine Dupla 4 portas",
+      "fipe": { "code": "003504-2", "month": "Mai/2026" },
+      "sources": { "primary": "Ficha técnica do fabricante", "secondary": "Tabela FIPE API", "confidence": "Alta", "cross": 2 },
+      "market": {
+        "fipeAvg": 349000,
+        "delta30": 1.8,
+        "delta90": 3.2,
+        "offers": 184,
+        "offerMin": 329000,
+        "offerMax": 361500,
+        "sparkline": [10, 11, 12, 11, 13, 12, 14, 13, 15, 14, 16, 17],
+        "ranking": { "position": 2, "total": 5, "segment": "Picape Média Premium" },
+        "competitors": [
+          { "name": "Toyota Hilux SR-V",       "delta": -0.4, "fipe": 318000 },
+          { "name": "VW Amarok Highline",      "delta": 0.9,  "fipe": 341000 },
+          { "name": "Chevrolet S10 LTZ",       "delta": 1.4,  "fipe": 335000 }
+        ]
+      },
+      "ai": {
+        "title": "Análise Preditiva de Mercado",
+        "engine": "Oráculo IA",
+        "confidence": 72,
+        "severity": "medium",
+        "timeframe": "90 dias",
+        "summary": "Probabilidade de 72% de reajuste de 4–7% no próximo trimestre.",
+        "detail": "Histórico: a Ford reajusta versões intermediárias após lançamento de versão de entrada reestilizada. Pressão cambial recente reforça o sinal.",
+        "action": "Comunicar 'Preço travado no estoque atual' para estimular antecipação de compra.",
+        "signals": [
+          { "label": "Pressão cambial",     "value": "+5,2% USD", "weight": 0.35 },
+          { "label": "Estoque concessionária","value": "−12% MoM", "weight": 0.28 },
+          { "label": "Reajustes anteriores","value": "3 em 18m",  "weight": 0.22 },
+          { "label": "Sinais de imprensa",  "value": "8 menções", "weight": 0.15 }
+        ],
+        "lastRun": "há 2 horas"
+      }
+    },
+    "ford-ranger-xls-2024": {
+      "segment": "Picape Média de Entrada",
+      "bodyStyle": "Cabine Dupla 4 portas",
+      "fipe": { "code": "003504-3", "month": "Mai/2026" },
+      "sources": { "primary": "Ficha técnica do fabricante", "secondary": "Tabela FIPE API", "confidence": "Média", "cross": 2 },
+      "market": {
+        "fipeAvg": 259000,
+        "delta30": -0.6,
+        "delta90": 1.1,
+        "offers": 96,
+        "offerMin": 245000,
+        "offerMax": 268000,
+        "sparkline": [14, 14, 13, 13, 12, 12, 13, 12, 11, 12, 11, 11],
+        "ranking": { "position": 3, "total": 5, "segment": "Picape Média de Entrada" },
+        "competitors": [
+          { "name": "Toyota Hilux SR",       "delta": -1.2, "fipe": 248000 },
+          { "name": "VW Amarok Comfortline", "delta": 0.4,  "fipe": 256000 },
+          { "name": "Chevrolet S10 LS",      "delta": -0.8, "fipe": 239000 }
+        ]
+      },
+      "ai": {
+        "title": "Alerta de Descontinuação",
+        "engine": "Oráculo IA",
+        "confidence": 61,
+        "severity": "medium",
+        "timeframe": "12 meses",
+        "summary": "Probabilidade de 61% de descontinuação da motorização 2.2L no ciclo 2025.",
+        "detail": "Tendência de mercado indica migração forçada para propulsores 2.0L bi-turbo. Concorrentes diretos já fizeram a transição.",
+        "action": "Acelerar giro de estoque com campanha 'Última Geração Motor 2.2L'.",
+        "signals": [
+          { "label": "Migração concorrência","value": "3 modelos",  "weight": 0.40 },
+          { "label": "Regulação emissões",  "value": "Proconve L8", "weight": 0.30 },
+          { "label": "Volume de venda",     "value": "−22% YoY",    "weight": 0.20 },
+          { "label": "Sinais OEM",          "value": "1 patente",   "weight": 0.10 }
+        ],
+        "lastRun": "há 1 dia"
+      }
+    }
+  }
+}
