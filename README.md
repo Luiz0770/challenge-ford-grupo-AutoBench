@@ -125,7 +125,7 @@ data/
 
 | Nome | RM |
 |---|---|
-| Luiz Felipe Coelho Ramos | 5550774 |
+| Luiz Felipe Coelho Ramos | 555074 |
 | Vitor Musolino Teixeira | 555012 |
 | Fernando Gonzales Alexandre | 555045 |
 | Lucas Catroppa Piratininga Dias | 555450 |
