@@ -94,21 +94,19 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
   const fipe = fipeAvg ?? vehicle.priceInCents / 100;
 
   return (
-    <Pressable
-      onPress={onSwap}
-      style={({ pressed }) => ({
+    <View
+      style={{
         flex: 1,
         backgroundColor: colors.bg.surface,
         borderRadius: 12,
         borderWidth: 1,
         borderColor: colors.bg.border,
         padding: 12,
-        opacity: pressed ? 0.95 : 1,
         shadowColor: '#101828',
         shadowOpacity: 0.04,
         shadowRadius: 2,
         shadowOffset: { width: 0, height: 1 },
-      })}
+      }}
     >
       <View
         style={{
@@ -133,10 +131,7 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
           {vehicle.brand}
         </Text>
         <Pressable
-          onPress={(e) => {
-            e.stopPropagation();
-            onRemove();
-          }}
+          onPress={onRemove}
           hitSlop={8}
           style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1 })}
         >
@@ -203,8 +198,9 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
         </Text>
       </View>
 
-      <View
-        style={{
+      <Pressable
+        onPress={onSwap}
+        style={({ pressed }) => ({
           backgroundColor: colors.bg.canvas,
           borderWidth: 1,
           borderColor: colors.bg.borderStrong,
@@ -215,7 +211,8 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
           alignItems: 'center',
           justifyContent: 'center',
           gap: 4,
-        }}
+          opacity: pressed ? 0.85 : 1,
+        })}
       >
         <Feather name="repeat" size={12} color={colors.brand.blue} />
         <Text
@@ -227,7 +224,7 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
         >
           Trocar
         </Text>
-      </View>
-    </Pressable>
+      </Pressable>
+    </View>
   );
 };
