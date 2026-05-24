@@ -25,6 +25,7 @@ export interface PredictiveAlert {
 
 export interface Vehicle {
   id: string;
+  categoryId: string;
   brand: string;
   brandFipeCode: string;
   model: string;
@@ -85,11 +86,6 @@ export interface Category {
   accent: string;
 }
 
-export interface TrendingBrand {
-  name: string;
-  count: number;
-}
-
 export interface CategoryVehicleEntry {
   vehicleId: string;
   brand: string;
@@ -97,65 +93,6 @@ export interface CategoryVehicleEntry {
   version: string;
   year: number;
   fipe: number;
-}
-
-export interface Suggestion {
-  brand: string;
-  model: string;
-  vehicleId: string;
-}
-
-export interface AiSignal {
-  label: string;
-  value: string;
-  weight: number;
-}
-
-export interface VehicleAi {
-  title: string;
-  engine: string;
-  confidence: number;
-  severity: AlertSeverity;
-  timeframe: string;
-  summary: string;
-  detail: string;
-  action: string;
-  signals: AiSignal[];
-  lastRun: string;
-}
-
-export interface MarketCompetitor {
-  name: string;
-  delta: number;
-  fipe: number;
-}
-
-export interface VehicleMarket {
-  fipeAvg: number;
-  delta30: number;
-  delta90: number;
-  offers: number;
-  offerMin: number;
-  offerMax: number;
-  sparkline: number[];
-  ranking: { position: number; total: number; segment: string };
-  competitors: MarketCompetitor[];
-}
-
-export interface VehicleSources {
-  primary: string;
-  secondary: string;
-  confidence: 'Alta' | 'Média' | 'Baixa';
-  cross: number;
-}
-
-export interface VehicleMeta {
-  segment: string;
-  bodyStyle: string;
-  fipe: { code: string; month: string };
-  sources: VehicleSources;
-  market: VehicleMarket;
-  ai: VehicleAi;
 }
 
 export interface CompareVerdict {

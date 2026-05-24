@@ -12,32 +12,5 @@
     { "id": "hibrido",     "label": "Híbrido",     "code": "HEV", "count": 28,  "color": "#0F172A", "accent": "#94A3B8" },
     { "id": "conversivel", "label": "Conversível", "code": "CAB", "count": 11,  "color": "#7F1D1D", "accent": "#FDA4AF" },
     { "id": "minivan",     "label": "Minivan",     "code": "MPV", "count": 16,  "color": "#18181B", "accent": "#A1A1AA" }
-  ],
-  "trendingBrands": [
-    { "name": "Volkswagen", "count": 32 },
-    { "name": "Chevrolet",  "count": 26 },
-    { "name": "Ford",       "count": 24 },
-    { "name": "Hyundai",    "count": 22 },
-    { "name": "Toyota",     "count": 21 },
-    { "name": "Renault",    "count": 19 },
-    { "name": "Fiat",       "count": 18 },
-    { "name": "Honda",      "count": 14 },
-    { "name": "Peugeot",    "count": 14 },
-    { "name": "Jeep",       "count": 12 },
-    { "name": "Nissan",     "count": 11 },
-    { "name": "Citroën",    "count": 8 }
-  ],
-  "categoryVehicles": {
-    "picape": [
-      { "vehicleId": "ford-ranger-raptor-2024", "brand": "Ford", "model": "Ranger", "version": "Raptor V6 3.0 Bi-Turbo", "year": 2024, "fipe": 499000 },
-      { "vehicleId": "ford-ranger-limited-2024", "brand": "Ford", "model": "Ranger", "version": "Limited 2.0 Bi-Turbo Diesel", "year": 2024, "fipe": 349000 },
-      { "vehicleId": "ford-ranger-xls-2024", "brand": "Ford", "model": "Ranger", "version": "XLS 2.2 TD Diesel", "year": 2024, "fipe": 259000 }
-    ]
-  },
-  "suggestions": [
-    { "brand": "Ford", "model": "Ranger", "vehicleId": "ford-ranger-raptor-2024" },
-    { "brand": "Ford", "model": "Raptor", "vehicleId": "ford-ranger-raptor-2024" },
-    { "brand": "Ford", "model": "Limited", "vehicleId": "ford-ranger-limited-2024" },
-    { "brand": "Ford", "model": "XLS", "vehicleId": "ford-ranger-xls-2024" }
   ]
 }

@@ -43,8 +43,6 @@ export default function CompareScreen() {
     [cat, a?.id, b?.id],
   );
 
-  const aMarket = a ? CatalogService.getVehicleMeta(a.id) : null;
-  const bMarket = b ? CatalogService.getVehicleMeta(b.id) : null;
   const { price: aPrice } = useFipePrice(a);
   const { price: bPrice } = useFipePrice(b);
 
@@ -130,14 +128,14 @@ export default function CompareScreen() {
             side="A"
             onSwap={() => setSwap("a")}
             onRemove={() => handleRemove("a")}
-            fipeAvg={aPrice?.valor ?? aMarket?.market.fipeAvg}
+            fipeAvg={aPrice?.valor}
           />
           <VehicleSlot
             vehicle={b}
             side="B"
             onSwap={() => setSwap("b")}
             onRemove={() => handleRemove("b")}
-            fipeAvg={bPrice?.valor ?? bMarket?.market.fipeAvg}
+            fipeAvg={bPrice?.valor}
           />
           <View
             style={{

@@ -18,7 +18,6 @@ export default function BuscaScreen() {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
   const categories = CatalogService.getCategories();
-  const brands = CatalogService.getTrendingBrands();
 
   const matches = useMemo(() => CatalogService.getSuggestions(q), [q]);
 
@@ -166,68 +165,6 @@ export default function BuscaScreen() {
           ))}
         </View>
 
-        {/* Implementacao Futura para busca por Marcas */}
-        {/* <View style={{ paddingHorizontal: 20, paddingTop: 28 }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: 10,
-            }}
-          >
-            <SectionLabel>Marcas em alta</SectionLabel>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3 }}>
-              <Text
-                style={{
-                  fontFamily: fonts.monoSemibold,
-                  fontSize: 10,
-                  color: colors.brand.blue,
-                }}
-              >
-                Ver todas
-              </Text>
-              <Feather name="chevron-right" size={11} color={colors.brand.blue} />
-            </View>
-          </View>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-            {brands.map((b) => (
-              <View
-                key={b.name}
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  gap: 6,
-                  paddingHorizontal: 12,
-                  paddingVertical: 8,
-                  borderRadius: 999,
-                  backgroundColor: colors.bg.surface,
-                  borderWidth: 1,
-                  borderColor: colors.bg.borderStrong,
-                }}
-              >
-                <Text
-                  style={{
-                    fontFamily: fonts.sansMedium,
-                    fontSize: 12.5,
-                    color: colors.text.primary,
-                  }}
-                >
-                  {b.name}
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: fonts.monoSemibold,
-                    fontSize: 9.5,
-                    color: colors.text.secondary,
-                  }}
-                >
-                  {b.count}
-                </Text>
-              </View>
-            ))}
-          </View>
-        </View> */}
       </ScrollView>
     </SafeAreaView>
   );

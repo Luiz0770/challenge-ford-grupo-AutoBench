@@ -2,6 +2,7 @@
   "vehicles": [
     {
       "id": "ford-ranger-raptor-2024",
+      "categoryId": "picape",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Ranger",
@@ -139,6 +140,7 @@
     },
     {
       "id": "ford-ranger-limited-2024",
+      "categoryId": "picape",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Ranger",
@@ -276,6 +278,7 @@
     },
     {
       "id": "ford-ranger-xls-2024",
+      "categoryId": "picape",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Ranger",

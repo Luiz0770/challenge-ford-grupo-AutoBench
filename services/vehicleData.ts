@@ -1,5 +1,5 @@
 import vehiclesData from '../data/vehicles.json';
-import type { Vehicle } from '../types';
+import type { CategoryVehicleEntry, Vehicle } from '../types';
 
 const vehicles: Vehicle[] = vehiclesData.vehicles as Vehicle[];
 
@@ -32,5 +32,43 @@ export const VehicleDataService = {
         (v) => v.brandFipeCode === brandCode && v.modelFipeCode === String(modelCode)
       )
       .map(sanitizeSpecs);
+  },
+
+  getByCategory(categoryId: string): CategoryVehicleEntry[] {
+    return vehicles
+      .filter((v) => v.categoryId === categoryId)
+      .map((v) => ({
+        vehicleId: v.id,
+        brand: v.brand,
+        model: v.model,
+        version: v.version,
+        year: v.year,
+        fipe: v.priceInCents / 100,
+      }));
+  },
+
+  getAllAsEntries(): CategoryVehicleEntry[] {
+    return vehicles.map((v) => ({
+      vehicleId: v.id,
+      brand: v.brand,
+      model: v.model,
+      version: v.version,
+      year: v.year,
+      fipe: v.priceInCents / 100,
+    }));
+  },
+
+  search(query: string): { brand: string; model: string; vehicleId: string }[] {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return vehicles
+      .filter(
+        (v) =>
+          v.brand.toLowerCase().includes(q) ||
+          v.model.toLowerCase().includes(q) ||
+          v.version.toLowerCase().includes(q)
+      )
+      .slice(0, 6)
+      .map((v) => ({ brand: v.brand, model: v.model, vehicleId: v.id }));
   },
 };

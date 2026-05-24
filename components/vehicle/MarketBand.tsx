@@ -5,9 +5,9 @@ import { colors, fonts } from '../../constants/colors';
 import { fmtBRLFromReais } from '../../utils/format';
 
 interface MarketBandProps {
-  fipeCode: string;
-  fipeMonth: string;
-  fipeAvg: number;
+  fipeCode?: string;
+  fipeMonth?: string;
+  fipeAvg?: number;
   modelo?: string;
   loading: boolean;
   error: boolean;
@@ -99,7 +99,7 @@ export const MarketBand: React.FC<MarketBandProps> = ({
               marginBottom: modelo ? 4 : 10,
             }}
           >
-            {fmtBRLFromReais(fipeAvg)}
+            {fipeAvg != null ? fmtBRLFromReais(fipeAvg) : '—'}
           </Text>
           {modelo ? (
             <Text

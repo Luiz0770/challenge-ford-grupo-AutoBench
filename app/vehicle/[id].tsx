@@ -11,7 +11,6 @@ import { MarketBand } from "../../components/vehicle/MarketBand";
 import { SpecsMatrix } from "../../components/vehicle/SpecsMatrix";
 import { colors, fonts } from "../../constants/colors";
 import { useFipePrice } from "../../hooks/useFipePrice";
-import { CatalogService } from "../../services/catalog";
 import { VehicleDataService } from "../../services/vehicleData";
 import { useUserStore } from "../../store/userStore";
 
@@ -20,7 +19,6 @@ export default function VehicleScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const vehicleId = Array.isArray(id) ? id[0] : (id ?? "");
   const vehicle = VehicleDataService.getVehicleById(vehicleId);
-  const meta = CatalogService.getVehicleMeta(vehicleId);
   const {
     price: fipePrice,
     loading: fipeLoading,
@@ -214,48 +212,20 @@ export default function VehicleScreen() {
         contentContainerStyle={{ paddingBottom: 40 }}
         showsVerticalScrollIndicator={false}
       >
-        {meta && (
+        <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
           <View
             style={{
-              marginHorizontal: 20,
-              marginTop: 14,
-              backgroundColor: colors.bg.surface,
-              borderRadius: 10,
-              borderWidth: 1,
-              borderColor: colors.bg.border,
-              paddingHorizontal: 12,
-              paddingVertical: 8,
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
+              marginBottom: 10,
             }}
           >
-            <View
-              style={{ flexDirection: "row", alignItems: "center", gap: 8 }}
-            >
-              <LivePulse color={colors.status.success} size={6} />
-              <Text
-                style={{
-                  fontFamily: fonts.sansMedium,
-                  fontSize: 11.5,
-                  color: colors.text.primary,
-                }}
-              >
-                Confiança da fonte:{" "}
-                <Text
-                  style={{
-                    fontFamily: fonts.sansSemibold,
-                    color: colors.status.success,
-                  }}
-                >
-                  {meta.sources.confidence}
-                </Text>
-              </Text>
-            </View>
+            <SectionLabel>Mercado · FIPE API</SectionLabel>
             <View
               style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
             >
-              <Feather name="info" size={11} color={colors.text.secondary} />
+              <LivePulse color={colors.status.success} size={5} />
               <Text
                 style={{
                   fontFamily: fonts.mono,
@@ -263,48 +233,19 @@ export default function VehicleScreen() {
                   color: colors.text.secondary,
                 }}
               >
-                {meta.sources.cross} fontes cruzadas
+                ao vivo
               </Text>
             </View>
           </View>
-        )}
-
-        {meta && (
-          <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: 10,
-              }}
-            >
-              <SectionLabel>Mercado · FIPE API</SectionLabel>
-              <View
-                style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
-              >
-                <LivePulse color={colors.status.success} size={5} />
-                <Text
-                  style={{
-                    fontFamily: fonts.mono,
-                    fontSize: 9.5,
-                    color: colors.text.secondary,
-                  }}
-                >
-                  ao vivo
-                </Text>
-              </View>
-            </View>
-            <MarketBand
-              fipeCode={fipePrice?.codigoFipe ?? meta.fipe.code}
-              fipeMonth={fipePrice?.mesReferencia ?? meta.fipe.month}
-              fipeAvg={fipePrice?.valor ?? meta.market.fipeAvg}
-              modelo={fipePrice?.modelo}
-              loading={fipeLoading}
-              error={fipeError}
-            />
-          </View>
-        )}
+          <MarketBand
+            fipeCode={fipePrice?.codigoFipe}
+            fipeMonth={fipePrice?.mesReferencia}
+            fipeAvg={fipePrice?.valor}
+            modelo={fipePrice?.modelo}
+            loading={fipeLoading}
+            error={fipeError}
+          />
+        </View>
 
         <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
           <View

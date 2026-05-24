@@ -1,29 +1,40 @@
 import categoriesData from '../data/categories.json';
-import compareData from '../data/compare.json';
-import marketData from '../data/market.json';
 import type {
   Category,
   CategoryVehicleEntry,
   CompareCategoryId,
   CompareRow,
   CompareVerdict,
-  Suggestion,
-  TrendingBrand,
   Vehicle,
-  VehicleMeta,
 } from '../types';
 import { VehicleDataService } from './vehicleData';
 
 const categories = categoriesData.categories as Category[];
-const trendingBrands = categoriesData.trendingBrands as TrendingBrand[];
-const categoryVehicles = categoriesData.categoryVehicles as Record<string, CategoryVehicleEntry[]>;
-const suggestions = categoriesData.suggestions as Suggestion[];
 
-const marketByVehicleId = marketData.byVehicleId as Record<string, VehicleMeta>;
-const compareCategoryMap = compareData.categoryMap as Record<CompareCategoryId, string[]>;
-const compareAlternatives = compareData.alternatives as CategoryVehicleEntry[];
-const compareVerdicts = compareData.verdicts as Record<string, CompareVerdict>;
-const compareDefaultPair = compareData.defaultPair as { a: string; b: string };
+const compareCategoryMap: Record<CompareCategoryId, string[]> = {
+  motorizacao: ['engine', 'transmission'],
+  dimensoes:   ['dimensions', 'wheels'],
+  tecnologia:  ['tech', 'lighting', 'driving_modes'],
+  seguranca:   ['safety', 'suspension'],
+};
+
+const compareVerdicts: Record<string, CompareVerdict> = {
+  'ford-ranger-raptor-2024|ford-ranger-limited-2024': {
+    title: 'Veredito Oráculo',
+    summary: 'Raptor lidera em performance e tração; Limited compensa em valor e conforto urbano.',
+    scores: [
+      { cat: 'Motorização', a: 72, b: 28, leans: 'a' },
+      { cat: 'Dimensões',   a: 52, b: 48, leans: 'a' },
+      { cat: 'Tecnologia',  a: 61, b: 39, leans: 'a' },
+      { cat: 'Segurança',   a: 54, b: 46, leans: 'a' },
+    ],
+    recommendations: [
+      { tag: 'Off-road extremo',   winner: 'a', detail: 'Raptor — V6 397 cv, suspensão Live Valve FOX e 8 modos de condução. Sem rival nesta lista.' },
+      { tag: 'Uso urbano + valor', winner: 'b', detail: 'Limited — torque diesel, 10 marchas e equipamentos premium por R$ 150 mil a menos.' },
+    ],
+    priceGap: { absolute: 150000, percent: 30.1, cheaper: 'b' },
+  },
+};
 
 export const CatalogService = {
   getCategories(): Category[] {
@@ -34,37 +45,16 @@ export const CatalogService = {
     return categories.find((c) => c.id === id) ?? null;
   },
 
-  getTrendingBrands(): TrendingBrand[] {
-    return trendingBrands;
-  },
-
   getCategoryVehicles(categoryId: string): CategoryVehicleEntry[] {
-    return categoryVehicles[categoryId] ?? [];
+    return VehicleDataService.getByCategory(categoryId);
   },
 
-  getSuggestions(query: string): Suggestion[] {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return suggestions
-      .filter(
-        (s) => s.brand.toLowerCase().includes(q) || s.model.toLowerCase().includes(q)
-      )
-      .slice(0, 6);
-  },
-
-  getVehicleMeta(vehicleId: string): VehicleMeta | null {
-    return marketByVehicleId[vehicleId] ?? null;
+  getSuggestions(query: string) {
+    return VehicleDataService.search(query);
   },
 
   getCompareAlternatives(): CategoryVehicleEntry[] {
-    return compareAlternatives;
-  },
-
-  getCompareDefaultPair(): { a: Vehicle | null; b: Vehicle | null } {
-    return {
-      a: VehicleDataService.getVehicleById(compareDefaultPair.a),
-      b: VehicleDataService.getVehicleById(compareDefaultPair.b),
-    };
+    return VehicleDataService.getAllAsEntries();
   },
 
   getCompareVerdict(aId: string, bId: string): CompareVerdict {
