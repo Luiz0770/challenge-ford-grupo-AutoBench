@@ -11,9 +11,16 @@ interface SwapSheetProps {
   side: 'a' | 'b' | null;
   onClose: () => void;
   onPick: (entry: CategoryVehicleEntry) => void;
+  excludedId?: string;
 }
 
-export const SwapSheet: React.FC<SwapSheetProps> = ({ open, side, onClose, onPick }) => {
+export const SwapSheet: React.FC<SwapSheetProps> = ({
+  open,
+  side,
+  onClose,
+  onPick,
+  excludedId,
+}) => {
   const alternatives = CatalogService.getCompareAlternatives();
 
   return (
@@ -99,66 +106,71 @@ export const SwapSheet: React.FC<SwapSheetProps> = ({ open, side, onClose, onPic
           </View>
 
           <ScrollView contentContainerStyle={{ paddingHorizontal: 14 }}>
-            {alternatives.map((v) => (
-              <Pressable
-                key={v.vehicleId}
-                onPress={() => onPick(v)}
-                style={({ pressed }) => ({
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  gap: 12,
-                  paddingHorizontal: 8,
-                  paddingVertical: 12,
-                  borderRadius: 10,
-                  opacity: pressed ? 0.7 : 1,
-                })}
-              >
-                <View
-                  style={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: 8,
-                    backgroundColor: colors.bg.elevated,
+            {alternatives.map((v) => {
+              const isExcluded = v.vehicleId === excludedId;
+              return (
+                <Pressable
+                  key={v.vehicleId}
+                  onPress={isExcluded ? undefined : () => onPick(v)}
+                  style={({ pressed }) => ({
+                    flexDirection: 'row',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
+                    gap: 12,
+                    paddingHorizontal: 8,
+                    paddingVertical: 12,
+                    borderRadius: 10,
+                    opacity: isExcluded ? 0.4 : pressed ? 0.7 : 1,
+                  })}
                 >
-                  <Feather name="truck" size={18} color={colors.brand.navy} />
-                </View>
-                <View style={{ flex: 1, minWidth: 0 }}>
-                  <Text
+                  <View
                     style={{
-                      fontFamily: fonts.sansSemibold,
-                      fontSize: 13.5,
-                      color: colors.text.primary,
-                      letterSpacing: -0.2,
+                      width: 38,
+                      height: 38,
+                      borderRadius: 8,
+                      backgroundColor: colors.bg.elevated,
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
                   >
-                    {v.brand} {v.model}
-                  </Text>
+                    <Feather name="truck" size={18} color={colors.brand.navy} />
+                  </View>
+                  <View style={{ flex: 1, minWidth: 0 }}>
+                    <Text
+                      style={{
+                        fontFamily: fonts.sansSemibold,
+                        fontSize: 13.5,
+                        color: colors.text.primary,
+                        letterSpacing: -0.2,
+                      }}
+                    >
+                      {v.brand} {v.model}
+                    </Text>
+                    <Text
+                      style={{
+                        fontFamily: fonts.sans,
+                        fontSize: 11.5,
+                        color: colors.text.secondary,
+                        marginTop: 1,
+                      }}
+                      numberOfLines={1}
+                    >
+                      {isExcluded
+                        ? `${v.version} · ${v.year} · Já selecionado`
+                        : `${v.version} · ${v.year}`}
+                    </Text>
+                  </View>
                   <Text
                     style={{
-                      fontFamily: fonts.sans,
-                      fontSize: 11.5,
+                      fontFamily: fonts.mono,
+                      fontSize: 11,
                       color: colors.text.secondary,
-                      marginTop: 1,
                     }}
-                    numberOfLines={1}
                   >
-                    {v.version} · {v.year}
+                    {fmtBRLFromReais(v.fipe)}
                   </Text>
-                </View>
-                <Text
-                  style={{
-                    fontFamily: fonts.mono,
-                    fontSize: 11,
-                    color: colors.text.secondary,
-                  }}
-                >
-                  {fmtBRLFromReais(v.fipe)}
-                </Text>
-              </Pressable>
-            ))}
+                </Pressable>
+              );
+            })}
           </ScrollView>
         </Pressable>
       </Pressable>
