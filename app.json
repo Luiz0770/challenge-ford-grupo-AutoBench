@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "oraculo-app",
-    "slug": "oraculo-app",
+    "name": "Challenge Ford - AutoBench",
+    "slug": "challenge-ford-autobench",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "oraculoapp",
+    "scheme": "challenge-ford-autobench",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true

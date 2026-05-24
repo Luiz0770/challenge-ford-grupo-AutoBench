@@ -4,6 +4,7 @@
 node_modules/
 docs/
 .claude/
+.vscode/
 
 # Expo
 .expo/
