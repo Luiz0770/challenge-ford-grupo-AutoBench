@@ -61,6 +61,7 @@ export default function RootLayout() {
       >
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="vehicle/[id]" options={{ animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="model-results" options={{ animation: 'slide_from_right' }} />
       </Stack>
     </SafeAreaProvider>
   );
