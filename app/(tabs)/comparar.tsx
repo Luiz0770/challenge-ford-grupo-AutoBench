@@ -29,9 +29,8 @@ const CATEGORY_TABS: {
 ];
 
 export default function CompareScreen() {
-  const defaultPair = CatalogService.getCompareDefaultPair();
-  const [a, setA] = useState<Vehicle | null>(defaultPair.a);
-  const [b, setB] = useState<Vehicle | null>(defaultPair.b);
+  const [a, setA] = useState<Vehicle | null>(null);
+  const [b, setB] = useState<Vehicle | null>(null);
   const [cat, setCat] = useState<CompareCategoryId>("motorizacao");
   const [swap, setSwap] = useState<"a" | "b" | null>(null);
 
@@ -40,7 +39,7 @@ export default function CompareScreen() {
     [a?.id, b?.id],
   );
   const rows = useMemo(
-    () => (a && b ? CatalogService.buildCompareRows(cat, a, b) : []),
+    () => (a || b ? CatalogService.buildCompareRows(cat, a, b) : []),
     [cat, a?.id, b?.id],
   );
 
@@ -60,49 +59,10 @@ export default function CompareScreen() {
     setSwap(null);
   };
 
-  if (!a || !b || !verdict) {
-    return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-        <View
-          style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            padding: 24,
-          }}
-        >
-          <Feather
-            name="git-pull-request"
-            size={32}
-            color={colors.text.muted}
-          />
-          <Text
-            style={{
-              fontFamily: fonts.sansSemibold,
-              fontSize: 15,
-              color: colors.text.primary,
-              marginTop: 14,
-              textAlign: "center",
-            }}
-          >
-            Comparar em breve
-          </Text>
-          <Text
-            style={{
-              fontFamily: fonts.sans,
-              fontSize: 13,
-              color: colors.text.secondary,
-              marginTop: 6,
-              textAlign: "center",
-              lineHeight: 18,
-            }}
-          >
-            Adicione veículos ao catálogo para liberar a análise lado-a-lado.
-          </Text>
-        </View>
-      </SafeAreaView>
-    );
-  }
+  const handleRemove = (slot: 'a' | 'b') => {
+    if (slot === 'a') setA(null);
+    else setB(null);
+  };
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
@@ -169,12 +129,14 @@ export default function CompareScreen() {
             vehicle={a}
             side="A"
             onSwap={() => setSwap("a")}
+            onRemove={() => handleRemove("a")}
             fipeAvg={aPrice?.valor ?? aMarket?.market.fipeAvg}
           />
           <VehicleSlot
             vehicle={b}
             side="B"
             onSwap={() => setSwap("b")}
+            onRemove={() => handleRemove("b")}
             fipeAvg={bPrice?.valor ?? bMarket?.market.fipeAvg}
           />
           <View
@@ -211,6 +173,7 @@ export default function CompareScreen() {
         </View>
 
         {/* Matriz comparativa */}
+        {(a || b) && (
         <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
           <View
             style={{
@@ -273,12 +236,14 @@ export default function CompareScreen() {
 
           <CompareMatrix
             rows={rows}
-            aLabel={`${a.brand} ${a.model}`}
-            bLabel={`${b.brand} ${b.model}`}
+            aLabel={a ? `${a.brand} ${a.model}` : 'Slot A'}
+            bLabel={b ? `${b.brand} ${b.model}` : 'Slot B'}
           />
         </View>
+        )}
 
         {/* Veredito do Oráculo */}
+        {verdict && (
         <View style={{ paddingHorizontal: 16, paddingTop: 20 }}>
           <View
             style={{
@@ -302,8 +267,10 @@ export default function CompareScreen() {
           </View>
           <VerdictCard verdict={verdict} />
         </View>
+        )}
 
         {/* Rodapé técnico */}
+        {(a || b) && (
         <View
           style={{
             paddingHorizontal: 20,
@@ -325,6 +292,7 @@ export default function CompareScreen() {
             Análise cruzada · 4 categorias · {rows.length} atributos
           </Text>
         </View>
+        )}
       </ScrollView>
 
       <SwapSheet
@@ -332,6 +300,7 @@ export default function CompareScreen() {
         side={swap}
         onClose={() => setSwap(null)}
         onPick={handlePick}
+        excludedId={swap === 'a' ? b?.id : a?.id}
       />
     </View>
   );
