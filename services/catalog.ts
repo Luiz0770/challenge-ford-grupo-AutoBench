@@ -141,7 +141,7 @@ const unionLabels = (a: Map<string, string>, b: Map<string, string>): string[] =
 };
 
 const parseNum = (value: string): number | null => {
-  if (!value || value === 'Não Disponível') return null;
+  if (!value || value === 'Não Disponível' || value === '—') return null;
   const m = value.replace(/\./g, '').replace(',', '.').match(/-?\d+(\.\d+)?/);
   return m ? parseFloat(m[0]) : null;
 };
