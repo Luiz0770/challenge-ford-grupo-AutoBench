@@ -11,6 +11,7 @@ interface VehicleSlotProps {
   onSwap: () => void;
   onRemove: () => void;
   fipeAvg?: number;
+  fipeLoading?: boolean;
 }
 
 export const VehicleSlot: React.FC<VehicleSlotProps> = ({
@@ -19,6 +20,7 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
   onSwap,
   onRemove,
   fipeAvg,
+  fipeLoading,
 }) => {
   const accent = side === 'A' ? colors.brand.blue : colors.status.warning;
   const accentBg =
@@ -91,7 +93,7 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
     );
   }
 
-  const fipe = fipeAvg ?? vehicle.priceInCents / 100;
+  const priceLabel = fipeLoading ? '...' : fipeAvg != null ? fmtBRLFromReais(fipeAvg) : 'Indisponível';
 
   return (
     <View
@@ -194,7 +196,7 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
             color: colors.text.primary,
           }}
         >
-          {fmtBRLFromReais(fipe)}
+          {priceLabel}
         </Text>
       </View>
 

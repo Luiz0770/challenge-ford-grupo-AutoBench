@@ -9,7 +9,8 @@ import type {
 } from '../types';
 import { VehicleDataService } from './vehicleData';
 
-const categories = categoriesData.categories as Category[];
+type CategoryBase = Omit<Category, 'count'>;
+const categoryBases = categoriesData.categories as CategoryBase[];
 
 const compareCategoryMap: Record<CompareCategoryId, string[]> = {
   motorizacao: ['engine', 'transmission'],
@@ -38,11 +39,10 @@ const compareVerdicts: Record<string, CompareVerdict> = {
 
 export const CatalogService = {
   getCategories(): Category[] {
-    return categories;
-  },
-
-  getCategoryById(id: string): Category | null {
-    return categories.find((c) => c.id === id) ?? null;
+    return categoryBases.map((c) => ({
+      ...c,
+      count: VehicleDataService.countByCategory(c.id),
+    }));
   },
 
   getCategoryVehicles(categoryId: string): CategoryVehicleEntry[] {

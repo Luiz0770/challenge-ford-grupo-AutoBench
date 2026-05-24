@@ -1,5 +1,5 @@
 import { Feather } from '@expo/vector-icons';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { colors, fonts } from '../../constants/colors';
 import { useFipePrice } from '../../hooks/useFipePrice';
@@ -8,8 +8,6 @@ import { VehicleDataService } from '../../services/vehicleData';
 import type { Category, CategoryVehicleEntry } from '../../types';
 import { fmtBRLFromReais } from '../../utils/format';
 
-type SortKey = 'relevance' | 'price-asc' | 'price-desc';
-
 interface CategoryListViewProps {
   category: Category;
   onBack: () => void;
@@ -17,15 +15,8 @@ interface CategoryListViewProps {
 }
 
 export const CategoryListView: React.FC<CategoryListViewProps> = ({ category, onBack, onSelect }) => {
-  const [sort, setSort] = useState<SortKey>('relevance');
   const vehicles = CatalogService.getCategoryVehicles(category.id);
-
-  const sorted = useMemo(() => {
-    const arr = [...vehicles];
-    if (sort === 'price-asc') arr.sort((a, b) => a.fipe - b.fipe);
-    if (sort === 'price-desc') arr.sort((a, b) => b.fipe - a.fipe);
-    return arr;
-  }, [sort, vehicles]);
+  const sorted = useMemo(() => [...vehicles], [vehicles]);
 
   return (
     <View>
@@ -145,46 +136,6 @@ export const CategoryListView: React.FC<CategoryListViewProps> = ({ category, on
         </Text>
       </View>
 
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: 20, paddingVertical: 14, gap: 6 }}
-      >
-        {(
-          [
-            { id: 'relevance', label: 'Relevância' },
-            { id: 'price-asc', label: 'Menor preço' },
-            { id: 'price-desc', label: 'Maior preço' },
-          ] as { id: SortKey; label: string }[]
-        ).map((opt) => {
-          const active = sort === opt.id;
-          return (
-            <Pressable
-              key={opt.id}
-              onPress={() => setSort(opt.id)}
-              style={({ pressed }) => ({
-                paddingHorizontal: 12,
-                paddingVertical: 7,
-                borderRadius: 999,
-                backgroundColor: active ? colors.brand.navy : colors.bg.surface,
-                borderWidth: 1,
-                borderColor: active ? colors.brand.navy : colors.bg.borderStrong,
-                opacity: pressed ? 0.85 : 1,
-              })}
-            >
-              <Text
-                style={{
-                  fontFamily: fonts.sansMedium,
-                  fontSize: 12,
-                  color: active ? colors.bg.surface : colors.text.primary,
-                }}
-              >
-                {opt.label}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </ScrollView>
 
       <View style={{ paddingHorizontal: 16 }}>
         <View
@@ -250,7 +201,7 @@ const VehicleListRow: React.FC<{
 }> = ({ vehicle, category, isFirst, onPress }) => {
   const vehicleObj = VehicleDataService.getVehicleById(vehicle.vehicleId);
   const { price, loading } = useFipePrice(vehicleObj);
-  const fipe = price?.valor ?? vehicle.fipe;
+  const fipe = price?.valor;
 
   return (
     <Pressable
@@ -344,7 +295,7 @@ const VehicleListRow: React.FC<{
             marginTop: 2,
           }}
         >
-          {loading ? '...' : fmtBRLFromReais(fipe)}
+          {loading ? '...' : fipe != null ? fmtBRLFromReais(fipe) : 'Indisponível'}
         </Text>
       </View>
     </Pressable>

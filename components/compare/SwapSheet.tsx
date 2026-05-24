@@ -2,7 +2,9 @@ import { Feather } from '@expo/vector-icons';
 import React from 'react';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import { colors, fonts } from '../../constants/colors';
+import { useFipePrice } from '../../hooks/useFipePrice';
 import { CatalogService } from '../../services/catalog';
+import { VehicleDataService } from '../../services/vehicleData';
 import type { CategoryVehicleEntry } from '../../types';
 import { fmtBRLFromReais } from '../../utils/format';
 
@@ -106,74 +108,89 @@ export const SwapSheet: React.FC<SwapSheetProps> = ({
           </View>
 
           <ScrollView contentContainerStyle={{ paddingHorizontal: 14 }}>
-            {alternatives.map((v) => {
-              const isExcluded = v.vehicleId === excludedId;
-              return (
-                <Pressable
-                  key={v.vehicleId}
-                  onPress={isExcluded ? undefined : () => onPick(v)}
-                  style={({ pressed }) => ({
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    gap: 12,
-                    paddingHorizontal: 8,
-                    paddingVertical: 12,
-                    borderRadius: 10,
-                    opacity: isExcluded ? 0.4 : pressed ? 0.7 : 1,
-                  })}
-                >
-                  <View
-                    style={{
-                      width: 38,
-                      height: 38,
-                      borderRadius: 8,
-                      backgroundColor: colors.bg.elevated,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <Feather name="truck" size={18} color={colors.brand.navy} />
-                  </View>
-                  <View style={{ flex: 1, minWidth: 0 }}>
-                    <Text
-                      style={{
-                        fontFamily: fonts.sansSemibold,
-                        fontSize: 13.5,
-                        color: colors.text.primary,
-                        letterSpacing: -0.2,
-                      }}
-                    >
-                      {v.brand} {v.model}
-                    </Text>
-                    <Text
-                      style={{
-                        fontFamily: fonts.sans,
-                        fontSize: 11.5,
-                        color: colors.text.secondary,
-                        marginTop: 1,
-                      }}
-                      numberOfLines={1}
-                    >
-                      {isExcluded
-                        ? `${v.version} · ${v.year} · Já selecionado`
-                        : `${v.version} · ${v.year}`}
-                    </Text>
-                  </View>
-                  <Text
-                    style={{
-                      fontFamily: fonts.mono,
-                      fontSize: 11,
-                      color: colors.text.secondary,
-                    }}
-                  >
-                    {fmtBRLFromReais(v.fipe)}
-                  </Text>
-                </Pressable>
-              );
-            })}
+            {alternatives.map((v) => (
+              <SwapRow
+                key={v.vehicleId}
+                entry={v}
+                isExcluded={v.vehicleId === excludedId}
+                onPick={() => onPick(v)}
+              />
+            ))}
           </ScrollView>
         </Pressable>
       </Pressable>
     </Modal>
+  );
+};
+
+const SwapRow: React.FC<{
+  entry: CategoryVehicleEntry;
+  isExcluded: boolean;
+  onPick: () => void;
+}> = ({ entry, isExcluded, onPick }) => {
+  const vehicleObj = VehicleDataService.getVehicleById(entry.vehicleId);
+  const { price, loading } = useFipePrice(vehicleObj);
+  const priceLabel = loading ? '...' : price?.valor != null ? fmtBRLFromReais(price.valor) : 'Indisponível';
+
+  return (
+    <Pressable
+      onPress={isExcluded ? undefined : onPick}
+      style={({ pressed }) => ({
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+        paddingHorizontal: 8,
+        paddingVertical: 12,
+        borderRadius: 10,
+        opacity: isExcluded ? 0.4 : pressed ? 0.7 : 1,
+      })}
+    >
+      <View
+        style={{
+          width: 38,
+          height: 38,
+          borderRadius: 8,
+          backgroundColor: colors.bg.elevated,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Feather name="truck" size={18} color={colors.brand.navy} />
+      </View>
+      <View style={{ flex: 1, minWidth: 0 }}>
+        <Text
+          style={{
+            fontFamily: fonts.sansSemibold,
+            fontSize: 13.5,
+            color: colors.text.primary,
+            letterSpacing: -0.2,
+          }}
+        >
+          {entry.brand} {entry.model}
+        </Text>
+        <Text
+          style={{
+            fontFamily: fonts.sans,
+            fontSize: 11.5,
+            color: colors.text.secondary,
+            marginTop: 1,
+          }}
+          numberOfLines={1}
+        >
+          {isExcluded
+            ? `${entry.version} · ${entry.year} · Já selecionado`
+            : `${entry.version} · ${entry.year}`}
+        </Text>
+      </View>
+      <Text
+        style={{
+          fontFamily: fonts.mono,
+          fontSize: 11,
+          color: colors.text.secondary,
+        }}
+      >
+        {priceLabel}
+      </Text>
+    </Pressable>
   );
 };

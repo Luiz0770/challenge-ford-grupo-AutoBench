@@ -12,17 +12,6 @@ export interface SpecSection {
   specs: SpecItem[];
 }
 
-export type AlertType = 'decontenting' | 'price_increase' | 'discontinuation';
-export type AlertSeverity = 'low' | 'medium' | 'high';
-
-export interface PredictiveAlert {
-  probability: number;
-  type: AlertType;
-  title: string;
-  description: string;
-  actionSuggestion: string;
-}
-
 export interface Vehicle {
   id: string;
   categoryId: string;
@@ -32,29 +21,12 @@ export interface Vehicle {
   modelFipeCode: string;
   version: string;
   year: number;
-  priceInCents: number;
   sections: SpecSection[];
-  alert: PredictiveAlert;
-}
-
-export interface FipeBrand {
-  codigo: string;
-  nome: string;
-}
-
-export interface FipeModel {
-  codigo: number;
-  nome: string;
 }
 
 export interface FipeYear {
   codigo: string;
   nome: string;
-}
-
-export interface FipeModelsResponse {
-  modelos: FipeModel[];
-  anos: FipeYear[];
 }
 
 export interface FipePrice {
@@ -92,7 +64,6 @@ export interface CategoryVehicleEntry {
   model: string;
   version: string;
   year: number;
-  fipe: number;
 }
 
 export interface CompareVerdict {

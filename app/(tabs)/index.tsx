@@ -319,7 +319,7 @@ const FavoriteTile: React.FC<{ vehicleId: string; name: string; onPress: () => v
             color: colors.text.primary,
           }}
         >
-          {loading ? '...' : fipe ? fmtBRLFromReais(fipe) : '—'}
+          {loading ? '...' : fipe ? fmtBRLFromReais(fipe) : 'Indisponível'}
         </Text>
       </View>
     </Card>

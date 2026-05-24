@@ -43,8 +43,8 @@ export default function CompareScreen() {
     [cat, a?.id, b?.id],
   );
 
-  const { price: aPrice } = useFipePrice(a);
-  const { price: bPrice } = useFipePrice(b);
+  const { price: aPrice, loading: aLoading } = useFipePrice(a);
+  const { price: bPrice, loading: bLoading } = useFipePrice(b);
 
   const handlePick = (entry: CategoryVehicleEntry) => {
     const v = VehicleDataService.getVehicleById(entry.vehicleId);
@@ -129,6 +129,7 @@ export default function CompareScreen() {
             onSwap={() => setSwap("a")}
             onRemove={() => handleRemove("a")}
             fipeAvg={aPrice?.valor}
+            fipeLoading={aLoading}
           />
           <VehicleSlot
             vehicle={b}
@@ -136,6 +137,7 @@ export default function CompareScreen() {
             onSwap={() => setSwap("b")}
             onRemove={() => handleRemove("b")}
             fipeAvg={bPrice?.valor}
+            fipeLoading={bLoading}
           />
           <View
             style={{

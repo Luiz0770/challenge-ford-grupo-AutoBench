@@ -10,7 +10,6 @@ interface UserState {
   removeFavorite: (vehicleId: string) => void;
   isFavorite: (vehicleId: string) => boolean;
   addHistory: (entry: HistoryEntry) => void;
-  clearHistory: () => void;
 }
 
 export const useUserStore = create<UserState>()(
@@ -38,7 +37,6 @@ export const useUserStore = create<UserState>()(
             ...s.history.filter((h) => h.vehicleId !== entry.vehicleId),
           ].slice(0, 20),
         })),
-      clearHistory: () => set({ history: [] }),
     }),
     {
       name: 'oraculo-user-storage',

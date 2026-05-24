@@ -15,23 +15,9 @@ const sanitizeSpecs = (vehicle: Vehicle): Vehicle => ({
 });
 
 export const VehicleDataService = {
-  getVersionsByModel(brand: string, model: string): Vehicle[] {
-    return vehicles
-      .filter((v) => v.brand === brand && v.model === model)
-      .map(sanitizeSpecs);
-  },
-
   getVehicleById(id: string): Vehicle | null {
     const vehicle = vehicles.find((v) => v.id === id) ?? null;
     return vehicle ? sanitizeSpecs(vehicle) : null;
-  },
-
-  searchByBrandModelFipeCodes(brandCode: string, modelCode: string): Vehicle[] {
-    return vehicles
-      .filter(
-        (v) => v.brandFipeCode === brandCode && v.modelFipeCode === String(modelCode)
-      )
-      .map(sanitizeSpecs);
   },
 
   getByCategory(categoryId: string): CategoryVehicleEntry[] {
@@ -43,7 +29,6 @@ export const VehicleDataService = {
         model: v.model,
         version: v.version,
         year: v.year,
-        fipe: v.priceInCents / 100,
       }));
   },
 
@@ -54,8 +39,11 @@ export const VehicleDataService = {
       model: v.model,
       version: v.version,
       year: v.year,
-      fipe: v.priceInCents / 100,
     }));
+  },
+
+  countByCategory(categoryId: string): number {
+    return vehicles.filter((v) => v.categoryId === categoryId).length;
   },
 
   search(query: string): { brand: string; model: string; vehicleId: string }[] {

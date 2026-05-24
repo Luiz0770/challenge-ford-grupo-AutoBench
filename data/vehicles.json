@@ -9,7 +9,6 @@
       "modelFipeCode": "10891",
       "version": "Raptor",
       "year": 2024,
-      "priceInCents": 49900000,
       "sections": [
         {
           "id": "engine",
@@ -147,7 +146,6 @@
       "modelFipeCode": "10761",
       "version": "Limited",
       "year": 2024,
-      "priceInCents": 34900000,
       "sections": [
         {
           "id": "engine",
@@ -285,7 +283,6 @@
       "modelFipeCode": "10829",
       "version": "XLS",
       "year": 2024,
-      "priceInCents": 25900000,
       "sections": [
         {
           "id": "engine",
