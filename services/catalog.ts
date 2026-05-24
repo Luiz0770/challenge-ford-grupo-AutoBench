@@ -53,6 +53,26 @@ export const CatalogService = {
     return VehicleDataService.search(query);
   },
 
+  searchGrouped(query: string) {
+    return VehicleDataService.searchGrouped(query);
+  },
+
+  getModelVersionStrings(brand: string, model: string) {
+    return VehicleDataService.getModelVersionStrings(brand, model);
+  },
+
+  getModelYears(brand: string, model: string) {
+    return VehicleDataService.getModelYears(brand, model);
+  },
+
+  findExactVehicle(brand: string, model: string, version: string, year: number) {
+    return VehicleDataService.findExactVehicle(brand, model, version, year);
+  },
+
+  getModelVehicles(brand: string, model: string) {
+    return VehicleDataService.getVersionsByModel(brand, model);
+  },
+
   getCompareAlternatives(): CategoryVehicleEntry[] {
     return VehicleDataService.getAllAsEntries();
   },
