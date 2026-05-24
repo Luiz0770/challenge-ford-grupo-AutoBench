@@ -48,3 +48,62 @@ describe('VehicleDataService.searchByBrandModelFipeCodes', () => {
     expect(versions).toEqual([]);
   });
 });
+
+describe('VehicleDataService.searchGrouped', () => {
+  it('deduplicates brand+model results', () => {
+    const results = VehicleDataService.searchGrouped('ranger');
+    expect(results).toHaveLength(1);
+    expect(results[0]).toEqual({ brand: 'Ford', model: 'Ranger', key: 'Ford|Ranger' });
+  });
+
+  it('returns empty array for empty query', () => {
+    expect(VehicleDataService.searchGrouped('')).toHaveLength(0);
+  });
+
+  it('matches on brand name', () => {
+    const results = VehicleDataService.searchGrouped('ford');
+    expect(results.length).toBeGreaterThan(0);
+    expect(results[0].brand).toBe('Ford');
+  });
+});
+
+describe('VehicleDataService.getModelVersionStrings', () => {
+  it('returns unique version strings for a brand+model', () => {
+    const versions = VehicleDataService.getModelVersionStrings('Ford', 'Ranger');
+    expect(versions).toContain('Raptor');
+    expect(versions).toContain('Limited');
+    expect(versions).toContain('XLS');
+    expect(new Set(versions).size).toBe(versions.length);
+  });
+
+  it('returns empty array for unknown brand+model', () => {
+    expect(VehicleDataService.getModelVersionStrings('Unknown', 'Car')).toHaveLength(0);
+  });
+});
+
+describe('VehicleDataService.getModelYears', () => {
+  it('returns unique years sorted descending', () => {
+    const years = VehicleDataService.getModelYears('Ford', 'Ranger');
+    expect(years).toContain(2024);
+    expect(new Set(years).size).toBe(years.length);
+    for (let i = 0; i < years.length - 1; i++) {
+      expect(years[i]).toBeGreaterThanOrEqual(years[i + 1]);
+    }
+  });
+
+  it('returns empty array for unknown brand+model', () => {
+    expect(VehicleDataService.getModelYears('Unknown', 'Car')).toHaveLength(0);
+  });
+});
+
+describe('VehicleDataService.findExactVehicle', () => {
+  it('returns vehicleId for exact match', () => {
+    const id = VehicleDataService.findExactVehicle('Ford', 'Ranger', 'Raptor', 2024);
+    expect(id).toBe('ford-ranger-raptor-2024');
+  });
+
+  it('returns null when year does not match', () => {
+    const id = VehicleDataService.findExactVehicle('Ford', 'Ranger', 'Raptor', 2020);
+    expect(id).toBeNull();
+  });
+});
