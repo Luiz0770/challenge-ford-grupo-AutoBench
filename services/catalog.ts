@@ -95,31 +95,28 @@ export const CatalogService = {
     return synthesizeVerdict(aId, bId);
   },
 
-  buildCompareRows(category: CompareCategoryId, a: Vehicle, b: Vehicle): CompareRow[] {
+  buildCompareRows(category: CompareCategoryId, a: Vehicle | null, b: Vehicle | null): CompareRow[] {
+    if (!a && !b) return [];
     const sectionIds = compareCategoryMap[category] ?? [];
-    const aSpecs = collectSpecs(a, sectionIds);
-    const bSpecs = collectSpecs(b, sectionIds);
+    const aSpecs = a ? collectSpecs(a, sectionIds) : new Map<string, string>();
+    const bSpecs = b ? collectSpecs(b, sectionIds) : new Map<string, string>();
     const keys = unionLabels(aSpecs, bSpecs);
 
     return keys.map((label) => {
-      const av = aSpecs.get(label) ?? 'Não Disponível';
-      const bv = bSpecs.get(label) ?? 'Não Disponível';
+      const av = a ? (aSpecs.get(label) ?? 'Não Disponível') : '—';
+      const bv = b ? (bSpecs.get(label) ?? 'Não Disponível') : '—';
+      const nullA = !a || av === 'Não Disponível';
+      const nullB = !b || bv === 'Não Disponível';
       const aNum = parseNum(av);
       const bNum = parseNum(bv);
       const isNum = aNum !== null && bNum !== null;
       let winner: CompareRow['w'] = null;
-      if (isNum && aNum !== bNum) winner = aNum > bNum ? 'a' : 'b';
-      else if (isNum && aNum === bNum) winner = 'tie';
-      else if (av === bv) winner = 'tie';
-      return {
-        k: label,
-        a: av,
-        b: bv,
-        w: winner,
-        num: isNum,
-        nullA: av === 'Não Disponível',
-        nullB: bv === 'Não Disponível',
-      };
+      if (a && b) {
+        if (isNum && aNum !== bNum) winner = aNum > bNum ? 'a' : 'b';
+        else if (isNum && aNum === bNum) winner = 'tie';
+        else if (av === bv) winner = 'tie';
+      }
+      return { k: label, a: av, b: bv, w: winner, num: isNum, nullA, nullB };
     });
   },
 };
