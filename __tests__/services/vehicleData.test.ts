@@ -37,18 +37,6 @@ describe('VehicleDataService.getVehicleById', () => {
   });
 });
 
-describe('VehicleDataService.searchByBrandModelFipeCodes', () => {
-  it('returns Ford Ranger Raptor by FIPE code', () => {
-    const versions = VehicleDataService.searchByBrandModelFipeCodes('22', '10891');
-    expect(versions.length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('returns empty array for unknown codes', () => {
-    const versions = VehicleDataService.searchByBrandModelFipeCodes('99', '9999');
-    expect(versions).toEqual([]);
-  });
-});
-
 describe('VehicleDataService.searchGrouped', () => {
   it('deduplicates brand+model results', () => {
     const results = VehicleDataService.searchGrouped('ranger');

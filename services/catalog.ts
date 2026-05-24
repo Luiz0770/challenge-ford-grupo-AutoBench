@@ -49,10 +49,6 @@ export const CatalogService = {
     return VehicleDataService.getByCategory(categoryId);
   },
 
-  getSuggestions(query: string) {
-    return VehicleDataService.search(query);
-  },
-
   searchGrouped(query: string) {
     return VehicleDataService.searchGrouped(query);
   },

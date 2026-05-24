@@ -46,40 +46,9 @@ export const VehicleDataService = {
     return vehicles.filter((v) => v.categoryId === categoryId).length;
   },
 
-  search(query: string): { brand: string; model: string; vehicleId: string }[] {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return vehicles
-      .filter(
-        (v) =>
-          v.brand.toLowerCase().includes(q) ||
-          v.model.toLowerCase().includes(q) ||
-          v.version.toLowerCase().includes(q)
-      )
-      .slice(0, 6)
-      .map((v) => ({ brand: v.brand, model: v.model, vehicleId: v.id }));
-  },
-
   getVersionsByModel(brand: string, model: string): CategoryVehicleEntry[] {
     return vehicles
       .filter((v) => v.brand === brand && v.model === model)
-      .map((v) => ({
-        vehicleId: v.id,
-        brand: v.brand,
-        model: v.model,
-        version: v.version,
-        year: v.year,
-      }));
-  },
-
-  searchByBrandModelFipeCodes(
-    brandFipeCode: string,
-    modelFipeCode: string
-  ): CategoryVehicleEntry[] {
-    return vehicles
-      .filter(
-        (v) => v.brandFipeCode === brandFipeCode && v.modelFipeCode === modelFipeCode
-      )
       .map((v) => ({
         vehicleId: v.id,
         brand: v.brand,
