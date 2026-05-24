@@ -1,15 +1,14 @@
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import React, { useMemo, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import React from 'react';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { HierarchicalSearchBar } from '../../components/search/HierarchicalSearchBar';
 import { Card } from '../../components/ui/Card';
-import { Chip } from '../../components/ui/Chip';
 import { SectionLabel } from '../../components/ui/SectionLabel';
 import { Wordmark } from '../../components/ui/Wordmark';
 import { colors, fonts } from '../../constants/colors';
 import { useFipePrice } from '../../hooks/useFipePrice';
-import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
 import { useUserStore } from '../../store/userStore';
 import { fmtBRLFromReais } from '../../utils/format';
@@ -18,11 +17,6 @@ export default function HomeScreen() {
   const router = useRouter();
   const favorites = useUserStore((s) => s.favorites);
   const history = useUserStore((s) => s.history);
-
-  const [q, setQ] = useState('');
-  const [focused, setFocused] = useState(false);
-
-  const matches = useMemo(() => CatalogService.getSuggestions(q), [q]);
 
   const recentTrimmed = history.slice(0, 3);
 
@@ -61,85 +55,12 @@ export default function HomeScreen() {
         </View>
 
         <View style={{ paddingHorizontal: 20 }}>
-          <View
-            style={{
-              backgroundColor: colors.bg.surface,
-              borderRadius: 12,
-              borderWidth: 1,
-              borderColor: focused ? colors.brand.blue : colors.bg.borderStrong,
-              paddingHorizontal: 14,
-              paddingVertical: 12,
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: 10,
-              shadowColor: focused ? colors.brand.blue : '#101828',
-              shadowOpacity: focused ? 0.18 : 0.04,
-              shadowRadius: focused ? 8 : 2,
-              shadowOffset: { width: 0, height: 1 },
-            }}
-          >
-            <Feather name="search" size={18} color={colors.text.secondary} />
-            <TextInput
-              value={q}
-              onChangeText={setQ}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-              placeholder="Busque por marca, modelo ou versão"
-              placeholderTextColor={colors.text.muted}
-              style={{
-                flex: 1,
-                fontFamily: fonts.sans,
-                fontSize: 15,
-                color: colors.text.primary,
-                letterSpacing: -0.2,
-                padding: 0,
-              }}
-            />
-            <View style={{ width: 1, height: 18, backgroundColor: colors.bg.borderStrong }} />
-            <Feather name="mic" size={18} color={colors.brand.blue} />
-          </View>
-
-          {matches.length > 0 && (
-            <Card style={{ marginTop: 8, padding: 0, overflow: 'hidden' }}>
-              {matches.map((m, i) => (
-                <Pressable
-                  key={`${m.vehicleId}-${i}`}
-                  onPress={() => router.push(`/vehicle/${m.vehicleId}`)}
-                  style={({ pressed }) => ({
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    gap: 10,
-                    paddingHorizontal: 14,
-                    paddingVertical: 11,
-                    borderTopWidth: i > 0 ? 1 : 0,
-                    borderTopColor: colors.divider,
-                    opacity: pressed ? 0.7 : 1,
-                  })}
-                >
-                  <Feather name="search" size={14} color={colors.text.muted} />
-                  <Text style={{ fontFamily: fonts.sans, fontSize: 14, color: colors.text.primary }}>
-                    <Text style={{ fontFamily: fonts.sansSemibold }}>{m.brand}</Text> {m.model}
-                  </Text>
-                </Pressable>
-              ))}
-            </Card>
-          )}
-
-          <View style={{ marginTop: 14, flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
-            <Chip label="Marca" active />
-            <Chip
-              label="Modelo"
-              trailing={<Feather name="chevron-down" size={12} color={colors.text.secondary} />}
-            />
-            <Chip
-              label="Versão"
-              trailing={<Feather name="chevron-down" size={12} color={colors.text.secondary} />}
-            />
-            <Chip
-              label="Ano"
-              trailing={<Feather name="chevron-down" size={12} color={colors.text.secondary} />}
-            />
-          </View>
+          <HierarchicalSearchBar
+            onExactSearch={(vehicleId) => router.push(`/vehicle/${vehicleId}`)}
+            onBroadSearch={(brand, model) =>
+              router.push({ pathname: '/model-results', params: { brand, model } })
+            }
+          />
         </View>
 
         <View style={{ paddingHorizontal: 20, paddingTop: 28 }}>
