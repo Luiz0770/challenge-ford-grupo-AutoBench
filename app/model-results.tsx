@@ -10,12 +10,20 @@ import { VehicleDataService } from '../services/vehicleData';
 
 export default function ModelResultsScreen() {
   const router = useRouter();
-  const { brand, model } = useLocalSearchParams<{ brand: string; model: string }>();
+  const { brand, model, version, year } = useLocalSearchParams<{
+    brand: string;
+    model: string;
+    version?: string;
+    year?: string;
+  }>();
 
-  const vehicles = useMemo(
-    () => CatalogService.getModelVehicles(brand ?? '', model ?? ''),
-    [brand, model]
-  );
+  const vehicles = useMemo(() => {
+    const all = CatalogService.getModelVehicles(brand ?? '', model ?? '');
+    if (version && year) return all.filter((v) => v.version === version && v.year === Number(year));
+    if (version) return all.filter((v) => v.version === version);
+    if (year) return all.filter((v) => v.year === Number(year));
+    return all;
+  }, [brand, model, version, year]);
 
   const categories = useMemo(() => CatalogService.getCategories(), []);
 

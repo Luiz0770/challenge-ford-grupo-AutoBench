@@ -7,7 +7,7 @@ import { Card } from '../ui/Card';
 
 interface HierarchicalSearchBarProps {
   onExactSearch: (vehicleId: string) => void;
-  onBroadSearch: (brand: string, model: string) => void;
+  onBroadSearch: (brand: string, model: string, version: string | null, year: number | null) => void;
 }
 
 export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
@@ -73,7 +73,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
         return;
       }
     }
-    onBroadSearch(selectedModel.brand, selectedModel.model);
+    onBroadSearch(selectedModel.brand, selectedModel.model, selectedVersion, selectedYear);
   };
 
   const isDisabled = !selectedModel;
@@ -177,8 +177,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
 
       {/* Version and Year dropdowns — side by side */}
       <View style={{ flexDirection: 'row', gap: 10, marginTop: 10 }}>
-        <Pressable
-          onPress={() => { if (!isDisabled) setShowVersionModal(true); }}
+        <View
           style={{
             flex: 1,
             backgroundColor: isDisabled ? colors.bg.elevated : colors.bg.surface,
@@ -189,29 +188,37 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
             paddingVertical: 11,
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'space-between',
           }}
         >
-          <Text
-            style={{
-              fontFamily: fonts.sans,
-              fontSize: 13,
-              color: selectedVersion ? colors.text.primary : colors.text.muted,
-              flex: 1,
-            }}
-            numberOfLines={1}
+          <Pressable
+            onPress={() => { if (!isDisabled) setShowVersionModal(true); }}
+            style={{ flex: 1, marginRight: 6 }}
           >
-            {selectedVersion ?? 'Versão'}
-          </Text>
-          <Feather
-            name="chevron-down"
-            size={14}
-            color={isDisabled ? colors.text.muted : colors.text.secondary}
-          />
-        </Pressable>
+            <Text
+              style={{
+                fontFamily: fonts.sans,
+                fontSize: 13,
+                color: selectedVersion ? colors.text.primary : colors.text.muted,
+              }}
+              numberOfLines={1}
+            >
+              {selectedVersion ?? 'Versão'}
+            </Text>
+          </Pressable>
+          {selectedVersion && !isDisabled ? (
+            <Pressable onPress={() => setSelectedVersion(null)} hitSlop={8}>
+              <Feather name="x" size={14} color={colors.text.secondary} />
+            </Pressable>
+          ) : (
+            <Feather
+              name="chevron-down"
+              size={14}
+              color={isDisabled ? colors.text.muted : colors.text.secondary}
+            />
+          )}
+        </View>
 
-        <Pressable
-          onPress={() => { if (!isDisabled) setShowYearModal(true); }}
+        <View
           style={{
             flex: 1,
             backgroundColor: isDisabled ? colors.bg.elevated : colors.bg.surface,
@@ -222,24 +229,34 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
             paddingVertical: 11,
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'space-between',
           }}
         >
-          <Text
-            style={{
-              fontFamily: fonts.sans,
-              fontSize: 13,
-              color: selectedYear ? colors.text.primary : colors.text.muted,
-            }}
+          <Pressable
+            onPress={() => { if (!isDisabled) setShowYearModal(true); }}
+            style={{ flex: 1, marginRight: 6 }}
           >
-            {selectedYear ?? 'Ano'}
-          </Text>
-          <Feather
-            name="chevron-down"
-            size={14}
-            color={isDisabled ? colors.text.muted : colors.text.secondary}
-          />
-        </Pressable>
+            <Text
+              style={{
+                fontFamily: fonts.sans,
+                fontSize: 13,
+                color: selectedYear != null ? colors.text.primary : colors.text.muted,
+              }}
+            >
+              {selectedYear ?? 'Ano'}
+            </Text>
+          </Pressable>
+          {selectedYear != null && !isDisabled ? (
+            <Pressable onPress={() => setSelectedYear(null)} hitSlop={8}>
+              <Feather name="x" size={14} color={colors.text.secondary} />
+            </Pressable>
+          ) : (
+            <Feather
+              name="chevron-down"
+              size={14}
+              color={isDisabled ? colors.text.muted : colors.text.secondary}
+            />
+          )}
+        </View>
       </View>
 
       {/* Search button — only visible when model is selected */}

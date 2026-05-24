@@ -41,8 +41,16 @@ export default function BuscaScreen() {
         <View style={{ paddingHorizontal: 20, paddingTop: 14, paddingBottom: 6 }}>
           <HierarchicalSearchBar
             onExactSearch={(vehicleId) => router.push(`/vehicle/${vehicleId}`)}
-            onBroadSearch={(brand, model) =>
-              router.push({ pathname: '/model-results', params: { brand, model } })
+            onBroadSearch={(brand, model, version, year) =>
+              router.push({
+                pathname: '/model-results',
+                params: {
+                  brand,
+                  model,
+                  ...(version ? { version } : {}),
+                  ...(year != null ? { year: String(year) } : {}),
+                },
+              })
             }
           />
         </View>
