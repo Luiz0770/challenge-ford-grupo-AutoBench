@@ -4,12 +4,6 @@
 
 ---
 
-## Grupo
-
-**AutoBench** — Turma de Análise e Desenvolvimento de Sistemas · FIAP
-
----
-
 ## O Desafio
 
 O mercado automotivo exige que montadoras compreendam rapidamente como seus concorrentes se posicionam em preço e pacotes de equipamentos. Dados imprecisos ou desorganizados custam tempo e decisões estratégicas.
