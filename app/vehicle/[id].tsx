@@ -101,46 +101,52 @@ export default function VehicleScreen() {
           >
             <Pressable
               onPress={() => router.back()}
-              style={({ pressed }) => ({
-                width: 34,
-                height: 34,
-                borderRadius: 17,
-                backgroundColor: "rgba(255,255,255,0.10)",
-                borderWidth: 1,
-                borderColor: "rgba(255,255,255,0.14)",
-                alignItems: "center",
-                justifyContent: "center",
-                opacity: pressed ? 0.7 : 1,
-              })}
+              style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
             >
-              <Feather
-                name="chevron-left"
-                size={16}
-                color={colors.bg.surface}
-              />
+              <View
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
+                  backgroundColor: "rgba(255,255,255,0.10)",
+                  borderWidth: 1,
+                  borderColor: "rgba(255,255,255,0.14)",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Feather
+                  name="chevron-left"
+                  size={18}
+                  color={colors.bg.surface}
+                />
+              </View>
             </Pressable>
 
             <Wordmark small light />
 
             <Pressable
               onPress={toggleFavorite}
-              style={({ pressed }) => ({
-                width: 34,
-                height: 34,
-                borderRadius: 17,
-                backgroundColor: saved
-                  ? colors.brand.blue
-                  : "rgba(255,255,255,0.10)",
-                borderWidth: 1,
-                borderColor: saved
-                  ? colors.brand.blue
-                  : "rgba(255,255,255,0.14)",
-                alignItems: "center",
-                justifyContent: "center",
-                opacity: pressed ? 0.7 : 1,
-              })}
+              style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
             >
-              <Feather name="bookmark" size={15} color={colors.bg.surface}/>
+              <View
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
+                  backgroundColor: saved
+                    ? colors.brand.blue
+                    : "rgba(255,255,255,0.10)",
+                  borderWidth: 1,
+                  borderColor: saved
+                    ? colors.brand.blue
+                    : "rgba(255,255,255,0.14)",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Feather name="bookmark" size={17} color={colors.bg.surface} />
+              </View>
             </Pressable>
           </View>
 

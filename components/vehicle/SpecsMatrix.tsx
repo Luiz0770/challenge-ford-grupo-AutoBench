@@ -37,33 +37,36 @@ export const SpecsMatrix: React.FC<SpecsMatrixProps> = ({ vehicle }) => {
             <Pressable
               key={c.id}
               onPress={() => setCat(c.id)}
-              style={({ pressed }) => ({
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 6,
-                paddingHorizontal: 12,
-                paddingVertical: 8,
-                borderRadius: 10,
-                backgroundColor: isActive ? colors.brand.navy : colors.bg.surface,
-                borderWidth: 1,
-                borderColor: isActive ? colors.brand.navy : colors.bg.borderStrong,
-                opacity: pressed ? 0.85 : 1,
-              })}
+              style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}
             >
-              <Feather
-                name={c.icon}
-                size={13}
-                color={isActive ? colors.bg.surface : colors.text.secondary}
-              />
-              <Text
+              <View
                 style={{
-                  fontFamily: fonts.sansMedium,
-                  fontSize: 12.5,
-                  color: isActive ? colors.bg.surface : colors.text.primary,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 6,
+                  paddingHorizontal: 12,
+                  paddingVertical: 8,
+                  borderRadius: 10,
+                  backgroundColor: isActive ? colors.brand.navy : colors.bg.surface,
+                  borderWidth: 1,
+                  borderColor: isActive ? colors.brand.navy : colors.bg.borderStrong,
                 }}
               >
-                {c.label}
-              </Text>
+                <Feather
+                  name={c.icon}
+                  size={13}
+                  color={isActive ? colors.bg.surface : colors.text.secondary}
+                />
+                <Text
+                  style={{
+                    fontFamily: fonts.sansMedium,
+                    fontSize: 12.5,
+                    color: isActive ? colors.bg.surface : colors.text.primary,
+                  }}
+                >
+                  {c.label}
+                </Text>
+              </View>
             </Pressable>
           );
         })}

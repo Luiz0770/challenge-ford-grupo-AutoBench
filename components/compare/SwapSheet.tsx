@@ -27,16 +27,19 @@ export const SwapSheet: React.FC<SwapSheetProps> = ({
 
   return (
     <Modal visible={open} animationType="slide" transparent onRequestClose={onClose}>
-      <Pressable
-        style={{
-          flex: 1,
-          backgroundColor: 'rgba(0,28,70,0.42)',
-          justifyContent: 'flex-end',
-        }}
-        onPress={onClose}
-      >
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
         <Pressable
-          onPress={(e) => e.stopPropagation()}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0,28,70,0.42)',
+          }}
+          onPress={onClose}
+        />
+        <View
           style={{
             backgroundColor: colors.bg.surface,
             borderTopLeftRadius: 22,
@@ -91,19 +94,22 @@ export const SwapSheet: React.FC<SwapSheetProps> = ({
             </View>
             <Pressable
               onPress={onClose}
-              style={({ pressed }) => ({
-                width: 32,
-                height: 32,
-                borderRadius: 16,
-                borderWidth: 1,
-                borderColor: colors.bg.borderStrong,
-                backgroundColor: colors.bg.surface,
-                alignItems: 'center',
-                justifyContent: 'center',
-                opacity: pressed ? 0.7 : 1,
-              })}
+              style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
             >
-              <Feather name="x" size={14} color={colors.text.secondary} />
+              <View
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: 16,
+                  borderWidth: 1,
+                  borderColor: colors.bg.borderStrong,
+                  backgroundColor: colors.bg.surface,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Feather name="x" size={14} color={colors.text.secondary} />
+              </View>
             </Pressable>
           </View>
 
@@ -117,8 +123,8 @@ export const SwapSheet: React.FC<SwapSheetProps> = ({
               />
             ))}
           </ScrollView>
-        </Pressable>
-      </Pressable>
+        </View>
+      </View>
     </Modal>
   );
 };
@@ -136,61 +142,67 @@ const SwapRow: React.FC<{
     <Pressable
       onPress={isExcluded ? undefined : onPick}
       style={({ pressed }) => ({
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 12,
-        paddingHorizontal: 8,
-        paddingVertical: 12,
-        borderRadius: 10,
-        opacity: isExcluded ? 0.4 : pressed ? 0.7 : 1,
+        opacity: !isExcluded && pressed ? 0.7 : 1,
       })}
     >
       <View
         style={{
-          width: 38,
-          height: 38,
-          borderRadius: 8,
-          backgroundColor: colors.bg.elevated,
+          flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'center',
+          gap: 12,
+          paddingHorizontal: 8,
+          paddingVertical: 12,
+          borderRadius: 10,
+          opacity: isExcluded ? 0.4 : 1,
         }}
       >
-        <Feather name="truck" size={18} color={colors.brand.navy} />
-      </View>
-      <View style={{ flex: 1, minWidth: 0 }}>
-        <Text
+        <View
           style={{
-            fontFamily: fonts.sansSemibold,
-            fontSize: 13.5,
-            color: colors.text.primary,
-            letterSpacing: -0.2,
+            width: 38,
+            height: 38,
+            borderRadius: 8,
+            backgroundColor: colors.bg.elevated,
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          {entry.brand} {entry.model}
-        </Text>
+          <Feather name="truck" size={18} color={colors.brand.navy} />
+        </View>
+        <View style={{ flex: 1, minWidth: 0 }}>
+          <Text
+            style={{
+              fontFamily: fonts.sansSemibold,
+              fontSize: 13.5,
+              color: colors.text.primary,
+              letterSpacing: -0.2,
+            }}
+          >
+            {entry.brand} {entry.model}
+          </Text>
+          <Text
+            style={{
+              fontFamily: fonts.sans,
+              fontSize: 11.5,
+              color: colors.text.secondary,
+              marginTop: 1,
+            }}
+            numberOfLines={1}
+          >
+            {isExcluded
+              ? `${entry.version} · ${entry.year} · Já selecionado`
+              : `${entry.version} · ${entry.year}`}
+          </Text>
+        </View>
         <Text
           style={{
-            fontFamily: fonts.sans,
-            fontSize: 11.5,
+            fontFamily: fonts.mono,
+            fontSize: 11,
             color: colors.text.secondary,
-            marginTop: 1,
           }}
-          numberOfLines={1}
         >
-          {isExcluded
-            ? `${entry.version} · ${entry.year} · Já selecionado`
-            : `${entry.version} · ${entry.year}`}
+          {priceLabel}
         </Text>
       </View>
-      <Text
-        style={{
-          fontFamily: fonts.mono,
-          fontSize: 11,
-          color: colors.text.secondary,
-        }}
-      >
-        {priceLabel}
-      </Text>
     </Pressable>
   );
 };

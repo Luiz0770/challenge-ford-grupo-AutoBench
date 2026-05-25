@@ -86,7 +86,7 @@ export default function BuscaScreen() {
             paddingHorizontal: 20,
             flexDirection: 'row',
             flexWrap: 'wrap',
-            gap: 10,
+            rowGap: 10,
             justifyContent: 'space-between',
           }}
         >

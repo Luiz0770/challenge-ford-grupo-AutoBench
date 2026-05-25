@@ -96,6 +96,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
           shadowOpacity: focused ? 0.18 : 0.04,
           shadowRadius: focused ? 8 : 2,
           shadowOffset: { width: 0, height: 1 },
+          elevation: focused ? 4 : 1,
         }}
       >
         <Feather name="search" size={18} color={colors.text.secondary} />
@@ -147,29 +148,32 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
             <Pressable
               key={s.key}
               onPress={() => handleSelectModel(s.brand, s.model)}
-              style={({ pressed }) => ({
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 10,
-                paddingHorizontal: 14,
-                paddingVertical: 11,
-                borderTopWidth: i > 0 ? 1 : 0,
-                borderTopColor: colors.divider,
-                opacity: pressed ? 0.7 : 1,
-              })}
+              style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
             >
-              <Feather name="search" size={14} color={colors.text.muted} />
-              <Text
+              <View
                 style={{
-                  fontFamily: fonts.sans,
-                  fontSize: 14,
-                  color: colors.text.primary,
-                  flex: 1,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 10,
+                  paddingHorizontal: 14,
+                  paddingVertical: 11,
+                  borderTopWidth: i > 0 ? 1 : 0,
+                  borderTopColor: colors.divider,
                 }}
               >
-                <Text style={{ fontFamily: fonts.sansSemibold }}>{s.brand}</Text> {s.model}
-              </Text>
-              <Feather name="arrow-up-right" size={13} color={colors.text.muted} />
+                <Feather name="search" size={14} color={colors.text.muted} />
+                <Text
+                  style={{
+                    fontFamily: fonts.sans,
+                    fontSize: 14,
+                    color: colors.text.primary,
+                    flex: 1,
+                  }}
+                >
+                  <Text style={{ fontFamily: fonts.sansSemibold }}>{s.brand}</Text> {s.model}
+                </Text>
+                <Feather name="arrow-up-right" size={13} color={colors.text.muted} />
+              </View>
             </Pressable>
           ))}
         </Card>
@@ -263,31 +267,42 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
       {selectedModel && (
         <Pressable
           onPress={handleSearch}
-          style={({ pressed }) => ({
-            marginTop: 12,
-            backgroundColor: colors.brand.blue,
-            borderRadius: 10,
-            paddingVertical: 13,
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'row',
-            gap: 8,
-            opacity: pressed ? 0.85 : 1,
-          })}
+          style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}
         >
-          <Text style={{ fontFamily: fonts.sansSemibold, fontSize: 14, color: '#fff' }}>
-            Buscar
-          </Text>
-          <Feather name="arrow-right" size={14} color="#fff" />
+          <View
+            style={{
+              marginTop: 12,
+              backgroundColor: colors.brand.blue,
+              borderRadius: 10,
+              paddingVertical: 13,
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'row',
+              gap: 8,
+            }}
+          >
+            <Text style={{ fontFamily: fonts.sansSemibold, fontSize: 14, color: '#fff' }}>
+              Buscar
+            </Text>
+            <Feather name="arrow-right" size={14} color="#fff" />
+          </View>
         </Pressable>
       )}
 
       {/* Version picker sheet */}
       <Modal visible={showVersionModal} transparent animationType="slide">
-        <Pressable
-          style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'flex-end' }}
-          onPress={() => setShowVersionModal(false)}
-        >
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <Pressable
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0,0,0,0.4)',
+            }}
+            onPress={() => setShowVersionModal(false)}
+          />
           <View
             style={{
               backgroundColor: colors.bg.surface,
@@ -328,36 +343,47 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                     setSelectedVersion(item);
                     setShowVersionModal(false);
                   }}
-                  style={({ pressed }) => ({
-                    paddingHorizontal: 20,
-                    paddingVertical: 14,
-                    borderTopWidth: 1,
-                    borderTopColor: colors.divider,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    opacity: pressed ? 0.7 : 1,
-                  })}
+                  style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
                 >
-                  <Text style={{ fontFamily: fonts.sans, fontSize: 14, color: colors.text.primary }}>
-                    {item}
-                  </Text>
-                  {selectedVersion === item && (
-                    <Feather name="check" size={14} color={colors.brand.blue} />
-                  )}
+                  <View
+                    style={{
+                      paddingHorizontal: 20,
+                      paddingVertical: 14,
+                      borderTopWidth: 1,
+                      borderTopColor: colors.divider,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <Text style={{ fontFamily: fonts.sans, fontSize: 14, color: colors.text.primary }}>
+                      {item}
+                    </Text>
+                    {selectedVersion === item && (
+                      <Feather name="check" size={14} color={colors.brand.blue} />
+                    )}
+                  </View>
                 </Pressable>
               )}
             />
           </View>
-        </Pressable>
+        </View>
       </Modal>
 
       {/* Year picker sheet */}
       <Modal visible={showYearModal} transparent animationType="slide">
-        <Pressable
-          style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'flex-end' }}
-          onPress={() => setShowYearModal(false)}
-        >
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <Pressable
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0,0,0,0.4)',
+            }}
+            onPress={() => setShowYearModal(false)}
+          />
           <View
             style={{
               backgroundColor: colors.bg.surface,
@@ -398,28 +424,31 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                     setSelectedYear(item);
                     setShowYearModal(false);
                   }}
-                  style={({ pressed }) => ({
-                    paddingHorizontal: 20,
-                    paddingVertical: 14,
-                    borderTopWidth: 1,
-                    borderTopColor: colors.divider,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    opacity: pressed ? 0.7 : 1,
-                  })}
+                  style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
                 >
-                  <Text style={{ fontFamily: fonts.sans, fontSize: 14, color: colors.text.primary }}>
-                    {item}
-                  </Text>
-                  {selectedYear === item && (
-                    <Feather name="check" size={14} color={colors.brand.blue} />
-                  )}
+                  <View
+                    style={{
+                      paddingHorizontal: 20,
+                      paddingVertical: 14,
+                      borderTopWidth: 1,
+                      borderTopColor: colors.divider,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <Text style={{ fontFamily: fonts.sans, fontSize: 14, color: colors.text.primary }}>
+                      {item}
+                    </Text>
+                    {selectedYear === item && (
+                      <Feather name="check" size={14} color={colors.brand.blue} />
+                    )}
+                  </View>
                 </Pressable>
               )}
             />
           </View>
-        </Pressable>
+        </View>
       </Modal>
     </View>
   );

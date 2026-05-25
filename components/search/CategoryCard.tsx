@@ -10,62 +10,69 @@ interface CategoryCardProps {
 }
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({ category, onPress }) => (
-  <Pressable
-    onPress={onPress}
-    style={({ pressed }) => ({
-      width: '48%',
-      borderRadius: 14,
-      padding: 14,
-      backgroundColor: category.color,
-      height: 96,
-      overflow: 'hidden',
-      transform: pressed ? [{ scale: 0.985 }] : [{ scale: 1 }],
-      opacity: pressed ? 0.95 : 1,
-    })}
-  >
-    <Text
-      style={{
-        position: 'absolute',
-        bottom: -10,
-        right: -2,
-        fontFamily: fonts.monoBold,
-        fontSize: 56,
-        color: category.accent,
-        opacity: 0.22,
-        letterSpacing: -3,
-        lineHeight: 56,
-      }}
+  <View style={{ width: '48%', height: 96, borderRadius: 14, overflow: 'hidden' }}>
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => ({
+        width: '100%',
+        height: 96,
+        opacity: pressed ? 0.95 : 1,
+        transform: pressed ? [{ scale: 0.985 }] : [{ scale: 1 }],
+      })}
     >
-      {category.code}
-    </Text>
-
-    <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-      <Feather name="arrow-up-right" size={14} color="rgba(255,255,255,0.55)" />
-    </View>
-
-    <View style={{ position: 'absolute', left: 14, bottom: 12 }}>
-      <Text
+      <View
         style={{
-          fontFamily: fonts.sansBold,
-          fontSize: 16,
-          color: colors.bg.surface,
-          letterSpacing: -0.4,
-          lineHeight: 18,
+          width: '100%',
+          height: 96,
+          backgroundColor: category.color,
+          padding: 14,
         }}
       >
-        {category.label}
-      </Text>
-      <Text
-        style={{
-          fontFamily: fonts.monoMedium,
-          fontSize: 10,
-          color: 'rgba(255,255,255,0.65)',
-          letterSpacing: 0.4,
-          marginTop: 4,
-        }}
-      >
-        {category.count} modelos
-      </Text>
-    </View>
-  </Pressable>
+        <Text
+          style={{
+            position: 'absolute',
+            bottom: -10,
+            right: -2,
+            fontFamily: fonts.monoBold,
+            fontSize: 56,
+            color: category.accent,
+            opacity: 0.22,
+            letterSpacing: -3,
+            lineHeight: 56,
+          }}
+        >
+          {category.code}
+        </Text>
+
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+          <Feather name="arrow-up-right" size={14} color="rgba(255,255,255,0.55)" />
+        </View>
+
+        <View style={{ position: 'absolute', left: 14, bottom: 12 }}>
+          <Text
+            style={{
+              fontFamily: fonts.sansBold,
+              fontSize: 16,
+              color: colors.bg.surface,
+              letterSpacing: -0.4,
+              lineHeight: 18,
+            }}
+          >
+            {category.label}
+          </Text>
+          <Text
+            style={{
+              fontFamily: fonts.monoMedium,
+              fontSize: 10,
+              color: 'rgba(255,255,255,0.65)',
+              letterSpacing: 0.4,
+              marginTop: 4,
+            }}
+          >
+            {category.count} modelos
+          </Text>
+        </View>
+      </View>
+    </Pressable>
+  </View>
 );

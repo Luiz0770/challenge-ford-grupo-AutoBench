@@ -50,46 +50,48 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
 
   if (!vehicle) {
     return (
-      <Pressable
-        onPress={onSwap}
-        style={({ pressed }) => ({
-          flex: 1,
-          backgroundColor: colors.bg.surface,
-          borderRadius: 12,
-          borderWidth: 1,
-          borderColor: colors.bg.border,
-          borderStyle: 'dashed',
-          padding: 12,
-          opacity: pressed ? 0.85 : 1,
-          minHeight: 140,
-        })}
-      >
-        <View style={{ flexDirection: 'row', marginBottom: 12 }}>
-          {SideBadge}
-        </View>
-        <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 8,
-            paddingVertical: 12,
-          }}
+      <View style={{ flex: 1 }}>
+        <Pressable
+          onPress={onSwap}
+          style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}
         >
-          <Feather name="plus-circle" size={22} color={colors.text.muted} />
-          <Text
+          <View
             style={{
-              fontFamily: fonts.sans,
-              fontSize: 11,
-              color: colors.text.muted,
-              textAlign: 'center',
-              lineHeight: 15,
+              backgroundColor: colors.bg.surface,
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: colors.bg.border,
+              padding: 12,
+              minHeight: 140,
             }}
           >
-            Selecione um veículo{'\n'}para comparar
-          </Text>
-        </View>
-      </Pressable>
+            <View style={{ flexDirection: 'row', marginBottom: 12 }}>
+              {SideBadge}
+            </View>
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 8,
+                paddingVertical: 12,
+              }}
+            >
+              <Feather name="plus-circle" size={22} color={colors.text.muted} />
+              <Text
+                style={{
+                  fontFamily: fonts.sans,
+                  fontSize: 11,
+                  color: colors.text.muted,
+                  textAlign: 'center',
+                  lineHeight: 15,
+                }}
+              >
+                Selecione um veículo{'\n'}para comparar
+              </Text>
+            </View>
+          </View>
+        </Pressable>
+      </View>
     );
   }
 
@@ -170,11 +172,10 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
           marginTop: 10,
           paddingTop: 10,
           borderTopWidth: 1,
-          borderStyle: 'dashed',
           borderTopColor: colors.bg.border,
           flexDirection: 'row',
           justifyContent: 'space-between',
-          alignItems: 'baseline',
+          alignItems: 'flex-end',
           marginBottom: 10,
         }}
       >
@@ -202,30 +203,33 @@ export const VehicleSlot: React.FC<VehicleSlotProps> = ({
 
       <Pressable
         onPress={onSwap}
-        style={({ pressed }) => ({
-          backgroundColor: colors.bg.canvas,
-          borderWidth: 1,
-          borderColor: colors.bg.borderStrong,
-          borderRadius: 8,
-          paddingHorizontal: 8,
-          paddingVertical: 7,
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 4,
-          opacity: pressed ? 0.85 : 1,
-        })}
+        style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}
       >
-        <Feather name="repeat" size={12} color={colors.brand.blue} />
-        <Text
+        <View
           style={{
-            fontFamily: fonts.sansMedium,
-            fontSize: 11.5,
-            color: colors.brand.navy,
+            backgroundColor: colors.bg.canvas,
+            borderWidth: 1,
+            borderColor: colors.bg.borderStrong,
+            borderRadius: 8,
+            paddingHorizontal: 8,
+            paddingVertical: 7,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 4,
           }}
         >
-          Trocar
-        </Text>
+          <Feather name="repeat" size={12} color={colors.brand.blue} />
+          <Text
+            style={{
+              fontFamily: fonts.sansMedium,
+              fontSize: 11.5,
+              color: colors.brand.navy,
+            }}
+          >
+            Trocar
+          </Text>
+        </View>
       </Pressable>
     </View>
   );

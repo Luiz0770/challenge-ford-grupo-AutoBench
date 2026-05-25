@@ -142,33 +142,39 @@ export default function CompareScreen() {
           <View
             style={{
               position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: [{ translateX: -14 }, { translateY: -14 }],
-              width: 28,
-              height: 28,
-              borderRadius: 14,
-              backgroundColor: colors.bg.surface,
-              borderWidth: 1,
-              borderColor: colors.bg.border,
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
               alignItems: "center",
               justifyContent: "center",
-              shadowColor: "#101828",
-              shadowOpacity: 0.1,
-              shadowRadius: 6,
-              shadowOffset: { width: 0, height: 2 },
             }}
+            pointerEvents="none"
           >
-            <Text
+            <View
               style={{
-                fontFamily: fonts.monoBold,
-                fontSize: 10,
-                color: colors.brand.navy,
-                letterSpacing: 0.5,
+                width: 28,
+                height: 28,
+                borderRadius: 14,
+                backgroundColor: colors.bg.surface,
+                borderWidth: 1,
+                borderColor: colors.bg.border,
+                alignItems: "center",
+                justifyContent: "center",
+                elevation: 3,
               }}
             >
-              VS
-            </Text>
+              <Text
+                style={{
+                  fontFamily: fonts.monoBold,
+                  fontSize: 10,
+                  color: colors.brand.navy,
+                  letterSpacing: 0.5,
+                }}
+              >
+                VS
+              </Text>
+            </View>
           </View>
         </View>
 
@@ -198,37 +204,40 @@ export default function CompareScreen() {
                 <Pressable
                   key={c.id}
                   onPress={() => setCat(c.id)}
-                  style={({ pressed }) => ({
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: 6,
-                    paddingHorizontal: 12,
-                    paddingVertical: 8,
-                    borderRadius: 10,
-                    backgroundColor: isActive
-                      ? colors.brand.navy
-                      : colors.bg.surface,
-                    borderWidth: 1,
-                    borderColor: isActive
-                      ? colors.brand.navy
-                      : colors.bg.borderStrong,
-                    opacity: pressed ? 0.85 : 1,
-                  })}
+                  style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}
                 >
-                  <Feather
-                    name={c.icon}
-                    size={13}
-                    color={isActive ? colors.bg.surface : colors.text.secondary}
-                  />
-                  <Text
+                  <View
                     style={{
-                      fontFamily: fonts.sansMedium,
-                      fontSize: 12.5,
-                      color: isActive ? colors.bg.surface : colors.text.primary,
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 6,
+                      paddingHorizontal: 12,
+                      paddingVertical: 8,
+                      borderRadius: 10,
+                      backgroundColor: isActive
+                        ? colors.brand.navy
+                        : colors.bg.surface,
+                      borderWidth: 1,
+                      borderColor: isActive
+                        ? colors.brand.navy
+                        : colors.bg.borderStrong,
                     }}
                   >
-                    {c.label}
-                  </Text>
+                    <Feather
+                      name={c.icon}
+                      size={13}
+                      color={isActive ? colors.bg.surface : colors.text.secondary}
+                    />
+                    <Text
+                      style={{
+                        fontFamily: fonts.sansMedium,
+                        fontSize: 12.5,
+                        color: isActive ? colors.bg.surface : colors.text.primary,
+                      }}
+                    >
+                      {c.label}
+                    </Text>
+                  </View>
                 </Pressable>
               );
             })}

@@ -84,24 +84,27 @@ export default function ModelResultsScreen() {
           >
             <Pressable
               onPress={() => router.back()}
-              style={({ pressed }) => ({
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 6,
-                paddingVertical: 6,
-                paddingLeft: 8,
-                paddingRight: 12,
-                borderRadius: 999,
-                backgroundColor: 'rgba(255,255,255,0.10)',
-                borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.14)',
-                opacity: pressed ? 0.8 : 1,
-              })}
+              style={({ pressed }) => ({ opacity: pressed ? 0.8 : 1 })}
             >
-              <Feather name="chevron-left" size={14} color={colors.bg.surface} />
-              <Text style={{ fontFamily: fonts.sansMedium, fontSize: 12, color: colors.bg.surface }}>
-                Voltar
-              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 6,
+                  paddingVertical: 6,
+                  paddingLeft: 8,
+                  paddingRight: 12,
+                  borderRadius: 999,
+                  backgroundColor: 'rgba(255,255,255,0.10)',
+                  borderWidth: 1,
+                  borderColor: 'rgba(255,255,255,0.14)',
+                }}
+              >
+                <Feather name="chevron-left" size={14} color={colors.bg.surface} />
+                <Text style={{ fontFamily: fonts.sansMedium, fontSize: 12, color: colors.bg.surface }}>
+                  Voltar
+                </Text>
+              </View>
             </Pressable>
 
             <View
