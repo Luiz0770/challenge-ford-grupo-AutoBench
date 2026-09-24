@@ -1,0 +1,1793 @@
+{
+  "vehicles": [
+    {
+      "id": "ford-ranger-raptor-2024",
+      "categoryId": "picape",
+      "brand": "Ford",
+      "brandFipeCode": "22",
+      "model": "Ranger",
+      "modelFipeCode": "10891",
+      "version": "Raptor",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "V6 3.0L Nano Bi-Turbo" },
+            { "label": "Potência", "value": "397 cv", "unit": "@ 5.650 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "583 Nm", "unit": "@ 3.500 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "5,8 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 10 velocidades com Paddle Shifters" },
+            { "label": "Tração", "value": "4WD com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Live Valve FOX Racing 2.5\"" },
+            { "label": "Suspensão Dianteira", "value": "Independente de duplo A-arm" },
+            { "label": "Suspensão Traseira", "value": "Multi-link com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Sport · Escorregadio · Lama · Areia · Rock · Crawl · Baja" },
+            { "label": "Modos de Volante", "value": "Normal · Sport · Conforto" },
+            { "label": "Modos de Escapamento", "value": "Normal · Silencioso · Sport · Baja" },
+            { "label": "Modos de Amortecedor", "value": "Normal · Sport · Baja" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "Matrix LED com adaptação de curva automática" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
+            { "label": "Iluminação Interior", "value": "LED ambiente multizona" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "17\" alumínio preto fosco" },
+            { "label": "Pneus", "value": "285/70 R17 All-Terrain" },
+            { "label": "Estepe", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "12\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "SYNC 4A" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "B&O com 10 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "360° com guias dinâmicas" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (FCA)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC Stop & Go)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKA)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM)" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.370 mm" },
+            { "label": "Largura", "value": "2.028 mm" },
+            { "label": "Altura", "value": "1.910 mm" },
+            { "label": "Entre-eixos", "value": "3.270 mm" },
+            { "label": "Capacidade de Carga", "value": "703 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 499.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "Não Disponível" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 89,
+        "type": "decontenting",
+        "title": "Alerta Preditivo: De-contenting",
+        "description": "Análise histórica detecta probabilidade de 89% de descontenting no próximo facelift. Padrão: remoção de materiais macios nas portas e redução da central multimídia de 12\" para 10\" nas versões de entrada.",
+        "actionSuggestion": "Contra-ataque sugerido: reforçar comunicação de 'Acabamento Premium Sem Cortes de Custo' nas versões atuais."
+      }
+    },
+    {
+      "id": "ford-ranger-limited-2024",
+      "categoryId": "picape",
+      "brand": "Ford",
+      "brandFipeCode": "22",
+      "model": "Ranger",
+      "modelFipeCode": "10761",
+      "version": "Limited",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.0L Bi-Turbo" },
+            { "label": "Potência", "value": "213 cv", "unit": "@ 3.750 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "500 Nm", "unit": "@ 1.750–2.000 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 10 velocidades" },
+            { "label": "Tração", "value": "4WD com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Lama · Areia · Rocha" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED projetores" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "Não Disponível" },
+            { "label": "Iluminação Interior", "value": "LED" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio" },
+            { "label": "Pneus", "value": "265/60 R18" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,1\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "SYNC 4" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "6 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Traseira" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (FCA)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Não Disponível" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM)" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.370 mm" },
+            { "label": "Largura", "value": "1.918 mm" },
+            { "label": "Altura", "value": "1.815 mm" },
+            { "label": "Entre-eixos", "value": "3.270 mm" },
+            { "label": "Capacidade de Carga", "value": "783 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 349.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 72,
+        "type": "price_increase",
+        "title": "Alerta Preditivo: Reajuste de Preço",
+        "description": "Probabilidade de 72% de reajuste de 4–7% no próximo trimestre. Histórico: a Ford reajusta versões intermediárias após lançamento de versão de entrada reestilizada.",
+        "actionSuggestion": "Ação sugerida: comunicar 'Preço travado no estoque atual' para estimular antecipação de compra."
+      }
+    },
+    {
+      "id": "ford-ranger-xls-2024",
+      "categoryId": "picape",
+      "brand": "Ford",
+      "brandFipeCode": "22",
+      "model": "Ranger",
+      "modelFipeCode": "10829",
+      "version": "XLS",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.2L Turbo" },
+            { "label": "Potência", "value": "160 cv", "unit": "@ 3.200 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "385 Nm", "unit": "@ 1.500–2.500 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "MT de 6 velocidades" },
+            { "label": "Tração", "value": "4WD" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Tambor" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "Halógeno" },
+            { "label": "Lanternas", "value": "Halógeno" },
+            { "label": "Luz de Neblina Dianteira", "value": "Não Disponível" },
+            { "label": "Iluminação Interior", "value": "Incandescente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "16\" aço" },
+            { "label": "Pneus", "value": "245/75 R16" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "8\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "SYNC 3" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "4 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Não Disponível" },
+            { "label": "Ar-condicionado", "value": "Manual" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Não Disponível" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Disponível" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Não Disponível" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Disponível" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.370 mm" },
+            { "label": "Largura", "value": "1.850 mm" },
+            { "label": "Altura", "value": "1.815 mm" },
+            { "label": "Entre-eixos", "value": "3.270 mm" },
+            { "label": "Capacidade de Carga", "value": "800 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 259.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 61,
+        "type": "discontinuation",
+        "title": "Alerta Preditivo: Descontinuação",
+        "description": "Probabilidade de 61% de descontinuação desta motorização 2.2L no ciclo de renovação 2025. Tendência de mercado indica migração forçada para propulsores 2.0L bi-turbo.",
+        "actionSuggestion": "Ação sugerida: acelerar giro de estoque com campanha de 'Última Geração com Motor 2.2L'."
+      }
+    },
+    {
+      "id": "chevrolet-s10-ltz-2024",
+      "categoryId": "picape",
+      "brand": "Chevrolet",
+      "brandFipeCode": "17",
+      "model": "S10",
+      "modelFipeCode": "10745",
+      "version": "LTZ",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.8L Turbo" },
+            { "label": "Potência", "value": "200 cv", "unit": "@ 3.600 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "500 Nm", "unit": "@ 1.400–2.800 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 6 velocidades" },
+            { "label": "Tração", "value": "4WD com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Lama · Areia · Rocha" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED projetores" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "17\" alumínio" },
+            { "label": "Pneus", "value": "265/65 R17" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "9\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Chevrolet MyLink" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "6 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Traseira" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.300 mm" },
+            { "label": "Largura", "value": "1.902 mm" },
+            { "label": "Altura", "value": "1.815 mm" },
+            { "label": "Entre-eixos", "value": "3.140 mm" },
+            { "label": "Capacidade de Carga", "value": "750 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 379.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 58,
+        "type": "model_refresh",
+        "title": "Alerta Preditivo: Renovação de Modelo",
+        "description": "Probabilidade de 58% de refresh visual e tecnológico no ciclo 2025. Tendência: inclusão de novos padrões de conectividade e atualização de paleta de cores.",
+        "actionSuggestion": "Ação sugerida: comunicar 'Geração atual com equipamentos premium a preço estável'."
+      }
+    },
+    {
+      "id": "chevrolet-s10-work-2024",
+      "categoryId": "picape",
+      "brand": "Chevrolet",
+      "brandFipeCode": "17",
+      "model": "S10",
+      "modelFipeCode": "10742",
+      "version": "Work",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.5L Turbo" },
+            { "label": "Potência", "value": "163 cv", "unit": "@ 3.400 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "400 Nm", "unit": "@ 1.600–2.400 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "MT de 6 velocidades" },
+            { "label": "Tração", "value": "4WD" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Tambor" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "Halógeno" },
+            { "label": "Lanternas", "value": "Halógeno" },
+            { "label": "Luz de Neblina Dianteira", "value": "Não Disponível" },
+            { "label": "Iluminação Interior", "value": "Incandescente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "16\" aço" },
+            { "label": "Pneus", "value": "245/75 R16" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "7\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Chevrolet MyLink básico" },
+            { "label": "Apple CarPlay", "value": "Não Disponível" },
+            { "label": "Android Auto", "value": "Não Disponível" },
+            { "label": "Sistema de Som", "value": "2 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Não Disponível" },
+            { "label": "Ar-condicionado", "value": "Manual" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Não Disponível" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Disponível" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Não Disponível" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Disponível" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.300 mm" },
+            { "label": "Largura", "value": "1.850 mm" },
+            { "label": "Altura", "value": "1.815 mm" },
+            { "label": "Entre-eixos", "value": "3.140 mm" },
+            { "label": "Capacidade de Carga", "value": "830 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 289.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 45,
+        "type": "market_trend",
+        "title": "Alerta Preditivo: Tendência de Mercado",
+        "description": "Probabilidade de 45% de redução de demanda em versões Work puras. Tendência: clientes migrando para versões intermediárias com melhor acabamento.",
+        "actionSuggestion": "Ação sugerida: bundling com acessórios de trabalho para agregar valor percebido."
+      }
+    },
+    {
+      "id": "toyota-hilux-sr5-2024",
+      "categoryId": "picape",
+      "brand": "Toyota",
+      "brandFipeCode": "30",
+      "model": "Hilux",
+      "modelFipeCode": "10903",
+      "version": "SR5",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.8L Turbo" },
+            { "label": "Potência", "value": "204 cv", "unit": "@ 3.400 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "500 Nm", "unit": "@ 1.200–3.200 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 6 velocidades" },
+            { "label": "Tração", "value": "4WD com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais de duplo tubo" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Lama · Areia · Rocha · Descida" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED projetores" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio" },
+            { "label": "Pneus", "value": "265/60 R18 All-Terrain" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,5\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Toyota Touch 2" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "8 alto-falantes JBL" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "360° com guias dinâmicas" },
+            { "label": "Ar-condicionado", "value": "Tri-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (PCS)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LTA)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (APA)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.410 mm" },
+            { "label": "Largura", "value": "1.910 mm" },
+            { "label": "Altura", "value": "1.835 mm" },
+            { "label": "Entre-eixos", "value": "3.275 mm" },
+            { "label": "Capacidade de Carga", "value": "720 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 419.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 78,
+        "type": "competitor_threat",
+        "title": "Alerta Preditivo: Ameaça Competitiva",
+        "description": "Probabilidade de 78% de incremento em promoções de competidores diretos. Histórico: Toyota segura preços; concorrentes buscam ganhar share com descontos estratégicos.",
+        "actionSuggestion": "Ação sugerida: reforçar TCO (custo total de propriedade) e confiabilidade da marca em comunicação."
+      }
+    },
+    {
+      "id": "toyota-hilux-dx-2024",
+      "categoryId": "picape",
+      "brand": "Toyota",
+      "brandFipeCode": "30",
+      "model": "Hilux",
+      "modelFipeCode": "10889",
+      "version": "DX",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.7L Turbo" },
+            { "label": "Potência", "value": "163 cv", "unit": "@ 3.400 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "420 Nm", "unit": "@ 1.400–3.000 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "MT de 5 velocidades" },
+            { "label": "Tração", "value": "4WD" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Tambor" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "Halógeno" },
+            { "label": "Lanternas", "value": "Halógeno" },
+            { "label": "Luz de Neblina Dianteira", "value": "Não Disponível" },
+            { "label": "Iluminação Interior", "value": "Incandescente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "16\" aço" },
+            { "label": "Pneus", "value": "245/75 R16" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "7\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Toyota Touch básico" },
+            { "label": "Apple CarPlay", "value": "Não Disponível" },
+            { "label": "Android Auto", "value": "Não Disponível" },
+            { "label": "Sistema de Som", "value": "2 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Não Disponível" },
+            { "label": "Ar-condicionado", "value": "Manual" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Não Disponível" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Disponível" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Não Disponível" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Disponível" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.410 mm" },
+            { "label": "Largura", "value": "1.850 mm" },
+            { "label": "Altura", "value": "1.835 mm" },
+            { "label": "Entre-eixos", "value": "3.275 mm" },
+            { "label": "Capacidade de Carga", "value": "800 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 299.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 52,
+        "type": "market_demand",
+        "title": "Alerta Preditivo: Demanda de Mercado",
+        "description": "Probabilidade de 52% de aumento em demanda por versões básicas com MT. Tendência: redução de poder aquisitivo impulsiona buscas por modelos econômicos.",
+        "actionSuggestion": "Ação sugerida: destacar economia de combustível e baixo custo de manutenção em campanhas direcionadas."
+      }
+    },
+    {
+      "id": "volkswagen-amarok-highline-2024",
+      "categoryId": "picape",
+      "brand": "Volkswagen",
+      "brandFipeCode": "31",
+      "model": "Amarok",
+      "modelFipeCode": "10878",
+      "version": "Highline",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 3.0L TDI V6 Turbo" },
+            { "label": "Potência", "value": "258 cv", "unit": "@ 3.800 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "580 Nm", "unit": "@ 1.600–2.600 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "6,8 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades" },
+            { "label": "Tração", "value": "4Motion com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes duplo tubo" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm com estabilizadora" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Areia · Lama · Rocha · Descida" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Bi-xenon com adaptação de curva" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED ambiente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio preto" },
+            { "label": "Pneus", "value": "265/60 R18 All-Terrain" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,3\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "MIB3 com navegação integrada" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Fender Premium com 8 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "360° com guias dinâmicas" },
+            { "label": "Ar-condicionado", "value": "Tri-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (Front Assist)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (Side Assist)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (Park Assist)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.370 mm" },
+            { "label": "Largura", "value": "1.962 mm" },
+            { "label": "Altura", "value": "1.835 mm" },
+            { "label": "Entre-eixos", "value": "3.270 mm" },
+            { "label": "Capacidade de Carga", "value": "715 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 429.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 66,
+        "type": "brand_positioning",
+        "title": "Alerta Preditivo: Posicionamento de Marca",
+        "description": "Probabilidade de 66% de intensificação de marketing premium. Tendência: Volkswagen busca elevar percepção de valor e diferenciar Amarok do segmento.",
+        "actionSuggestion": "Ação sugerida: enfatizar craftsmanship alemão e durabilidade de longo prazo em comunicação."
+      }
+    },
+    {
+      "id": "fiat-toro-freedom-2024",
+      "categoryId": "picape",
+      "brand": "Fiat",
+      "brandFipeCode": "14",
+      "model": "Toro",
+      "modelFipeCode": "10855",
+      "version": "Freedom",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 1.8L Turbo Flex" },
+            { "label": "Potência", "value": "200 cv", "unit": "@ 5.500 RPM (etanol)", "highlight": true },
+            { "label": "Torque Máximo", "value": "270 Nm", "unit": "@ 2.000–4.800 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "8,5 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 9 velocidades" },
+            { "label": "Tração", "value": "4WD com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Esporte · Lama · Areia · Rocha" },
+            { "label": "Modos de Volante", "value": "Sim · Conforto · Esporte" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full LED" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED ambiente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "17\" alumínio cinzento" },
+            { "label": "Pneus", "value": "265/65 R17" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,1\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Uconnect 5 com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Harman Kardon com 8 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "360° com visão night vision" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital automático" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (AEB)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKA)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (PAS)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.260 mm" },
+            { "label": "Largura", "value": "1.930 mm" },
+            { "label": "Altura", "value": "1.815 mm" },
+            { "label": "Entre-eixos", "value": "3.150 mm" },
+            { "label": "Capacidade de Carga", "value": "750 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 389.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 71,
+        "type": "fuel_efficiency",
+        "title": "Alerta Preditivo: Eficiência de Combustível",
+        "description": "Probabilidade de 71% de crescimento em demanda por motores flex. Tendência: consumidores buscam flexibilidade de combustível em contexto de volatilidade de preços.",
+        "actionSuggestion": "Ação sugerida: comunicar economia com etanol e flexibilidade em campanhas de sustentabilidade."
+      }
+    },
+    {
+      "id": "fiat-toro-ultra-2024",
+      "categoryId": "picape",
+      "brand": "Fiat",
+      "brandFipeCode": "14",
+      "model": "Toro",
+      "modelFipeCode": "10863",
+      "version": "Ultra",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Diesel 2.0L Turbo Diesel" },
+            { "label": "Potência", "value": "170 cv", "unit": "@ 3.500 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "400 Nm", "unit": "@ 1.500–2.500 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "MT de 6 velocidades" },
+            { "label": "Tração", "value": "4WD" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Tambor" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "Halógeno projetor" },
+            { "label": "Lanternas", "value": "Halógeno" },
+            { "label": "Luz de Neblina Dianteira", "value": "Não Disponível" },
+            { "label": "Iluminação Interior", "value": "Incandescente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "16\" aço" },
+            { "label": "Pneus", "value": "245/75 R16" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "8\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Uconnect 3" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "4 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Traseira" },
+            { "label": "Ar-condicionado", "value": "Manual duplo" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Não Disponível" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Disponível" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Não Disponível" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Disponível" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.260 mm" },
+            { "label": "Largura", "value": "1.850 mm" },
+            { "label": "Altura", "value": "1.815 mm" },
+            { "label": "Entre-eixos", "value": "3.150 mm" },
+            { "label": "Capacidade de Carga", "value": "800 kg" },
+            { "label": "Capacidade de Reboque", "value": "3.500 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 299.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 55,
+        "type": "segment_migration",
+        "title": "Alerta Preditivo: Migração de Segmento",
+        "description": "Probabilidade de 55% de migração de clientes da versão Ultra para Freedom. Tendência: busca por maior conforto e tecnologia em detrimento de economia pura.",
+        "actionSuggestion": "Ação sugerida: reposicionar Ultra com foco em durabilidade e trabalho pesado."
+      }
+    },
+    {
+      "id": "renault-duster-oroch-iconic-2024",
+      "categoryId": "picape",
+      "brand": "Renault",
+      "brandFipeCode": "25",
+      "model": "Duster Oroch",
+      "modelFipeCode": "10884",
+      "version": "Iconic",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 1.6L Turbo Flex" },
+            { "label": "Potência", "value": "130 cv", "unit": "@ 5.600 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "200 Nm", "unit": "@ 4.800 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "Não Disponível" },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "CVT com paddle shifters" },
+            { "label": "Tração", "value": "4WD com modo Eco" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H" },
+            { "label": "Hill Descent Control", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais" },
+            { "label": "Suspensão Dianteira", "value": "Independente tipo McPherson" },
+            { "label": "Suspensão Traseira", "value": "Eixo rígido com molas de lâminas" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Areia · Lama" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "17\" alumínio preto" },
+            { "label": "Pneus", "value": "225/65 R17" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "8,7\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Renault Easy Link" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "6 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Traseira" },
+            { "label": "Ar-condicionado", "value": "Bi-zona automático" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (AEB)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Disponível" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LDW)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Disponível" },
+            { "label": "Assistente de Estacionamento", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.900 mm" },
+            { "label": "Largura", "value": "1.850 mm" },
+            { "label": "Altura", "value": "1.650 mm" },
+            { "label": "Entre-eixos", "value": "2.900 mm" },
+            { "label": "Capacidade de Carga", "value": "500 kg" },
+            { "label": "Capacidade de Reboque", "value": "1.200 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 249.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 64,
+        "type": "niche_appeal",
+        "title": "Alerta Preditivo: Apelo de Nicho",
+        "description": "Probabilidade de 64% de expansão do nicho de picapes urbanas com motor flex. Tendência: jovens profissionais buscam versatilidade estético-funcional.",
+        "actionSuggestion": "Ação sugerida: marketing focado em lifestyle e versatilidade urbano-aventura."
+      }
+    },
+    {
+      "id": "honda-ridgeline-trsx-2024",
+      "categoryId": "picape",
+      "brand": "Honda",
+      "brandFipeCode": "23",
+      "model": "Ridgeline",
+      "modelFipeCode": "10880",
+      "version": "TRSX",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 3.5L V6 VTEC Turbo" },
+            { "label": "Potência", "value": "420 cv", "unit": "@ 5.500 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "540 Nm", "unit": "@ 3.100 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "6,2 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 10 velocidades" },
+            { "label": "Tração", "value": "SH-AWD com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes com controle eletrônico" },
+            { "label": "Suspensão Dianteira", "value": "Duplo A-arm com barra estabilizadora" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado grande" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Snow · Mud · Sand · Rock · Tow" },
+            { "label": "Modos de Volante", "value": "Conforto · Normal · Esporte" },
+            { "label": "Modos de Escapamento", "value": "Silencioso · Esporte · Sport Plus" },
+            { "label": "Modos de Amortecedor", "value": "Conforto · Esporte · Esporte Plus" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Matrix com adaptação inteligente" },
+            { "label": "Lanternas", "value": "LED Full" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
+            { "label": "Iluminação Interior", "value": "LED ambiente multizona" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "20\" alumínio preto fosco" },
+            { "label": "Pneus", "value": "275/55 R20 All-Terrain" },
+            { "label": "Estepe", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "12,3\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Honda Sensing Elite com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Bose Premium com 12 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Sim (cor)" },
+            { "label": "Câmera", "value": "360° com night vision" },
+            { "label": "Ar-condicionado", "value": "Tri-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (CMBS)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keep Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSI)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (Advanced PAS)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.330 mm" },
+            { "label": "Largura", "value": "2.010 mm" },
+            { "label": "Altura", "value": "1.750 mm" },
+            { "label": "Entre-eixos", "value": "3.150 mm" },
+            { "label": "Capacidade de Carga", "value": "680 kg" },
+            { "label": "Capacidade de Reboque", "value": "2.267 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 479.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob demanda" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 75,
+        "type": "premium_positioning",
+        "title": "Alerta Preditivo: Posicionamento Premium",
+        "description": "Probabilidade de 75% de fortalecimento de posicionamento premium. Tendência: Honda busca capturar segmento de compradores que valorizam tecnologia e conforto.",
+        "actionSuggestion": "Ação sugerida: enfatizar inovação Honda Sensing e refinamento de condução em comunicação."
+      }
+    },
+    {
+      "id": "hyundai-santa-cruz-sel-2024",
+      "categoryId": "picape",
+      "brand": "Hyundai",
+      "brandFipeCode": "24",
+      "model": "Santa Cruz",
+      "modelFipeCode": "10885",
+      "version": "SEL",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 2.5L Turbo GDI" },
+            { "label": "Potência", "value": "277 cv", "unit": "@ 5.300 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "422 Nm", "unit": "@ 1.650–4.800 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "7,1 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades" },
+            { "label": "Tração", "value": "HTRAC com bloqueio de diferencial traseiro" },
+            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes de duplo tubo" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Normal · Esporte · Eco · Mudança Inteligente" },
+            { "label": "Modos de Volante", "value": "Comfort · Normal · Sport" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com adaptação de curva" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED ambiente" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio cinzento" },
+            { "label": "Pneus", "value": "235/60 R18" },
+            { "label": "Estepe", "value": "Sobressalente step-in" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,25\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Hyundai Bluelink com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Bose com 8 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "360° com dinâmica inteligente" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ASCC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BLIS)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (SVM)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.115 mm" },
+            { "label": "Largura", "value": "1.910 mm" },
+            { "label": "Altura", "value": "1.590 mm" },
+            { "label": "Entre-eixos", "value": "3.100 mm" },
+            { "label": "Capacidade de Carga", "value": "600 kg" },
+            { "label": "Capacidade de Reboque", "value": "1.588 kg" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 289.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional" },
+            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 68,
+        "type": "value_proposition",
+        "title": "Alerta Preditivo: Proposta de Valor",
+        "description": "Probabilidade de 68% de intensificação de campanhas de valor. Tendência: Hyundai posiciona Santa Cruz como alternativa premium a custos menores.",
+        "actionSuggestion": "Ação sugerida: comunicar garantia estendida e TCO como diferenciais competitivos."
+      }
+    }
+  ],
+  "_metadata": {
+    "totalVehicles": 15,
+    "categories": ["picape"],
+    "brands": ["Ford", "Chevrolet", "Toyota", "Volkswagen", "Fiat", "Renault", "Honda", "Hyundai"],
+    "lastUpdated": "2024-09-23",
+    "version": "1.0",
+    "notes": "JSON contendo 15 modelos de picapes do mercado brasileiro 2024. Todos os equipamentos não disponíveis seguem o padrão 'NÃO POSSUI'. Estrutura pronta para expansão com outras categorias de veículos (sedans, hatchbacks, SUVs, crossovers, vans, furgões, motos, comerciais, luxo, esportivos, clássicos)."
+  }
+}
