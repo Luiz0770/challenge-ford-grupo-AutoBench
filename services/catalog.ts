@@ -45,6 +45,15 @@ export const CatalogService = {
     }));
   },
 
+  // Apenas categorias com ao menos um veículo no catálogo
+  getAvailableCategories(): Category[] {
+    return CatalogService.getCategories().filter((c) => c.count > 0);
+  },
+
+  getCategoryById(categoryId: string): Category | null {
+    return CatalogService.getCategories().find((c) => c.id === categoryId) ?? null;
+  },
+
   getCategoryVehicles(categoryId: string): CategoryVehicleEntry[] {
     return VehicleDataService.getByCategory(categoryId);
   },

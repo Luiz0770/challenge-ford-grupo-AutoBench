@@ -12,6 +12,14 @@ export interface SpecSection {
   specs: SpecItem[];
 }
 
+export interface VehicleAlert {
+  probability: number; // 0–100
+  type: string;        // rótulo livre, ex.: "market_leader", "price_pressure"
+  title: string;
+  description: string;
+  actionSuggestion: string;
+}
+
 export interface Vehicle {
   id: string;
   categoryId: string;
@@ -22,6 +30,12 @@ export interface Vehicle {
   version: string;
   year: number;
   sections: SpecSection[];
+  alert: VehicleAlert;
+}
+
+export interface BrandSummary {
+  name: string;
+  count: number;
 }
 
 export interface FipeYear {

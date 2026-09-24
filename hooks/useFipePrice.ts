@@ -18,28 +18,17 @@ export function useFipePrice(vehicle: Vehicle | null) {
     setError(false);
     setPrice(null);
 
-    async function fetchPrice() {
-      try {
-        const years = await FipeService.getYearsByModel(
-          vehicle!.brandFipeCode,
-          vehicle!.modelFipeCode
-        );
-        const yearEntry = years.find((y) => y.codigo.startsWith(String(vehicle!.year)));
-        if (!yearEntry) throw new Error('Ano não encontrado na tabela FIPE');
-        const data = await FipeService.getVehiclePrice(
-          vehicle!.brandFipeCode,
-          vehicle!.modelFipeCode,
-          yearEntry.codigo
-        );
+    FipeService.getPriceForVehicle(vehicle)
+      .then((data) => {
         if (!cancelled) setPrice(data);
-      } catch {
+      })
+      .catch(() => {
         if (!cancelled) setError(true);
-      } finally {
+      })
+      .finally(() => {
         if (!cancelled) setLoading(false);
-      }
-    }
+      });
 
-    fetchPrice();
     return () => { cancelled = true; };
   }, [vehicle?.id]);
 
