@@ -1,5 +1,5 @@
-import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CategoryCard } from '../../components/search/CategoryCard';
@@ -12,8 +12,18 @@ import type { Category } from '../../types';
 export default function BuscaScreen() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
+  const { categoria } = useLocalSearchParams<{ categoria?: string }>();
 
-  const categories = CatalogService.getCategories();
+  const categories = CatalogService.getAvailableCategories();
+
+  // Aberta a partir da home (/busca?categoria=suv): mostra a categoria direto e
+  // limpa o parâmetro para que o mesmo atalho funcione de novo depois
+  useEffect(() => {
+    if (!categoria) return;
+    const category = CatalogService.getCategoryById(categoria);
+    if (category) setSelectedCategory(category);
+    router.setParams({ categoria: undefined });
+  }, [categoria, router]);
 
   if (selectedCategory) {
     return (
@@ -77,7 +87,7 @@ export default function BuscaScreen() {
               marginTop: 6,
             }}
           >
-            12 segmentos
+            {categories.length} segmentos
           </Text>
         </View>
 

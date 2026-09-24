@@ -1,3 +1,186 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   Paleta AutoBench (design em model/)
+   Canais RGB separados por espaço para que o Tailwind aplique
+   opacidade: bg-navy-900/50, text-blue-600/80, etc.
+   Os tokens são mapeados em tailwind.config.js.
+   ───────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Superfícies */
+    --color-canvas: 248 249 250;        /* #F8F9FA fundo das telas */
+    --color-paper: 246 247 249;         /* #F6F7F9 fundo da home */
+    --color-surface: 255 255 255;       /* #FFFFFF cards */
+    --color-subtle: 251 252 253;        /* #FBFCFD rodapés de card */
+    --color-line: 233 236 239;          /* #E9ECEF borda de chips/inputs */
+
+    /* Navy (headers e textos de destaque) */
+    --color-navy-950: 5 14 38;          /* #050E26 */
+    --color-navy-900: 0 28 70;          /* #001C46 */
+    --color-navy-800: 0 52 120;         /* #003478 */
+
+    /* Identidade da marca (hero da home) */
+    --color-brand-deep: 0 26 77;        /* #001A4D */
+    --color-brand-mid: 0 61 165;        /* #003DA5 */
+    --color-brand-bright: 0 102 255;    /* #0066FF */
+    --color-brand-cyan: 0 183 255;      /* #00B7FF */
+    --color-brand-ink: 11 18 32;        /* #0B1220 */
+    --color-brand-warm: 255 106 26;     /* #FF6A1A */
+
+    /* Azul (ações, slot A, links) */
+    --color-blue-600: 0 102 204;        /* #0066CC */
+    --color-blue-500: 37 137 230;       /* #2589E6 */
+    --color-blue-400: 96 165 250;       /* #60A5FA */
+
+    /* Âmbar (Oráculo IA, slot B, alertas) */
+    --color-amber-600: 217 119 6;       /* #D97706 */
+    --color-amber-500: 245 158 11;      /* #F59E0B */
+    --color-amber-400: 251 191 36;      /* #FBBF24 */
+    --color-amber-300: 252 211 77;      /* #FCD34D */
+    --color-amber-100: 254 243 199;     /* #FEF3C7 */
+
+    /* Texto e divisores */
+    --color-ink-900: 33 37 41;          /* #212529 texto principal */
+    --color-ink-700: 108 117 125;       /* #6C757D texto secundário */
+    --color-ink-400: 173 181 189;       /* #ADB5BD texto apagado */
+    --color-ink-300: 213 217 221;       /* #D5D9DD separador em ponto */
+    --color-ink-200: 238 240 243;       /* #EEF0F3 borda de card */
+    --color-ink-100: 241 243 245;       /* #F1F3F5 divisores de lista */
+
+    /* Status */
+    --color-success: 15 118 110;        /* #0F766E */
+    --color-warning: 180 83 9;          /* #B45309 */
+    --color-danger: 185 28 28;          /* #B91C1C */
+    --color-info: 0 102 204;            /* #0066CC */
+    --color-positive: 4 120 87;         /* #047857 variação FIPE negativa (bom p/ comprador) */
+    --color-positive-soft: 236 253 245; /* #ECFDF5 */
+    --color-warm-soft: 254 243 233;     /* #FEF3E9 */
+
+    /* Categorias de veículo: cor de fundo + acento */
+    --color-cat-suv: 30 41 59;                    /* #1E293B */
+    --color-cat-suv-accent: 148 163 184;          /* #94A3B8 */
+    --color-cat-picape: 20 83 45;                 /* #14532D */
+    --color-cat-picape-accent: 134 239 172;       /* #86EFAC */
+    --color-cat-sedan: 0 28 70;                   /* #001C46 */
+    --color-cat-sedan-accent: 96 165 250;         /* #60A5FA */
+    --color-cat-hatch: 180 83 9;                  /* #B45309 */
+    --color-cat-hatch-accent: 252 211 77;         /* #FCD34D */
+    --color-cat-crossover: 15 118 110;            /* #0F766E */
+    --color-cat-crossover-accent: 94 234 212;     /* #5EEAD4 */
+    --color-cat-cupe: 88 28 135;                  /* #581C87 */
+    --color-cat-cupe-accent: 216 180 254;         /* #D8B4FE */
+    --color-cat-esportivo: 153 27 27;             /* #991B1B */
+    --color-cat-esportivo-accent: 252 165 165;    /* #FCA5A5 */
+    --color-cat-compacto: 71 85 105;              /* #475569 */
+    --color-cat-compacto-accent: 203 213 225;     /* #CBD5E1 */
+    --color-cat-eletrico: 0 102 204;              /* #0066CC */
+    --color-cat-eletrico-accent: 191 219 254;     /* #BFDBFE */
+    --color-cat-hibrido: 15 23 42;                /* #0F172A */
+    --color-cat-hibrido-accent: 148 163 184;      /* #94A3B8 */
+    --color-cat-conversivel: 127 29 29;           /* #7F1D1D */
+    --color-cat-conversivel-accent: 253 164 175;  /* #FDA4AF */
+    --color-cat-minivan: 24 24 27;                /* #18181B */
+    --color-cat-minivan-accent: 161 161 170;      /* #A1A1AA */
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Animações AutoBench
+   Uso: className="animate-rise anim-delay-[120ms]"
+   React Native não tem ::before/::after, então o anel pulsante
+   (animate-live) e o brilho (animate-sweep) vão numa View própria,
+   posicionada com absolute inset-0 dentro do elemento.
+   ───────────────────────────────────────────────────────────── */
+@keyframes ab-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes ab-screen-enter {
+  from { opacity: 0; transform: translateY(6px) scale(0.995); }
+  to   { opacity: 1; transform: translateY(0px) scale(1); }
+}
+
+@keyframes ab-live {
+  from { opacity: 0.55; transform: scale(0.6); }
+  to   { opacity: 0; transform: scale(2.2); }
+}
+
+@keyframes ab-sweep {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes ab-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ab-beta {
+  0%   { opacity: 0.55; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.55; }
+}
+
+@keyframes ab-vs-pop {
+  from { opacity: 0; transform: scale(0.4) rotate(-25deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes ab-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ab-slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0%); }
+}
+
+@layer utilities {
+  /* Entrada escalonada de itens de lista/cards */
+  .animate-rise {
+    animation: ab-rise 520ms cubic-bezier(0.22, 0.94, 0.4, 1) backwards;
+  }
+
+  /* Entrada da tela inteira a cada navegação */
+  .animate-screen-enter {
+    animation: ab-screen-enter 360ms cubic-bezier(0.22, 0.94, 0.4, 1) both;
+  }
+
+  /* Anel pulsante do indicador "ao vivo" */
+  .animate-live {
+    animation: ab-live 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Brilho único que atravessa os cards do Oráculo IA */
+  .animate-sweep {
+    animation: ab-sweep 1600ms cubic-bezier(0.22, 0.94, 0.4, 1) 280ms 1 both;
+  }
+
+  /* Rotação lenta do ícone Sparkles */
+  .animate-spin-slow {
+    animation: ab-spin 14s linear infinite;
+  }
+
+  /* Pulso do selo BETA */
+  .animate-beta {
+    animation: ab-beta 2.4s linear infinite;
+  }
+
+  /* Selo "VS" da tela de comparação */
+  .animate-vs-pop {
+    animation: ab-vs-pop 540ms cubic-bezier(0.22, 1.6, 0.36, 1) 260ms backwards;
+  }
+
+  /* Overlay e bottom sheet */
+  .animate-fade-in {
+    animation: ab-fade-in 180ms ease both;
+  }
+  .animate-slide-up {
+    animation: ab-slide-up 240ms cubic-bezier(0.22, 0.94, 0.4, 1) both;
+  }
+}

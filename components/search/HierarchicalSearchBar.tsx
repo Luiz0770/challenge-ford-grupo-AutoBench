@@ -1,4 +1,4 @@
-import { Feather } from '@expo/vector-icons';
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, Search, X } from 'lucide-react-native';
 import React, { useMemo, useState } from 'react';
 import { FlatList, Modal, Pressable, Text, TextInput, View } from 'react-native';
 import { colors, fonts } from '../../constants/colors';
@@ -8,11 +8,14 @@ import { Card } from '../ui/Card';
 interface HierarchicalSearchBarProps {
   onExactSearch: (vehicleId: string) => void;
   onBroadSearch: (brand: string, model: string, version: string | null, year: number | null) => void;
+  // Visual de card flutuante sobre o hero da home
+  floating?: boolean;
 }
 
 export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
   onExactSearch,
   onBroadSearch,
+  floating = false,
 }) => {
   const [modelQuery, setModelQuery] = useState('');
   const [selectedModel, setSelectedModel] = useState<{ brand: string; model: string } | null>(
@@ -82,24 +85,45 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
     <View>
       {/* Model text input */}
       <View
-        style={{
-          backgroundColor: colors.bg.surface,
-          borderRadius: 12,
-          borderWidth: 1,
-          borderColor: focused ? colors.brand.blue : colors.bg.borderStrong,
-          paddingHorizontal: 14,
-          paddingVertical: 12,
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: 10,
-          shadowColor: focused ? colors.brand.blue : '#101828',
-          shadowOpacity: focused ? 0.18 : 0.04,
-          shadowRadius: focused ? 8 : 2,
-          shadowOffset: { width: 0, height: 1 },
-          elevation: focused ? 4 : 1,
-        }}
+        style={
+          floating
+            ? {
+                backgroundColor: colors.bg.surface,
+                borderRadius: 14,
+                borderWidth: 1,
+                borderColor: focused ? colors.brand.bright : colors.bg.borderStrong,
+                paddingHorizontal: 16,
+                paddingVertical: 14,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 10,
+                boxShadow: focused
+                  ? '0 0 0 4px rgba(0,102,255,0.13), 0 8px 24px rgba(0,26,77,0.18)'
+                  : '0 8px 24px rgba(0,26,77,0.14)',
+              }
+            : {
+                backgroundColor: colors.bg.surface,
+                borderRadius: 12,
+                borderWidth: 1,
+                borderColor: focused ? colors.brand.blue : colors.bg.borderStrong,
+                paddingHorizontal: 14,
+                paddingVertical: 12,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 10,
+                shadowColor: focused ? colors.brand.blue : '#101828',
+                shadowOpacity: focused ? 0.18 : 0.04,
+                shadowRadius: focused ? 8 : 2,
+                shadowOffset: { width: 0, height: 1 },
+                elevation: focused ? 4 : 1,
+              }
+        }
       >
-        <Feather name="search" size={18} color={colors.text.secondary} />
+        {floating ? (
+          <Search size={19} color={colors.brand.deep} strokeWidth={2.4} />
+        ) : (
+          <Search size={18} color={colors.text.secondary} />
+        )}
         <TextInput
           value={modelQuery}
           onChangeText={(text) => {
@@ -136,7 +160,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
               justifyContent: 'center',
             }}
           >
-            <Feather name="x" size={11} color={colors.text.secondary} />
+            <X size={11} color={colors.text.secondary} />
           </Pressable>
         )}
       </View>
@@ -161,7 +185,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                   borderTopColor: colors.divider,
                 }}
               >
-                <Feather name="search" size={14} color={colors.text.muted} />
+                <Search size={14} color={colors.text.muted} />
                 <Text
                   style={{
                     fontFamily: fonts.sans,
@@ -172,7 +196,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                 >
                   <Text style={{ fontFamily: fonts.sansSemibold }}>{s.brand}</Text> {s.model}
                 </Text>
-                <Feather name="arrow-up-right" size={13} color={colors.text.muted} />
+                <ArrowUpRight size={13} color={colors.text.muted} />
               </View>
             </Pressable>
           ))}
@@ -211,11 +235,10 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
           </Pressable>
           {selectedVersion && !isDisabled ? (
             <Pressable onPress={() => setSelectedVersion(null)} hitSlop={8}>
-              <Feather name="x" size={14} color={colors.text.secondary} />
+              <X size={14} color={colors.text.secondary} />
             </Pressable>
           ) : (
-            <Feather
-              name="chevron-down"
+            <ChevronDown
               size={14}
               color={isDisabled ? colors.text.muted : colors.text.secondary}
             />
@@ -251,11 +274,10 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
           </Pressable>
           {selectedYear != null && !isDisabled ? (
             <Pressable onPress={() => setSelectedYear(null)} hitSlop={8}>
-              <Feather name="x" size={14} color={colors.text.secondary} />
+              <X size={14} color={colors.text.secondary} />
             </Pressable>
           ) : (
-            <Feather
-              name="chevron-down"
+            <ChevronDown
               size={14}
               color={isDisabled ? colors.text.muted : colors.text.secondary}
             />
@@ -284,7 +306,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
             <Text style={{ fontFamily: fonts.sansSemibold, fontSize: 14, color: '#fff' }}>
               Buscar
             </Text>
-            <Feather name="arrow-right" size={14} color="#fff" />
+            <ArrowRight size={14} color="#fff" />
           </View>
         </Pressable>
       )}
@@ -360,7 +382,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                       {item}
                     </Text>
                     {selectedVersion === item && (
-                      <Feather name="check" size={14} color={colors.brand.blue} />
+                      <Check size={14} color={colors.brand.blue} />
                     )}
                   </View>
                 </Pressable>
@@ -441,7 +463,7 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                       {item}
                     </Text>
                     {selectedYear === item && (
-                      <Feather name="check" size={14} color={colors.brand.blue} />
+                      <Check size={14} color={colors.brand.blue} />
                     )}
                   </View>
                 </Pressable>
