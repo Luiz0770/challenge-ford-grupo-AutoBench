@@ -103,3 +103,29 @@ export interface CompareRow {
 
 // Plataforma estrutural do veículo (define compatibilidade de peças na Montagem)
 export type Platform = 'mono' | 'chassi';
+
+// ── Montagem ────────────────────────────────────────────────
+export type SystemId = 'motor' | 'cambio' | 'tracao' | 'susp' | 'freios' | 'rodas' | 'interior';
+
+export type PartStatus = 'orig' | 'swap' | 'adapt';
+
+export interface BuildPart {
+  /** `${systemId}|${platform}|${name}|${detail}` — identidade da especificação */
+  key: string;
+  systemId: SystemId;
+  name: string;
+  detail: string;
+  platform: Platform;
+  /** ids dos veículos do catálogo que têm esta especificação (ordem do catálogo) */
+  sources: string[];
+}
+
+export interface Build {
+  id: string;
+  name: string;
+  baseId: string | null;
+  platform: Platform;
+  /** sistema → BuildPart.key */
+  parts: Partial<Record<SystemId, string>>;
+  updatedAt: string;
+}
