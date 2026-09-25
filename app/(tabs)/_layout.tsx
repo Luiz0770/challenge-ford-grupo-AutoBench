@@ -52,6 +52,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="montagem"
+        options={{
+          title: 'Montagem',
+          tabBarIcon: ({ color, focused }) => (
+            <Feather name="tool" size={20} color={color} strokeWidth={focused ? 2.4 : 2} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
