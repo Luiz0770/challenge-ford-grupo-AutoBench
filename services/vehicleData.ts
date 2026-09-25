@@ -124,6 +124,22 @@ export const VehicleDataService = {
     return results;
   },
 
+  // Busca livre em "marca modelo versão", sem limite de resultados
+  searchVehicles(query: string): CategoryVehicleEntry[] {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return vehicles
+      .filter((v) => `${v.brand} ${v.model} ${v.version}`.toLowerCase().includes(q))
+      .map((v) => ({
+        vehicleId: v.id,
+        brand: v.brand,
+        model: v.model,
+        version: v.version,
+        year: v.year,
+      }))
+      .sort((a, b) => `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`, 'pt-BR'));
+  },
+
   getModelVersionStrings(brand: string, model: string): string[] {
     return [
       ...new Set(

@@ -137,7 +137,7 @@ export const VerdictCard: React.FC<VerdictCardProps> = ({ verdict }) => (
       ))}
     </View>
 
-    <View style={{ gap: 8, marginBottom: 12 }}>
+    <View style={{ gap: 8, marginBottom: verdict.recommendations.length ? 12 : 0 }}>
       {verdict.recommendations.map((r) => (
         <View
           key={r.tag}
@@ -205,6 +205,8 @@ export const VerdictCard: React.FC<VerdictCardProps> = ({ verdict }) => (
       ))}
     </View>
 
+    {/* Sem curadoria não há preço: a diferença FIPE some em vez de mostrar R$ 0 */}
+    {verdict.priceGap.absolute > 0 && (
     <View
       style={{
         flexDirection: 'row',
@@ -259,5 +261,6 @@ export const VerdictCard: React.FC<VerdictCardProps> = ({ verdict }) => (
         </Text>
       </View>
     </View>
+    )}
   </View>
 );

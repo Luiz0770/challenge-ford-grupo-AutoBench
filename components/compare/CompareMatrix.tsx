@@ -3,6 +3,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { colors, fonts } from '../../constants/colors';
 import type { CompareRow } from '../../types';
+import { Rise } from '../ui/Rise';
 
 interface CompareMatrixProps {
   rows: CompareRow[];
@@ -107,7 +108,9 @@ export const CompareMatrix: React.FC<CompareMatrixProps> = ({ rows, aLabel, bLab
 
       <View style={{ paddingHorizontal: 6, paddingVertical: 4 }}>
         {rows.map((r, i) => (
-          <Row key={`${r.k}-${i}`} row={r} />
+          <Rise key={`${r.k}-${i}`} delay={i * 30}>
+            <Row row={r} />
+          </Rise>
         ))}
       </View>
 
