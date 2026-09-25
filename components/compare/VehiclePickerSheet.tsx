@@ -22,7 +22,11 @@ type Mode = 'brand' | 'cat';
 
 interface VehiclePickerSheetProps {
   open: boolean;
-  side: CompareSide | null;
+  side?: CompareSide | null;
+  // Sobrescreve o rótulo "Veículo A/B" do cabeçalho (uso fora do Comparar)
+  eyebrow?: string;
+  // Sobrescreve a cor do lado A/B (uso fora do Comparar)
+  accent?: { color: string; bg: string };
   // Veículo já escolhido no outro slot (aparece desabilitado)
   excludedId?: string;
   onClose: () => void;
@@ -57,6 +61,8 @@ const circleButton = {
 export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
   open,
   side,
+  eyebrow,
+  accent,
   excludedId,
   onClose,
   onPick,
@@ -74,7 +80,7 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
     }
   }, [open]);
 
-  const s = SIDE[side ?? 'a'];
+  const s = accent ? { ...SIDE.a, ...accent } : SIDE[side ?? 'a'];
   const searching = q.trim().length > 0;
 
   const brands = useMemo(
@@ -191,7 +197,7 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
                   marginBottom: 2,
                 }}
               >
-                Veículo {s.label}
+                {eyebrow ?? `Veículo ${s.label}`}
                 {group && !searching ? (mode === 'brand' ? ' · Marca' : ' · Categoria') : ''}
               </Text>
               <Text
