@@ -3,6 +3,7 @@
     {
       "id": "ford-ranger-raptor-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Ranger",
@@ -140,6 +141,7 @@
     {
       "id": "ford-ranger-limited-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Ranger",
@@ -277,6 +279,7 @@
     {
       "id": "ford-ranger-xls-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Ranger",
@@ -414,6 +417,7 @@
     {
       "id": "chevrolet-s10-ltz-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "S10",
@@ -551,6 +555,7 @@
     {
       "id": "chevrolet-s10-work-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "S10",
@@ -688,6 +693,7 @@
     {
       "id": "toyota-hilux-sr5-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Hilux",
@@ -825,6 +831,7 @@
     {
       "id": "toyota-hilux-dx-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Hilux",
@@ -962,6 +969,7 @@
     {
       "id": "volkswagen-amarok-highline-2024",
       "categoryId": "picape",
+      "platform": "chassi",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Amarok",
@@ -1099,6 +1107,7 @@
     {
       "id": "fiat-toro-freedom-2024",
       "categoryId": "picape",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Toro",
@@ -1236,6 +1245,7 @@
     {
       "id": "fiat-toro-ultra-2024",
       "categoryId": "picape",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Toro",
@@ -1373,6 +1383,7 @@
     {
       "id": "renault-duster-oroch-iconic-2024",
       "categoryId": "picape",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Duster Oroch",
@@ -1510,6 +1521,7 @@
     {
       "id": "honda-ridgeline-trsx-2024",
       "categoryId": "picape",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Ridgeline",
@@ -1647,6 +1659,7 @@
     {
       "id": "hyundai-santa-cruz-sel-2024",
       "categoryId": "picape",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Santa Cruz",

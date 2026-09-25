@@ -3,6 +3,7 @@
     {
       "id": "toyota-prius-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Prius",
@@ -147,6 +148,7 @@
     {
       "id": "toyota-corolla-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Corolla",
@@ -290,6 +292,7 @@
     {
       "id": "toyota-rav4-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "RAV4",
@@ -432,6 +435,7 @@
     {
       "id": "toyota-highlander-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Highlander",
@@ -575,6 +579,7 @@
     {
       "id": "honda-accord-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Accord",
@@ -718,6 +723,7 @@
     {
       "id": "honda-crv-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "CR-V",
@@ -861,6 +867,7 @@
     {
       "id": "honda-civic-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Civic",
@@ -1004,6 +1011,7 @@
     {
       "id": "hyundai-ioniq-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Ioniq",
@@ -1147,6 +1155,7 @@
     {
       "id": "hyundai-tucson-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Tucson",
@@ -1290,6 +1299,7 @@
     {
       "id": "hyundai-elantra-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Elantra",
@@ -1433,6 +1443,7 @@
     {
       "id": "kia-niro-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "26",
       "model": "Niro",
@@ -1576,6 +1587,7 @@
     {
       "id": "kia-sportage-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "26",
       "model": "Sportage",
@@ -1719,6 +1731,7 @@
     {
       "id": "kia-sorento-hybrid-2024",
       "categoryId": "hibrido",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "26",
       "model": "Sorento",

@@ -3,6 +3,7 @@
     {
       "id": "jeep-wrangler-unlimited-sahara-2024",
       "categoryId": "conversivel",
+      "platform": "chassi",
       "brand": "Jeep",
       "brandFipeCode": "26",
       "model": "Wrangler",
@@ -140,6 +141,7 @@
     {
       "id": "jeep-wrangler-sport-s-2024",
       "categoryId": "conversivel",
+      "platform": "chassi",
       "brand": "Jeep",
       "brandFipeCode": "26",
       "model": "Wrangler",
@@ -277,6 +279,7 @@
     {
       "id": "jeep-wrangler-sport-2024",
       "categoryId": "conversivel",
+      "platform": "chassi",
       "brand": "Jeep",
       "brandFipeCode": "26",
       "model": "Wrangler",
@@ -414,6 +417,7 @@
     {
       "id": "ford-mustang-convertible-gt-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Mustang",
@@ -552,6 +556,7 @@
     {
       "id": "chevrolet-camaro-convertible-ss-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Camaro",
@@ -690,6 +695,7 @@
     {
       "id": "nissan-370z-roadster-nismo-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "28",
       "model": "370Z",
@@ -828,6 +834,7 @@
     {
       "id": "hyundai-veloster-n-convertible-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Veloster N",
@@ -966,6 +973,7 @@
     {
       "id": "kia-forte-koup-convertible-gt-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "48",
       "model": "Forte Koup",
@@ -1105,6 +1113,7 @@
     {
       "id": "volkswagen-golf-cabriolet-highline-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Golf Cabriolet",
@@ -1244,6 +1253,7 @@
     {
       "id": "renault-megane-cabriolet-intense-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Megane Cabriolet",
@@ -1383,6 +1393,7 @@
     {
       "id": "peugeot-308-cabriolet-allure-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Peugeot",
       "brandFipeCode": "33",
       "model": "308 Cabriolet",
@@ -1522,6 +1533,7 @@
     {
       "id": "citroen-c3-cabriolet-origins-2024",
       "categoryId": "conversivel",
+      "platform": "mono",
       "brand": "Citroën",
       "brandFipeCode": "19",
       "model": "C3 Cabriolet",

@@ -23,6 +23,7 @@ export interface VehicleAlert {
 export interface Vehicle {
   id: string;
   categoryId: string;
+  platform: Platform;
   brand: string;
   brandFipeCode: string;
   model: string;
@@ -99,3 +100,6 @@ export interface CompareRow {
   nullA?: boolean;
   nullB?: boolean;
 }
+
+// Plataforma estrutural do veículo (define compatibilidade de peças na Montagem)
+export type Platform = 'mono' | 'chassi';

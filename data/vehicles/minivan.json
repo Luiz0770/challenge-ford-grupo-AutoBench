@@ -3,6 +3,7 @@
     {
       "id": "chevrolet-spin-premier-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Spin",
@@ -149,6 +150,7 @@
     {
       "id": "renault-scenic-iconic-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Scenic",
@@ -296,6 +298,7 @@
     {
       "id": "citroen-c3-picasso-feel-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Citroën",
       "brandFipeCode": "19",
       "model": "C3 Picasso",
@@ -443,6 +446,7 @@
     {
       "id": "peugeot-5008-allure-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Peugeot",
       "brandFipeCode": "23",
       "model": "5008",
@@ -590,6 +594,7 @@
     {
       "id": "fiat-500-living-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "500",
@@ -737,6 +742,7 @@
     {
       "id": "toyota-sienna-limited-hybrid-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Sienna",
@@ -884,6 +890,7 @@
     {
       "id": "honda-odyssey-touring-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Odyssey",
@@ -1031,6 +1038,7 @@
     {
       "id": "nissan-livina-sv-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "24",
       "model": "Livina",
@@ -1178,6 +1186,7 @@
     {
       "id": "kia-carnival-ex-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "26",
       "model": "Carnival",
@@ -1325,6 +1334,7 @@
     {
       "id": "ford-galaxy-titanium-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Galaxy",
@@ -1472,6 +1482,7 @@
     {
       "id": "hyundai-i30-sw-select-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "i30 Station Wagon",
@@ -1619,6 +1630,7 @@
     {
       "id": "volkswagen-t-cross-allspace-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "T-Cross Allspace",
@@ -1766,6 +1778,7 @@
     {
       "id": "jeep-grand-cherokee-L-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Jeep",
       "brandFipeCode": "20",
       "model": "Grand Cherokee L",
@@ -1913,6 +1926,7 @@
     {
       "id": "chevrolet-spin-activ-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Spin",
@@ -2059,6 +2073,7 @@
     {
       "id": "fiat-500-pop-2024",
       "categoryId": "minivan",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "500",

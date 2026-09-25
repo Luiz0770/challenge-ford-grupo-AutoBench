@@ -3,6 +3,7 @@
     {
       "id": "ferrari-f8-tributo-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Ferrari",
       "brandFipeCode": "20",
       "model": "F8 Tributo",
@@ -140,6 +141,7 @@
     {
       "id": "lamborghini-revuelto-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Lamborghini",
       "brandFipeCode": "48",
       "model": "Revuelto",
@@ -277,6 +279,7 @@
     {
       "id": "porsche-911-turbo-gt3-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Porsche",
       "brandFipeCode": "28",
       "model": "911",
@@ -414,6 +417,7 @@
     {
       "id": "mclaren-artura-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "McLaren",
       "brandFipeCode": "49",
       "model": "Artura",
@@ -551,6 +555,7 @@
     {
       "id": "bugatti-bolide-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Bugatti",
       "brandFipeCode": "50",
       "model": "Bolide",
@@ -688,6 +693,7 @@
     {
       "id": "lotus-emira-v6-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Lotus",
       "brandFipeCode": "51",
       "model": "Emira",
@@ -825,6 +831,7 @@
     {
       "id": "maserati-mc20-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Maserati",
       "brandFipeCode": "52",
       "model": "MC20",
@@ -962,6 +969,7 @@
     {
       "id": "bentley-continental-gt-speed-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Bentley",
       "brandFipeCode": "53",
       "model": "Continental GT",
@@ -1099,6 +1107,7 @@
     {
       "id": "pagani-huayra-r-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Pagani",
       "brandFipeCode": "54",
       "model": "Huayra",
@@ -1236,6 +1245,7 @@
     {
       "id": "koenigsegg-jesko-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Koenigsegg",
       "brandFipeCode": "55",
       "model": "Jesko",
@@ -1373,6 +1383,7 @@
     {
       "id": "lamborghini-huracán-sterrato-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Lamborghini",
       "brandFipeCode": "48",
       "model": "Huracán",
@@ -1510,6 +1521,7 @@
     {
       "id": "ferrari-sf90-stradale-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Ferrari",
       "brandFipeCode": "20",
       "model": "SF90",
@@ -1647,6 +1659,7 @@
     {
       "id": "rimac-nevera-2024",
       "categoryId": "esportivo",
+      "platform": "mono",
       "brand": "Rimac",
       "brandFipeCode": "56",
       "model": "Nevera",

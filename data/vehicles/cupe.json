@@ -3,6 +3,7 @@
     {
       "id": "bmw-m440i-xdrive-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "BMW",
       "brandFipeCode": "04",
       "model": "M440i xDrive",
@@ -140,6 +141,7 @@
     {
       "id": "hyundai-veloster-turbo-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Veloster",
@@ -277,6 +279,7 @@
     {
       "id": "ford-mustang-ecoboost-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Mustang",
@@ -414,6 +417,7 @@
     {
       "id": "mercedes-amg-c63-coupe-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Mercedes-Benz",
       "brandFipeCode": "13",
       "model": "C63 AMG",
@@ -551,6 +555,7 @@
     {
       "id": "chevrolet-corvette-stingray-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Corvette",
@@ -688,6 +693,7 @@
     {
       "id": "audi-a5-sportback-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Audi",
       "brandFipeCode": "02",
       "model": "A5",
@@ -825,6 +831,7 @@
     {
       "id": "porsche-911-carrera-coupe-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Porsche",
       "brandFipeCode": "28",
       "model": "911",
@@ -962,6 +969,7 @@
     {
       "id": "nissan-z-performance-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "26",
       "model": "Z",
@@ -1099,6 +1107,7 @@
     {
       "id": "volkswagen-arteon-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Arteon",
@@ -1236,6 +1245,7 @@
     {
       "id": "fiat-abarth-595-turismo-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Abarth 595",
@@ -1373,6 +1383,7 @@
     {
       "id": "subaru-brz-performance-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Subaru",
       "brandFipeCode": "29",
       "model": "BRZ",
@@ -1510,6 +1521,7 @@
     {
       "id": "infiniti-q60-red-sport-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Infiniti",
       "brandFipeCode": "24",
       "model": "Q60",
@@ -1647,6 +1659,7 @@
     {
       "id": "dodge-charger-srt-2024",
       "categoryId": "cupe",
+      "platform": "mono",
       "brand": "Dodge",
       "brandFipeCode": "19",
       "model": "Charger",

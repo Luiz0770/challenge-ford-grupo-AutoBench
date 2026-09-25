@@ -3,6 +3,7 @@
     {
       "id": "toyota-corolla-cross-hybrid-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Corolla Cross",
@@ -145,6 +146,7 @@
     {
       "id": "honda-hrv-sport-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "HR-V",
@@ -287,6 +289,7 @@
     {
       "id": "volkswagen-nivus-highline-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Nivus",
@@ -429,6 +432,7 @@
     {
       "id": "hyundai-creta-smart-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Creta",
@@ -571,6 +575,7 @@
     {
       "id": "jeep-compass-limited-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Jeep",
       "brandFipeCode": "27",
       "model": "Compass",
@@ -712,6 +717,7 @@
     {
       "id": "chevrolet-tracker-ltz-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Tracker",
@@ -854,6 +860,7 @@
     {
       "id": "nissan-kicks-sense-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "26",
       "model": "Kicks",
@@ -996,6 +1003,7 @@
     {
       "id": "renault-captur-intense-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Captur",
@@ -1138,6 +1146,7 @@
     {
       "id": "fiat-pulse-firefly-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Pulse",
@@ -1280,6 +1289,7 @@
     {
       "id": "peugeot-2008-griffe-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Peugeot",
       "brandFipeCode": "29",
       "model": "2008",
@@ -1422,6 +1432,7 @@
     {
       "id": "citroen-c3-aircross-shine-2024",
       "categoryId": "crossover",
+      "platform": "mono",
       "brand": "Citroën",
       "brandFipeCode": "19",
       "model": "C3 Aircross",

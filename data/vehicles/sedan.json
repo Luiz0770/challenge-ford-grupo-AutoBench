@@ -3,6 +3,7 @@
     {
       "id": "toyota-corolla-gli-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Corolla",
@@ -140,6 +141,7 @@
     {
       "id": "honda-civic-sport-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Civic",
@@ -277,6 +279,7 @@
     {
       "id": "volkswagen-jetta-comfortline-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Jetta",
@@ -414,6 +417,7 @@
     {
       "id": "chevrolet-cruze-premier-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Cruze",
@@ -551,6 +555,7 @@
     {
       "id": "hyundai-elantra-gls-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Elantra",
@@ -688,6 +693,7 @@
     {
       "id": "fiat-cronos-drive-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Cronos",
@@ -825,6 +831,7 @@
     {
       "id": "renault-fluence-prestige-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Fluence",
@@ -962,6 +969,7 @@
     {
       "id": "ford-fusion-seselect-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Fusion",
@@ -1099,6 +1107,7 @@
     {
       "id": "toyota-yaris-sedan-xl-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Yaris Sedan",
@@ -1236,6 +1245,7 @@
     {
       "id": "nissan-versa-sv-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "26",
       "model": "Versa",
@@ -1373,6 +1383,7 @@
     {
       "id": "chevrolet-onix-plus-lt-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Onix Plus",
@@ -1510,6 +1521,7 @@
     {
       "id": "kia-cerato-ex-2024",
       "categoryId": "sedan",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "32",
       "model": "Cerato",

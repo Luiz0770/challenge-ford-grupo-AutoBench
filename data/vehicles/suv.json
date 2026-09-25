@@ -3,6 +3,7 @@
     {
       "id": "toyota-corolla-cross-xei-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Corolla Cross",
@@ -140,6 +141,7 @@
     {
       "id": "volkswagen-t-cross-comfortline-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "T-Cross",
@@ -277,6 +279,7 @@
     {
       "id": "hyundai-creta-pulse-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Creta",
@@ -414,6 +417,7 @@
     {
       "id": "jeep-renegade-trailhawk-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Jeep",
       "brandFipeCode": "27",
       "model": "Renegade",
@@ -551,6 +555,7 @@
     {
       "id": "chevrolet-tracker-premier-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Tracker",
@@ -688,6 +693,7 @@
     {
       "id": "renault-duster-prestige-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Duster",
@@ -825,6 +831,7 @@
     {
       "id": "honda-hr-v-exl-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "HR-V",
@@ -962,6 +969,7 @@
     {
       "id": "ford-ecosport-titanium-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "EcoSport",
@@ -1099,6 +1107,7 @@
     {
       "id": "nissan-kicks-sv-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "26",
       "model": "Kicks",
@@ -1236,6 +1245,7 @@
     {
       "id": "fiat-fastback-drive-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Fastback",
@@ -1373,6 +1383,7 @@
     {
       "id": "kia-seltos-ex-2024",
       "categoryId": "suv",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "32",
       "model": "Seltos",

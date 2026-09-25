@@ -3,6 +3,7 @@
     {
       "id": "toyota-yaris-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Toyota",
       "brandFipeCode": "30",
       "model": "Yaris",
@@ -148,6 +149,7 @@
     {
       "id": "honda-city-sedan-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "City",
@@ -295,6 +297,7 @@
     {
       "id": "honda-jazz-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Jazz",
@@ -441,6 +444,7 @@
     {
       "id": "volkswagen-polo-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Polo",
@@ -587,6 +591,7 @@
     {
       "id": "hyundai-hb20-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "HB20",
@@ -733,6 +738,7 @@
     {
       "id": "hyundai-i20-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "i20",
@@ -878,6 +884,7 @@
     {
       "id": "chevrolet-onix-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Onix",
@@ -1024,6 +1031,7 @@
     {
       "id": "ford-fiesta-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Fiesta",
@@ -1170,6 +1178,7 @@
     {
       "id": "nissan-march-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "26",
       "model": "March",
@@ -1316,6 +1325,7 @@
     {
       "id": "kia-picanto-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "25",
       "model": "Picanto",
@@ -1462,6 +1472,7 @@
     {
       "id": "renault-sandero-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Sandero",
@@ -1608,6 +1619,7 @@
     {
       "id": "fiat-argo-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Argo",
@@ -1754,6 +1766,7 @@
     {
       "id": "fiat-uno-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Uno",
@@ -1900,6 +1913,7 @@
     {
       "id": "peugeot-208-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Peugeot",
       "brandFipeCode": "27",
       "model": "208",
@@ -2046,6 +2060,7 @@
     {
       "id": "citroen-c3-hatch-2024",
       "categoryId": "compacto",
+      "platform": "mono",
       "brand": "Citroën",
       "brandFipeCode": "16",
       "model": "C3",

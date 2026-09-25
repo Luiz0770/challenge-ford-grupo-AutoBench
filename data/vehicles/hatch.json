@@ -3,6 +3,7 @@
     {
       "id": "volkswagen-polo-trendline-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Polo",
@@ -140,6 +141,7 @@
     {
       "id": "fiat-argo-drive-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Argo",
@@ -277,6 +279,7 @@
     {
       "id": "chevrolet-onix-lt-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Onix",
@@ -414,6 +417,7 @@
     {
       "id": "honda-fit-lx-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Honda",
       "brandFipeCode": "23",
       "model": "Fit",
@@ -551,6 +555,7 @@
     {
       "id": "ford-fiesta-se-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Fiesta",
@@ -688,6 +693,7 @@
     {
       "id": "hyundai-hb20-sense-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "HB20",
@@ -825,6 +831,7 @@
     {
       "id": "renault-sandero-authentique-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Sandero",
@@ -962,6 +969,7 @@
     {
       "id": "nissan-march-sv-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Nissan",
       "brandFipeCode": "26",
       "model": "March",
@@ -1099,6 +1107,7 @@
     {
       "id": "fiat-mobi-like-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Mobi",
@@ -1236,6 +1245,7 @@
     {
       "id": "kia-picanto-ex-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "32",
       "model": "Picanto",
@@ -1373,6 +1383,7 @@
     {
       "id": "volkswagen-fox-connect-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "Fox",
@@ -1510,6 +1521,7 @@
     {
       "id": "chevrolet-spark-joy-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Spark",
@@ -1647,6 +1659,7 @@
     {
       "id": "fiat-palio-fire-2024",
       "categoryId": "hatch",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "Palio",

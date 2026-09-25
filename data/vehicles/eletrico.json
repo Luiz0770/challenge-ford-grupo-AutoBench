@@ -3,6 +3,7 @@
     {
       "id": "volkswagen-id4-standard-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "ID.4",
@@ -149,6 +150,7 @@
     {
       "id": "volkswagen-id5-professional-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Volkswagen",
       "brandFipeCode": "31",
       "model": "ID.5",
@@ -294,6 +296,7 @@
     {
       "id": "hyundai-ioniq5-standard-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Ioniq 5",
@@ -439,6 +442,7 @@
     {
       "id": "hyundai-ioniq6-long-range-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Hyundai",
       "brandFipeCode": "24",
       "model": "Ioniq 6",
@@ -584,6 +588,7 @@
     {
       "id": "kia-ev6-air-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "27",
       "model": "EV6",
@@ -729,6 +734,7 @@
     {
       "id": "kia-ev9-prestige-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Kia",
       "brandFipeCode": "27",
       "model": "EV9",
@@ -874,6 +880,7 @@
     {
       "id": "renault-scenic-e-tech-techno-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Renault",
       "brandFipeCode": "25",
       "model": "Scenic E-Tech",
@@ -1019,6 +1026,7 @@
     {
       "id": "fiat-600e-urban-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Fiat",
       "brandFipeCode": "14",
       "model": "600e",
@@ -1164,6 +1172,7 @@
     {
       "id": "peugeot-e3008-allure-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Peugeot",
       "brandFipeCode": "19",
       "model": "E-3008",
@@ -1309,6 +1318,7 @@
     {
       "id": "citroen-ec3-shine-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Citroën",
       "brandFipeCode": "13",
       "model": "e-C3",
@@ -1454,6 +1464,7 @@
     {
       "id": "tesla-model3-standard-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Tesla",
       "brandFipeCode": "129",
       "model": "Model 3",
@@ -1599,6 +1610,7 @@
     {
       "id": "tesla-modely-long-range-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Tesla",
       "brandFipeCode": "129",
       "model": "Model Y",
@@ -1744,6 +1756,7 @@
     {
       "id": "byd-yuan-plus-ev-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "BYD",
       "brandFipeCode": "130",
       "model": "Yuan Plus EV",
@@ -1889,6 +1902,7 @@
     {
       "id": "chevrolet-equinox-ev-2ltz-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Chevrolet",
       "brandFipeCode": "17",
       "model": "Equinox EV",
@@ -2034,6 +2048,7 @@
     {
       "id": "ford-mustang-mache-select-2025",
       "categoryId": "eletrico",
+      "platform": "mono",
       "brand": "Ford",
       "brandFipeCode": "22",
       "model": "Mustang Mach-E",
