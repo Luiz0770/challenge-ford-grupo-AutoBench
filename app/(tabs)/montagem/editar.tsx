@@ -1,6 +1,6 @@
 import { Feather } from '@expo/vector-icons';
 import { Redirect, useRouter } from 'expo-router';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { BuildHero, heroPill } from '../../../components/build/BuildHero';
 import { BuildProgress } from '../../../components/build/BuildProgress';
@@ -25,25 +25,34 @@ export default function EditarMontagemScreen() {
   const saveDraft = useBuildStore((s) => s.saveDraft);
 
   const [sysId, setSysId] = useState<SystemId | null>(null);
+  const leaving = useRef(false);
 
   const summary = useMemo(() => (draft ? BuildService.summarize(draft) : null), [draft]);
 
-  // Sem rascunho (ex.: recarga do app): volta para a tela inicial
-  if (!draft || !summary) return <Redirect href="/montagem" />;
+  // Sem rascunho (ex.: recarga do app): volta para a tela inicial.
+  // Ao sair de propósito o rascunho some, mas não redireciona durante a transição de volta.
+  if (!draft || !summary) return leaving.current ? null : <Redirect href="/montagem" />;
 
   const base = draft.baseId ? BuildService.getBase(draft.baseId) : null;
   const hasBase = !!base;
   const system = SYSTEMS.find((s) => s.id === sysId) ?? null;
   const missing = summary.total - summary.defined;
 
+  const goBack = () => {
+    if (router.canGoBack()) router.back();
+    else router.replace('/montagem');
+  };
+
   const handleBack = () => {
+    leaving.current = true;
     discardDraft();
-    router.back();
+    goBack();
   };
 
   const handleSave = () => {
+    leaving.current = true;
     saveDraft();
-    router.back();
+    goBack();
   };
 
   const handlePick = (key: string) => {

@@ -1,7 +1,7 @@
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { Platform as RNPlatform, ScrollView, View } from 'react-native';
 import { VehiclePickerSheet } from '../../../components/compare/VehiclePickerSheet';
 import { BuildHero } from '../../../components/build/BuildHero';
 import { PlatformSheet } from '../../../components/build/PlatformSheet';
@@ -43,18 +43,24 @@ export default function MontagemScreen() {
 
   const totals = VehicleDataService.getTotals();
 
+  // iOS ignora navegação enquanto o Modal ainda está fechando
+  const openEditor = () => {
+    if (RNPlatform.OS === 'ios') setTimeout(() => router.push('/montagem/editar'), 350);
+    else router.push('/montagem/editar');
+  };
+
   const handlePickBase = (entry: CategoryVehicleEntry) => {
     const build = BuildService.createFromBase(entry.vehicleId);
     if (!build) return;
     setSheet(null);
     startDraft(build);
-    router.push('/montagem/editar');
+    openEditor();
   };
 
   const handleFromScratch = (platform: Platform) => {
     setSheet(null);
     startDraft(BuildService.createFromScratch(platform));
-    router.push('/montagem/editar');
+    openEditor();
   };
 
   const handleOpenSaved = (build: Build) => {
