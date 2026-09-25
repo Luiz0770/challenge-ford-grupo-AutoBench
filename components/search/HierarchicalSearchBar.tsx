@@ -102,27 +102,26 @@ export const HierarchicalSearchBar: React.FC<HierarchicalSearchBarProps> = ({
                   : '0 8px 24px rgba(0,26,77,0.14)',
               }
             : {
+                // Pílula com anel azul no foco (visual da tela de busca do design)
                 backgroundColor: colors.bg.surface,
-                borderRadius: 12,
+                borderRadius: 999,
                 borderWidth: 1,
                 borderColor: focused ? colors.brand.blue : colors.bg.borderStrong,
-                paddingHorizontal: 14,
+                paddingHorizontal: 16,
                 paddingVertical: 12,
                 flexDirection: 'row',
                 alignItems: 'center',
                 gap: 10,
-                shadowColor: focused ? colors.brand.blue : '#101828',
-                shadowOpacity: focused ? 0.18 : 0.04,
-                shadowRadius: focused ? 8 : 2,
-                shadowOffset: { width: 0, height: 1 },
-                elevation: focused ? 4 : 1,
+                boxShadow: focused
+                  ? '0 0 0 4px rgba(0,102,204,0.10)'
+                  : '0 1px 2px rgba(16,24,40,0.04)',
               }
         }
       >
         {floating ? (
           <Search size={19} color={colors.brand.deep} strokeWidth={2.4} />
         ) : (
-          <Search size={18} color={colors.text.secondary} />
+          <Search size={18} color={colors.brand.navy} strokeWidth={2.4} />
         )}
         <TextInput
           value={modelQuery}

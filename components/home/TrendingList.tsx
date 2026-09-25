@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
 import type { Category, Vehicle } from '../../types';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { FipeValue } from './FipeValue';
 import { SectionHeader } from './SectionHeader';
@@ -17,9 +17,9 @@ interface TrendingListProps {
 // "Em alta": veículos com maior probabilidade de alerta do Oráculo
 export const TrendingList: React.FC<TrendingListProps> = ({ vehicles, categories, onSelect }) => (
   <View className="px-5 pt-[26px]">
-    <View className={`mb-3 ${riseClass(720)}`}>
+    <Rise delay={720} className="mb-3">
       <SectionHeader title="Em alta no Oráculo" icon={TrendingUp} iconColor={colors.brand.warm} />
-    </View>
+    </Rise>
     <View
       className="overflow-hidden rounded-[14px] border border-ink-200 bg-surface"
       style={{ boxShadow: '0 1px 2px rgba(16,24,40,0.04)' }}
@@ -28,7 +28,7 @@ export const TrendingList: React.FC<TrendingListProps> = ({ vehicles, categories
         const category = categories.find((c) => c.id === v.categoryId);
         const tone = category?.color ?? colors.brand.mid;
         return (
-          <View key={v.id} className={riseClass(760 + i * 50)}>
+          <Rise key={v.id} delay={760 + i * 50}>
             <PressableScale
               onPress={() => onSelect(v.id)}
               accessibilityLabel={`${v.brand} ${v.model} ${v.version}`}
@@ -77,7 +77,7 @@ export const TrendingList: React.FC<TrendingListProps> = ({ vehicles, categories
                 </View>
               </View>
             </PressableScale>
-          </View>
+          </Rise>
         );
       })}
     </View>

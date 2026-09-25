@@ -12,7 +12,7 @@ import { PersonaShortcuts } from '../../components/home/PersonaShortcuts';
 import { RecentSearches } from '../../components/home/RecentSearches';
 import { TrendingList } from '../../components/home/TrendingList';
 import { HierarchicalSearchBar } from '../../components/search/HierarchicalSearchBar';
-import { riseClass } from '../../components/ui/motion';
+import { Rise } from '../../components/ui/Rise';
 import { colors } from '../../constants/colors';
 import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
@@ -43,7 +43,7 @@ export default function HomeScreen() {
         <HomeHero />
 
         {/* Busca flutuando sobre o hero */}
-        <View className={`relative z-10 -mt-[34px] px-5 ${riseClass(140)}`}>
+        <Rise delay={140} className="relative z-10 -mt-[34px] px-5">
           <HierarchicalSearchBar
             floating
             onExactSearch={openVehicle}
@@ -59,7 +59,7 @@ export default function HomeScreen() {
               })
             }
           />
-        </View>
+        </Rise>
 
         <PersonaShortcuts onSelectCategory={openCategory} />
 

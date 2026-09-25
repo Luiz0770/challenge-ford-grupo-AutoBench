@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle, Defs, LinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from 'react-native-svg';
 import { colors } from '../../constants/colors';
 import { LivePulse } from '../ui/LivePulse';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { Wordmark } from '../ui/Wordmark';
 
 const MONTHS = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -59,7 +59,7 @@ export const HomeHero: React.FC = () => {
       </BlurTargetView>
 
       {/* Marca + avatar */}
-      <View className={`flex-row items-center justify-between px-5 pt-2 pb-[18px] ${riseClass(0)}`}>
+      <Rise delay={0} className="flex-row items-center justify-between px-5 pt-2 pb-[18px]">
         <Wordmark light />
         <View className="relative">
           <BlurView
@@ -86,10 +86,10 @@ export const HomeHero: React.FC = () => {
             style={{ backgroundColor: accent, borderColor: colors.brand.deep }}
           />
         </View>
-      </View>
+      </Rise>
 
       {/* Saudação */}
-      <View className={`px-5 pt-1.5 pb-1 ${riseClass(60)}`}>
+      <Rise delay={60} className="px-5 pt-1.5 pb-1">
         <View className="mb-2.5 flex-row items-center gap-2">
           <LivePulse color={accent} size={6} />
           <Text className="font-mono-medium text-[10px] uppercase tracking-[1.4px] text-white/70">
@@ -102,7 +102,7 @@ export const HomeHero: React.FC = () => {
         <Text className="max-w-[300px] font-sans text-sm leading-[21px] text-white/70">
           Especificações determinísticas + sinais preditivos do Oráculo IA.
         </Text>
-      </View>
+      </Rise>
     </View>
   );
 };

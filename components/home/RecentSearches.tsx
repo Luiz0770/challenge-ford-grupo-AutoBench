@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
 import { VehicleDataService } from '../../services/vehicleData';
 import type { HistoryEntry } from '../../types';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { SectionHeader } from './SectionHeader';
 
@@ -17,16 +17,16 @@ interface RecentSearchesProps {
 
 export const RecentSearches: React.FC<RecentSearchesProps> = ({ history, onSelect }) => (
   <View className="px-5 pt-6">
-    <View className={`mb-2.5 ${riseClass(1480)}`}>
+    <Rise delay={1480} className="mb-2.5">
       <SectionHeader title="Buscas recentes" />
-    </View>
+    </Rise>
 
     {history.length > 0 ? (
       <View className="overflow-hidden rounded-[14px] border border-ink-200 bg-surface" style={cardShadow}>
         {history.map((h, i) => {
           const vehicle = VehicleDataService.getVehicleById(h.vehicleId);
           return (
-            <View key={h.vehicleId} className={riseClass(1520 + i * 60)}>
+            <Rise key={h.vehicleId} delay={1520 + i * 60}>
               <PressableScale
                 onPress={() => onSelect(h.vehicleId)}
                 accessibilityLabel={h.vehicleName}
@@ -47,13 +47,13 @@ export const RecentSearches: React.FC<RecentSearchesProps> = ({ history, onSelec
                 </View>
                 <ChevronRight size={16} color={colors.text.muted} strokeWidth={2.2} />
               </PressableScale>
-            </View>
+            </Rise>
           );
         })}
       </View>
     ) : (
-      <View
-        className={`flex-row items-center gap-3.5 rounded-[14px] border border-ink-200 bg-surface p-[18px] ${riseClass(1520)}`}
+      <Rise
+        delay={1520} className="flex-row items-center gap-3.5 rounded-[14px] border border-ink-200 bg-surface p-[18px]"
         style={cardShadow}
       >
         <View className="h-11 w-11 items-center justify-center rounded-xl bg-ink-100">
@@ -65,7 +65,7 @@ export const RecentSearches: React.FC<RecentSearchesProps> = ({ history, onSelec
             Comece pelos atalhos acima ou digite no campo de busca.
           </Text>
         </View>
-      </View>
+      </Rise>
     )}
   </View>
 );

@@ -1,13 +1,67 @@
 import { ArrowUpRight, Car, Sparkles } from 'lucide-react-native';
-import React from 'react';
-import { Text, View } from 'react-native';
+import { useFocusEffect } from 'expo-router';
+import React, { useCallback, useState } from 'react';
+import { Animated, Easing, LayoutChangeEvent, Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
 import type { Vehicle } from '../../types';
 import { GradientFill } from '../ui/GradientFill';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 
 const accent = colors.brand.bright;
+
+// Brilho único que atravessa o card (antigo `animate-sweep`)
+const Sweep: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const progress = React.useRef(new Animated.Value(0)).current;
+  const [width, setWidth] = useState(0);
+
+  useFocusEffect(
+    useCallback(() => {
+      progress.setValue(0);
+      const a = Animated.timing(progress, {
+        toValue: 1,
+        duration: 1600,
+        delay: 280,
+        easing: Easing.bezier(0.22, 0.94, 0.4, 1),
+        useNativeDriver: true,
+      });
+      a.start();
+      return () => a.stop();
+    }, [progress])
+  );
+
+  const translateX = progress.interpolate({ inputRange: [0, 1], outputRange: [-width, width] });
+
+  return (
+    <View
+      pointerEvents="none"
+      className="absolute inset-0"
+      onLayout={(e: LayoutChangeEvent) => setWidth(e.nativeEvent.layout.width)}
+    >
+      <Animated.View style={{ flex: 1, transform: [{ translateX }] }}>{children}</Animated.View>
+    </View>
+  );
+};
+
+// Rotação lenta contínua (antigo `animate-spin-slow`)
+const SlowSpin: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const turn = React.useRef(new Animated.Value(0)).current;
+
+  // Só gira enquanto a tela está em foco
+  useFocusEffect(
+    useCallback(() => {
+      const loop = Animated.loop(
+        Animated.timing(turn, { toValue: 1, duration: 14000, easing: Easing.linear, useNativeDriver: true })
+      );
+      loop.start();
+      return () => loop.stop();
+    }, [turn])
+  );
+
+  const rotate = turn.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '360deg'] });
+
+  return <Animated.View style={{ transform: [{ rotate }] }}>{children}</Animated.View>;
+};
 
 interface OracleInsightCardProps {
   vehicle: Vehicle;
@@ -19,7 +73,7 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
   const { alert } = vehicle;
 
   return (
-    <View className={`px-5 pt-[22px] ${riseClass(420)}`}>
+    <Rise delay={420} className="px-5 pt-[22px]">
       <PressableScale
         onPress={onPress}
         accessibilityLabel={`${alert.title}. Abrir ${vehicle.brand} ${vehicle.model}`}
@@ -35,7 +89,7 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
         />
 
         {/* Brilho único atravessando o card (.ab-sweep) */}
-        <View pointerEvents="none" className="absolute inset-0 animate-sweep">
+        <Sweep>
           <GradientFill
             angle={115}
             stops={[
@@ -44,7 +98,7 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
               { color: '#60A5FA', offset: 0.7, opacity: 0 },
             ]}
           />
-        </View>
+        </Sweep>
 
         {/* Selo */}
         <View className="absolute right-0 top-0 rounded-bl-[10px] px-3 py-2" style={{ backgroundColor: accent }}>
@@ -54,9 +108,9 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
         </View>
 
         <View className="mb-3 flex-row items-center gap-1.5 opacity-70">
-          <View className="animate-spin-slow">
+          <SlowSpin>
             <Sparkles size={13} color={accent} strokeWidth={2.2} />
-          </View>
+          </SlowSpin>
           <Text className="font-mono text-[10px] uppercase tracking-[1.4px] text-white/70">
             Oráculo · hoje
           </Text>
@@ -84,6 +138,6 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
           <ArrowUpRight size={18} color="#fff" strokeWidth={2.4} />
         </View>
       </PressableScale>
-    </View>
+    </Rise>
   );
 };

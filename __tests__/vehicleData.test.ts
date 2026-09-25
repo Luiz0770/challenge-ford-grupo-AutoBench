@@ -46,3 +46,23 @@ describe('CatalogService', () => {
     available.forEach((c) => expect(c.count).toBeGreaterThan(0));
   });
 });
+
+describe('filtro por marca', () => {
+  it('getByBrand devolve só veículos da marca e bate com a contagem de getBrands', () => {
+    VehicleDataService.getBrands().forEach(({ name, count }) => {
+      const list = VehicleDataService.getByBrand(name);
+      expect(list).toHaveLength(count);
+      list.forEach((v) => expect(v.brand).toBe(name));
+    });
+  });
+
+  it('getByBrand devolve lista vazia para marca inexistente', () => {
+    expect(VehicleDataService.getByBrand('Marca Inexistente')).toEqual([]);
+  });
+
+  it('getCategoryIdOf resolve a categoria de um veículo do catálogo', () => {
+    const [first] = VehicleDataService.getAllAsEntries();
+    expect(VehicleDataService.getCategoryIdOf(first.vehicleId)).toBeTruthy();
+    expect(VehicleDataService.getCategoryIdOf('nao-existe')).toBeNull();
+  });
+});

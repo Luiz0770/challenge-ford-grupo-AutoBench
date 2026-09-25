@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
 import { VehicleDataService } from '../../services/vehicleData';
 import type { FavoriteEntry } from '../../types';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { FipeValue } from './FipeValue';
 import { SectionHeader } from './SectionHeader';
@@ -19,16 +19,16 @@ interface FavoritesSectionProps {
 
 export const FavoritesSection: React.FC<FavoritesSectionProps> = ({ favorites, onSelect }) => (
   <View className="px-5 pt-7">
-    <View className={`mb-2.5 ${riseClass(1240)}`}>
+    <Rise delay={1240} className="mb-2.5">
       <SectionHeader title={`Favoritos · ${favorites.length}`} />
-    </View>
+    </Rise>
 
     {favorites.length > 0 ? (
       <View className="flex-row flex-wrap justify-between gap-y-2.5">
         {favorites.slice(0, 4).map((f, i) => {
           const vehicle = VehicleDataService.getVehicleById(f.vehicleId);
           return (
-            <View key={f.vehicleId} className={`w-[48.5%] ${riseClass(1280 + i * 70)}`}>
+            <Rise key={f.vehicleId} delay={1280 + i * 70} className="w-[48.5%]">
               <PressableScale
                 onPress={() => onSelect(f.vehicleId)}
                 accessibilityLabel={f.vehicleName}
@@ -58,13 +58,13 @@ export const FavoritesSection: React.FC<FavoritesSectionProps> = ({ favorites, o
                   <FipeValue vehicle={vehicle} className="font-mono-semibold text-xs text-ink-900" />
                 </View>
               </PressableScale>
-            </View>
+            </Rise>
           );
         })}
       </View>
     ) : (
-      <View
-        className={`flex-row items-center gap-3.5 rounded-[14px] border border-ink-200 bg-surface p-[18px] ${riseClass(1280)}`}
+      <Rise
+        delay={1280} className="flex-row items-center gap-3.5 rounded-[14px] border border-ink-200 bg-surface p-[18px]"
         style={cardShadow}
       >
         <View
@@ -81,7 +81,7 @@ export const FavoritesSection: React.FC<FavoritesSectionProps> = ({ favorites, o
             Toque ★ em qualquer veículo para acompanhar o preço FIPE e os sinais do Oráculo.
           </Text>
         </View>
-      </View>
+      </Rise>
     )}
   </View>
 );

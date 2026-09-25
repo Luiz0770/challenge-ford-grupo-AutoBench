@@ -78,6 +78,22 @@ export const VehicleDataService = {
     return sanitizeSpecs(sorted[dayOfYear(date) % sorted.length]);
   },
 
+  getByBrand(brand: string): CategoryVehicleEntry[] {
+    return vehicles
+      .filter((v) => v.brand === brand)
+      .map((v) => ({
+        vehicleId: v.id,
+        brand: v.brand,
+        model: v.model,
+        version: v.version,
+        year: v.year,
+      }));
+  },
+
+  getCategoryIdOf(vehicleId: string): string | null {
+    return vehicles.find((v) => v.id === vehicleId)?.categoryId ?? null;
+  },
+
   getVersionsByModel(brand: string, model: string): CategoryVehicleEntry[] {
     return vehicles
       .filter((v) => v.brand === brand && v.model === model)

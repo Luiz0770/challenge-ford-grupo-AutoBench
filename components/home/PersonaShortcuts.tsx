@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
 import { GradientFill } from '../ui/GradientFill';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { SectionHeader } from './SectionHeader';
 
@@ -28,14 +28,14 @@ interface PersonaShortcutsProps {
 
 export const PersonaShortcuts: React.FC<PersonaShortcutsProps> = ({ onSelectCategory }) => (
   <View className="px-5 pt-[22px]">
-    <View className={`mb-2.5 ${riseClass(180)}`}>
+    <Rise delay={180} className="mb-2.5">
       <SectionHeader title="Começar por necessidade" />
-    </View>
+    </Rise>
     <View className="flex-row gap-2">
       {PERSONAS.map((p, i) => {
         const Icon = p.icon;
         return (
-          <View key={p.id} className={`flex-1 ${riseClass(220 + i * 50)}`}>
+          <Rise key={p.id} delay={220 + i * 50} className="flex-1">
             <PressableScale
               onPress={() => onSelectCategory(p.categoryId)}
               accessibilityLabel={p.label}
@@ -56,7 +56,7 @@ export const PersonaShortcuts: React.FC<PersonaShortcutsProps> = ({ onSelectCate
                 {p.label}
               </Text>
             </PressableScale>
-          </View>
+          </Rise>
         );
       })}
     </View>

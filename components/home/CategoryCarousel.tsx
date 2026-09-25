@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import type { Category } from '../../types';
-import { riseClass } from '../ui/motion';
+import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { SectionHeader } from './SectionHeader';
 
@@ -17,9 +17,9 @@ interface CategoryCarouselProps {
 
 export const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories, onSelect, onSeeAll }) => (
   <View className="pt-[26px]">
-    <View className={`mb-3 px-5 ${riseClass(500)}`}>
+    <Rise delay={500} className="mb-3 px-5">
       <SectionHeader title="Explorar por categoria" action="Ver tudo" onAction={onSeeAll} />
-    </View>
+    </Rise>
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
@@ -28,7 +28,7 @@ export const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories, 
       contentContainerStyle={{ paddingHorizontal: 20, gap: GAP }}
     >
       {categories.map((c, i) => (
-        <View key={c.id} className={riseClass(540 + i * 40)}>
+        <Rise key={c.id} delay={540 + i * 40}>
           <PressableScale
             onPress={() => onSelect(c.id)}
             accessibilityLabel={`${c.label}, ${c.count} modelos`}
@@ -70,7 +70,7 @@ export const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories, 
               </View>
             </View>
           </PressableScale>
-        </View>
+        </Rise>
       ))}
     </ScrollView>
   </View>
