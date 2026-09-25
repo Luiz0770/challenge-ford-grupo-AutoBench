@@ -3,7 +3,7 @@ import { vehicles } from '../data/vehicles';
 import { BuildService } from '../services/build';
 import type { Build, Vehicle } from '../types';
 
-const NOT_AVAILABLE = /n[ãa]o (dispon[ií]vel|possui)/i;
+const NOT_AVAILABLE = /n[ãa]o (dispon[ií]vel|possui|aplic[áa]vel)/i;
 
 const isFull = (v: Vehicle) => {
   const b = BuildService.createFromBase(v.id);
@@ -39,6 +39,23 @@ describe('BuildService — catálogo de peças', () => {
         expect(p.detail).not.toMatch(NOT_AVAILABLE);
       }
     }
+  });
+
+  it('nenhuma peça tem "Não Aplicável" no nome ou no detalhe', () => {
+    for (const system of SYSTEMS) {
+      for (const p of BuildService.getOptions(system.id, { platform: 'mono' })) {
+        expect(p.name).not.toMatch(/n[ãa]o aplic/i);
+        expect(p.detail).not.toMatch(/n[ãa]o aplic/i);
+      }
+    }
+  });
+
+  it('tração não duplica peças que só diferem por um sufixo "Não Aplicável"', () => {
+    const options = BuildService.getOptions('tracao', { platform: 'mono', onlyCompatible: true });
+    expect(options.length).toBeGreaterThan(0);
+    options.forEach((p) => expect(p.detail).not.toMatch(/n[ãa]o aplic/i));
+    const keys = options.map((p) => `${p.name}|${p.detail}`);
+    expect(new Set(keys).size).toBe(keys.length);
   });
 
   it('as chaves das opções são únicas (peças idênticas são agrupadas)', () => {

@@ -20,6 +20,12 @@ interface PartPickerSheetProps {
 export const PartPickerSheet: React.FC<PartPickerSheetProps> = ({ system, build, onClose, onPick }) => {
   const [q, setQ] = useState('');
   const [onlyCompatible, setOnlyCompatible] = useState(true);
+  // Guarda o último sistema para o conteúdo não esvaziar durante a animação de fechar.
+  const [shown, setShown] = useState<SystemDef | null>(system);
+  useEffect(() => {
+    if (system) setShown(system);
+  }, [system]);
+  const view = system ?? shown;
   const open = !!system;
 
   useEffect(() => {
@@ -29,19 +35,19 @@ export const PartPickerSheet: React.FC<PartPickerSheetProps> = ({ system, build,
     }
   }, [open]);
 
-  const stockKey = system && build.baseId ? BuildService.getStock(build.baseId)[system.id] : undefined;
+  const stockKey = view && build.baseId ? BuildService.getStock(build.baseId)[view.id] : undefined;
 
   const options = useMemo(
     () =>
-      system
-        ? BuildService.getOptions(system.id, {
+      view
+        ? BuildService.getOptions(view.id, {
             query: q,
             platform: build.platform,
             onlyCompatible,
             stockKey,
           })
         : [],
-    [system, q, onlyCompatible, build.platform, stockKey],
+    [view, q, onlyCompatible, build.platform, stockKey],
   );
 
   const renderItem = ({ item }: { item: BuildPart }) => {
@@ -210,8 +216,8 @@ export const PartPickerSheet: React.FC<PartPickerSheetProps> = ({ system, build,
       open={open}
       fill
       scroll={false}
-      eyebrow={system?.hint ?? ''}
-      title={system?.label ?? ''}
+      eyebrow={view?.hint ?? ''}
+      title={view?.label ?? ''}
       onClose={onClose}
       header={header}
     >

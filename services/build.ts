@@ -21,7 +21,7 @@ export interface BuildSummary {
   complete: boolean;
 }
 
-const NOT_AVAILABLE = /^n[ãa]o (dispon[ií]vel|possui)$/i;
+const NOT_AVAILABLE = /^n[ãa]o (dispon[ií]vel|possui|aplic[áa]vel)\b/i;
 
 const specValue = (v: Vehicle, ref: SpecRef): string | null => {
   const spec = v.sections

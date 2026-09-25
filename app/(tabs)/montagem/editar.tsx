@@ -26,14 +26,18 @@ export default function EditarMontagemScreen() {
 
   const [sysId, setSysId] = useState<SystemId | null>(null);
   const leaving = useRef(false);
+  const lastDraft = useRef(draft);
+  if (draft) lastDraft.current = draft;
+  // Ao sair, mantém o último rascunho na tela durante a transição.
+  const view = draft ?? (leaving.current ? lastDraft.current : null);
 
-  const summary = useMemo(() => (draft ? BuildService.summarize(draft) : null), [draft]);
+  const summary = useMemo(() => (view ? BuildService.summarize(view) : null), [view]);
 
   // Sem rascunho (ex.: recarga do app): volta para a tela inicial.
-  // Ao sair de propósito o rascunho some, mas não redireciona durante a transição de volta.
-  if (!draft || !summary) return leaving.current ? null : <Redirect href="/montagem" />;
+  // Ao sair de propósito o rascunho some da store, mas não redireciona durante a transição de volta.
+  if (!view || !summary) return leaving.current ? null : <Redirect href="/montagem" />;
 
-  const base = draft.baseId ? BuildService.getBase(draft.baseId) : null;
+  const base = view.baseId ? BuildService.getBase(view.baseId) : null;
   const hasBase = !!base;
   const system = SYSTEMS.find((s) => s.id === sysId) ?? null;
   const missing = summary.total - summary.defined;
@@ -84,7 +88,7 @@ export default function EditarMontagemScreen() {
             eyebrow={
               base
                 ? `Base · ${base.brand} ${base.model} ${base.year}`
-                : `Do zero · ${platformLabel(draft.platform)}`
+                : `Do zero · ${platformLabel(view.platform)}`
             }
             title={hasBase ? 'Modificar peças' : 'Montar do zero'}
             bottomPad={56}
@@ -119,7 +123,7 @@ export default function EditarMontagemScreen() {
               Nome da montagem
             </Text>
             <TextInput
-              value={draft.name}
+              value={view.name}
               onChangeText={setName}
               placeholder="Minha montagem"
               placeholderTextColor={colors.text.muted}
@@ -157,7 +161,7 @@ export default function EditarMontagemScreen() {
                 {summary.adapts > 0 && <StatusBadge tone="adapt" label={`${summary.adapts} adaptação`} />}
               </View>
             </View>
-            <BuildProgress segments={SYSTEMS.map((s) => BuildService.getStatus(draft, s.id))} />
+            <BuildProgress segments={SYSTEMS.map((s) => BuildService.getStatus(view, s.id))} />
           </Rise>
 
           <View style={{ paddingHorizontal: 16, paddingTop: 22 }}>
@@ -174,15 +178,15 @@ export default function EditarMontagemScreen() {
               }}
             >
               {SYSTEMS.map((s, i) => {
-                const part = BuildService.getPart(draft.parts[s.id]);
+                const part = BuildService.getPart(view.parts[s.id]);
                 return (
                   <SystemRow
                     key={s.id}
                     system={s}
                     part={part}
-                    status={part ? BuildService.getPartStatus(draft, part) : null}
+                    status={part ? BuildService.getPartStatus(view, part) : null}
                     hasBase={hasBase}
-                    origin={part ? BuildService.describeOrigin(part, draft.baseId).label : null}
+                    origin={part ? BuildService.describeOrigin(part, view.baseId).label : null}
                     index={i}
                     onPress={() => setSysId(s.id)}
                   />
@@ -237,7 +241,7 @@ export default function EditarMontagemScreen() {
           </View>
         </ScrollView>
 
-        <PartPickerSheet system={system} build={draft} onClose={() => setSysId(null)} onPick={handlePick} />
+        <PartPickerSheet system={system} build={view} onClose={() => setSysId(null)} onPick={handlePick} />
       </View>
     </KeyboardAvoidingView>
   );
