@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, fonts } from '../../constants/colors';
 import { HeroBackground, useHeroBackdropHeight } from '../ui/HeroBackground';
+import { HeroBrandRow } from '../ui/HeroBrandRow';
 import { Rise } from '../ui/Rise';
 
 // Altura mínima dos slots (SetupSlot) e quanto o azul deve invadir: metade deles.
@@ -27,7 +28,9 @@ export const SetupHero: React.FC<SetupHeroProps> = ({ step }) => {
     >
       <HeroBackground height={backdropHeight} />
 
-      <Rise delay={0} style={{ paddingHorizontal: 20 }}>
+      <HeroBrandRow />
+
+      <Rise delay={60} style={{ paddingHorizontal: 20 }}>
         <Text
           style={{
             fontFamily: fonts.mono,
@@ -37,7 +40,7 @@ export const SetupHero: React.FC<SetupHeroProps> = ({ step }) => {
             textTransform: 'uppercase',
           }}
         >
-          Comparar · passo {step} de 2
+          Comparar
         </Text>
         <Text
           style={{

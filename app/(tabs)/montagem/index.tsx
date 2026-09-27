@@ -77,6 +77,7 @@ export default function MontagemScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
       <ScrollView ref={scrollRef} contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         <BuildHero
+          brand
           eyebrow="Montagem"
           title={'Monte ou modifique\nseu veículo'}
           sub={`Combine peças de ${totals.vehicles} veículos do catálogo em ${SYSTEMS.length} sistemas.`}
@@ -106,7 +107,9 @@ export default function MontagemScreen() {
           <Rise delay={200} style={{ marginBottom: 10 }}>
             <SectionLabel>Minhas montagens</SectionLabel>
           </Rise>
-          <SavedBuildsList builds={builds} onOpen={handleOpenSaved} onDelete={deleteBuild} />
+          <Rise delay={260}>
+            <SavedBuildsList builds={builds} onOpen={handleOpenSaved} onDelete={deleteBuild} />
+          </Rise>
         </View>
       </ScrollView>
 

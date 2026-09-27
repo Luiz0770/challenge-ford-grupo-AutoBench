@@ -1,7 +1,10 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
+import { getCategoryVehicleImage, getCategoryVehicleImageScale } from '../../constants/categoryVehicleImages';
 import type { Category } from '../../types';
+import { FadeImage } from '../ui/FadeImage';
+import { GradientFill } from '../ui/GradientFill';
 import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { SectionHeader } from './SectionHeader';
@@ -27,7 +30,11 @@ export const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories, 
       decelerationRate="fast"
       contentContainerStyle={{ paddingHorizontal: 20, gap: GAP }}
     >
-      {categories.map((c, i) => (
+      {categories.map((c, i) => {
+        const vehicleImage = getCategoryVehicleImage(c.id);
+        const vehicleImageScale = getCategoryVehicleImageScale(c.id);
+
+        return (
         <Rise key={c.id} delay={540 + i * 40}>
           <PressableScale
             onPress={() => onSelect(c.id)}
@@ -51,6 +58,45 @@ export const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories, 
               <Circle cx={116} cy={20} r={78} fill="none" stroke={c.accent} strokeWidth={0.8} opacity={0.6} />
             </Svg>
 
+            {/* Foto do carro atrás do texto, um pouco acima da faixa de baixo
+                (label + contagem) para não encostar nela — maior que a versão
+                original, porém contida dentro do card (overflow-hidden no
+                card cuida disso). Sem espelhamento aqui — os carros mantêm a
+                orientação original — e o fade vai da direita para a esquerda
+                (oposto do card de Busca). */}
+            {vehicleImage && (
+              <View
+                pointerEvents="none"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  bottom: 42,
+                  width: '78%',
+                  overflow: 'hidden',
+                }}
+              >
+                <FadeImage
+                  source={vehicleImage}
+                  resizeMode="contain"
+                  style={{
+                    width: '100%',
+                    height: `${75 * vehicleImageScale}%`,
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                  }}
+                />
+                <GradientFill
+                  angle={270}
+                  stops={[
+                    { color: c.color, offset: 0, opacity: 1 },
+                    { color: c.color, offset: 1, opacity: 0 },
+                  ]}
+                />
+              </View>
+            )}
+
             <View className="px-3 pt-3">
               <View className="self-start rounded bg-white/20 px-[7px] py-[3px]">
                 <Text className="font-mono-bold text-[9px] tracking-[1.5px]" style={{ color: c.accent }}>
@@ -71,7 +117,8 @@ export const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories, 
             </View>
           </PressableScale>
         </Rise>
-      ))}
+        );
+      })}
     </ScrollView>
   </View>
 );

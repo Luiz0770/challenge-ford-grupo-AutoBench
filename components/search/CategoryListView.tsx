@@ -2,9 +2,12 @@ import { Feather } from '@expo/vector-icons';
 import React, { useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { colors, fonts } from '../../constants/colors';
+import { getCategoryVehicleImage, getCategoryVehicleImageScale } from '../../constants/categoryVehicleImages';
 import { CatalogService } from '../../services/catalog';
 import type { Category } from '../../types';
 import { sortByName, type NameSort } from '../../utils/sort';
+import { FadeImage } from '../ui/FadeImage';
+import { GradientFill } from '../ui/GradientFill';
 import { RadialFill, categoryGlow } from '../ui/RadialFill';
 import { Rise } from '../ui/Rise';
 import { SortChips } from './SortChips';
@@ -20,6 +23,8 @@ export const CategoryListView: React.FC<CategoryListViewProps> = ({ category, on
   const [sort, setSort] = useState<NameSort>('default');
   const vehicles = useMemo(() => CatalogService.getCategoryVehicles(category.id), [category.id]);
   const sorted = useMemo(() => sortByName(vehicles, sort), [vehicles, sort]);
+  const vehicleImage = getCategoryVehicleImage(category.id);
+  const vehicleImageScale = getCategoryVehicleImageScale(category.id);
 
   return (
     <View>
@@ -47,6 +52,43 @@ export const CategoryListView: React.FC<CategoryListViewProps> = ({ category, on
         >
           {category.code}
         </Text>
+
+        {/* Foto do carro atrás de todo o texto do cabeçalho, do lado direito,
+            com o fade indo da direita (borda do card) para a esquerda (onde
+            fica o texto) — mesmo tratamento do carrossel de categorias da
+            Início. */}
+        {vehicleImage && (
+          <View
+            pointerEvents="none"
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              width: '58%',
+              overflow: 'hidden',
+            }}
+          >
+            <FadeImage
+              source={vehicleImage}
+              resizeMode="contain"
+              style={{
+                width: '100%',
+                height: `${78 * vehicleImageScale}%`,
+                position: 'absolute',
+                bottom: 0,
+                right: 0,
+              }}
+            />
+            <GradientFill
+              angle={270}
+              stops={[
+                { color: category.color, offset: 0, opacity: 1 },
+                { color: category.color, offset: 1, opacity: 0 },
+              ]}
+            />
+          </View>
+        )}
 
         <View
           style={{

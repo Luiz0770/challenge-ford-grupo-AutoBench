@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { Text, View } from 'react-native';
-import Svg, { Circle, Path } from 'react-native-svg';
+import Svg, { Defs, G, Mask, Path, Polygon, Rect } from 'react-native-svg';
 import { colors, fonts } from '../../constants/colors';
 
 interface WordmarkProps {
@@ -8,38 +8,45 @@ interface WordmarkProps {
   light?: boolean;
 }
 
-export const Wordmark: React.FC<WordmarkProps> = ({ small = false, light = false }) => {
-  const box = small ? 22 : 28;
-  const glyph = small ? 14 : 18;
-  const labelColor = light ? colors.bg.surface : colors.brand.navy;
+// Proporção do símbolo oficial AutoBench (assets/images/autobench-simbolo-*.svg)
+const SYMBOL_VIEWBOX = '3 8 45 32';
+const SYMBOL_ASPECT = 45 / 32;
+
+export const WordmarkIcon: React.FC<WordmarkProps> = ({ small = false, light = false }) => {
+  const maskId = useId();
+  const glyphHeight = small ? 20 : 26;
+  const glyphWidth = glyphHeight * SYMBOL_ASPECT;
+  const markColor = light ? colors.bg.surface : colors.brand.deep;
   const dotColor = light ? colors.brand.cyan : colors.brand.bright;
 
   return (
+    // Símbolo oficial da marca (autobench-simbolo-padrao/negNavy)
+    <Svg width={glyphWidth} height={glyphHeight} viewBox={SYMBOL_VIEWBOX}>
+      <Defs>
+        <Mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={56} height={48}>
+          <Rect width={56} height={48} fill="#fff" />
+          <Polygon points="31.5,40 51.5,8 53.5,8 33.5,40" fill="#000" />
+        </Mask>
+      </Defs>
+      <G mask={`url(#${maskId})`}>
+        <G fill={markColor}>
+          <Rect x={23} y={8} width={5} height={32} />
+          <Polygon points="3,40 23,8 23,17.6 9,40" />
+          <Path fillRule="evenodd" d="M28 8H37A8 8 0 0 1 37 24H28ZM28 13H37A3 3 0 0 1 37 19H28Z" />
+          <Path fillRule="evenodd" d="M28 19H37.5A10.5 10.5 0 0 1 37.5 40H28ZM28 24H37.5A5.5 5.5 0 0 1 37.5 35H28Z" />
+        </G>
+        <Polygon points="15.9,29 23,29 23,34 12.75,34" fill={dotColor} />
+      </G>
+    </Svg>
+  );
+};
+
+export const Wordmark: React.FC<WordmarkProps> = ({ small = false, light = false }) => {
+  const labelColor = light ? colors.bg.surface : colors.brand.navy;
+
+  return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: small ? 7 : 9 }}>
-      {/* Símbolo da marca */}
-      <View
-        style={{
-          width: box,
-          height: box,
-          borderRadius: small ? 6 : 8,
-          backgroundColor: light ? 'rgba(255,255,255,0.16)' : colors.brand.navy,
-          borderWidth: light ? 1 : 0,
-          borderColor: 'rgba(255,255,255,0.18)',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Svg width={glyph} height={glyph} viewBox="0 0 24 24" fill="none">
-          <Path
-            d="M5 18V6h8a3.5 3.5 0 0 1 0 7H7"
-            stroke="#fff"
-            strokeWidth={2.6}
-            strokeLinecap="square"
-            strokeLinejoin="miter"
-          />
-          <Circle cx={17.5} cy={16} r={2} fill={dotColor} />
-        </Svg>
-      </View>
+      <WordmarkIcon small={small} light={light} />
 
       <View>
         <Text

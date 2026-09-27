@@ -1,13 +1,12 @@
-import { BlurTargetView, BlurView } from 'expo-blur';
-import { User } from 'lucide-react-native';
+import { BlurTargetView } from 'expo-blur';
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors } from '../../constants/colors';
 import { HeroBackground } from '../ui/HeroBackground';
+import { HeroBrandRow } from '../ui/HeroBrandRow';
 import { LivePulse } from '../ui/LivePulse';
 import { Rise } from '../ui/Rise';
-import { Wordmark } from '../ui/Wordmark';
 
 const MONTHS = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
@@ -20,41 +19,13 @@ export const HomeHero: React.FC = () => {
   const fipeRef = `${MONTHS[now.getMonth()]}/${now.getFullYear()}`;
 
   return (
-    <View className="relative overflow-hidden pb-[70px]" style={{ paddingTop: insets.top + 6 }}>
-      {/* Conteúdo que o BlurView do avatar desfoca no Android */}
+    <View className="relative overflow-hidden pb-[70px]" style={{ paddingTop: insets.top + 14 }}>
+      {/* Conteúdo que o BlurView do header desfoca no Android */}
       <BlurTargetView ref={blurTarget} style={StyleSheet.absoluteFill}>
         <HeroBackground />
       </BlurTargetView>
 
-      {/* Marca + avatar */}
-      <Rise delay={0} className="flex-row items-center justify-between px-5 pt-2 pb-[18px]">
-        <Wordmark light />
-        <View className="relative">
-          <BlurView
-            intensity={30}
-            tint="dark"
-            blurTarget={blurTarget}
-            blurMethod="dimezisBlurViewSdk31Plus"
-            style={{
-              width: 38,
-              height: 38,
-              borderRadius: 19,
-              overflow: 'hidden',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderWidth: 1,
-              borderColor: 'rgba(255,255,255,0.18)',
-              backgroundColor: 'rgba(255,255,255,0.12)',
-            }}
-          >
-            <User size={17} color="#fff" strokeWidth={2.2} />
-          </BlurView>
-          <View
-            className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2"
-            style={{ backgroundColor: accent, borderColor: colors.brand.deep }}
-          />
-        </View>
-      </Rise>
+      <HeroBrandRow />
 
       {/* Saudação */}
       <Rise delay={60} className="px-5 pt-1.5 pb-1">

@@ -2,7 +2,6 @@ import { Building, Truck, Users, Zap, type LucideIcon } from 'lucide-react-nativ
 import React from 'react';
 import { Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
-import { GradientFill } from '../ui/GradientFill';
 import { Rise } from '../ui/Rise';
 import { PressableScale } from '../ui/PressableScale';
 import { SectionHeader } from './SectionHeader';
@@ -42,15 +41,8 @@ export const PersonaShortcuts: React.FC<PersonaShortcutsProps> = ({ onSelectCate
               className="items-center gap-1.5 rounded-[14px] border border-ink-200 bg-surface px-1.5 pt-3 pb-2.5"
               style={{ boxShadow: '0 1px 2px rgba(16,24,40,0.04)' }}
             >
-              <View className="h-9 w-9 items-center justify-center overflow-hidden rounded-[10px]">
-                <GradientFill
-                  angle={135}
-                  stops={[
-                    { color: colors.brand.deep, offset: 0 },
-                    { color: colors.brand.mid, offset: 1 },
-                  ]}
-                />
-                <Icon size={20} color="#fff" strokeWidth={2} />
+              <View className="h-9 w-9 items-center justify-center">
+                <Icon size={22} color={colors.brand.mid} strokeWidth={2} />
               </View>
               <Text className="font-sans-semibold text-[11.5px] tracking-[-0.2px] text-brand-deep">
                 {p.label}

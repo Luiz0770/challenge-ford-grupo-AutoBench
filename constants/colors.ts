@@ -29,6 +29,12 @@ export const colors = {
     ink: '#0B1220',
     warm: '#FF6A1A',
   },
+  neutral: {
+    // Cabeçalho cinza das telas sem cor própria (ficha do veículo, listagens
+    // por marca/modelo) — mesma família tonal do navy, sem a identidade azul.
+    gray: '#5C636A',
+    grayLight: '#7B828A',
+  },
   accent: {
     amber: '#F59E0B',
     amberLight: '#FBBF24',

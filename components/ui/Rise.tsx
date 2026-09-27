@@ -35,10 +35,14 @@ export const Rise: React.FC<RiseProps> = ({ delay = 0, style, children, ...rest 
     }, [progress, delay])
   );
 
+  // Opacity sobe rápido (evita o card "lavado"/acinzentado sobre o fundo
+  // claro do canvas por boa parte da animação); o translateY continua
+  // suave até o fim para manter a sensação de deslize.
+  const opacity = progress.interpolate({ inputRange: [0, 0.4, 1], outputRange: [0, 1, 1] });
   const translateY = progress.interpolate({ inputRange: [0, 1], outputRange: [10, 0] });
 
   return (
-    <AnimatedView {...rest} style={[style, { opacity: progress, transform: [{ translateY }] }]}>
+    <AnimatedView {...rest} style={[style, { opacity, transform: [{ translateY }] }]}>
       {children}
     </AnimatedView>
   );

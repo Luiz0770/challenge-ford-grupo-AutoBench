@@ -56,7 +56,7 @@ export default function ModelResultsScreen() {
         {/* Header */}
         <View
           style={{
-            backgroundColor: colors.brand.navy,
+            backgroundColor: colors.neutral.gray,
             paddingHorizontal: 20,
             paddingTop: 16,
             paddingBottom: 22,
@@ -70,7 +70,7 @@ export default function ModelResultsScreen() {
               right: -6,
               fontFamily: fonts.monoBold,
               fontSize: 130,
-              color: colors.brand.navyLight,
+              color: colors.neutral.grayLight,
               opacity: 0.25,
               letterSpacing: -6,
             }}

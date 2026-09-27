@@ -141,16 +141,28 @@ export const CatalogService = {
       const aNum = parseNum(av);
       const bNum = parseNum(bv);
       const isNum = aNum !== null && bNum !== null;
+      const lowerIsBetter = LOWER_IS_BETTER_LABELS.has(label);
+      const aAbsent = isAbsentValue(av);
+      const bAbsent = isAbsentValue(bv);
       let winner: CompareRow['w'] = null;
       if (a && b) {
-        if (isNum && aNum !== bNum) winner = aNum > bNum ? 'a' : 'b';
-        else if (isNum && aNum === bNum) winner = 'tie';
+        if (isNum && aNum !== bNum) {
+          winner = lowerIsBetter ? (aNum < bNum ? 'a' : 'b') : aNum > bNum ? 'a' : 'b';
+        } else if (isNum && aNum === bNum) winner = 'tie';
+        else if (aAbsent && !bAbsent) winner = 'b';
+        else if (bAbsent && !aAbsent) winner = 'a';
         else if (av === bv) winner = 'tie';
       }
       return { k: label, a: av, b: bv, w: winner, num: isNum, nullA, nullB };
     });
   },
 };
+
+// Especificações numéricas onde o menor valor é o melhor (ex.: tempo de aceleração).
+const LOWER_IS_BETTER_LABELS = new Set<string>(['0-100 km/h']);
+
+// Valores que representam ausência do item — quando só um lado tem, o outro perde essa linha.
+const isAbsentValue = (value: string) => value === 'Não Possui' || value === 'Não Disponível';
 
 const collectSpecs = (vehicle: Vehicle, sectionIds: string[]) => {
   const out = new Map<string, string>();

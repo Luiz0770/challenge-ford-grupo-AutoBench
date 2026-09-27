@@ -42,7 +42,9 @@ export default function HomeScreen() {
 
   const openVehicle = (vehicleId: string) => router.push(`/vehicle/${vehicleId}`);
   const openCategory = (categoryId: string) =>
-    router.navigate({ pathname: '/busca', params: { categoria: categoryId } });
+    router.push({ pathname: '/category-results', params: { categoria: categoryId } });
+  const openBrand = (brand: string) =>
+    router.push({ pathname: '/brand-results', params: { brand } });
 
   return (
     <View className="flex-1 bg-paper">
@@ -85,7 +87,7 @@ export default function HomeScreen() {
 
         <TrendingList vehicles={trending} categories={categories} onSelect={openVehicle} />
 
-        <BrandGrid brands={brands} />
+        <BrandGrid brands={brands} onSelectBrand={openBrand} />
 
         <FavoritesSection favorites={favorites} onSelect={openVehicle} />
 

@@ -5,9 +5,12 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SortChips } from '../components/search/SortChips';
 import { VehicleListRow } from '../components/search/VehicleListRow';
+import { FadeImage } from '../components/ui/FadeImage';
 import { FipeLoadingOverlay } from '../components/ui/FipeLoadingOverlay';
 import { Rise } from '../components/ui/Rise';
+import { getBrandHeaderColor } from '../constants/brandColors';
 import { colors, fonts } from '../constants/colors';
+import { getBrandLogo } from '../constants/brandLogos';
 import { useFipeReady } from '../hooks/useFipeReady';
 import { CatalogService } from '../services/catalog';
 import { VehicleDataService } from '../services/vehicleData';
@@ -50,6 +53,8 @@ export default function BrandResultsScreen() {
   const fipeReady = useFipeReady(vehicles.map((v) => VehicleDataService.getVehicleById(v.vehicleId)));
 
   const brandCode = (brand ?? '').slice(0, 3).toUpperCase();
+  const brandLogo = getBrandLogo(brand ?? '');
+  const headerColor = getBrandHeaderColor(brand ?? '');
 
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
@@ -60,27 +65,47 @@ export default function BrandResultsScreen() {
         {/* Header */}
         <View
           style={{
-            backgroundColor: colors.brand.navy,
+            backgroundColor: headerColor.color,
             paddingHorizontal: 20,
             paddingTop: 16,
             paddingBottom: 22,
             overflow: 'hidden',
           }}
         >
-          <Text
-            style={{
-              position: 'absolute',
-              bottom: -22,
-              right: -6,
-              fontFamily: fonts.monoBold,
-              fontSize: 130,
-              color: colors.brand.navyLight,
-              opacity: 0.25,
-              letterSpacing: -6,
-            }}
-          >
-            {brandCode}
-          </Text>
+          {brandLogo ? (
+            <View
+              pointerEvents="none"
+              style={{
+                position: 'absolute',
+                bottom: -56,
+                right: -56,
+                width: 220,
+                height: 220,
+                opacity: 0.16,
+              }}
+            >
+              <FadeImage
+                source={brandLogo}
+                resizeMode="contain"
+                style={{ width: '100%', height: '100%' }}
+              />
+            </View>
+          ) : (
+            <Text
+              style={{
+                position: 'absolute',
+                bottom: -22,
+                right: -6,
+                fontFamily: fonts.monoBold,
+                fontSize: 130,
+                color: headerColor.accent,
+                opacity: 0.25,
+                letterSpacing: -6,
+              }}
+            >
+              {brandCode}
+            </Text>
+          )}
 
           <View
             style={{

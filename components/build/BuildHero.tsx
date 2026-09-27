@@ -4,6 +4,7 @@ import { Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, fonts } from '../../constants/colors';
 import { HeroBackground, useHeroBackdropHeight } from '../ui/HeroBackground';
+import { HeroBrandRow } from '../ui/HeroBrandRow';
 import { Rise } from '../ui/Rise';
 
 interface BuildHeroProps {
@@ -14,6 +15,8 @@ interface BuildHeroProps {
   /** Conteúdo à direita da linha do botão voltar (ex.: "Restaurar original") */
   right?: React.ReactNode;
   bottomPad?: number;
+  /** Exibe a linha de marca (símbolo + AutoBench) acima do conteúdo — telas de nível superior. */
+  brand?: boolean;
 }
 
 export const heroPill = {
@@ -35,6 +38,7 @@ export const BuildHero: React.FC<BuildHeroProps> = ({
   onBack,
   right,
   bottomPad = 64,
+  brand = false,
 }) => {
   const insets = useSafeAreaInsets();
   const [heroHeight, setHeroHeight] = useState(0);
@@ -46,6 +50,8 @@ export const BuildHero: React.FC<BuildHeroProps> = ({
       style={{ paddingTop: insets.top + 14, paddingBottom: bottomPad }}
     >
       <HeroBackground height={backdropHeight} />
+
+      {brand && <HeroBrandRow />}
 
       {(onBack || right) && (
         <View
@@ -72,7 +78,7 @@ export const BuildHero: React.FC<BuildHeroProps> = ({
         </View>
       )}
 
-      <Rise delay={0} style={{ paddingHorizontal: 20, paddingTop: 8 }}>
+      <Rise delay={60} style={{ paddingHorizontal: 20, paddingTop: 8 }}>
         <Text
           style={{
             fontFamily: fonts.mono,

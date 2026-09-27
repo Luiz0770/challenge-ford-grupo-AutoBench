@@ -1,4 +1,4 @@
-import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { BackHandler, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -23,21 +23,11 @@ export default function BuscaScreen() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [showAllBrands, setShowAllBrands] = useState(false);
-  const { categoria } = useLocalSearchParams<{ categoria?: string }>();
 
   const categories = CatalogService.getAvailableCategories();
   const totals = VehicleDataService.getTotals();
   const allBrands = VehicleDataService.getBrands();
   const brands = showAllBrands ? allBrands : allBrands.slice(0, BRANDS_COLLAPSED);
-
-  // Aberta a partir da home (/busca?categoria=suv): mostra a categoria direto e
-  // limpa o parâmetro para que o mesmo atalho funcione de novo depois
-  useEffect(() => {
-    if (!categoria) return;
-    const category = CatalogService.getCategoryById(categoria);
-    if (category) setSelectedCategory(category);
-    router.setParams({ categoria: undefined });
-  }, [categoria, router]);
 
   // Os dois ScrollViews ocupam a mesma posição na árvore e são reaproveitados;
   // sem isso a lista da categoria abriria com a rolagem da busca
