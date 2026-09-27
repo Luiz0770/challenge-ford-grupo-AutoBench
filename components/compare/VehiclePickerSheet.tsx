@@ -2,6 +2,7 @@ import { Feather } from '@expo/vector-icons';
 import { Car } from 'lucide-react-native';
 import React, { useEffect, useMemo, useState } from 'react';
 import {
+  Animated,
   KeyboardAvoidingView,
   Modal,
   Pressable,
@@ -16,7 +17,8 @@ import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
 import type { CategoryVehicleEntry } from '../../types';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { GradientFill } from '../ui/GradientFill';
+import { BrandLogo } from '../ui/BrandLogo';
+import { useDragToCloseSheet } from '../../hooks/useDragToCloseSheet';
 
 type Mode = 'brand' | 'cat';
 
@@ -71,6 +73,7 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
   const [mode, setMode] = useState<Mode>('brand');
   const [group, setGroup] = useState<string | null>(null);
   const insets = useSafeAreaInsets();
+  const { translateY, panHandlers, onSheetLayout } = useDragToCloseSheet(open, onClose);
 
   useEffect(() => {
     if (open) {
@@ -146,7 +149,8 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
           }}
           onPress={onClose}
         />
-        <View
+        <Animated.View
+          onLayout={onSheetLayout}
           style={{
             height: '80%',
             backgroundColor: colors.bg.surface,
@@ -154,18 +158,24 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
             borderTopRightRadius: 22,
             paddingTop: 12,
             paddingBottom: Math.max(30, insets.bottom + 12),
+            transform: [{ translateY }],
           }}
         >
           <View
-            style={{
-              width: 36,
-              height: 4,
-              borderRadius: 4,
-              backgroundColor: colors.bg.borderStrong,
-              alignSelf: 'center',
-              marginBottom: 14,
-            }}
-          />
+            {...panHandlers}
+            hitSlop={{ top: 12, bottom: 12, left: 60, right: 60 }}
+            style={{ paddingTop: 10, paddingBottom: 14, marginTop: -10 }}
+          >
+            <View
+              style={{
+                width: 36,
+                height: 4,
+                borderRadius: 4,
+                backgroundColor: colors.bg.borderStrong,
+                alignSelf: 'center',
+              }}
+            />
+          </View>
 
           {/* Cabeçalho */}
           <View
@@ -364,27 +374,7 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
                                 transform: [{ scale: pressed ? 0.985 : 1 }],
                               }}
                             >
-                              <View
-                                style={{
-                                  width: 36,
-                                  height: 36,
-                                  borderRadius: 18,
-                                  overflow: 'hidden',
-                                  alignItems: 'center',
-                                  justifyContent: 'center',
-                                }}
-                              >
-                                <GradientFill
-                                  angle={135}
-                                  stops={[
-                                    { color: colors.brand.deep, offset: 0 },
-                                    { color: colors.brand.mid, offset: 1 },
-                                  ]}
-                                />
-                                <Text style={{ fontFamily: fonts.sansBold, fontSize: 12, color: colors.text.inverse }}>
-                                  {b.name.slice(0, 2).toUpperCase()}
-                                </Text>
-                              </View>
+                              <BrandLogo name={b.name} size={36} />
                               <Text
                                 numberOfLines={1}
                                 style={{ fontFamily: fonts.sansSemibold, fontSize: 12, color: colors.brand.navy }}
@@ -467,7 +457,7 @@ export const VehiclePickerSheet: React.FC<VehiclePickerSheetProps> = ({
               </View>
             )}
           </ScrollView>
-        </View>
+        </Animated.View>
       </KeyboardAvoidingView>
     </Modal>
   );
