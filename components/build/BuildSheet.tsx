@@ -1,8 +1,9 @@
 import { Feather } from '@expo/vector-icons';
 import React from 'react';
-import { KeyboardAvoidingView, Modal, Pressable, ScrollView, Text, View } from 'react-native';
+import { Animated, KeyboardAvoidingView, Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, fonts } from '../../constants/colors';
+import { useDragToCloseSheet } from '../../hooks/useDragToCloseSheet';
 
 interface BuildSheetProps {
   open: boolean;
@@ -30,6 +31,7 @@ export const BuildSheet: React.FC<BuildSheetProps> = ({
   children,
 }) => {
   const insets = useSafeAreaInsets();
+  const { translateY, panHandlers, onSheetLayout } = useDragToCloseSheet(open, onClose);
 
   return (
     <Modal
@@ -53,7 +55,8 @@ export const BuildSheet: React.FC<BuildSheetProps> = ({
           }}
           onPress={onClose}
         />
-        <View
+        <Animated.View
+          onLayout={onSheetLayout}
           style={{
             height: fill ? '80%' : undefined,
             maxHeight: '80%',
@@ -62,18 +65,24 @@ export const BuildSheet: React.FC<BuildSheetProps> = ({
             borderTopRightRadius: 22,
             paddingTop: 12,
             paddingBottom: Math.max(30, insets.bottom + 12),
+            transform: [{ translateY }],
           }}
         >
           <View
-            style={{
-              width: 36,
-              height: 4,
-              borderRadius: 4,
-              backgroundColor: colors.bg.borderStrong,
-              alignSelf: 'center',
-              marginBottom: 14,
-            }}
-          />
+            {...panHandlers}
+            hitSlop={{ top: 12, bottom: 12, left: 60, right: 60 }}
+            style={{ paddingTop: 10, paddingBottom: 14, marginTop: -10 }}
+          >
+            <View
+              style={{
+                width: 36,
+                height: 4,
+                borderRadius: 4,
+                backgroundColor: colors.bg.borderStrong,
+                alignSelf: 'center',
+              }}
+            />
+          </View>
 
           <View
             style={{
@@ -144,7 +153,7 @@ export const BuildSheet: React.FC<BuildSheetProps> = ({
           ) : (
             <View style={{ flex: 1 }}>{children}</View>
           )}
-        </View>
+        </Animated.View>
       </KeyboardAvoidingView>
     </Modal>
   );
