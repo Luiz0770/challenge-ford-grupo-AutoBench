@@ -37,12 +37,27 @@ const compareVerdicts: Record<string, CompareVerdict> = {
   },
 };
 
+const popularDuels: [string, string][] = [
+  ['ford-ranger-raptor-2024', 'ford-ranger-limited-2024'],
+  ['ford-ranger-limited-2024', 'toyota-hilux-sr5-2024'],
+  ['fiat-toro-ultra-2024', 'ford-ranger-limited-2024'],
+];
+
 export const CatalogService = {
   getCategories(): Category[] {
     return categoryBases.map((c) => ({
       ...c,
       count: VehicleDataService.countByCategory(c.id),
     }));
+  },
+
+  // Apenas categorias com ao menos um veículo no catálogo
+  getAvailableCategories(): Category[] {
+    return CatalogService.getCategories().filter((c) => c.count > 0);
+  },
+
+  getCategoryById(categoryId: string): Category | null {
+    return CatalogService.getCategories().find((c) => c.id === categoryId) ?? null;
   },
 
   getCategoryVehicles(categoryId: string): CategoryVehicleEntry[] {
@@ -73,9 +88,19 @@ export const CatalogService = {
     return VehicleDataService.getAllAsEntries();
   },
 
-  getCompareVerdict(aId: string, bId: string): CompareVerdict {
-    const key = `${aId}|${bId}`;
-    const reverseKey = `${bId}|${aId}`;
+  // Pares em destaque no setup; um par só aparece se os dois lados existirem no catálogo
+  getCompareDuels(): [CategoryVehicleEntry, CategoryVehicleEntry][] {
+    const all = VehicleDataService.getAllAsEntries();
+    const find = (id: string) => all.find((e) => e.vehicleId === id);
+    return popularDuels
+      .map(([x, y]) => [find(x), find(y)] as const)
+      .filter((p): p is readonly [CategoryVehicleEntry, CategoryVehicleEntry] => !!p[0] && !!p[1])
+      .map(([x, y]) => [x, y]);
+  },
+
+  getCompareVerdict(a: Vehicle, b: Vehicle): CompareVerdict {
+    const key = `${a.id}|${b.id}`;
+    const reverseKey = `${b.id}|${a.id}`;
     const found = compareVerdicts[key];
     if (found) return found;
     const reversed = compareVerdicts[reverseKey];
@@ -98,7 +123,7 @@ export const CatalogService = {
         },
       };
     }
-    return synthesizeVerdict(aId, bId);
+    return synthesizeVerdict(a, b);
   },
 
   buildCompareRows(category: CompareCategoryId, a: Vehicle | null, b: Vehicle | null): CompareRow[] {
@@ -116,16 +141,28 @@ export const CatalogService = {
       const aNum = parseNum(av);
       const bNum = parseNum(bv);
       const isNum = aNum !== null && bNum !== null;
+      const lowerIsBetter = LOWER_IS_BETTER_LABELS.has(label);
+      const aAbsent = isAbsentValue(av);
+      const bAbsent = isAbsentValue(bv);
       let winner: CompareRow['w'] = null;
       if (a && b) {
-        if (isNum && aNum !== bNum) winner = aNum > bNum ? 'a' : 'b';
-        else if (isNum && aNum === bNum) winner = 'tie';
+        if (isNum && aNum !== bNum) {
+          winner = lowerIsBetter ? (aNum < bNum ? 'a' : 'b') : aNum > bNum ? 'a' : 'b';
+        } else if (isNum && aNum === bNum) winner = 'tie';
+        else if (aAbsent && !bAbsent) winner = 'b';
+        else if (bAbsent && !aAbsent) winner = 'a';
         else if (av === bv) winner = 'tie';
       }
       return { k: label, a: av, b: bv, w: winner, num: isNum, nullA, nullB };
     });
   },
 };
+
+// Especificações numéricas onde o menor valor é o melhor (ex.: tempo de aceleração).
+const LOWER_IS_BETTER_LABELS = new Set<string>(['0-100 km/h']);
+
+// Valores que representam ausência do item — quando só um lado tem, o outro perde essa linha.
+const isAbsentValue = (value: string) => value === 'Não Possui' || value === 'Não Disponível';
 
 const collectSpecs = (vehicle: Vehicle, sectionIds: string[]) => {
   const out = new Map<string, string>();
@@ -152,17 +189,54 @@ const parseNum = (value: string): number | null => {
   return m ? parseFloat(m[0]) : null;
 };
 
-const synthesizeVerdict = (aId: string, bId: string): CompareVerdict => ({
-  title: 'Veredito Oráculo',
-  summary: 'Comparativo equilibrado — sem dados curados para esta combinação.',
-  scores: [
-    { cat: 'Motorização', a: 50, b: 50, leans: 'tie' },
-    { cat: 'Dimensões',   a: 50, b: 50, leans: 'tie' },
-    { cat: 'Tecnologia',  a: 50, b: 50, leans: 'tie' },
-    { cat: 'Segurança',   a: 50, b: 50, leans: 'tie' },
-  ],
-  recommendations: [
-    { tag: 'Análise indisponível', winner: 'a', detail: `Sem veredito curado para ${aId} vs ${bId}.` },
-  ],
-  priceGap: { absolute: 0, percent: 0, cheaper: 'a' },
-});
+const compareCategoryLabels: Record<CompareCategoryId, string> = {
+  motorizacao: 'Motorização',
+  dimensoes: 'Dimensões',
+  tecnologia: 'Tecnologia',
+  seguranca: 'Segurança',
+};
+
+const vehicleName = (v: Vehicle) => `${v.brand} ${v.model} ${v.version}`;
+
+// Sem curadoria: os scores saem dos vencedores da matriz comparativa (determinístico).
+// Não há preço aqui, então priceGap fica zerado e a UI oculta a linha de diferença FIPE.
+const synthesizeVerdict = (a: Vehicle, b: Vehicle): CompareVerdict => {
+  const ids = Object.keys(compareCategoryLabels) as CompareCategoryId[];
+  const wonBy: Record<'a' | 'b', string[]> = { a: [], b: [] };
+
+  const scores = ids.map((id) => {
+    const rows = CatalogService.buildCompareRows(id, a, b);
+    const wa = rows.filter((r) => r.w === 'a').length;
+    const wb = rows.filter((r) => r.w === 'b').length;
+    const cat = compareCategoryLabels[id];
+    const pctA = wa + wb === 0 ? 50 : Math.round((100 * wa) / (wa + wb));
+    const leans: 'a' | 'b' | 'tie' = wa === wb ? 'tie' : wa > wb ? 'a' : 'b';
+    if (leans !== 'tie') wonBy[leans].push(cat);
+    return { cat, a: pctA, b: 100 - pctA, leans };
+  });
+
+  const recommendations = (['a', 'b'] as const)
+    .filter((side) => wonBy[side].length > 0)
+    .map((side) => ({
+      tag: wonBy[side].join(' + '),
+      winner: side,
+      detail: `${vehicleName(side === 'a' ? a : b)} leva vantagem nas especificações de ${wonBy[side]
+        .join(' e ')
+        .toLowerCase()}.`,
+    }));
+
+  const winsA = wonBy.a.length;
+  const winsB = wonBy.b.length;
+  const summary =
+    winsA === winsB
+      ? 'Comparativo equilibrado: os dois veículos se alternam nas especificações.'
+      : `${vehicleName(winsA > winsB ? a : b)} lidera em ${Math.max(winsA, winsB)} de ${ids.length} categorias.`;
+
+  return {
+    title: 'Veredito Oráculo',
+    summary,
+    scores,
+    recommendations,
+    priceGap: { absolute: 0, percent: 0, cheaper: 'a' },
+  };
+};

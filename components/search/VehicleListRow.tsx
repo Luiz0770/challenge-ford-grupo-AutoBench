@@ -6,6 +6,7 @@ import { useFipePrice } from '../../hooks/useFipePrice';
 import { VehicleDataService } from '../../services/vehicleData';
 import type { Category, CategoryVehicleEntry } from '../../types';
 import { fmtBRLFromReais } from '../../utils/format';
+import { RadialFill, categoryGlow } from '../ui/RadialFill';
 
 export const VehicleListRow: React.FC<{
   vehicle: CategoryVehicleEntry;
@@ -41,8 +42,10 @@ export const VehicleListRow: React.FC<{
             backgroundColor: category.color,
             alignItems: 'center',
             justifyContent: 'center',
+            overflow: 'hidden',
           }}
         >
+          <RadialFill layers={categoryGlow(category.accent, 0.25)} />
           <Text
             style={{
               fontFamily: fonts.monoBold,

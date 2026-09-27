@@ -1,0 +1,153 @@
+{
+  "vehicles": [
+{
+      "id": "chevrolet-camaro-convertible-ss-2024",
+      "categoryId": "conversivel",
+      "platform": "mono",
+      "brand": "Chevrolet",
+      "brandFipeCode": "23",
+      "model": "Camaro",
+      "modelFipeCode": "6887",
+      "version": "Convertible SS",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 6.2L V8 LSA" },
+            { "label": "Potência", "value": "455 cv", "unit": "@ 6.000 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "621 Nm", "unit": "@ 4.200 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "4,0 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "260 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades" },
+            { "label": "Tração", "value": "Traseira com Limited Slip Diff" },
+            { "label": "Caixa de Transferência", "value": "Não Aplicável" },
+            { "label": "Launch Control", "value": "Sim (Performance Traction Mgmt)" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Magnetic Ride Control" },
+            { "label": "Suspensão Dianteira", "value": "Double-wishbone independente" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado grande Brembo" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado Brembo" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Conforto · Normal · Esporte · Track" },
+            { "label": "Modos de Escapamento", "value": "Normal · Esporte · Track · Beast Mode" },
+            { "label": "Modos de Amortecedor", "value": "Conforto · Esporte · Track" },
+            { "label": "Modos de Condução", "value": "LS · LT · SS · ZL1 · Track · Eco" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com adaptação inteligente" },
+            { "label": "Lanternas", "value": "LED Full com design aerodinâmico" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado no para-choque" },
+            { "label": "Iluminação Interior", "value": "LED ambient Chevrolet" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "20\" alumínio Hyper Silver" },
+            { "label": "Pneus", "value": "285/40 R20 Goodyear Eagle F1" },
+            { "label": "Estepe", "value": "Não Disponível (kit reparo)" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "12,6\" touchscreen diagonal" },
+            { "label": "Sistema de Infotainment", "value": "Chevrolet MyLink 8 com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Bose Premium com 10 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Sim" },
+            { "label": "Câmera", "value": "360° com periscope view" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (Forward Collision Alert)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (Adaptive Cruise)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keep Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (Blind Spot Alert)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (Park Assist)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.810 mm" },
+            { "label": "Largura", "value": "1.920 mm" },
+            { "label": "Altura", "value": "1.390 mm" },
+            { "label": "Entre-eixos", "value": "2.810 mm" },
+            { "label": "Capacidade de Carga", "value": "340 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Recomendado" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 719.000", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob demanda" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 71,
+        "type": "american_muscle_resurgence",
+        "title": "Alerta Preditivo: Ressurgimento de Muscle Car",
+        "description": "Probabilidade de 71% de aumento em demanda por conversíveis American Muscle. Tendência: nostalgia e lifestyle retro-futurista atraem colecionadores.",
+        "actionSuggestion": "Ação sugerida: campanhas em plataformas automotivas e comunidades de entusiastas."
+      }
+    }
+  ],
+  "_metadata": {
+    "totalVehicles": 1,
+    "categories": [
+      "conversivel"
+    ],
+    "brands": ["Chevrolet"],
+    "lastUpdated": "2024-09-23",
+    "version": "1.0",
+    "notes": "JSON contendo 1 modelos de conversíveis/cabriolets do mercado brasileiro 2024. Validação FIPE parcial com marcas que oferecem conversíveis (Jeep com Wrangler, importados de marcas premium). Todos os equipamentos não disponíveis seguem o padrão 'Não Disponível'. Estrutura completa pronta para uso em projetos automotivos, marketing e análise de mercado. Inclui alertas preditivos em 5 categorias de tendências (segmento, tecnologia, preço, posicionamento, demanda)."
+  }
+}

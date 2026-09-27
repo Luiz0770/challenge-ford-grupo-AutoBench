@@ -12,9 +12,18 @@ export interface SpecSection {
   specs: SpecItem[];
 }
 
+export interface VehicleAlert {
+  probability: number; // 0–100
+  type: string;        // rótulo livre, ex.: "market_leader", "price_pressure"
+  title: string;
+  description: string;
+  actionSuggestion: string;
+}
+
 export interface Vehicle {
   id: string;
   categoryId: string;
+  platform: Platform;
   brand: string;
   brandFipeCode: string;
   model: string;
@@ -22,6 +31,12 @@ export interface Vehicle {
   version: string;
   year: number;
   sections: SpecSection[];
+  alert: VehicleAlert;
+}
+
+export interface BrandSummary {
+  name: string;
+  count: number;
 }
 
 export interface FipeYear {
@@ -84,4 +99,33 @@ export interface CompareRow {
   num: boolean;
   nullA?: boolean;
   nullB?: boolean;
+}
+
+// Plataforma estrutural do veículo (define compatibilidade de peças na Montagem)
+export type Platform = 'mono' | 'chassi';
+
+// ── Montagem ────────────────────────────────────────────────
+export type SystemId = 'motor' | 'cambio' | 'tracao' | 'susp' | 'freios' | 'rodas' | 'interior';
+
+export type PartStatus = 'orig' | 'swap' | 'adapt';
+
+export interface BuildPart {
+  /** `${systemId}|${platform}|${name}|${detail}` — identidade da especificação */
+  key: string;
+  systemId: SystemId;
+  name: string;
+  detail: string;
+  platform: Platform;
+  /** ids dos veículos do catálogo que têm esta especificação (ordem do catálogo) */
+  sources: string[];
+}
+
+export interface Build {
+  id: string;
+  name: string;
+  baseId: string | null;
+  platform: Platform;
+  /** sistema → BuildPart.key */
+  parts: Partial<Record<SystemId, string>>;
+  updatedAt: string;
 }

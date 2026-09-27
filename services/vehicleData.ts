@@ -1,7 +1,11 @@
-import vehiclesData from '../data/vehicles.json';
-import type { CategoryVehicleEntry, Vehicle } from '../types';
+import { vehicles } from '../data/vehicles';
+import type { BrandSummary, CategoryVehicleEntry, Vehicle } from '../types';
 
-const vehicles: Vehicle[] = vehiclesData.vehicles as Vehicle[];
+const byAlertProbability = (a: Vehicle, b: Vehicle) =>
+  b.alert.probability - a.alert.probability || a.id.localeCompare(b.id);
+
+const dayOfYear = (date: Date) =>
+  Math.floor((date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 86_400_000);
 
 const sanitizeSpecs = (vehicle: Vehicle): Vehicle => ({
   ...vehicle,
@@ -46,6 +50,50 @@ export const VehicleDataService = {
     return vehicles.filter((v) => v.categoryId === categoryId).length;
   },
 
+  getTotals(): { vehicles: number; brands: number } {
+    return {
+      vehicles: vehicles.length,
+      brands: new Set(vehicles.map((v) => v.brand)).size,
+    };
+  },
+
+  // Marcas ordenadas pela quantidade de modelos no catálogo
+  getBrands(): BrandSummary[] {
+    const counts = new Map<string, number>();
+    vehicles.forEach((v) => counts.set(v.brand, (counts.get(v.brand) ?? 0) + 1));
+    return Array.from(counts, ([name, count]) => ({ name, count })).sort(
+      (a, b) => b.count - a.count || a.name.localeCompare(b.name, 'pt-BR')
+    );
+  },
+
+  // Veículos com maior probabilidade de alerta do Oráculo ("Em alta")
+  getTopByAlert(limit: number): Vehicle[] {
+    return [...vehicles].sort(byAlertProbability).slice(0, limit).map(sanitizeSpecs);
+  },
+
+  // Alerta em destaque do dia: gira entre os veículos, estável ao longo do dia
+  getDailyAlertVehicle(date: Date = new Date()): Vehicle | null {
+    if (!vehicles.length) return null;
+    const sorted = [...vehicles].sort(byAlertProbability);
+    return sanitizeSpecs(sorted[dayOfYear(date) % sorted.length]);
+  },
+
+  getByBrand(brand: string): CategoryVehicleEntry[] {
+    return vehicles
+      .filter((v) => v.brand === brand)
+      .map((v) => ({
+        vehicleId: v.id,
+        brand: v.brand,
+        model: v.model,
+        version: v.version,
+        year: v.year,
+      }));
+  },
+
+  getCategoryIdOf(vehicleId: string): string | null {
+    return vehicles.find((v) => v.id === vehicleId)?.categoryId ?? null;
+  },
+
   getVersionsByModel(brand: string, model: string): CategoryVehicleEntry[] {
     return vehicles
       .filter((v) => v.brand === brand && v.model === model)
@@ -74,6 +122,22 @@ export const VehicleDataService = {
       }
     }
     return results;
+  },
+
+  // Busca livre em "marca modelo versão", sem limite de resultados
+  searchVehicles(query: string): CategoryVehicleEntry[] {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return vehicles
+      .filter((v) => `${v.brand} ${v.model} ${v.version}`.toLowerCase().includes(q))
+      .map((v) => ({
+        vehicleId: v.id,
+        brand: v.brand,
+        model: v.model,
+        version: v.version,
+        year: v.year,
+      }))
+      .sort((a, b) => `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`, 'pt-BR'));
   },
 
   getModelVersionStrings(brand: string, model: string): string[] {

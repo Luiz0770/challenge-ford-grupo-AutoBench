@@ -1,62 +1,64 @@
-import { Feather } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import React from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useIsFocused, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Database } from 'lucide-react-native';
+import React, { useMemo } from 'react';
+import { ScrollView, Text, View } from 'react-native';
+import { BrandGrid } from '../../components/home/BrandGrid';
+import { CategoryCarousel } from '../../components/home/CategoryCarousel';
+import { FavoritesSection } from '../../components/home/FavoritesSection';
+import { HomeHero } from '../../components/home/HomeHero';
+import { OracleInsightCard } from '../../components/home/OracleInsightCard';
+import { PersonaShortcuts } from '../../components/home/PersonaShortcuts';
+import { RecentSearches } from '../../components/home/RecentSearches';
+import { TrendingList } from '../../components/home/TrendingList';
 import { HierarchicalSearchBar } from '../../components/search/HierarchicalSearchBar';
-import { Card } from '../../components/ui/Card';
-import { SectionLabel } from '../../components/ui/SectionLabel';
-import { Wordmark } from '../../components/ui/Wordmark';
-import { colors, fonts } from '../../constants/colors';
-import { useFipePrice } from '../../hooks/useFipePrice';
+import { FipeLoadingOverlay } from '../../components/ui/FipeLoadingOverlay';
+import { Rise } from '../../components/ui/Rise';
+import { colors } from '../../constants/colors';
+import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
 import { useUserStore } from '../../store/userStore';
-import { fmtBRLFromReais } from '../../utils/format';
+import { useFipeReady } from '../../hooks/useFipeReady';
+import { useScrollToTopOnFocus } from '../../hooks/useScrollToTopOnFocus';
 
 export default function HomeScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
+  const isFocused = useIsFocused();
   const favorites = useUserStore((s) => s.favorites);
   const history = useUserStore((s) => s.history);
 
-  const recentTrimmed = history.slice(0, 3);
+  const categories = useMemo(() => CatalogService.getAvailableCategories(), []);
+  const trending = useMemo(() => VehicleDataService.getTopByAlert(4), []);
+  const brands = useMemo(() => VehicleDataService.getBrands().slice(0, 8), []);
+  const totals = useMemo(() => VehicleDataService.getTotals(), []);
+  const dailyAlert = useMemo(() => VehicleDataService.getDailyAlertVehicle(), []);
+
+  // Espera os preços FIPE dos cards visíveis (em alta + favoritos) antes de mostrar a home
+  const fipeReady = useFipeReady([
+    ...trending,
+    ...favorites.slice(0, 4).map((f) => VehicleDataService.getVehicleById(f.vehicleId)),
+  ]);
+
+  const openVehicle = (vehicleId: string) => router.push(`/vehicle/${vehicleId}`);
+  const openCategory = (categoryId: string) =>
+    router.push({ pathname: '/category-results', params: { categoria: categoryId } });
+  const openBrand = (brand: string) =>
+    router.push({ pathname: '/brand-results', params: { brand } });
 
   return (
-    <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-      <ScrollView
-        contentContainerStyle={{ paddingBottom: 40 }}
-        showsVerticalScrollIndicator={false}
-      >
-        <View
-          style={{
-            paddingHorizontal: 20,
-            paddingTop: 12,
-            paddingBottom: 18,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Wordmark />
-        </View>
+    <View className="flex-1 bg-paper">
+      {/* Hero escuro: texto da status bar claro só enquanto a home está em foco */}
+      {isFocused && <StatusBar style="light" />}
 
-        <View style={{ paddingHorizontal: 20, paddingBottom: 18 }}>
-          <Text
-            style={{
-              fontFamily: fonts.sansBold,
-              fontSize: 28,
-              lineHeight: 32,
-              color: colors.brand.navy,
-              letterSpacing: -0.8,
-              marginBottom: 6,
-            }}
-          >
-            Qual veículo{'\n'}vamos analisar hoje?
-          </Text>
-        </View>
+      <ScrollView ref={scrollRef} contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
+        <HomeHero />
 
-        <View style={{ paddingHorizontal: 20 }}>
+        {/* Busca flutuando sobre o hero */}
+        <Rise delay={140} className="relative z-10 -mt-[34px] px-5">
           <HierarchicalSearchBar
-            onExactSearch={(vehicleId) => router.push(`/vehicle/${vehicleId}`)}
+            floating
+            onExactSearch={openVehicle}
             onBroadSearch={(brand, model, version, year) =>
               router.push({
                 pathname: '/model-results',
@@ -69,199 +71,37 @@ export default function HomeScreen() {
               })
             }
           />
-        </View>
+        </Rise>
 
-        <View style={{ paddingHorizontal: 20, paddingTop: 28 }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: 10,
-            }}
-          >
-            <SectionLabel>Favoritos</SectionLabel>
-            <Text style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.text.secondary }}>
-              {favorites.length}
-            </Text>
-          </View>
-          {favorites.length === 0 ? (
-            <Card style={{ padding: 16 }}>
-              <Text style={{ fontFamily: fonts.sans, fontSize: 13, color: colors.text.secondary }}>
-                Toque em qualquer veículo e marque com a estrela para vê-lo aqui.
-              </Text>
-            </Card>
-          ) : (
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', rowGap: 10, justifyContent: 'space-between' }}>
-              {favorites.slice(0, 4).map((f) => (
-                <View key={f.vehicleId} style={{ width: '48%' }}>
-                  <FavoriteTile
-                    vehicleId={f.vehicleId}
-                    name={f.vehicleName}
-                    onPress={() => router.push(`/vehicle/${f.vehicleId}`)}
-                  />
-                </View>
-              ))}
-            </View>
-          )}
-        </View>
+        <PersonaShortcuts onSelectCategory={openCategory} />
 
-        {recentTrimmed.length > 0 && (
-          <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
-            <View style={{ marginBottom: 10 }}>
-              <SectionLabel>Buscas recentes</SectionLabel>
-            </View>
-            <Card style={{ padding: 0, overflow: 'hidden' }}>
-              {recentTrimmed.map((h, i) => (
-                <Pressable
-                  key={h.vehicleId}
-                  onPress={() => router.push(`/vehicle/${h.vehicleId}`)}
-                  style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
-                >
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      gap: 12,
-                      paddingHorizontal: 14,
-                      paddingVertical: 14,
-                      borderTopWidth: i > 0 ? 1 : 0,
-                      borderTopColor: colors.divider,
-                    }}
-                  >
-                    <View
-                      style={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: 8,
-                        backgroundColor: colors.bg.elevated,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Feather name="clock" size={15} color={colors.text.secondary} />
-                    </View>
-                    <View style={{ flex: 1 }}>
-                      <Text
-                        style={{
-                          fontFamily: fonts.sansSemibold,
-                          fontSize: 14,
-                          color: colors.text.primary,
-                        }}
-                      >
-                        {h.vehicleName}
-                      </Text>
-                      <Text
-                        style={{
-                          fontFamily: fonts.sans,
-                          fontSize: 11,
-                          color: colors.text.secondary,
-                          marginTop: 2,
-                        }}
-                      >
-                        {new Date(h.viewedAt).toLocaleDateString('pt-BR')}
-                      </Text>
-                    </View>
-                    <Feather name="chevron-right" size={16} color={colors.text.muted} />
-                  </View>
-                </Pressable>
-              ))}
-            </Card>
-          </View>
+        {dailyAlert && (
+          <OracleInsightCard vehicle={dailyAlert} onPress={() => openVehicle(dailyAlert.id)} />
         )}
+
+        <CategoryCarousel
+          categories={categories.slice(0, 8)}
+          onSelect={openCategory}
+          onSeeAll={() => router.navigate('/busca')}
+        />
+
+        <TrendingList vehicles={trending} categories={categories} onSelect={openVehicle} />
+
+        <BrandGrid brands={brands} onSelectBrand={openBrand} />
+
+        <FavoritesSection favorites={favorites} onSelect={openVehicle} />
+
+        <RecentSearches history={history.slice(0, 3)} onSelect={openVehicle} />
+
+        <View className="flex-row items-center gap-2 px-5 pt-7">
+          <Database size={11} color={colors.text.muted} strokeWidth={2.2} />
+          <Text className="font-mono text-[9.5px] tracking-[0.4px] text-ink-400">
+            {totals.vehicles} veículos · {totals.brands} marcas · FIPE
+          </Text>
+        </View>
       </ScrollView>
-    </SafeAreaView>
+
+      <FipeLoadingOverlay visible={!fipeReady} />
+    </View>
   );
 }
-
-const FavoriteTile: React.FC<{ vehicleId: string; name: string; onPress: () => void }> = ({
-  vehicleId,
-  name,
-  onPress,
-}) => {
-  const vehicle = VehicleDataService.getVehicleById(vehicleId);
-  const { price, loading } = useFipePrice(vehicle);
-  const fipe = price?.valor ?? 0;
-  const parts = name.split(' ');
-  const brand = parts[0] ?? '';
-  const rest = parts.slice(1).join(' ');
-
-  return (
-    <Pressable
-      onPress={onPress}
-      style={({ pressed }) => ({
-        opacity: pressed ? 0.92 : 1,
-        transform: pressed ? [{ scale: 0.99 }] : [{ scale: 1 }],
-      })}
-    >
-      <Card style={{ padding: 12 }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            marginBottom: 24,
-          }}
-        >
-          <Feather name="star" size={14} color={colors.brand.blue} />
-          <Feather name="arrow-up-right" size={14} color={colors.text.muted} />
-        </View>
-        <Text
-          style={{
-            fontFamily: fonts.monoMedium,
-            fontSize: 9,
-            color: colors.text.secondary,
-            letterSpacing: 1.2,
-            textTransform: 'uppercase',
-            marginBottom: 4,
-          }}
-        >
-          {brand}
-        </Text>
-        <Text
-          style={{
-            fontFamily: fonts.sansSemibold,
-            fontSize: 14,
-            color: colors.brand.navy,
-            letterSpacing: -0.3,
-            lineHeight: 17,
-          }}
-        >
-          {rest}
-        </Text>
-        <View
-          style={{
-            marginTop: 10,
-            paddingTop: 10,
-            borderTopWidth: 1,
-            borderTopColor: colors.bg.border,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: fonts.mono,
-              fontSize: 9,
-              color: colors.text.muted,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-            }}
-          >
-            FIPE
-          </Text>
-          <Text
-            style={{
-              fontFamily: fonts.monoSemibold,
-              fontSize: 12,
-              color: colors.text.primary,
-            }}
-          >
-            {loading ? '...' : fipe ? fmtBRLFromReais(fipe) : 'Indisponível'}
-          </Text>
-        </View>
-      </Card>
-    </Pressable>
-  );
-};

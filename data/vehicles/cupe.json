@@ -1,0 +1,288 @@
+{
+  "vehicles": [
+{
+      "id": "audi-a5-sportback-2024",
+      "categoryId": "cupe",
+      "platform": "mono",
+      "brand": "Audi",
+      "brandFipeCode": "6",
+      "model": "A5",
+      "modelFipeCode": "8772",
+      "version": "Sportback 2.0T",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 2.0L Turbo TFSI" },
+            { "label": "Potência", "value": "261 cv", "unit": "@ 5.000 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "37,8 kgf·m", "unit": "@ 1.600 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "6,2 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "240 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades Tiptronic" },
+            { "label": "Tração", "value": "Integral Quattro com diferencial" },
+            { "label": "Modo Sport", "value": "Sim (mudanças rápidas)" },
+            { "label": "Hill Descent Control", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Adaptativos com sistema de controle" },
+            { "label": "Suspensão Dianteira", "value": "Double Wishbone com barra estabilizadora" },
+            { "label": "Suspensão Traseira", "value": "Multi-link com barra estabilizadora" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado com pinça 4 pistões" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado com pinça 1 pistão" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Possui" },
+            { "label": "Modos de Volante", "value": "Eco · Comfort · Auto · Sport · Dynamic" },
+            { "label": "Modos de Escapamento", "value": "Não Possui" },
+            { "label": "Modos de Amortecedor", "value": "Sim (adaptativo)" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Matrix com DRL" },
+            { "label": "Lanternas", "value": "LED OLED com animação" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
+            { "label": "Iluminação Interior", "value": "LED ambiente 40 cores" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "19\" alumínio design S" },
+            { "label": "Pneus", "value": "225/40 R19 Michelin Primacy 4" },
+            { "label": "Estepe", "value": "Roda de ferro de emergência" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,1\" tela tátil MMI Touch" },
+            { "label": "Sistema de Infotainment", "value": "Audi MIB3 com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (wireless)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "Bang & Olufsen 14 falantes" },
+            { "label": "Head-Up Display", "value": "Sim (AR virtual)" },
+            { "label": "Câmera", "value": "360º com Parking System" },
+            { "label": "Ar-condicionado", "value": "Automático dual-zone" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (Pre-sense)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim com Stop&Go" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (automático)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.714 mm" },
+            { "label": "Largura", "value": "1.896 mm" },
+            { "label": "Altura", "value": "1.397 mm" },
+            { "label": "Entre-eixos", "value": "2.886 mm" },
+            { "label": "Capacidade de Carga", "value": "405 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 429.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob pedido" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 73,
+        "type": "luxury_refinement",
+        "title": "Alerta Preditivo: Luxo Refinado",
+        "description": "Probabilidade de 73% de crescimento em apelo de elegância. Tendência: A5 Sportback atrai executivos que valorizam design e performance.",
+        "actionSuggestion": "Ação sugerida: reforçar 'A5: Elegância e Performance Audi'."
+      }
+    },
+    {
+      "id": "porsche-911-carrera-coupe-2024",
+      "categoryId": "cupe",
+      "platform": "mono",
+      "brand": "Porsche",
+      "brandFipeCode": "47",
+      "model": "911",
+      "modelFipeCode": "7602",
+      "version": "Carrera Coupe",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 3.0L Turbo Flat-Six" },
+            { "label": "Potência", "value": "385 cv", "unit": "@ 6.000 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "46,4 kgf·m", "unit": "@ 2.300 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "3,7 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "293 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades PDK dupla embreagem" },
+            { "label": "Tração", "value": "Traseira com diferencial eletrônico" },
+            { "label": "Launch Control", "value": "Sim (Sport Response)" },
+            { "label": "Traction Control", "value": "Sim (multi-modo)" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Porsche Adaptive Suspension com controle ativo" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson com duplos amortecedores" },
+            { "label": "Suspensão Traseira", "value": "Multi-link com amortecedores duplos" },
+            { "label": "Freios Dianteiros", "value": "Disco cerâmico ventilado com pinça 6 pistões" },
+            { "label": "Freios Traseiros", "value": "Disco cerâmico ventilado com pinça 4 pistões" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Possui" },
+            { "label": "Modos de Volante", "value": "Normal · Sport · Sport Plus · Individual" },
+            { "label": "Modos de Escapamento", "value": "Sim (Porsche Dynamic)" },
+            { "label": "Modos de Amortecedor", "value": "Sim (PASM com 3 modos)" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com matriz dinâmica" },
+            { "label": "Lanternas", "value": "LED 3D com sequencial" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
+            { "label": "Iluminação Interior", "value": "LED ambiente 30 cores" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "20\" forjado Porsche Design" },
+            { "label": "Pneus", "value": "255/35 R20 / 305/30 R20 Michelin Pilot S4S" },
+            { "label": "Estepe", "value": "Run-flat" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,9\" tela touchscreen curvada" },
+            { "label": "Sistema de Infotainment", "value": "Porsche Communication Management (PCM)" },
+            { "label": "Apple CarPlay", "value": "Sim (wireless)" },
+            { "label": "Android Auto", "value": "Sim (wireless)" },
+            { "label": "Sistema de Som", "value": "BOSE Surround Sound 12 falantes" },
+            { "label": "Head-Up Display", "value": "Sim (full color)" },
+            { "label": "Câmera", "value": "360º com Parking Assistant Plus" },
+            { "label": "Ar-condicionado", "value": "Automático dual-zone" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (Advanced Emergency Braking)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim com assistente inteligente" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keeping Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (automático)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.519 mm" },
+            { "label": "Largura", "value": "1.852 mm" },
+            { "label": "Altura", "value": "1.300 mm" },
+            { "label": "Entre-eixos", "value": "2.731 mm" },
+            { "label": "Capacidade de Carga", "value": "350 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 899.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob pedido" },
+            { "label": "Garantia", "value": "2 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 94,
+        "type": "absolute_icon",
+        "title": "Alerta Preditivo: Ícone Absoluto",
+        "description": "Probabilidade de 94% de permanência como símbolo de excelência automotiva. Tendência: 911 Carrera atrai colecionadores e entusiastas atemporais.",
+        "actionSuggestion": "Ação sugerida: comunicar '911: O Carro Esportivo Perfeito'."
+      }
+    }
+  ],
+  "_metadata": {
+    "totalVehicles": 2,
+    "categories": ["cupe"],
+    "brands": ["Audi", "Porsche"],
+    "lastUpdated": "2024-09-23",
+    "version": "1.0",
+    "notes": "JSON contendo 2 modelos de coupes do mercado brasileiro 2024. Categoria premium com foco em performance. Todos os equipamentos não disponíveis seguem o padrão 'Não Possui'. Códigos modelFipeCode obtidos da API FIPE (https://parallelum.com.br/fipe/api/v1/carros). Estrutura pronta para integração com pipeline de coleta de dados FIPE em tempo real. Segmento inclui desde entry-level (Abarth/Veloster) até ultra-premium (911/C63 AMG)."
+  }
+}

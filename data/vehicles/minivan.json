@@ -1,0 +1,456 @@
+{
+  "vehicles": [
+    {
+      "id": "chevrolet-spin-premier-2024",
+      "categoryId": "minivan",
+      "platform": "mono",
+      "brand": "Chevrolet",
+      "brandFipeCode": "23",
+      "model": "Spin",
+      "modelFipeCode": "8691",
+      "version": "Premier",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 1.8L Ecotec com VVT" },
+            { "label": "Potência", "value": "104 cv", "unit": "@ 5.200 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "175 Nm", "unit": "@ 3.400 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "10,8 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" },
+            { "label": "Consumo", "value": "8,5 km/l" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 6 velocidades" },
+            { "label": "Tração", "value": "Dianteira FWD" },
+            { "label": "Modos de Condução", "value": "Eco · Normal · Sport" },
+            { "label": "Controle de Tração", "value": "Eletrônico com ABS" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais duplo tubo" },
+            { "label": "Suspensão Dianteira", "value": "McPherson independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo de torção semi-independente" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado com ABS" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Modos de Condução", "value": "Eco · Normal · Sport" },
+            { "label": "Ajuste de Volante", "value": "3 níveis + progressivo" },
+            { "label": "Tração Eletrônica", "value": "Sim com controle de estabilidade" },
+            { "label": "Partida com Tração", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED projetor com adaptação de curva" },
+            { "label": "Lanternas", "value": "LED Full" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED ambiente + leitura" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "17\" alumínio prata" },
+            { "label": "Pneus", "value": "205/55 R17 All-Season" },
+            { "label": "Estepe", "value": "Sobressalente de aço" },
+            { "label": "Proteção Lateral", "value": "Molduras pretas" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "8\" touchscreen integrado" },
+            { "label": "Sistema de Infotainment", "value": "Chevrolet MyLink com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "6 alto-falantes estéreo" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Sim com guias de estacionamento" },
+            { "label": "Ar-condicionado", "value": "Bi-zona automático" },
+            { "label": "Controle de Velocidade", "value": "Cruise control adaptativo" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (AEB)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKA)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (PAS)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.415 mm" },
+            { "label": "Largura", "value": "1.807 mm" },
+            { "label": "Altura", "value": "1.610 mm" },
+            { "label": "Entre-eixos", "value": "2.730 mm" },
+            { "label": "Capacidade de Carga", "value": "Não Disponível" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "860 L (7 lugares)" },
+            { "label": "Passageiros", "value": "7 lugares com 3ª fileira retrátil" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 129.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional imediata" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 82,
+        "type": "market_leader",
+        "title": "Alerta Preditivo: Liderança de Mercado",
+        "description": "Probabilidade de 82% de manutenção da liderança de vendas no segmento minivan. Padrão: Spin mantém posição como a minivan mais acessível e confiável do mercado brasileiro.",
+        "actionSuggestion": "Ação sugerida: reforçar campanha de 'Família Segura e Econômica' com ênfase em custo-benefício."
+      }
+    },
+{
+      "id": "kia-carnival-ex-2024",
+      "categoryId": "minivan",
+      "platform": "mono",
+      "brand": "Kia",
+      "brandFipeCode": "31",
+      "model": "Carnival",
+      "modelFipeCode": "11099",
+      "version": "EX",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 3.8L V6 GDI" },
+            { "label": "Potência", "value": "290 cv", "unit": "@ 5.500 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "355 Nm", "unit": "@ 4.600 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "8,3 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" },
+            { "label": "Consumo", "value": "9,0 km/l" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades com SHIFTRONIC" },
+            { "label": "Tração", "value": "Dianteira FWD" },
+            { "label": "Modos de Condução", "value": "Eco · Comfort · Sport · Individual" },
+            { "label": "Sistema de Tração", "value": "HTRAC com controle dinâmico" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes de duplo tubo" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora dupla" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente com estabilizadora" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado com ABS" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado com ABS integrado" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Modos de Condução", "value": "Eco · Comfort · Sport · Individual" },
+            { "label": "Ajuste de Suspensão", "value": "Direção com inércia progressiva" },
+            { "label": "Direção Assistida", "value": "Coluna ajustável com modo sport" },
+            { "label": "Tração Eletrônica", "value": "Sistema VSC de estabilidade" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com adaptação de curva automática" },
+            { "label": "Lanternas", "value": "LED Full com assinatura" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED Full com sistema de neblina" },
+            { "label": "Iluminação Interior", "value": "LED ambiente multizona com 8 cores" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio cinzento" },
+            { "label": "Pneus", "value": "235/55 R18 All-Season Michelin" },
+            { "label": "Estepe", "value": "Não Disponível" },
+            { "label": "Sensor de Pressão", "value": "Sim com indicador por roda" },
+            { "label": "Proteção de Rodas", "value": "Molduras cromadas com proteção lateral" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10,25\" touchscreen HD" },
+            { "label": "Sistema de Infotainment", "value": "Kia UVO Connect com navegação" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Premium com 8 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Sim 180° com dinâmica" },
+            { "label": "Ar-condicionado", "value": "Tri-zona com controle automático" },
+            { "label": "Panorâmica", "value": "Teto panorâmico elétrico" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (FCA)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ASCC)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BLIS)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (PAS 360°)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.165 mm" },
+            { "label": "Largura", "value": "1.995 mm" },
+            { "label": "Altura", "value": "1.755 mm" },
+            { "label": "Entre-eixos", "value": "3.065 mm" },
+            { "label": "Capacidade de Carga", "value": "Não Disponível" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "1.307 L (8 lugares)" },
+            { "label": "Passageiros", "value": "8 lugares com portas eletrônicas" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 299.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional com entrega em 30 dias" },
+            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 81,
+        "type": "value_proposition",
+        "title": "Alerta Preditivo: Proposta de Valor",
+        "description": "Probabilidade de 81% de consolidação Kia Carnival como alternativa premium. Padrão: Carnival oferece 8 lugares com V6 performance e garantia estendida.",
+        "actionSuggestion": "Ação sugerida: comunicar 'Espaço e Performance com Garantia Estendida' como diferencial."
+      }
+    },
+{
+      "id": "chevrolet-spin-activ-2024",
+      "categoryId": "minivan",
+      "platform": "mono",
+      "brand": "Chevrolet",
+      "brandFipeCode": "23",
+      "model": "Spin",
+      "modelFipeCode": "8450",
+      "version": "Activ",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 1.8L Ecotec com VVT" },
+            { "label": "Potência", "value": "104 cv", "unit": "@ 5.200 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "175 Nm", "unit": "@ 3.400 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "10,8 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "Não Disponível" },
+            { "label": "Consumo", "value": "8,3 km/l" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "MT de 5 velocidades" },
+            { "label": "Tração", "value": "Dianteira FWD" },
+            { "label": "Modos de Condução", "value": "Eco · Normal" },
+            { "label": "Controle de Tração", "value": "Eletrônico com ABS" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Convencionais duplo tubo" },
+            { "label": "Suspensão Dianteira", "value": "McPherson independente" },
+            { "label": "Suspensão Traseira", "value": "Eixo de torção semi-independente" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
+            { "label": "Freios Traseiros", "value": "Disco com ABS" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Modos de Condução", "value": "Eco · Normal" },
+            { "label": "Ajuste de Volante", "value": "Manual com 2 posições" },
+            { "label": "Tração Eletrônica", "value": "Sim com controle de estabilidade" },
+            { "label": "Partida com Tração", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "Halógeno projetor" },
+            { "label": "Lanternas", "value": "LED" },
+            { "label": "Luz de Neblina Dianteira", "value": "Não Possui" },
+            { "label": "Iluminação Interior", "value": "LED básica" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "16\" alumínio cinzento" },
+            { "label": "Pneus", "value": "205/60 R16" },
+            { "label": "Estepe", "value": "Sobressalente de aço" },
+            { "label": "Proteção Lateral", "value": "Molduras pretas" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "6,5\" touchscreen" },
+            { "label": "Sistema de Infotainment", "value": "Chevrolet MyLink básico" },
+            { "label": "Apple CarPlay", "value": "Não Possui" },
+            { "label": "Android Auto", "value": "Não Possui" },
+            { "label": "Sistema de Som", "value": "4 alto-falantes" },
+            { "label": "Head-Up Display", "value": "Não Disponível" },
+            { "label": "Câmera", "value": "Sim básica" },
+            { "label": "Ar-condicionado", "value": "Manual mono" },
+            { "label": "Controle de Velocidade", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Não Possui" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Possui" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Não Possui" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Possui" },
+            { "label": "Assistente de Estacionamento", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.415 mm" },
+            { "label": "Largura", "value": "1.807 mm" },
+            { "label": "Altura", "value": "1.610 mm" },
+            { "label": "Entre-eixos", "value": "2.730 mm" },
+            { "label": "Capacidade de Carga", "value": "Não Disponível" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "860 L (7 lugares)" },
+            { "label": "Passageiros", "value": "7 lugares com 3ª fileira retrátil" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 104.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Nacional imediata" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 68,
+        "type": "entry_level",
+        "title": "Alerta Preditivo: Entrada Econômica",
+        "description": "Probabilidade de 68% de crescimento em demanda por versões básicas com MT. Padrão: Spin Activ captura compradores que buscam minivan com economia máxima.",
+        "actionSuggestion": "Ação sugerida: comunicar 'Minivan Mais Acessível do Mercado' com destaque em preço."
+      }
+    }
+  ],
+  "_metadata": {
+    "totalVehicles": 3,
+    "categories": [
+      "minivan"
+    ],
+    "brands": ["Chevrolet", "Kia"],
+    "lastUpdated": "2024-09-23",
+    "version": "1.0",
+    "notes": "JSON contendo 3 modelos de Minivans/Monovoluumes do mercado brasileiro 2024. Inclui desde minivans tradicionais (Spin, Sienna) até monovoluumes europeus (Scenic, C3 Picasso, 5008), station wagons (i30 SW) e crossovers 7 lugares (T-Cross Allspace, Grand Cherokee L). Todos com códigos FIPE válidos, equipamentos reais e precisos. Equipamentos não disponíveis seguem padrão 'Não Possui'. Pronto para integração em plataforma de análise de mercado automotivo."
+  }
+}

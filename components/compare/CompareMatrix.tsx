@@ -3,6 +3,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { colors, fonts } from '../../constants/colors';
 import type { CompareRow } from '../../types';
+import { Rise } from '../ui/Rise';
 
 interface CompareMatrixProps {
   rows: CompareRow[];
@@ -42,7 +43,17 @@ export const CompareMatrix: React.FC<CompareMatrixProps> = ({ rows, aLabel, bLab
           alignItems: 'center',
         }}
       >
-        <View style={{ flex: 1, alignItems: 'flex-end', paddingRight: 8 }}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'flex-end',
+            paddingVertical: 6,
+            paddingRight: 8,
+            paddingLeft: 4,
+            borderRadius: 8,
+            backgroundColor: 'rgba(0,102,204,0.07)',
+          }}
+        >
           <Text
             style={{
               fontFamily: fonts.monoBold,
@@ -79,7 +90,17 @@ export const CompareMatrix: React.FC<CompareMatrixProps> = ({ rows, aLabel, bLab
             atributo
           </Text>
         </View>
-        <View style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 8 }}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'flex-start',
+            paddingVertical: 6,
+            paddingLeft: 8,
+            paddingRight: 4,
+            borderRadius: 8,
+            backgroundColor: 'rgba(180,83,9,0.08)',
+          }}
+        >
           <Text
             style={{
               fontFamily: fonts.monoBold,
@@ -107,56 +128,109 @@ export const CompareMatrix: React.FC<CompareMatrixProps> = ({ rows, aLabel, bLab
 
       <View style={{ paddingHorizontal: 6, paddingVertical: 4 }}>
         {rows.map((r, i) => (
-          <Row key={`${r.k}-${i}`} row={r} />
+          <Rise key={`${r.k}-${i}`} delay={i * 30}>
+            <Row row={r} />
+          </Rise>
         ))}
       </View>
 
       <View
         style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
           alignItems: 'center',
           paddingHorizontal: 14,
-          paddingVertical: 10,
+          paddingVertical: 12,
           borderTopWidth: 1,
           borderTopColor: colors.divider,
           backgroundColor: colors.bg.subtle,
         }}
       >
-        <Text
-          style={{
-            fontFamily: fonts.monoMedium,
-            fontSize: 10.5,
-            color: colors.text.secondary,
-          }}
-        >
-          Placar parcial
-        </Text>
-        <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
-          <Text
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+          <View
             style={{
-              fontFamily: fonts.monoBold,
-              fontSize: 10.5,
-              color: colors.brand.blue,
+              flexDirection: 'row',
+              alignItems: 'baseline',
+              gap: 5,
+              paddingHorizontal: 10,
+              paddingVertical: 5,
+              borderRadius: 8,
+              backgroundColor: 'rgba(0,102,204,0.1)',
             }}
           >
-            A · {score.a}
-          </Text>
-          <Text style={{ color: colors.text.muted }}>·</Text>
-          <Text style={{ fontFamily: fonts.mono, fontSize: 10.5, color: colors.text.secondary }}>
-            Empate {score.t}
-          </Text>
-          <Text style={{ color: colors.text.muted }}>·</Text>
+            <Text
+              style={{
+                fontFamily: fonts.monoBold,
+                fontSize: 9,
+                color: colors.brand.blue,
+                letterSpacing: 1,
+              }}
+            >
+              A
+            </Text>
+            <Text
+              style={{
+                fontFamily: fonts.monoBold,
+                fontSize: 16,
+                color: colors.brand.blue,
+              }}
+            >
+              {score.a}
+            </Text>
+          </View>
           <Text
             style={{
-              fontFamily: fonts.monoBold,
-              fontSize: 10.5,
-              color: colors.status.warning,
+              fontFamily: fonts.monoMedium,
+              fontSize: 10,
+              color: colors.text.secondary,
+              letterSpacing: 1.2,
+              textTransform: 'uppercase',
             }}
           >
-            B · {score.b}
+            Vantagens
           </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'baseline',
+              gap: 5,
+              paddingHorizontal: 10,
+              paddingVertical: 5,
+              borderRadius: 8,
+              backgroundColor: 'rgba(180,83,9,0.12)',
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: fonts.monoBold,
+                fontSize: 16,
+                color: colors.status.warning,
+              }}
+            >
+              {score.b}
+            </Text>
+            <Text
+              style={{
+                fontFamily: fonts.monoBold,
+                fontSize: 9,
+                color: colors.status.warning,
+                letterSpacing: 1,
+              }}
+            >
+              B
+            </Text>
+          </View>
         </View>
+        {score.t > 0 && (
+          <Text
+            style={{
+              fontFamily: fonts.mono,
+              fontSize: 9.5,
+              color: colors.text.muted,
+              marginTop: 6,
+            }}
+          >
+            Empate em {score.t} {score.t === 1 ? 'atributo' : 'atributos'}
+          </Text>
+        )}
       </View>
     </View>
   );
@@ -229,13 +303,13 @@ const Row: React.FC<{ row: CompareRow }> = ({ row }) => {
           gap: 4,
           padding: 8,
           borderRadius: 6,
-          backgroundColor: winB ? 'rgba(0,102,204,0.06)' : 'transparent',
+          backgroundColor: winB ? 'rgba(180,83,9,0.08)' : 'transparent',
         }}
       >
         <Text style={[cellStyle(winB, row.nullB), { flex: 1, textAlign: 'left' }]} numberOfLines={2}>
           {row.b}
         </Text>
-        {winB && <Feather name="check" size={10} color={colors.brand.blue} />}
+        {winB && <Feather name="check" size={10} color={colors.status.warning} />}
       </View>
     </View>
   );

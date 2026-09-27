@@ -1,0 +1,598 @@
+{
+  "vehicles": [
+{
+      "id": "hyundai-ioniq5-standard-2025",
+      "categoryId": "eletrico",
+      "platform": "mono",
+      "brand": "Hyundai",
+      "brandFipeCode": "26",
+      "model": "Ioniq 5",
+      "modelFipeCode": "11227",
+      "version": "Standard",
+      "year": 2025,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Elétrico síncrono permanente" },
+            { "label": "Potência", "value": "168 cv", "unit": "contínua", "highlight": true },
+            { "label": "Torque Máximo", "value": "310 Nm", "unit": "instantâneo", "highlight": true },
+            { "label": "0-100 km/h", "value": "8,9 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "185 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "Redução direta automática de 1 marcha" },
+            { "label": "Tração", "value": "Traseira (RWD)" },
+            { "label": "Recuperação de Energia", "value": "Sim - 3 níveis ajustáveis" },
+            { "label": "Modos de Condução", "value": "Eco, Normal, Sport, Customizado" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes tipo MacPherson" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson com barras estabilizadoras" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado 370 mm com tecnologia regenerativa" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado 330 mm" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Eco", "value": "Economia máxima de energia" },
+            { "label": "Normal", "value": "Operação padrão confortável" },
+            { "label": "Sport", "value": "Desempenho máximo com resposta rápida" },
+            { "label": "Customizado", "value": "Ajustes personalizados pelo condutor" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED DRL com padrão em L" },
+            { "label": "Lanternas", "value": "LED Full com padrão em H" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado no parachoque" },
+            { "label": "Iluminação Interior", "value": "LED ambiente branco frio" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio design futurista" },
+            { "label": "Pneus", "value": "225/55 R18 Nexen N Fera RU1" },
+            { "label": "Estepe", "value": "Kit de reparo com spray selante" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "12,3\" touchscreen com painel digital" },
+            { "label": "Sistema de Infotainment", "value": "Hyundai Bluelink com navegação 3D" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "Bose 8 alto-falantes 360W" },
+            { "label": "Head-Up Display", "value": "Não Possui" },
+            { "label": "Câmera", "value": "Sim com visão dinâmica" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital automático com pré-resfriamento" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (SCC Stop & Go)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BVM)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (SVM)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.635 mm" },
+            { "label": "Largura", "value": "1.890 mm" },
+            { "label": "Altura", "value": "1.605 mm" },
+            { "label": "Entre-eixos", "value": "2.900 mm" },
+            { "label": "Capacidade de Carga", "value": "540 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "602 L (expansível a 1.605 L)" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 329.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Não Disponível" },
+            { "label": "Garantia", "value": "Não Disponível" },
+            { "label": "Revisão Programada", "value": "Não Disponível" },
+            { "label": "Bateria Standard", "value": "58 kWh (real: 55 kWh)" },
+            { "label": "Autonomia WLTP", "value": "428 km" },
+            { "label": "Tempo de Carga DC (10-80%)", "value": "18 minutos (Ultra Rápida)" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 88,
+        "type": "charging_infrastructure",
+        "title": "Alerta Preditivo: Infraestrutura de Carregamento",
+        "description": "Probabilidade de 88% de expansão acelerada de redes de carregamento rápido DC. Tendência: competição entre Ioniq 5 e Model 3 impulsiona investimentos em infraestrutura.",
+        "actionSuggestion": "Ação sugerida: comunicar tempo de carga ultra-rápido e integração com rede de carregadores V2L."
+      }
+    },
+{
+      "id": "kia-ev9-prestige-2025",
+      "categoryId": "eletrico",
+      "platform": "mono",
+      "brand": "Kia",
+      "brandFipeCode": "31",
+      "model": "EV9",
+      "modelFipeCode": "11373",
+      "version": "Prestige",
+      "year": 2025,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Elétrico síncrono permanente duplo (AWD)" },
+            { "label": "Potência", "value": "314 cv", "unit": "combinada", "highlight": true },
+            { "label": "Torque Máximo", "value": "665 Nm", "unit": "instantâneo", "highlight": true },
+            { "label": "0-100 km/h", "value": "4,7 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "230 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "Redução direta automática dupla com torque vetorizado" },
+            { "label": "Tração", "value": "Integral (AWD) com controle independente de torque" },
+            { "label": "Recuperação de Energia", "value": "Sim - 3 níveis com paddles e freio regenerativo máximo" },
+            { "label": "Modos de Condução", "value": "Eco, Normal, Sport, Snow, Drift, Customizado" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes com controle eletrônico adaptativo" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson duplo com barra anti-inclinação ativa" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado 370 mm com regeneração máxima" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado 330 mm com regeneração" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Eco", "value": "Economia extrema de energia" },
+            { "label": "Normal", "value": "Condução familiar equilibrada" },
+            { "label": "Sport", "value": "Performance máxima com resposta imediata" },
+            { "label": "Snow", "value": "Distribuição inteligente de torque em neve/gelo" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Matrix com adaptação dinâmica 3D" },
+            { "label": "Lanternas", "value": "LED Full com animação sequencial 3D" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED com padrão diagonal aerodinâmico" },
+            { "label": "Iluminação Interior", "value": "LED ambiente 64 cores multizona com sincronização musical" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "20\" alumínio design exclusivo preto fosco" },
+            { "label": "Pneus", "value": "255/50 R20 Hankook Kinergy ST" },
+            { "label": "Estepe", "value": "Kit de reparo com compressor digital" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "14\" touchscreen com painel digital 12,3\" integrado" },
+            { "label": "Sistema de Infotainment", "value": "Kia UVO Link 3.0 com IA e reconhecimento de voz" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio com prioridade)" },
+            { "label": "Android Auto", "value": "Sim (sem fio com prioridade)" },
+            { "label": "Sistema de Som", "value": "Meridian Surround Premium 14 alto-falantes 1.200W" },
+            { "label": "Head-Up Display", "value": "Sim - colorido 10 polegadas com realidade aumentada" },
+            { "label": "Câmera", "value": "Sim com visão 3D de topo, night vision e detecção de obstáculos" },
+            { "label": "Ar-condicionado", "value": "Quadri-zona digital com umidificador integrado" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (SCC com pedestres e ciclistas)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ASCC Stop & Go com navegação integrada)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKA + Lane Change Assist + Steering Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSD com Close Object Detection 360°)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (APA Remoto Automático com smartphone)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "5.015 mm" },
+            { "label": "Largura", "value": "1.980 mm" },
+            { "label": "Altura", "value": "1.755 mm" },
+            { "label": "Entre-eixos", "value": "3.100 mm" },
+            { "label": "Capacidade de Carga", "value": "700 kg (3 filas)" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "333 L + 50 L (banco central retrátil)" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 499.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Não Disponível" },
+            { "label": "Garantia", "value": "Não Disponível" },
+            { "label": "Revisão Programada", "value": "Não Disponível" },
+            { "label": "Bateria Prestige", "value": "99,8 kWh (real: 96 kWh)" },
+            { "label": "Autonomia WLTP", "value": "530 km" },
+            { "label": "Tempo de Carga DC (10-80%)", "value": "24 minutos" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 76,
+        "type": "family_segment",
+        "title": "Alerta Preditivo: Segmento Familiar",
+        "description": "Probabilidade de 76% de crescimento em vendas de SUVs grandes elétricos de 7 lugares. Tendência: famílias premium buscam espaço e conforto em veículos sustentáveis.",
+        "actionSuggestion": "Ação sugerida: destacar capacidade de 7 assentos, espaço modular e conforto familiar em campanhas B2C e B2B."
+      }
+    },
+{
+      "id": "byd-yuan-plus-ev-2025",
+      "categoryId": "eletrico",
+      "platform": "mono",
+      "brand": "BYD",
+      "brandFipeCode": "238",
+      "model": "Yuan Plus EV",
+      "modelFipeCode": "10184",
+      "version": "Standard",
+      "year": 2025,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Elétrico síncrono permanente" },
+            { "label": "Potência", "value": "184 cv", "unit": "contínua", "highlight": true },
+            { "label": "Torque Máximo", "value": "340 Nm", "unit": "instantâneo", "highlight": true },
+            { "label": "0-100 km/h", "value": "7,9 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "180 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "Redução direta automática de 1 marcha" },
+            { "label": "Tração", "value": "Dianteira (FWD)" },
+            { "label": "Recuperação de Energia", "value": "Sim - frenagem regenerativa 3 níveis" },
+            { "label": "Modos de Condução", "value": "Eco, Normal, Sport" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes tipo MacPherson" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson independente com barra estabilizadora" },
+            { "label": "Suspensão Traseira", "value": "Eixo de torção com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado com regeneração" },
+            { "label": "Freios Traseiros", "value": "Tambor com regeneração" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Eco", "value": "Economia de energia para maior autonomia" },
+            { "label": "Normal", "value": "Operação confortável equilibrada" },
+            { "label": "Sport", "value": "Resposta acelerada máxima" },
+            { "label": "Controle de Tração", "value": "Sistema eletrônico avançado" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com padrão de assinatura BYD" },
+            { "label": "Lanternas", "value": "LED Full com padrão em L" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado no parachoque" },
+            { "label": "Iluminação Interior", "value": "LED ambiente branco frio" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "18\" alumínio design moderno prata" },
+            { "label": "Pneus", "value": "225/55 R18 Michelin e-Primacy" },
+            { "label": "Estepe", "value": "Kit de reparo com selante" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "12,8\" touchscreen com painel digital 10,25\"" },
+            { "label": "Sistema de Infotainment", "value": "BYD DiLink 5.0 com IA integrada" },
+            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
+            { "label": "Android Auto", "value": "Sim (com fio)" },
+            { "label": "Sistema de Som", "value": "8 alto-falantes BYD 400W" },
+            { "label": "Head-Up Display", "value": "Não Possui" },
+            { "label": "Câmera", "value": "Sim com visão de topo" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital automático" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (AEB básico)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC Stop & Go)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LDW + LKA)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Não Possui" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (APA)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.600 mm" },
+            { "label": "Largura", "value": "1.910 mm" },
+            { "label": "Altura", "value": "1.680 mm" },
+            { "label": "Entre-eixos", "value": "2.830 mm" },
+            { "label": "Capacidade de Carga", "value": "520 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "480 L (expansível a 1.520 L)" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 229.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Não Disponível" },
+            { "label": "Garantia", "value": "Não Disponível" },
+            { "label": "Revisão Programada", "value": "Não Disponível" },
+            { "label": "Bateria Standard", "value": "61,4 kWh (real: 59 kWh)" },
+            { "label": "Autonomia CLTC", "value": "430 km" },
+            { "label": "Tempo de Carga DC (10-80%)", "value": "35 minutos" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 84,
+        "type": "chinese_competition",
+        "title": "Alerta Preditivo: Competição Chinesa",
+        "description": "Probabilidade de 84% de BYD ganhar significativo market share no Brasil. Tendência: marca chinesa oferece melhor custo-benefício e tecnologia de bateria proprietária.",
+        "actionSuggestion": "Ação sugerida: destacar tecnologia BYD Blade Battery, durabilidade de bateria estendida e valor agregado."
+      }
+    },
+    {
+      "id": "chevrolet-equinox-ev-2ltz-2025",
+      "categoryId": "eletrico",
+      "platform": "mono",
+      "brand": "Chevrolet",
+      "brandFipeCode": "23",
+      "model": "Equinox EV",
+      "modelFipeCode": "11261",
+      "version": "2LTZ",
+      "year": 2025,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Elétrico síncrono permanente duplo (AWD)" },
+            { "label": "Potência", "value": "210 cv", "unit": "combinada", "highlight": true },
+            { "label": "Torque Máximo", "value": "370 Nm", "unit": "instantâneo", "highlight": true },
+            { "label": "0-100 km/h", "value": "6,9 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "190 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "Redução direta automática dupla" },
+            { "label": "Tração", "value": "Integral (AWD)" },
+            { "label": "Recuperação de Energia", "value": "Sim - frenagem regenerativa com paddles" },
+            { "label": "Modos de Condução", "value": "Eco, Normal, Sport, Snow" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Independentes tipo MacPherson com controle eletrônico" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson com barra anti-inclinação ativa" },
+            { "label": "Suspensão Traseira", "value": "Multi-link independente com molas helicoidais" },
+            { "label": "Freios Dianteiros", "value": "Disco ventilado 370 mm com regeneração" },
+            { "label": "Freios Traseiros", "value": "Disco ventilado 330 mm" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Disponível" },
+            { "label": "Modos de Volante", "value": "Não Disponível" },
+            { "label": "Modos de Escapamento", "value": "Não Disponível" },
+            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
+            { "label": "Eco", "value": "Autonomia máxima com resposta suave" },
+            { "label": "Normal", "value": "Operação confortável equilibrada" },
+            { "label": "Sport", "value": "Performance com resposta acelerada" },
+            { "label": "Snow", "value": "Tração otimizada para gelo e neve" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com DRL daytime running" },
+            { "label": "Lanternas", "value": "LED Full com padrão dinâmico" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado no parachoque" },
+            { "label": "Iluminação Interior", "value": "LED ambiente branco com tons quentes" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "19\" alumínio design esportivo cinza" },
+            { "label": "Pneus", "value": "235/55 R19 Michelin Defender T+H" },
+            { "label": "Estepe", "value": "Kit de reparo com compressor digital" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "13\" touchscreen com painel digital 12,3\" dedicado" },
+            { "label": "Sistema de Infotainment", "value": "Chevrolet Infotainment 3.0 com IA" },
+            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
+            { "label": "Android Auto", "value": "Sim (sem fio)" },
+            { "label": "Sistema de Som", "value": "8 alto-falantes 300W" },
+            { "label": "Head-Up Display", "value": "Não Possui" },
+            { "label": "Câmera", "value": "Sim com visão de topo dinâmica" },
+            { "label": "Ar-condicionado", "value": "Bi-zona digital automático" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (Forward Collision Alert)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (Adaptive Cruise)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keep Assist)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (Blind Spot Monitoring)" },
+            { "label": "Assistente de Estacionamento", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.644 mm" },
+            { "label": "Largura", "value": "1.890 mm" },
+            { "label": "Altura", "value": "1.650 mm" },
+            { "label": "Entre-eixos", "value": "2.780 mm" },
+            { "label": "Capacidade de Carga", "value": "540 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Disponível" },
+            { "label": "Porta-malas", "value": "552 L (expansível a 1.570 L)" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 389.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Não Disponível" },
+            { "label": "Garantia", "value": "Não Disponível" },
+            { "label": "Revisão Programada", "value": "Não Disponível" },
+            { "label": "Bateria 2LTZ", "value": "85 kWh (real: 82 kWh)" },
+            { "label": "Autonomia EPA", "value": "480 km" },
+            { "label": "Tempo de Carga DC (10-80%)", "value": "30 minutos" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 68,
+        "type": "american_comeback",
+        "title": "Alerta Preditivo: Retorno Americano",
+        "description": "Probabilidade de 68% de retorno dos EUAs ao mercado elétrico brasileiro com marcas locais. Tendência: GM/Chevrolet investe em portfólio elétrico para competir globalmente.",
+        "actionSuggestion": "Ação sugerida: destacar engenharia americano confiável, suporte de rede Chevrolet e conforto familiar em campanhas."
+      }
+    }
+  ],
+  "_metadata": {
+    "totalVehicles": 4,
+    "categories": [
+      "eletrico"
+    ],
+    "brands": ["Hyundai", "Kia", "BYD", "Chevrolet"],
+    "lastUpdated": "2025-09-23",
+    "version": "1.0",
+    "notes": "Dataset JSON contendo 4 veículos elétricos 100% do mercado brasileiro 2025/2026. Todos seguem padrão de estrutura: 10 seções (engine, transmission, suspension, driving_modes, lighting, wheels, tech, safety, dimensions, pricing). Equipamentos não disponíveis utilizam 'Não Possui'. Potência em 'cv' com unit obrigatório. Torque em 'Nm' com unit. Highlights (true) apenas em: Potência, Torque, 0-100, Preço. Alertas preditivos com probabilidade (0-100), type, title, description e actionSuggestion. Pronto para expansão e integração com sistemas de e-commerce e dashboards de análise de mercado automotivo."
+  }
+}

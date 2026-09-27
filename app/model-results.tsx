@@ -4,7 +4,9 @@ import React, { useMemo } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { VehicleListRow } from '../components/search/VehicleListRow';
+import { FipeLoadingOverlay } from '../components/ui/FipeLoadingOverlay';
 import { colors, fonts } from '../constants/colors';
+import { useFipeReady } from '../hooks/useFipeReady';
 import { CatalogService } from '../services/catalog';
 import { VehicleDataService } from '../services/vehicleData';
 
@@ -41,6 +43,8 @@ export default function ModelResultsScreen() {
     );
   }, [vehicles, categories]);
 
+  const fipeReady = useFipeReady(vehicles.map((v) => VehicleDataService.getVehicleById(v.vehicleId)));
+
   const modelCode = (model ?? '').slice(0, 3).toUpperCase();
 
   return (
@@ -52,7 +56,7 @@ export default function ModelResultsScreen() {
         {/* Header */}
         <View
           style={{
-            backgroundColor: colors.brand.navy,
+            backgroundColor: colors.neutral.gray,
             paddingHorizontal: 20,
             paddingTop: 16,
             paddingBottom: 22,
@@ -66,7 +70,7 @@ export default function ModelResultsScreen() {
               right: -6,
               fontFamily: fonts.monoBold,
               fontSize: 130,
-              color: colors.brand.navyLight,
+              color: colors.neutral.grayLight,
               opacity: 0.25,
               letterSpacing: -6,
             }}
@@ -233,6 +237,8 @@ export default function ModelResultsScreen() {
           </Text>
         </View>
       </ScrollView>
+
+      <FipeLoadingOverlay visible={!fipeReady} />
     </SafeAreaView>
   );
 }

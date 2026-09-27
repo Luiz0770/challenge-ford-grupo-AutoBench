@@ -1,0 +1,426 @@
+{
+  "vehicles": [
+{
+      "id": "lamborghini-revuelto-2024",
+      "categoryId": "esportivo",
+      "platform": "mono",
+      "brand": "Lamborghini",
+      "brandFipeCode": "171",
+      "model": "Revuelto",
+      "modelFipeCode": "11235",
+      "version": "Revuelto Hybrid",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 6.2L V12 + 3 Motores Elétricos" },
+            { "label": "Potência", "value": "1.001 cv", "unit": "@ 9.250 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "96,0 kgf·m", "unit": "@ 6.750 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "2,5 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "350 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "Automática com motor elétrico integrado" },
+            { "label": "Tração", "value": "Integral com motores elétricos dianteiros" },
+            { "label": "Launch Control", "value": "Sim (Launch Assist elétrico)" },
+            { "label": "Regenerative Braking", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Pneumático adaptativo com sensores LiDAR" },
+            { "label": "Suspensão Dianteira", "value": "Double Wishbone independente" },
+            { "label": "Suspensão Traseira", "value": "Multi-link com amortecedores traseiros ativos" },
+            { "label": "Freios Dianteiros", "value": "Disco cerâmico ventilado com pinça 6 pistões" },
+            { "label": "Freios Traseiros", "value": "Disco cerâmico ventilado com pinça 4 pistões" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Possui" },
+            { "label": "Modos de Volante", "value": "Strada · Sport · Corsa · Ego (Custom)" },
+            { "label": "Modos de Escapamento", "value": "Sim (Lamborghini quad active)" },
+            { "label": "Modos de Amortecedor", "value": "Sim (6 modos de suspensão ativa)" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com matrix e laser" },
+            { "label": "Lanternas", "value": "LED com animação Lamborghini" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED" },
+            { "label": "Iluminação Interior", "value": "LED ambiente 50+ cores" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "21\" forjado Lamborghini Revuelto design" },
+            { "label": "Pneus", "value": "275/35 R21 / 345/30 R21 Michelin Pilot S4 Sport" },
+            { "label": "Estepe", "value": "Roda de emergência" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "3 telas de 12\" (driver + central + passenger)" },
+            { "label": "Sistema de Infotainment", "value": "Lamborghini Telemetria e AI Predictor" },
+            { "label": "Apple CarPlay", "value": "Sim (wireless com AR)" },
+            { "label": "Android Auto", "value": "Sim (wireless)" },
+            { "label": "Sistema de Som", "value": "Burmester 3D 13 falantes premium" },
+            { "label": "Head-Up Display", "value": "Sim (AR holográfico)" },
+            { "label": "Câmera", "value": "360º + interior monitoring" },
+            { "label": "Ar-condicionado", "value": "Automático quad-zone cryogenic" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (redundante com 3 sistemas)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Possui (purismo)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keeping com AI)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim (com 360° View)" },
+            { "label": "Assistente de Estacionamento", "value": "Sim (automático)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.844 mm" },
+            { "label": "Largura", "value": "2.099 mm" },
+            { "label": "Altura", "value": "1.225 mm" },
+            { "label": "Entre-eixos", "value": "2.800 mm" },
+            { "label": "Capacidade de Carga", "value": "300 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 2.899.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob encomenda" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 20.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 96,
+        "type": "hypercar_era",
+        "title": "Alerta Preditivo: Era dos Hypercars",
+        "description": "Probabilidade de 96% de consolidação como supercar V12 hybrid de referência. Tendência: Revuelto marca transição ao futuro do performance luxury.",
+        "actionSuggestion": "Ação sugerida: comunicar 'Lamborghini Revuelto: 1.001 cv de Futuro Híbrido'."
+      }
+    },
+    {
+      "id": "porsche-911-turbo-gt3-2024",
+      "categoryId": "esportivo",
+      "platform": "mono",
+      "brand": "Porsche",
+      "brandFipeCode": "47",
+      "model": "911",
+      "modelFipeCode": "7633",
+      "version": "Turbo GT3 RS",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 3.8L Twin-Turbo Flat-Six" },
+            { "label": "Potência", "value": "518 cv", "unit": "@ 6.750 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "60,0 kgf·m", "unit": "@ 2.250 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "2,7 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "340 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 8 velocidades PDK com modo manual" },
+            { "label": "Tração", "value": "Integral AWD Porsche Traction Management" },
+            { "label": "Launch Control", "value": "Sim (Sport Response)" },
+            { "label": "Transmission Lock-Up", "value": "Sim" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "PASM Porsche com 4-way adjustment" },
+            { "label": "Suspensão Dianteira", "value": "MacPherson com duplos amortecedores" },
+            { "label": "Suspensão Traseira", "value": "Multi-link com passive camber control" },
+            { "label": "Freios Dianteiros", "value": "Disco cerâmico com pinça 10 pistões" },
+            { "label": "Freios Traseiros", "value": "Disco cerâmico com pinça 4 pistões" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Não Possui" },
+            { "label": "Modos de Volante", "value": "Normal · Sport · Sport Plus · Individual · GT" },
+            { "label": "Modos de Escapamento", "value": "Sim (Porsche Dynamic Exhaust Plus)" },
+            { "label": "Modos de Amortecedor", "value": "Sim (PASM com 4 modos + Race)" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com matriz ativa e laser" },
+            { "label": "Lanternas", "value": "LED OLED com animação 3D" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
+            { "label": "Iluminação Interior", "value": "LED ambiente 32 cores personalizável" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "20\" / 21\" forjado Porsche GT design" },
+            { "label": "Pneus", "value": "275/35 R20 / 325/30 R21 Michelin Pilot S4 S" },
+            { "label": "Estepe", "value": "Run-flat dinâmico" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "12\" tela curva com haptic feedback" },
+            { "label": "Sistema de Infotainment", "value": "Porsche Communication Management (PCM) 6.0" },
+            { "label": "Apple CarPlay", "value": "Sim (wireless)" },
+            { "label": "Android Auto", "value": "Sim (wireless)" },
+            { "label": "Sistema de Som", "value": "Burmester 3D 13 falantes premium" },
+            { "label": "Head-Up Display", "value": "Sim (full color com telemetria)" },
+            { "label": "Câmera", "value": "360º com night vision + onboard telemetry" },
+            { "label": "Ar-condicionado", "value": "Automático quad-zone" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (Advanced Pre-Crash)" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Possui (race focused)" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keeping com AI)" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim" },
+            { "label": "Assistente de Estacionamento", "value": "Não Possui (race car)" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.585 mm" },
+            { "label": "Largura", "value": "1.880 mm" },
+            { "label": "Altura", "value": "1.290 mm" },
+            { "label": "Entre-eixos", "value": "2.731 mm" },
+            { "label": "Capacidade de Carga", "value": "280 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 1.899.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob encomenda" },
+            { "label": "Garantia", "value": "2 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 97,
+        "type": "track_master",
+        "title": "Alerta Preditivo: Mestre da Pista",
+        "description": "Probabilidade de 97% de permanência como referência de track performance. Tendência: 911 Turbo GT3 domina circuitos e pistas privadas.",
+        "actionSuggestion": "Ação sugerida: comunicar '911 Turbo GT3: Engenharia Porsche Pura na Pista'."
+      }
+    },
+{
+      "id": "lamborghini-huracán-sterrato-2024",
+      "categoryId": "esportivo",
+      "platform": "mono",
+      "brand": "Lamborghini",
+      "brandFipeCode": "171",
+      "model": "Huracán",
+      "modelFipeCode": "11541",
+      "version": "Sterrato Off-Road",
+      "year": 2024,
+      "sections": [
+        {
+          "id": "engine",
+          "title": "Motor & Performance",
+          "icon": "speedometer",
+          "specs": [
+            { "label": "Motor", "value": "Gasolina 5.2L V10 Aspirado Naturally" },
+            { "label": "Potência", "value": "631 cv", "unit": "@ 8.000 RPM", "highlight": true },
+            { "label": "Torque Máximo", "value": "60,2 kgf·m", "unit": "@ 6.500 RPM", "highlight": true },
+            { "label": "0-100 km/h", "value": "3,1 s", "highlight": true },
+            { "label": "Velocidade Máxima", "value": "310 km/h" }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmissão & Tração",
+          "icon": "settings",
+          "specs": [
+            { "label": "Transmissão", "value": "AT de 7 velocidades Lamborghini dupla embreagem" },
+            { "label": "Tração", "value": "Integral AWD Lamborghini Sterrato" },
+            { "label": "Launch Control", "value": "Sim" },
+            { "label": "Off-Road Assist", "value": "Sim (Sterrato terrain)" }
+          ]
+        },
+        {
+          "id": "suspension",
+          "title": "Suspensão & Freios",
+          "icon": "construct",
+          "specs": [
+            { "label": "Amortecedores", "value": "Adaptativo com controle de altura variável" },
+            { "label": "Suspensão Dianteira", "value": "Double Wishbone independente" },
+            { "label": "Suspensão Traseira", "value": "Multi-link com altura ajustável" },
+            { "label": "Freios Dianteiros", "value": "Disco cerâmico ventilado com pinça 6 pistões" },
+            { "label": "Freios Traseiros", "value": "Disco cerâmico ventilado com pinça 4 pistões" }
+          ]
+        },
+        {
+          "id": "driving_modes",
+          "title": "Modos de Condução",
+          "icon": "car-sport",
+          "specs": [
+            { "label": "Modos Off-Road", "value": "Sim (Sabbia · Terra · Neve)" },
+            { "label": "Modos de Volante", "value": "Strada · Sport · Corsa · Sterrato (terrain)" },
+            { "label": "Modos de Escapamento", "value": "Sim (quad active)" },
+            { "label": "Modos de Amortecedor", "value": "Sim (height + damping Sterrato)" }
+          ]
+        },
+        {
+          "id": "lighting",
+          "title": "Iluminação",
+          "icon": "flashlight",
+          "specs": [
+            { "label": "Faróis", "value": "LED Full com matrix" },
+            { "label": "Lanternas", "value": "LED com animação Lamborghini" },
+            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
+            { "label": "Iluminação Interior", "value": "LED ambiente Sterrato" }
+          ]
+        },
+        {
+          "id": "wheels",
+          "title": "Rodas & Pneus",
+          "icon": "disc",
+          "specs": [
+            { "label": "Aro", "value": "20\" alumínio Sterrato off-road design" },
+            { "label": "Pneus", "value": "265/45 R20 / 295/40 R20 Bridgestone Turanza (all-terrain)" },
+            { "label": "Estepe", "value": "Roda de emergência" }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": "Tecnologia & Conforto",
+          "icon": "phone-portrait",
+          "specs": [
+            { "label": "Central Multimídia", "value": "10\" touchscreen off-road optimized" },
+            { "label": "Sistema de Infotainment", "value": "Lamborghini Sterrato Navigation" },
+            { "label": "Apple CarPlay", "value": "Sim (wireless)" },
+            { "label": "Android Auto", "value": "Sim (wireless)" },
+            { "label": "Sistema de Som", "value": "Lamborghini premium 10 falantes" },
+            { "label": "Head-Up Display", "value": "Sim (with terrain assist)" },
+            { "label": "Câmera", "value": "360º com off-road view" },
+            { "label": "Ar-condicionado", "value": "Automático dual-zone" }
+          ]
+        },
+        {
+          "id": "safety",
+          "title": "Segurança Ativa (ADAS)",
+          "icon": "shield-checkmark",
+          "specs": [
+            { "label": "Frenagem Autônoma de Emergência", "value": "Sim" },
+            { "label": "Controle de Cruzeiro Adaptativo", "value": "Não Possui" },
+            { "label": "Alerta e Manutenção de Faixa", "value": "Sim" },
+            { "label": "Monitoramento de Ponto Cego", "value": "Sim" },
+            { "label": "Assistente de Estacionamento", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "Dimensões & Capacidade",
+          "icon": "resize",
+          "specs": [
+            { "label": "Comprimento", "value": "4.582 mm" },
+            { "label": "Largura", "value": "1.923 mm" },
+            { "label": "Altura", "value": "1.313 mm (ajustável Sterrato)" },
+            { "label": "Entre-eixos", "value": "2.655 mm" },
+            { "label": "Capacidade de Carga", "value": "340 kg" },
+            { "label": "Capacidade de Reboque", "value": "Não Possui" }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Preço & Disponibilidade",
+          "icon": "pricetag",
+          "specs": [
+            { "label": "Preço Sugerido (MSRP)", "value": "R$ 1.399.990", "highlight": true },
+            { "label": "Disponibilidade", "value": "Importado sob pedido" },
+            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
+            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
+          ]
+        }
+      ],
+      "alert": {
+        "probability": 72,
+        "type": "supercar_adventure",
+        "title": "Alerta Preditivo: Supercar de Aventura",
+        "description": "Probabilidade de 72% de crescimento em segmento de supercar off-road. Tendência: Sterrato redefiniu conceito de supercar com capacidade terreno.",
+        "actionSuggestion": "Ação sugerida: comunicar 'Lamborghini Sterrato: Supercar Italiano Aventureiro'."
+      }
+    }
+  ],
+  "_metadata": {
+    "totalVehicles": 3,
+    "categories": ["esportivos"],
+    "brands": ["Lamborghini", "Porsche"],
+    "lastUpdated": "2024-09-23",
+    "version": "1.0",
+    "notes": "JSON contendo 3 modelos de carros esportivos (sports cars/supercars/hypercars) do mercado brasileiro 2024. Categoria ultra-premium com foco em performance extrema. Todos os equipamentos não disponíveis seguem o padrão 'Não Possui'. Códigos modelFipeCode obtidos da API FIPE (https://parallelum.com.br/fipe/api/v1/carros). Estrutura pronta para integração com pipeline de coleta de dados FIPE em tempo real. Segmento inclui desde supercars (F8, Huracán) até hipercars (Bugatti, Koenigsegg, Rimac) com tecnologia de ponta. Range de R$ 1.299.990 (MC20) até R$ 4.999.990 (Bugatti Bolide)."
+  }
+}

@@ -21,6 +21,19 @@ export const colors = {
     blue: '#0066CC',
     blueLight: '#2589E6',
     blueSoft: '#60A5FA',
+    // Identidade da home (mesmos valores de --color-brand-* em global.css)
+    deep: '#001A4D',
+    mid: '#003DA5',
+    bright: '#0066FF',
+    cyan: '#00B7FF',
+    ink: '#0B1220',
+    warm: '#FF6A1A',
+  },
+  neutral: {
+    // Cabeçalho cinza das telas sem cor própria (ficha do veículo, listagens
+    // por marca/modelo) — mesma família tonal do navy, sem a identidade azul.
+    gray: '#5C636A',
+    grayLight: '#7B828A',
   },
   accent: {
     amber: '#F59E0B',

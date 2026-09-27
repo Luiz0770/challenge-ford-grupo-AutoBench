@@ -43,3 +43,6 @@ yarn-error.*
 /ios
 /android
 
+# modelos de design
+/model
+
