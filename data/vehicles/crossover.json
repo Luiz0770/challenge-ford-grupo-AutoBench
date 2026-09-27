@@ -5,9 +5,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Toyota",
-      "brandFipeCode": "30",
+      "brandFipeCode": "56",
       "model": "Corolla Cross",
-      "modelFipeCode": "11127",
+      "modelFipeCode": "9987",
       "version": "Hybrid",
       "year": 2024,
       "sections": [
@@ -148,9 +148,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Honda",
-      "brandFipeCode": "23",
+      "brandFipeCode": "25",
       "model": "HR-V",
-      "modelFipeCode": "10949",
+      "modelFipeCode": "10217",
       "version": "Sport",
       "year": 2024,
       "sections": [
@@ -291,9 +291,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Volkswagen",
-      "brandFipeCode": "31",
+      "brandFipeCode": "59",
       "model": "Nivus",
-      "modelFipeCode": "11100",
+      "modelFipeCode": "9151",
       "version": "Highline",
       "year": 2024,
       "sections": [
@@ -434,9 +434,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Hyundai",
-      "brandFipeCode": "24",
+      "brandFipeCode": "26",
       "model": "Creta",
-      "modelFipeCode": "11078",
+      "modelFipeCode": "9113",
       "version": "Smart",
       "year": 2024,
       "sections": [
@@ -577,9 +577,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Jeep",
-      "brandFipeCode": "27",
+      "brandFipeCode": "29",
       "model": "Compass",
-      "modelFipeCode": "11057",
+      "modelFipeCode": "9455",
       "version": "Limited",
       "year": 2024,
       "sections": [
@@ -719,9 +719,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Chevrolet",
-      "brandFipeCode": "17",
+      "brandFipeCode": "23",
       "model": "Tracker",
-      "modelFipeCode": "11095",
+      "modelFipeCode": "9213",
       "version": "LTZ",
       "year": 2024,
       "sections": [
@@ -862,9 +862,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Nissan",
-      "brandFipeCode": "26",
+      "brandFipeCode": "43",
       "model": "Kicks",
-      "modelFipeCode": "11027",
+      "modelFipeCode": "9337",
       "version": "Sense",
       "year": 2024,
       "sections": [
@@ -1005,9 +1005,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Renault",
-      "brandFipeCode": "25",
+      "brandFipeCode": "48",
       "model": "Captur",
-      "modelFipeCode": "11107",
+      "modelFipeCode": "9546",
       "version": "Intense",
       "year": 2024,
       "sections": [
@@ -1148,9 +1148,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Fiat",
-      "brandFipeCode": "14",
+      "brandFipeCode": "21",
       "model": "Pulse",
-      "modelFipeCode": "11121",
+      "modelFipeCode": "9647",
       "version": "Firefly",
       "year": 2024,
       "sections": [
@@ -1291,9 +1291,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Peugeot",
-      "brandFipeCode": "29",
+      "brandFipeCode": "44",
       "model": "2008",
-      "modelFipeCode": "11086",
+      "modelFipeCode": "8928",
       "version": "Griffe",
       "year": 2024,
       "sections": [
@@ -1434,9 +1434,9 @@
       "categoryId": "crossover",
       "platform": "mono",
       "brand": "Citroën",
-      "brandFipeCode": "19",
+      "brandFipeCode": "13",
       "model": "C3 Aircross",
-      "modelFipeCode": "11117",
+      "modelFipeCode": "11786",
       "version": "Shine",
       "year": 2024,
       "sections": [
@@ -1578,21 +1578,9 @@
     "categories": [
       "crossover"
     ],
-    "brands": [
-      "Toyota",
-      "Honda",
-      "Volkswagen",
-      "Hyundai",
-      "Jeep",
-      "Chevrolet",
-      "Nissan",
-      "Renault",
-      "Fiat",
-      "Peugeot",
-      "Citroën"
-    ],
+    "brands": ["Toyota", "Honda", "Volkswagen", "Hyundai", "Jeep", "Chevrolet", "Nissan", "Renault", "Fiat", "Peugeot", "Citroën"],
     "lastUpdated": "2024-09-24",
     "version": "1.0",
-    "notes": "JSON contendo 15 modelos de crossovers do mercado brasileiro 2024. Todos os equipamentos não disponíveis seguem o padrão 'Não Possui'. Estrutura validada com especificações técnicas reais de cada modelo. Inclui alertas preditivos de mercado baseados em tendências de segmento. Pronto para expansão com outras categorias (sedans, SUVs, hatchbacks, cupês, esportivos, comerciais, luxo, elétricos)."
+    "notes": "JSON contendo 11 modelos de crossovers do mercado brasileiro 2024. Todos os equipamentos não disponíveis seguem o padrão 'Não Possui'. Estrutura validada com especificações técnicas reais de cada modelo. Inclui alertas preditivos de mercado baseados em tendências de segmento. Pronto para expansão com outras categorias (sedans, SUVs, hatchbacks, cupês, esportivos, comerciais, luxo, elétricos)."
   }
 }

@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { FipeLoadingOverlay } from "../../components/ui/FipeLoadingOverlay";
 import { LivePulse } from "../../components/ui/LivePulse";
 import { SectionLabel } from "../../components/ui/SectionLabel";
 import { Wordmark } from "../../components/ui/Wordmark";
@@ -276,6 +277,8 @@ export default function VehicleScreen() {
           <SpecsMatrix vehicle={vehicle} />
         </View>
       </ScrollView>
+
+      <FipeLoadingOverlay visible={fipeLoading} />
     </View>
   );
 }

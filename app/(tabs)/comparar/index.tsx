@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import React, { useMemo, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { DuelRow } from '../../../components/compare/DuelRow';
-import { SetupHero } from '../../../components/compare/SetupHero';
+import { SETUP_HERO_OVERLAP, SetupHero } from '../../../components/compare/SetupHero';
 import { SetupSlot } from '../../../components/compare/SetupSlot';
 import { VehiclePickerSheet } from '../../../components/compare/VehiclePickerSheet';
 import { VsBadge } from '../../../components/compare/VsBadge';
@@ -13,8 +13,10 @@ import { colors, fonts } from '../../../constants/colors';
 import type { CompareSide } from '../../../constants/compare';
 import { CatalogService } from '../../../services/catalog';
 import type { CategoryVehicleEntry } from '../../../types';
+import { useScrollToTopOnFocus } from '../../../hooks/useScrollToTopOnFocus';
 
 export default function CompareSetupScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
   const [a, setA] = useState<CategoryVehicleEntry | null>(null);
   const [b, setB] = useState<CategoryVehicleEntry | null>(null);
@@ -37,10 +39,10 @@ export default function CompareSetupScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scrollRef} contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         <SetupHero step={step} />
 
-        <View style={{ paddingHorizontal: 16, marginTop: -42, flexDirection: 'row', gap: 10 }}>
+        <View style={{ paddingHorizontal: 16, marginTop: -SETUP_HERO_OVERLAP, flexDirection: 'row', gap: 10 }}>
           <SetupSlot side="a" vehicle={a} delay={80} onOpen={() => setPicking('a')} onClear={() => setA(null)} />
           <SetupSlot side="b" vehicle={b} delay={140} onOpen={() => setPicking('b')} onClear={() => setB(null)} />
           <VsBadge variant="dark" />

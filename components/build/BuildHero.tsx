@@ -1,10 +1,9 @@
 import { Feather } from '@expo/vector-icons';
-import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Circle } from 'react-native-svg';
 import { colors, fonts } from '../../constants/colors';
-import { GradientFill } from '../ui/GradientFill';
+import { HeroBackground, useHeroBackdropHeight } from '../ui/HeroBackground';
 import { Rise } from '../ui/Rise';
 
 interface BuildHeroProps {
@@ -38,27 +37,15 @@ export const BuildHero: React.FC<BuildHeroProps> = ({
   bottomPad = 64,
 }) => {
   const insets = useSafeAreaInsets();
+  const [heroHeight, setHeroHeight] = useState(0);
+  const backdropHeight = useHeroBackdropHeight(heroHeight);
 
   return (
-    <View style={{ paddingTop: insets.top + 14, paddingBottom: bottomPad, overflow: 'hidden' }}>
-      <GradientFill
-        angle={160}
-        stops={[
-          { color: colors.brand.deep, offset: 0 },
-          { color: colors.brand.mid, offset: 0.85 },
-        ]}
-      />
-      <Svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 390 240"
-        preserveAspectRatio="xMidYMid slice"
-        style={StyleSheet.absoluteFill}
-        pointerEvents="none"
-      >
-        <Circle cx={360} cy={30} r={110} fill="none" stroke="rgba(255,255,255,0.08)" />
-        <Circle cx={360} cy={30} r={170} fill="none" stroke="rgba(255,255,255,0.05)" />
-      </Svg>
+    <View
+      onLayout={(e) => setHeroHeight(e.nativeEvent.layout.height)}
+      style={{ paddingTop: insets.top + 14, paddingBottom: bottomPad }}
+    >
+      <HeroBackground height={backdropHeight} />
 
       {(onBack || right) && (
         <View

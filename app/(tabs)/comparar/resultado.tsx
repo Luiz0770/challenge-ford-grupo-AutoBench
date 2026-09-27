@@ -8,6 +8,7 @@ import { VehiclePickerSheet } from '../../../components/compare/VehiclePickerShe
 import { VehicleSlot } from '../../../components/compare/VehicleSlot';
 import { VerdictCard } from '../../../components/compare/VerdictCard';
 import { VsBadge } from '../../../components/compare/VsBadge';
+import { FipeLoadingOverlay } from '../../../components/ui/FipeLoadingOverlay';
 import { Rise } from '../../../components/ui/Rise';
 import { SectionLabel } from '../../../components/ui/SectionLabel';
 import { colors, fonts } from '../../../constants/colors';
@@ -16,6 +17,7 @@ import { useFipePrice } from '../../../hooks/useFipePrice';
 import { CatalogService } from '../../../services/catalog';
 import { VehicleDataService } from '../../../services/vehicleData';
 import type { CategoryVehicleEntry, CompareCategoryId } from '../../../types';
+import { useScrollToTopOnFocus } from '../../../hooks/useScrollToTopOnFocus';
 
 const CATEGORY_TABS: {
   id: CompareCategoryId;
@@ -29,6 +31,7 @@ const CATEGORY_TABS: {
 ];
 
 export default function CompareResultScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
   const params = useLocalSearchParams<{ a?: string; b?: string }>();
   const [cat, setCat] = useState<CompareCategoryId>('motorizacao');
@@ -60,7 +63,7 @@ export default function CompareResultScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scrollRef} contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         <ResultHeader onBack={backToSetup} onNew={backToSetup} />
 
         {/* Slots sobrepostos ao header */}
@@ -176,6 +179,8 @@ export default function CompareResultScreen() {
           </Text>
         </View>
       </ScrollView>
+
+      <FipeLoadingOverlay visible={aLoading || bLoading} />
 
       <VehiclePickerSheet
         open={!!swap}

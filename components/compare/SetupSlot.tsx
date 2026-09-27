@@ -6,6 +6,7 @@ import { colors, fonts } from '../../constants/colors';
 import { SIDE, type CompareSide } from '../../constants/compare';
 import type { CategoryVehicleEntry } from '../../types';
 import { Rise } from '../ui/Rise';
+import { SETUP_SLOT_HEIGHT } from './SetupHero';
 
 interface SetupSlotProps {
   side: CompareSide;
@@ -28,7 +29,7 @@ export const SetupSlot: React.FC<SetupSlotProps> = ({ side, vehicle, onOpen, onC
         {({ pressed }) => (
           <View
             style={{
-              minHeight: 168,
+              minHeight: SETUP_SLOT_HEIGHT,
               borderRadius: 14,
               padding: 14,
               backgroundColor: colors.bg.surface,

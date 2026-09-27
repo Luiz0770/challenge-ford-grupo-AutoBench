@@ -14,8 +14,10 @@ import { colors, fonts } from '../../../constants/colors';
 import { BuildService } from '../../../services/build';
 import { useBuildStore } from '../../../store/buildStore';
 import type { SystemId } from '../../../types';
+import { useScrollToTopOnFocus } from '../../../hooks/useScrollToTopOnFocus';
 
 export default function EditarMontagemScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
   const draft = useBuildStore((s) => s.draft);
   const setPart = useBuildStore((s) => s.setPart);
@@ -68,6 +70,7 @@ export default function EditarMontagemScreen() {
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
         <ScrollView
+          ref={scrollRef}
           contentContainerStyle={{ paddingBottom: 40 }}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"

@@ -12,13 +12,17 @@ import { PersonaShortcuts } from '../../components/home/PersonaShortcuts';
 import { RecentSearches } from '../../components/home/RecentSearches';
 import { TrendingList } from '../../components/home/TrendingList';
 import { HierarchicalSearchBar } from '../../components/search/HierarchicalSearchBar';
+import { FipeLoadingOverlay } from '../../components/ui/FipeLoadingOverlay';
 import { Rise } from '../../components/ui/Rise';
 import { colors } from '../../constants/colors';
 import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
 import { useUserStore } from '../../store/userStore';
+import { useFipeReady } from '../../hooks/useFipeReady';
+import { useScrollToTopOnFocus } from '../../hooks/useScrollToTopOnFocus';
 
 export default function HomeScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
   const isFocused = useIsFocused();
   const favorites = useUserStore((s) => s.favorites);
@@ -30,6 +34,12 @@ export default function HomeScreen() {
   const totals = useMemo(() => VehicleDataService.getTotals(), []);
   const dailyAlert = useMemo(() => VehicleDataService.getDailyAlertVehicle(), []);
 
+  // Espera os preços FIPE dos cards visíveis (em alta + favoritos) antes de mostrar a home
+  const fipeReady = useFipeReady([
+    ...trending,
+    ...favorites.slice(0, 4).map((f) => VehicleDataService.getVehicleById(f.vehicleId)),
+  ]);
+
   const openVehicle = (vehicleId: string) => router.push(`/vehicle/${vehicleId}`);
   const openCategory = (categoryId: string) =>
     router.navigate({ pathname: '/busca', params: { categoria: categoryId } });
@@ -39,7 +49,7 @@ export default function HomeScreen() {
       {/* Hero escuro: texto da status bar claro só enquanto a home está em foco */}
       {isFocused && <StatusBar style="light" />}
 
-      <ScrollView contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scrollRef} contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         <HomeHero />
 
         {/* Busca flutuando sobre o hero */}
@@ -88,6 +98,8 @@ export default function HomeScreen() {
           </Text>
         </View>
       </ScrollView>
+
+      <FipeLoadingOverlay visible={!fipeReady} />
     </View>
   );
 }

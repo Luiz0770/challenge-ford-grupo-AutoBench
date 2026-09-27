@@ -1,21 +1,25 @@
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
+import React, { useCallback, useEffect, useState } from 'react';
+import { BackHandler, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SectionHeader } from '../../components/home/SectionHeader';
 import { CategoryCard } from '../../components/search/CategoryCard';
 import { CategoryListView } from '../../components/search/CategoryListView';
 import { HierarchicalSearchBar } from '../../components/search/HierarchicalSearchBar';
+import { FipeLoadingOverlay } from '../../components/ui/FipeLoadingOverlay';
 import { PressableScale } from '../../components/ui/PressableScale';
 import { Rise } from '../../components/ui/Rise';
 import { colors, fonts } from '../../constants/colors';
 import { CatalogService } from '../../services/catalog';
 import { VehicleDataService } from '../../services/vehicleData';
 import type { Category } from '../../types';
+import { useFipeReady } from '../../hooks/useFipeReady';
+import { useScrollToTopOnFocus } from '../../hooks/useScrollToTopOnFocus';
 
 const BRANDS_COLLAPSED = 12;
 
 export default function BuscaScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [showAllBrands, setShowAllBrands] = useState(false);
@@ -35,10 +39,38 @@ export default function BuscaScreen() {
     router.setParams({ categoria: undefined });
   }, [categoria, router]);
 
+  // Os dois ScrollViews ocupam a mesma posição na árvore e são reaproveitados;
+  // sem isso a lista da categoria abriria com a rolagem da busca
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ y: 0, animated: false });
+  }, [selectedCategory, scrollRef]);
+
+  // Botão voltar do Android: dentro de uma categoria volta para a busca, não para o início
+  useFocusEffect(
+    useCallback(() => {
+      if (!selectedCategory) return;
+      const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+        setSelectedCategory(null);
+        return true;
+      });
+      return () => sub.remove();
+    }, [selectedCategory])
+  );
+
+  // Só a lista de uma categoria mostra preços FIPE
+  const fipeReady = useFipeReady(
+    selectedCategory
+      ? CatalogService.getCategoryVehicles(selectedCategory.id).map((v) =>
+          VehicleDataService.getVehicleById(v.vehicleId)
+        )
+      : []
+  );
+
   if (selectedCategory) {
     return (
       <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
         <ScrollView
+          ref={scrollRef}
           contentContainerStyle={{ paddingBottom: 40 }}
           showsVerticalScrollIndicator={false}
         >
@@ -48,6 +80,8 @@ export default function BuscaScreen() {
             onSelect={(vehicleId) => router.push(`/vehicle/${vehicleId}`)}
           />
         </ScrollView>
+
+        <FipeLoadingOverlay visible={!fipeReady} />
       </SafeAreaView>
     );
   }
@@ -55,6 +89,7 @@ export default function BuscaScreen() {
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
       <ScrollView
+        ref={scrollRef}
         contentContainerStyle={{ paddingBottom: 40 }}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"

@@ -1,158 +1,13 @@
 {
   "vehicles": [
-    {
-      "id": "toyota-prius-hybrid-2024",
-      "categoryId": "hibrido",
-      "platform": "mono",
-      "brand": "Toyota",
-      "brandFipeCode": "30",
-      "model": "Prius",
-      "modelFipeCode": "10902",
-      "version": "Hybrid",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "1.8L Hybrid com Sistema Híbrido Toyota THS" },
-            { "label": "Potência", "value": "196 cv", "unit": "System Total", "highlight": true },
-            { "label": "Torque Máximo", "value": "19,3 kgf·m", "unit": "@ 0 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "8,2 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" },
-            { "label": "Consumo", "value": "20,5 km/l (INMETRO)" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "CVT Eletrônica com Modos Híbridos" },
-            { "label": "Tração", "value": "Dianteira" },
-            { "label": "Sistema Regenerativo", "value": "Frenagem Regenerativa Inteligente" },
-            { "label": "Modo EV Puro", "value": "Sim (até 2 km em velocidade reduzida)" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Convencionais com estabilização" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson independente" },
-            { "label": "Suspensão Traseira", "value": "Eixo de torção duplo" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado com ABS" },
-            { "label": "Freios Traseiros", "value": "Disco com ABS e Frenagem Regenerativa" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Não Disponível" },
-            { "label": "Modos de Volante", "value": "Não Disponível" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
-            { "label": "Modos de Condução", "value": "Eco · Normal · Sport · EV" },
-            { "label": "Modo Eco", "value": "Reduz consumo energético até 15%" },
-            { "label": "Modo EV", "value": "Propulsão 100% elétrica em baixas velocidades" },
-            { "label": "Paddle Shifters", "value": "Não Possui" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED projetores com adaptação automática" },
-            { "label": "Lanternas", "value": "LED Full" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED" },
-            { "label": "Iluminação Interior", "value": "LED com regulagem de intensidade" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "17\" alumínio" },
-            { "label": "Pneus", "value": "215/50 R17 Low Rolling Resistance" },
-            { "label": "Estepe", "value": "Sobressalente step-in" },
-            { "label": "Tipo de Pneu", "value": "Eco-friendly com baixa resistência" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "10,5\" touchscreen" },
-            { "label": "Sistema de Infotainment", "value": "Toyota Touch 2 com navegação integrada" },
-            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
-            { "label": "Android Auto", "value": "Sim (sem fio)" },
-            { "label": "Sistema de Som", "value": "JBL Premium com 8 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "Não Disponível" },
-            { "label": "Ar-condicionado", "value": "Não Disponível" },
-            { "label": "Monitorador de Consumo", "value": "Display em tempo real de eficiência" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (PCS)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LTA)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM)" },
-            { "label": "Assistente de Estacionamento", "value": "Sim (PAS)" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "4.600 mm" },
-            { "label": "Largura", "value": "1.780 mm" },
-            { "label": "Altura", "value": "1.435 mm" },
-            { "label": "Entre-eixos", "value": "2.700 mm" },
-            { "label": "Capacidade de Carga", "value": "425 kg" },
-            { "label": "Capacidade de Reboque", "value": "Não Possui" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 189.990", "highlight": true },
-            { "label": "Disponibilidade", "value": "Nacional" },
-            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 82,
-        "type": "electrification_trend",
-        "title": "Alerta Preditivo: Tendência de Eletrificação",
-        "description": "Probabilidade de 82% de intensificação de demanda por híbridos no segmento de sedans compactos. Padrão: consumidores buscam redução de consumo com praticidade de combustível tradicional.",
-        "actionSuggestion": "Contra-ataque sugerido: comunicar 'Economia Certificada + Conforto Premium' destacando INMETRO."
-      }
-    },
-    {
+{
       "id": "toyota-corolla-hybrid-2024",
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Toyota",
-      "brandFipeCode": "30",
+      "brandFipeCode": "56",
       "model": "Corolla",
-      "modelFipeCode": "10876",
+      "modelFipeCode": "9984",
       "version": "Hybrid XEi",
       "year": 2024,
       "sections": [
@@ -294,9 +149,9 @@
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Toyota",
-      "brandFipeCode": "30",
+      "brandFipeCode": "56",
       "model": "RAV4",
-      "modelFipeCode": "10904",
+      "modelFipeCode": "10059",
       "version": "Hybrid 2.5 CVT",
       "year": 2024,
       "sections": [
@@ -432,158 +287,14 @@
         "actionSuggestion": "Ação sugerida: posicionar como 'SUV para Famílias Conscientes' com eco-score nas peças."
       }
     },
-    {
-      "id": "toyota-highlander-hybrid-2024",
-      "categoryId": "hibrido",
-      "platform": "mono",
-      "brand": "Toyota",
-      "brandFipeCode": "30",
-      "model": "Highlander",
-      "modelFipeCode": "10905",
-      "version": "Hybrid 3.5 Limited",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "3.5L V6 Hybrid com THS II" },
-            { "label": "Potência", "value": "243 cv", "unit": "System Total", "highlight": true },
-            { "label": "Torque Máximo", "value": "38,8 kgf·m", "unit": "@ 0 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "8,9 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" },
-            { "label": "Consumo", "value": "11,5 km/l (estimado)" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "CVT com Emulação de 8 Marchas" },
-            { "label": "Tração", "value": "AWD Standard" },
-            { "label": "Controle de Tração", "value": "VSC + Hill Descent Control" },
-            { "label": "Frenagem Regenerativa", "value": "Sistema Full Hybrid com máx. recuperação" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Duplo tubo com controle eletrônico" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora forte" },
-            { "label": "Suspensão Traseira", "value": "Multi-link independente" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado grande" },
-            { "label": "Freios Traseiros", "value": "Disco ventilado" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Não Disponível" },
-            { "label": "Modos de Volante", "value": "Não Disponível" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
-            { "label": "Modos de Condução", "value": "Eco · Normal · Sport · Trail · AWD-Lock" },
-            { "label": "Suspensão Adaptativa", "value": "Regulagem automática conforme terreno" },
-            { "label": "Segue Pista", "value": "Lane Trace Assist para off-road" },
-            { "label": "Monitor de Consumo", "value": "Real-time Eco Feedback" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED Matrix com adaptação curva dinâmica" },
-            { "label": "Lanternas", "value": "LED Full com padrão 3D" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
-            { "label": "Iluminação Interior", "value": "LED ambiente com 10 cores" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "19\" alumínio preto fosco" },
-            { "label": "Pneus", "value": "245/55 R19 All-Terrain" },
-            { "label": "Estepe", "value": "Não Possui (kit de reparo)" },
-            { "label": "Especificação", "value": "Michelin LTX M/S com baixa resistência" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "12,3\" touchscreen panorâmico" },
-            { "label": "Sistema de Infotainment", "value": "Toyota Touch 2 com IA assistente" },
-            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
-            { "label": "Android Auto", "value": "Sim (sem fio)" },
-            { "label": "Sistema de Som", "value": "Mark Levinson Premium com 12 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "Sim com visão panorâmica 3D" },
-            { "label": "Ar-condicionado", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (PCS com pedestres)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC Stop & Go)" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LTA)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSM avançado)" },
-            { "label": "Assistente de Estacionamento", "value": "Sim (APA remoto)" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "5.010 mm" },
-            { "label": "Largura", "value": "1.930 mm" },
-            { "label": "Altura", "value": "1.740 mm" },
-            { "label": "Entre-eixos", "value": "2.850 mm" },
-            { "label": "Capacidade de Carga", "value": "680 kg" },
-            { "label": "Capacidade de Reboque", "value": "2.268 kg" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 369.990", "highlight": true },
-            { "label": "Disponibilidade", "value": "Importado sob demanda" },
-            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 71,
-        "type": "premium_segment_growth",
-        "title": "Alerta Preditivo: Crescimento Premium",
-        "description": "Probabilidade de 71% de aumento em demanda por SUVs 7-lugares híbridos premium. Tendência: executivos buscam flagship híbrido com máximo conforto.",
-        "actionSuggestion": "Ação sugerida: enfatizar 'Tecnologia Toyota de 7ª geração + eficiência máxima' em eventos corporativos."
-      }
-    },
-    {
+{
       "id": "honda-accord-hybrid-2024",
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Honda",
-      "brandFipeCode": "23",
+      "brandFipeCode": "25",
       "model": "Accord",
-      "modelFipeCode": "10881",
+      "modelFipeCode": "9600",
       "version": "Hybrid EXL",
       "year": 2024,
       "sections": [
@@ -725,9 +436,9 @@
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Honda",
-      "brandFipeCode": "23",
+      "brandFipeCode": "25",
       "model": "CR-V",
-      "modelFipeCode": "10882",
+      "modelFipeCode": "10985",
       "version": "Hybrid EX-L",
       "year": 2024,
       "sections": [
@@ -869,9 +580,9 @@
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Honda",
-      "brandFipeCode": "23",
+      "brandFipeCode": "25",
       "model": "Civic",
-      "modelFipeCode": "10883",
+      "modelFipeCode": "10366",
       "version": "Hybrid Touring",
       "year": 2024,
       "sections": [
@@ -1008,446 +719,14 @@
         "actionSuggestion": "Ação sugerida: criar campanha 'Seu Primeiro Híbrido' com financiamentos acessíveis."
       }
     },
-    {
-      "id": "hyundai-ioniq-hybrid-2024",
-      "categoryId": "hibrido",
-      "platform": "mono",
-      "brand": "Hyundai",
-      "brandFipeCode": "24",
-      "model": "Ioniq",
-      "modelFipeCode": "10886",
-      "version": "Hybrid SEL",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "1.6L Hybrid com Kappa Engine" },
-            { "label": "Potência", "value": "141 cv", "unit": "System Total", "highlight": true },
-            { "label": "Torque Máximo", "value": "14,2 kgf·m", "unit": "@ 0 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "10,1 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" },
-            { "label": "Consumo", "value": "17,0 km/l (EPA)" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "Embreagem de Duplo Pré-Seleção Automática" },
-            { "label": "Tração", "value": "Dianteira" },
-            { "label": "Sistema Híbrido", "value": "Motor + Bateria 1,56 kWh" },
-            { "label": "Frenagem Regenerativa", "value": "Recuperação de energia otimizada" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Convencionais com estabilização" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson independente" },
-            { "label": "Suspensão Traseira", "value": "Eixo de torção" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado com ABS" },
-            { "label": "Freios Traseiros", "value": "Disco com ABS e Regeneração" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Não Disponível" },
-            { "label": "Modos de Volante", "value": "Não Disponível" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
-            { "label": "Modos de Condução", "value": "Eco · Normal · Sport · Conforto" },
-            { "label": "Modo Eco", "value": "Reduz 18% consumo em ciclo INMETRO" },
-            { "label": "Smart Regeneration", "value": "Aprende padrões de condução" },
-            { "label": "Monitor de Eficiência", "value": "Real-time consumption display" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED com adaptação automática" },
-            { "label": "Lanternas", "value": "LED Full" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED" },
-            { "label": "Iluminação Interior", "value": "LED com comando" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "16\" alumínio prata" },
-            { "label": "Pneus", "value": "205/55 R16 Low Rolling Resistance" },
-            { "label": "Estepe", "value": "Sobressalente step-in" },
-            { "label": "Especificação", "value": "Kumho Solus HA31 eco" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "8\" touchscreen" },
-            { "label": "Sistema de Infotainment", "value": "Hyundai Bluelink com navegação" },
-            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
-            { "label": "Android Auto", "value": "Sim (com fio)" },
-            { "label": "Sistema de Som", "value": "6 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "Sim com guias" },
-            { "label": "Ar-condicionado", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Não Possui" },
-            { "label": "Assistente de Estacionamento", "value": "Não Possui" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "4.600 mm" },
-            { "label": "Largura", "value": "1.775 mm" },
-            { "label": "Altura", "value": "1.450 mm" },
-            { "label": "Entre-eixos", "value": "2.700 mm" },
-            { "label": "Capacidade de Carga", "value": "415 kg" },
-            { "label": "Capacidade de Reboque", "value": "Não Possui" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 159.990", "highlight": true },
-            { "label": "Disponibilidade", "value": "Nacional (produção localizada)" },
-            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 77,
-        "type": "warranty_advantage",
-        "title": "Alerta Preditivo: Vantagem de Garantia",
-        "description": "Probabilidade de 77% de crescimento baseado em garantia estendida (5 anos). Padrão: compradores percebem segurança em híbridos Hyundai vs. concorrentes.",
-        "actionSuggestion": "Ação sugerida: destacar '5 Anos de Tranquilidade' em todas as peças de marketing."
-      }
-    },
-    {
-      "id": "hyundai-tucson-hybrid-2024",
-      "categoryId": "hibrido",
-      "platform": "mono",
-      "brand": "Hyundai",
-      "brandFipeCode": "24",
-      "model": "Tucson",
-      "modelFipeCode": "10887",
-      "version": "Hybrid GLS",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "1.6L Turbo Hybrid com GDI" },
-            { "label": "Potência", "value": "227 cv", "unit": "System Total", "highlight": true },
-            { "label": "Torque Máximo", "value": "31,5 kgf·m", "unit": "@ 1.500–4.000 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "8,1 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" },
-            { "label": "Consumo", "value": "14,0 km/l (INMETRO)" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "DCT de 7 marchas com inteligência híbrida" },
-            { "label": "Tração", "value": "AWD com distribuição inteligente" },
-            { "label": "Sistema Híbrido", "value": "Motor + Motor Elétrico 1,9 kWh" },
-            { "label": "Modo AWD Inteligente", "value": "Adapta tração ao terreno automaticamente" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Independentes com controle ativo" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora forte" },
-            { "label": "Suspensão Traseira", "value": "Multi-link com molas helicoidais" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado grande" },
-            { "label": "Freios Traseiros", "value": "Disco ventilado com regeneração" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Não Disponível" },
-            { "label": "Modos de Volante", "value": "Não Disponível" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
-            { "label": "Modos de Condução", "value": "Eco · Normal · Sport · Conforto · Off-Road" },
-            { "label": "Modo Off-Road", "value": "Controle de tração aprimorado" },
-            { "label": "Terrain Management", "value": "Detecta piso e ajusta automaticamente" },
-            { "label": "Shift Paddles", "value": "Sim (controle manual)" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED com adaptação de curva" },
-            { "label": "Lanternas", "value": "LED Full com padrão 3D" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
-            { "label": "Iluminação Interior", "value": "LED ambiente com regulagem" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "18\" alumínio grafite" },
-            { "label": "Pneus", "value": "235/60 R18 All-Terrain" },
-            { "label": "Estepe", "value": "Sobressalente step-in" },
-            { "label": "Especificação", "value": "Kumho Road Venture com baixa resistência" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "10,25\" touchscreen" },
-            { "label": "Sistema de Infotainment", "value": "Hyundai Bluelink com navegação" },
-            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
-            { "label": "Android Auto", "value": "Sim (sem fio)" },
-            { "label": "Sistema de Som", "value": "Bose com 8 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "Sim com visão 3D" },
-            { "label": "Ar-condicionado", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (SCC)" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BLIS)" },
-            { "label": "Assistente de Estacionamento", "value": "Sim (PAS)" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "4.670 mm" },
-            { "label": "Largura", "value": "1.865 mm" },
-            { "label": "Altura", "value": "1.655 mm" },
-            { "label": "Entre-eixos", "value": "2.755 mm" },
-            { "label": "Capacidade de Carga", "value": "545 kg" },
-            { "label": "Capacidade de Reboque", "value": "1.500 kg" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 219.990", "highlight": true },
-            { "label": "Disponibilidade", "value": "Nacional (produção localizada)" },
-            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 81,
-        "type": "turbo_hybrid_segment",
-        "title": "Alerta Preditivo: Segmento Turbo-Híbrido",
-        "description": "Probabilidade de 81% de expansão de turbos híbridos em SUVs compactos. Padrão: performance + economia atrai novo público.",
-        "actionSuggestion": "Ação sugerida: comunicar 'Potência Turbo + Economia Híbrida = Diversão com Consciência'."
-      }
-    },
-    {
-      "id": "hyundai-elantra-hybrid-2024",
-      "categoryId": "hibrido",
-      "platform": "mono",
-      "brand": "Hyundai",
-      "brandFipeCode": "24",
-      "model": "Elantra",
-      "modelFipeCode": "10888",
-      "version": "Hybrid SEL",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "2.0L Hybrid com Kappa Atkinson" },
-            { "label": "Potência", "value": "152 cv", "unit": "System Total", "highlight": true },
-            { "label": "Torque Máximo", "value": "14,9 kgf·m", "unit": "@ 0 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "9,4 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" },
-            { "label": "Consumo", "value": "18,5 km/l (EPA)" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "CVT com Lógica Híbrida Inteligente" },
-            { "label": "Tração", "value": "Dianteira" },
-            { "label": "Sistema Híbrido", "value": "Motor Elétrico de 32 kW acoplado" },
-            { "label": "Frenagem Regenerativa", "value": "Recuperação até 18% em ciclo urbano" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Convencionais com amortecimento otimizado" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora" },
-            { "label": "Suspensão Traseira", "value": "Eixo de torção com estabilizador" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado com ABS" },
-            { "label": "Freios Traseiros", "value": "Disco com ABS e Regeneração" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Não Disponível" },
-            { "label": "Modos de Volante", "value": "Não Disponível" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
-            { "label": "Modos de Condução", "value": "Eco · Normal · Sport · Conforto" },
-            { "label": "Modo Eco", "value": "Prioriza motor elétrico até 15% mais" },
-            { "label": "Modo Sport", "value": "Mantém resposta do motor híbrido" },
-            { "label": "Eco Score", "value": "Display de eficiência em tempo real" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED projetor com adaptação" },
-            { "label": "Lanternas", "value": "LED Full" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED" },
-            { "label": "Iluminação Interior", "value": "LED com comando de intensidade" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "16\" alumínio prata" },
-            { "label": "Pneus", "value": "205/55 R16 Low Rolling Resistance" },
-            { "label": "Estepe", "value": "Sobressalente step-in" },
-            { "label": "Especificação", "value": "Kumho Solus HA31 eco-friendly" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "8\" touchscreen" },
-            { "label": "Sistema de Infotainment", "value": "Hyundai Bluelink com navegação" },
-            { "label": "Apple CarPlay", "value": "Sim (com fio)" },
-            { "label": "Android Auto", "value": "Sim (com fio)" },
-            { "label": "Sistema de Som", "value": "6 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "Sim com guias dinâmicas" },
-            { "label": "Ar-condicionado", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Não Possui" },
-            { "label": "Assistente de Estacionamento", "value": "Não Possui" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "4.670 mm" },
-            { "label": "Largura", "value": "1.825 mm" },
-            { "label": "Altura", "value": "1.415 mm" },
-            { "label": "Entre-eixos", "value": "2.750 mm" },
-            { "label": "Capacidade de Carga", "value": "475 kg" },
-            { "label": "Capacidade de Reboque", "value": "Não Possui" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 149.990", "highlight": true },
-            { "label": "Disponibilidade", "value": "Nacional (produção localizada)" },
-            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 74,
-        "type": "value_conscious_segment",
-        "title": "Alerta Preditivo: Segmento Value-Conscious",
-        "description": "Probabilidade de 74% de crescimento entre compradores que priorizam custo-benefício. Padrão: Elantra Hybrid oferece máxima economia no menor preço.",
-        "actionSuggestion": "Ação sugerida: posicionar 'Economia Máxima, Preço Mínimo' em campanhas digitais."
-      }
-    },
-    {
+{
       "id": "kia-niro-hybrid-2024",
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Kia",
-      "brandFipeCode": "26",
+      "brandFipeCode": "31",
       "model": "Niro",
-      "modelFipeCode": "10890",
+      "modelFipeCode": "10104",
       "version": "Hybrid LX",
       "year": 2024,
       "sections": [
@@ -1589,9 +868,9 @@
       "categoryId": "hibrido",
       "platform": "mono",
       "brand": "Kia",
-      "brandFipeCode": "26",
+      "brandFipeCode": "31",
       "model": "Sportage",
-      "modelFipeCode": "10891",
+      "modelFipeCode": "10063",
       "version": "Hybrid EX",
       "year": 2024,
       "sections": [
@@ -1727,165 +1006,16 @@
         "description": "Probabilidade de 79% de consolidação em segmento premium médio. Padrão: Sportage Hybrid oferece performance + economia em preço competitivo.",
         "actionSuggestion": "Ação sugerida: direcionar 'Performance Híbrida para Aventureiros Modernos' em marketing lifestyle."
       }
-    },
-    {
-      "id": "kia-sorento-hybrid-2024",
-      "categoryId": "hibrido",
-      "platform": "mono",
-      "brand": "Kia",
-      "brandFipeCode": "26",
-      "model": "Sorento",
-      "modelFipeCode": "10892",
-      "version": "Hybrid SXL",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "2.5L Turbo Hybrid com Atkinson" },
-            { "label": "Potência", "value": "281 cv", "unit": "System Total", "highlight": true },
-            { "label": "Torque Máximo", "value": "42,8 kgf·m", "unit": "@ 1.650–4.000 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "7,2 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" },
-            { "label": "Consumo", "value": "11,8 km/l (EPA)" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "8-Speed DCT com Híbrido Integrado" },
-            { "label": "Tração", "value": "HTRAC AWD System com Multi-Plate" },
-            { "label": "Sistema Híbrido", "value": "Motor Elétrico 69,3 kW + Bateria 1,97 kWh" },
-            { "label": "Distribuição Inteligente", "value": "0-100% torque entre eixos conforme condição" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Independentes com controle eletrônico" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora forte" },
-            { "label": "Suspensão Traseira", "value": "Multi-link com molas helicoidais" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado grande com regeneração" },
-            { "label": "Freios Traseiros", "value": "Disco ventilado com recuperação de energia" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Não Disponível" },
-            { "label": "Modos de Volante", "value": "Não Disponível" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" },
-            { "label": "Modos de Condução", "value": "Eco · Normal · Sport · Conforto · Inteligente" },
-            { "label": "Inteligent Mode", "value": "Aprende padrões de condução do motorista" },
-            { "label": "AWD Lock", "value": "Tração máxima em qualquer terreno" },
-            { "label": "Monitor Eco", "value": "Exibe eficiência em tempo real" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED Matrix com adaptação curva dinâmica" },
-            { "label": "Lanternas", "value": "LED Full com padrão 3D dinâmico" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED integrado com ajuste" },
-            { "label": "Iluminação Interior", "value": "LED ambiente com 12 cores e 5 níveis" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "20\" alumínio preto fosco" },
-            { "label": "Pneus", "value": "245/50 R20 All-Terrain Premium" },
-            { "label": "Estepe", "value": "Não Possui (kit de reparo)" },
-            { "label": "Especificação", "value": "Kumho Road Venture ST com low rolling resistance" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "12,3\" touchscreen panorâmico" },
-            { "label": "Sistema de Infotainment", "value": "Kia UVO Connect com IA assistente" },
-            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
-            { "label": "Android Auto", "value": "Sim (sem fio)" },
-            { "label": "Sistema de Som", "value": "Bose Surround com 12 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "Sim com visão panorâmica 3D" },
-            { "label": "Ar-condicionado", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC com pedestres/bicicletas)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (SCC Stop & Go)" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS com steering assist)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BLIS avançado)" },
-            { "label": "Assistente de Estacionamento", "value": "Sim (Remote PAS)" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "4.810 mm" },
-            { "label": "Largura", "value": "1.900 mm" },
-            { "label": "Altura", "value": "1.700 mm" },
-            { "label": "Entre-eixos", "value": "2.815 mm" },
-            { "label": "Capacidade de Carga", "value": "630 kg" },
-            { "label": "Capacidade de Reboque", "value": "2.268 kg" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 299.990", "highlight": true },
-            { "label": "Disponibilidade", "value": "Importado sob demanda" },
-            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 76,
-        "type": "flagship_hybrid_suv",
-        "title": "Alerta Preditivo: Flagship SUV Híbrido",
-        "description": "Probabilidade de 76% de consolidação como SUV 7-lugares premium híbrido. Padrão: famílias executivas buscam máxima segurança, espaço e eficiência.",
-        "actionSuggestion": "Ação sugerida: comunicar 'Familial Premium com Inteligência Híbrida' para segmento executivo."
-      }
     }
   ],
   "_metadata": {
-    "totalVehicles": 13,
+    "totalVehicles": 7,
     "categories": [
       "hibrido"
     ],
-    "brands": [
-      "Toyota",
-      "Honda",
-      "Hyundai",
-      "Kia"
-    ],
+    "brands": ["Toyota", "Honda", "Kia"],
     "lastUpdated": "2024-09-24",
     "version": "1.0",
-    "notes": "JSON contendo 15 modelos de veículos híbridos do mercado brasileiro 2024. Estrutura completa com 10 sections técnicas detalhadas, alertas preditivos e códigos FIPE validados. Foco em híbridos convencionais (não-plug-in) com disponibilidade confirmada no Brasil em 2024."
+    "notes": "JSON contendo 7 modelos de veículos híbridos do mercado brasileiro 2024. Estrutura completa com 10 sections técnicas detalhadas, alertas preditivos e códigos FIPE validados. Foco em híbridos convencionais (não-plug-in) com disponibilidade confirmada no Brasil em 2024."
   }
 }

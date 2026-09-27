@@ -16,10 +16,15 @@ import { BuildService } from '../../../services/build';
 import { VehicleDataService } from '../../../services/vehicleData';
 import { useBuildStore } from '../../../store/buildStore';
 import type { Build, CategoryVehicleEntry, Platform } from '../../../types';
+import { useScrollToTopOnFocus } from '../../../hooks/useScrollToTopOnFocus';
 
 type Sheet = 'base' | 'zero' | null;
 
+// StartCard tem ~80–90px de altura: o azul do hero invade ao menos metade do 1º card
+const START_CARD_OVERLAP = 48;
+
 export default function MontagemScreen() {
+  const scrollRef = useScrollToTopOnFocus();
   const router = useRouter();
   const builds = useBuildStore((s) => s.builds);
   const notice = useBuildStore((s) => s.notice);
@@ -70,15 +75,15 @@ export default function MontagemScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.canvas }}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scrollRef} contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         <BuildHero
           eyebrow="Montagem"
           title={'Monte ou modifique\nseu veículo'}
           sub={`Combine peças de ${totals.vehicles} veículos do catálogo em ${SYSTEMS.length} sistemas.`}
-          bottomPad={64}
+          bottomPad={START_CARD_OVERLAP + 22}
         />
 
-        <View style={{ paddingHorizontal: 16, marginTop: -38, gap: 10 }}>
+        <View style={{ paddingHorizontal: 16, marginTop: -START_CARD_OVERLAP, gap: 10 }}>
           <StartCard
             title="Modificar um veículo"
             desc="Parta de um modelo existente e troque as peças que quiser."

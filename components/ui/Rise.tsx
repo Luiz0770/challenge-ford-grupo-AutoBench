@@ -1,7 +1,7 @@
-import { useFocusEffect } from 'expo-router';
 import { cssInterop } from 'nativewind';
 import React, { useCallback } from 'react';
 import { Animated, Easing, ViewProps } from 'react-native';
+import { useTabFocusEffect } from '../../hooks/useTabFocusEffect';
 
 // className -> style em um Animated.View. A animação em si usa só o Animated do
 // React Native (driver nativo), sem passar pelo Reanimated do NativeWind.
@@ -19,8 +19,8 @@ const easeOut = Easing.bezier(0.22, 0.94, 0.4, 1);
 export const Rise: React.FC<RiseProps> = ({ delay = 0, style, children, ...rest }) => {
   const progress = React.useRef(new Animated.Value(0)).current;
 
-  // Roda a cada vez que a tela ganha foco (troca de aba, voltar de outra tela)
-  useFocusEffect(
+  // Roda a cada troca de aba; voltar de uma tela empilhada não reanima
+  useTabFocusEffect(
     useCallback(() => {
       progress.setValue(0);
       const a = Animated.timing(progress, {

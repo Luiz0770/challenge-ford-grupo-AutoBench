@@ -1,5 +1,4 @@
 import React, { useId } from 'react';
-import { StyleSheet } from 'react-native';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 
 export interface GradientStop {
@@ -23,7 +22,12 @@ export const GradientFill: React.FC<GradientFillProps> = ({ stops, angle = 180 }
   const dy = -Math.cos(rad) / 2;
 
   return (
-    <Svg width="100%" height="100%" style={StyleSheet.absoluteFill} pointerEvents="none">
+    <Svg
+      style={{ position: 'absolute', top: -1, left: -1, right: -1, bottom: -1 }}
+      viewBox="0 0 1 1"
+      preserveAspectRatio="none"
+      pointerEvents="none"
+    >
       <Defs>
         <LinearGradient id={id} x1={0.5 - dx} y1={0.5 - dy} x2={0.5 + dx} y2={0.5 + dy}>
           {stops.map((s) => (
@@ -31,7 +35,7 @@ export const GradientFill: React.FC<GradientFillProps> = ({ stops, angle = 180 }
           ))}
         </LinearGradient>
       </Defs>
-      <Rect width="100%" height="100%" fill={`url(#${id})`} />
+      <Rect x={0} y={0} width={1} height={1} fill={`url(#${id})`} />
     </Svg>
   );
 };

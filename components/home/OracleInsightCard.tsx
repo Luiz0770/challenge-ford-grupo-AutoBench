@@ -1,5 +1,6 @@
 import { ArrowUpRight, Car, Sparkles } from 'lucide-react-native';
 import { useFocusEffect } from 'expo-router';
+import { useTabFocusEffect } from '../../hooks/useTabFocusEffect';
 import React, { useCallback, useState } from 'react';
 import { Animated, Easing, LayoutChangeEvent, Text, View } from 'react-native';
 import { colors } from '../../constants/colors';
@@ -15,7 +16,7 @@ const Sweep: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const progress = React.useRef(new Animated.Value(0)).current;
   const [width, setWidth] = useState(0);
 
-  useFocusEffect(
+  useTabFocusEffect(
     useCallback(() => {
       progress.setValue(0);
       const a = Animated.timing(progress, {
@@ -77,8 +78,8 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
       <PressableScale
         onPress={onPress}
         accessibilityLabel={`${alert.title}. Abrir ${vehicle.brand} ${vehicle.model}`}
-        className="relative overflow-hidden rounded-2xl border border-white/10 p-4"
-        style={{ backgroundColor: colors.brand.ink, boxShadow: '0 4px 14px rgba(0,26,77,0.18)' }}
+        className="relative overflow-hidden rounded-2xl p-4"
+        style={{ boxShadow: '0 4px 14px rgba(0,26,77,0.18)' }}
       >
         <GradientFill
           angle={135}
@@ -99,6 +100,9 @@ export const OracleInsightCard: React.FC<OracleInsightCardProps> = ({ vehicle, o
             ]}
           />
         </Sweep>
+
+        {/* Borda desenhada por cima: assim o gradiente cobre o card inteiro, sem fresta escura */}
+        <View pointerEvents="none" className="absolute inset-0 rounded-2xl border border-white/[0.08]" />
 
         {/* Selo */}
         <View className="absolute right-0 top-0 rounded-bl-[10px] px-3 py-2" style={{ backgroundColor: accent }}>

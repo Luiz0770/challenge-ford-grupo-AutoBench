@@ -419,9 +419,9 @@
       "categoryId": "picape",
       "platform": "chassi",
       "brand": "Chevrolet",
-      "brandFipeCode": "17",
+      "brandFipeCode": "23",
       "model": "S10",
-      "modelFipeCode": "10745",
+      "modelFipeCode": "5896",
       "version": "LTZ",
       "year": 2024,
       "sections": [
@@ -557,9 +557,9 @@
       "categoryId": "picape",
       "platform": "chassi",
       "brand": "Chevrolet",
-      "brandFipeCode": "17",
+      "brandFipeCode": "23",
       "model": "S10",
-      "modelFipeCode": "10742",
+      "modelFipeCode": "6101",
       "version": "Work",
       "year": 2024,
       "sections": [
@@ -695,9 +695,9 @@
       "categoryId": "picape",
       "platform": "chassi",
       "brand": "Toyota",
-      "brandFipeCode": "30",
+      "brandFipeCode": "56",
       "model": "Hilux",
-      "modelFipeCode": "10903",
+      "modelFipeCode": "7407",
       "version": "SR5",
       "year": 2024,
       "sections": [
@@ -833,9 +833,9 @@
       "categoryId": "picape",
       "platform": "chassi",
       "brand": "Toyota",
-      "brandFipeCode": "30",
+      "brandFipeCode": "56",
       "model": "Hilux",
-      "modelFipeCode": "10889",
+      "modelFipeCode": "2241",
       "version": "DX",
       "year": 2024,
       "sections": [
@@ -971,9 +971,9 @@
       "categoryId": "picape",
       "platform": "chassi",
       "brand": "Volkswagen",
-      "brandFipeCode": "31",
+      "brandFipeCode": "59",
       "model": "Amarok",
-      "modelFipeCode": "10878",
+      "modelFipeCode": "8183",
       "version": "Highline",
       "year": 2024,
       "sections": [
@@ -1109,9 +1109,9 @@
       "categoryId": "picape",
       "platform": "mono",
       "brand": "Fiat",
-      "brandFipeCode": "14",
+      "brandFipeCode": "21",
       "model": "Toro",
-      "modelFipeCode": "10855",
+      "modelFipeCode": "9494",
       "version": "Freedom",
       "year": 2024,
       "sections": [
@@ -1247,9 +1247,9 @@
       "categoryId": "picape",
       "platform": "mono",
       "brand": "Fiat",
-      "brandFipeCode": "14",
+      "brandFipeCode": "21",
       "model": "Toro",
-      "modelFipeCode": "10863",
+      "modelFipeCode": "10071",
       "version": "Ultra",
       "year": 2024,
       "sections": [
@@ -1385,9 +1385,9 @@
       "categoryId": "picape",
       "platform": "mono",
       "brand": "Renault",
-      "brandFipeCode": "25",
+      "brandFipeCode": "48",
       "model": "Duster Oroch",
-      "modelFipeCode": "10884",
+      "modelFipeCode": "11023",
       "version": "Iconic",
       "year": 2024,
       "sections": [
@@ -1517,290 +1517,14 @@
         "description": "Probabilidade de 64% de expansão do nicho de picapes urbanas com motor flex. Tendência: jovens profissionais buscam versatilidade estético-funcional.",
         "actionSuggestion": "Ação sugerida: marketing focado em lifestyle e versatilidade urbano-aventura."
       }
-    },
-    {
-      "id": "honda-ridgeline-trsx-2024",
-      "categoryId": "picape",
-      "platform": "mono",
-      "brand": "Honda",
-      "brandFipeCode": "23",
-      "model": "Ridgeline",
-      "modelFipeCode": "10880",
-      "version": "TRSX",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "Gasolina 3.5L V6 VTEC Turbo" },
-            { "label": "Potência", "value": "420 cv", "unit": "@ 5.500 RPM", "highlight": true },
-            { "label": "Torque Máximo", "value": "540 Nm", "unit": "@ 3.100 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "6,2 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "AT de 10 velocidades" },
-            { "label": "Tração", "value": "SH-AWD com bloqueio de diferencial traseiro" },
-            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
-            { "label": "Hill Descent Control", "value": "Sim" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Independentes com controle eletrônico" },
-            { "label": "Suspensão Dianteira", "value": "Duplo A-arm com barra estabilizadora" },
-            { "label": "Suspensão Traseira", "value": "Multi-link independente" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado grande" },
-            { "label": "Freios Traseiros", "value": "Disco ventilado" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Normal · Snow · Mud · Sand · Rock · Tow" },
-            { "label": "Modos de Volante", "value": "Conforto · Normal · Esporte" },
-            { "label": "Modos de Escapamento", "value": "Silencioso · Esporte · Sport Plus" },
-            { "label": "Modos de Amortecedor", "value": "Conforto · Esporte · Esporte Plus" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED Matrix com adaptação inteligente" },
-            { "label": "Lanternas", "value": "LED Full" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED integrado" },
-            { "label": "Iluminação Interior", "value": "LED ambiente multizona" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "20\" alumínio preto fosco" },
-            { "label": "Pneus", "value": "275/55 R20 All-Terrain" },
-            { "label": "Estepe", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "12,3\" touchscreen" },
-            { "label": "Sistema de Infotainment", "value": "Honda Sensing Elite com navegação" },
-            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
-            { "label": "Android Auto", "value": "Sim (sem fio)" },
-            { "label": "Sistema de Som", "value": "Bose Premium com 12 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Sim (cor)" },
-            { "label": "Câmera", "value": "360° com night vision" },
-            { "label": "Ar-condicionado", "value": "Tri-zona digital" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (CMBS)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ACC)" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (Lane Keep Assist)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BSI)" },
-            { "label": "Assistente de Estacionamento", "value": "Sim (Advanced PAS)" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "5.330 mm" },
-            { "label": "Largura", "value": "2.010 mm" },
-            { "label": "Altura", "value": "1.750 mm" },
-            { "label": "Entre-eixos", "value": "3.150 mm" },
-            { "label": "Capacidade de Carga", "value": "680 kg" },
-            { "label": "Capacidade de Reboque", "value": "2.267 kg" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 479.000", "highlight": true },
-            { "label": "Disponibilidade", "value": "Importado sob demanda" },
-            { "label": "Garantia", "value": "3 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 10.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 75,
-        "type": "premium_positioning",
-        "title": "Alerta Preditivo: Posicionamento Premium",
-        "description": "Probabilidade de 75% de fortalecimento de posicionamento premium. Tendência: Honda busca capturar segmento de compradores que valorizam tecnologia e conforto.",
-        "actionSuggestion": "Ação sugerida: enfatizar inovação Honda Sensing e refinamento de condução em comunicação."
-      }
-    },
-    {
-      "id": "hyundai-santa-cruz-sel-2024",
-      "categoryId": "picape",
-      "platform": "mono",
-      "brand": "Hyundai",
-      "brandFipeCode": "24",
-      "model": "Santa Cruz",
-      "modelFipeCode": "10885",
-      "version": "SEL",
-      "year": 2024,
-      "sections": [
-        {
-          "id": "engine",
-          "title": "Motor & Performance",
-          "icon": "speedometer",
-          "specs": [
-            { "label": "Motor", "value": "Gasolina 2.5L Turbo GDI" },
-            { "label": "Potência", "value": "277 cv", "unit": "@ 5.300 RPM", "highlight": true },
-            { "label": "Torque Máximo", "value": "422 Nm", "unit": "@ 1.650–4.800 RPM", "highlight": true },
-            { "label": "0-100 km/h", "value": "7,1 s", "highlight": true },
-            { "label": "Velocidade Máxima", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "transmission",
-          "title": "Transmissão & Tração",
-          "icon": "settings",
-          "specs": [
-            { "label": "Transmissão", "value": "AT de 8 velocidades" },
-            { "label": "Tração", "value": "HTRAC com bloqueio de diferencial traseiro" },
-            { "label": "Caixa de Transferência", "value": "2H / 4H / 4L" },
-            { "label": "Hill Descent Control", "value": "Sim" }
-          ]
-        },
-        {
-          "id": "suspension",
-          "title": "Suspensão & Freios",
-          "icon": "construct",
-          "specs": [
-            { "label": "Amortecedores", "value": "Independentes de duplo tubo" },
-            { "label": "Suspensão Dianteira", "value": "MacPherson com barra estabilizadora" },
-            { "label": "Suspensão Traseira", "value": "Multi-link independente" },
-            { "label": "Freios Dianteiros", "value": "Disco ventilado" },
-            { "label": "Freios Traseiros", "value": "Disco ventilado" }
-          ]
-        },
-        {
-          "id": "driving_modes",
-          "title": "Modos de Condução",
-          "icon": "car-sport",
-          "specs": [
-            { "label": "Modos Off-Road", "value": "Normal · Esporte · Eco · Mudança Inteligente" },
-            { "label": "Modos de Volante", "value": "Comfort · Normal · Sport" },
-            { "label": "Modos de Escapamento", "value": "Não Disponível" },
-            { "label": "Modos de Amortecedor", "value": "Não Disponível" }
-          ]
-        },
-        {
-          "id": "lighting",
-          "title": "Iluminação",
-          "icon": "flashlight",
-          "specs": [
-            { "label": "Faróis", "value": "LED Full com adaptação de curva" },
-            { "label": "Lanternas", "value": "LED" },
-            { "label": "Luz de Neblina Dianteira", "value": "LED" },
-            { "label": "Iluminação Interior", "value": "LED ambiente" }
-          ]
-        },
-        {
-          "id": "wheels",
-          "title": "Rodas & Pneus",
-          "icon": "disc",
-          "specs": [
-            { "label": "Aro", "value": "18\" alumínio cinzento" },
-            { "label": "Pneus", "value": "235/60 R18" },
-            { "label": "Estepe", "value": "Sobressalente step-in" }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": "Tecnologia & Conforto",
-          "icon": "phone-portrait",
-          "specs": [
-            { "label": "Central Multimídia", "value": "10,25\" touchscreen" },
-            { "label": "Sistema de Infotainment", "value": "Hyundai Bluelink com navegação" },
-            { "label": "Apple CarPlay", "value": "Sim (sem fio)" },
-            { "label": "Android Auto", "value": "Sim (sem fio)" },
-            { "label": "Sistema de Som", "value": "Bose com 8 alto-falantes" },
-            { "label": "Head-Up Display", "value": "Não Disponível" },
-            { "label": "Câmera", "value": "360° com dinâmica inteligente" },
-            { "label": "Ar-condicionado", "value": "Bi-zona digital" }
-          ]
-        },
-        {
-          "id": "safety",
-          "title": "Segurança Ativa (ADAS)",
-          "icon": "shield-checkmark",
-          "specs": [
-            { "label": "Frenagem Autônoma de Emergência", "value": "Sim (ASCC)" },
-            { "label": "Controle de Cruzeiro Adaptativo", "value": "Sim (ASCC)" },
-            { "label": "Alerta e Manutenção de Faixa", "value": "Sim (LKAS)" },
-            { "label": "Monitoramento de Ponto Cego", "value": "Sim (BLIS)" },
-            { "label": "Assistente de Estacionamento", "value": "Sim (SVM)" }
-          ]
-        },
-        {
-          "id": "dimensions",
-          "title": "Dimensões & Capacidade",
-          "icon": "resize",
-          "specs": [
-            { "label": "Comprimento", "value": "5.115 mm" },
-            { "label": "Largura", "value": "1.910 mm" },
-            { "label": "Altura", "value": "1.590 mm" },
-            { "label": "Entre-eixos", "value": "3.100 mm" },
-            { "label": "Capacidade de Carga", "value": "600 kg" },
-            { "label": "Capacidade de Reboque", "value": "1.588 kg" }
-          ]
-        },
-        {
-          "id": "pricing",
-          "title": "Preço & Disponibilidade",
-          "icon": "pricetag",
-          "specs": [
-            { "label": "Preço Sugerido (MSRP)", "value": "R$ 289.000", "highlight": true },
-            { "label": "Disponibilidade", "value": "Nacional" },
-            { "label": "Garantia", "value": "5 anos ou 100.000 km" },
-            { "label": "Revisão Programada", "value": "A cada 15.000 km" }
-          ]
-        }
-      ],
-      "alert": {
-        "probability": 68,
-        "type": "value_proposition",
-        "title": "Alerta Preditivo: Proposta de Valor",
-        "description": "Probabilidade de 68% de intensificação de campanhas de valor. Tendência: Hyundai posiciona Santa Cruz como alternativa premium a custos menores.",
-        "actionSuggestion": "Ação sugerida: comunicar garantia estendida e TCO como diferenciais competitivos."
-      }
     }
   ],
   "_metadata": {
-    "totalVehicles": 15,
+    "totalVehicles": 11,
     "categories": ["picape"],
-    "brands": ["Ford", "Chevrolet", "Toyota", "Volkswagen", "Fiat", "Renault", "Honda", "Hyundai"],
+    "brands": ["Ford", "Chevrolet", "Toyota", "Volkswagen", "Fiat", "Renault"],
     "lastUpdated": "2024-09-23",
     "version": "1.0",
-    "notes": "JSON contendo 15 modelos de picapes do mercado brasileiro 2024. Todos os equipamentos não disponíveis seguem o padrão 'NÃO POSSUI'. Estrutura pronta para expansão com outras categorias de veículos (sedans, hatchbacks, SUVs, crossovers, vans, furgões, motos, comerciais, luxo, esportivos, clássicos)."
+    "notes": "JSON contendo 11 modelos de picapes do mercado brasileiro 2024. Todos os equipamentos não disponíveis seguem o padrão 'NÃO POSSUI'. Estrutura pronta para expansão com outras categorias de veículos (sedans, hatchbacks, SUVs, crossovers, vans, furgões, motos, comerciais, luxo, esportivos, clássicos)."
   }
 }

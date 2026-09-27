@@ -5,8 +5,10 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SortChips } from '../components/search/SortChips';
 import { VehicleListRow } from '../components/search/VehicleListRow';
+import { FipeLoadingOverlay } from '../components/ui/FipeLoadingOverlay';
 import { Rise } from '../components/ui/Rise';
 import { colors, fonts } from '../constants/colors';
+import { useFipeReady } from '../hooks/useFipeReady';
 import { CatalogService } from '../services/catalog';
 import { VehicleDataService } from '../services/vehicleData';
 import type { Category } from '../types';
@@ -44,6 +46,8 @@ export default function BrandResultsScreen() {
   );
   const categoryOf = (vehicleId: string): Category =>
     categoriesById.get(VehicleDataService.getCategoryIdOf(vehicleId) ?? '') ?? FALLBACK_CATEGORY;
+
+  const fipeReady = useFipeReady(vehicles.map((v) => VehicleDataService.getVehicleById(v.vehicleId)));
 
   const brandCode = (brand ?? '').slice(0, 3).toUpperCase();
 
@@ -241,6 +245,8 @@ export default function BrandResultsScreen() {
           </Text>
         </View>
       </ScrollView>
+
+      <FipeLoadingOverlay visible={!fipeReady} />
     </SafeAreaView>
   );
 }

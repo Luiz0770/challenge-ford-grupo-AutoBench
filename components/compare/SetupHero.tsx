@@ -1,10 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Circle } from 'react-native-svg';
 import { colors, fonts } from '../../constants/colors';
-import { GradientFill } from '../ui/GradientFill';
+import { HeroBackground, useHeroBackdropHeight } from '../ui/HeroBackground';
 import { Rise } from '../ui/Rise';
+
+// Altura mínima dos slots (SetupSlot) e quanto o azul deve invadir: metade deles.
+export const SETUP_SLOT_HEIGHT = 168;
+export const SETUP_HERO_OVERLAP = SETUP_SLOT_HEIGHT / 2;
+// Folga entre o texto do hero e o topo dos slots (mesma do design: 64 - 42)
+const HERO_GAP = 22;
 
 interface SetupHeroProps {
   step: 1 | 2;
@@ -12,27 +17,15 @@ interface SetupHeroProps {
 
 export const SetupHero: React.FC<SetupHeroProps> = ({ step }) => {
   const insets = useSafeAreaInsets();
+  const [heroHeight, setHeroHeight] = useState(0);
+  const backdropHeight = useHeroBackdropHeight(heroHeight);
 
   return (
-    <View style={{ paddingTop: insets.top + 14, paddingBottom: 64, overflow: 'hidden' }}>
-      <GradientFill
-        angle={160}
-        stops={[
-          { color: colors.brand.deep, offset: 0 },
-          { color: colors.brand.mid, offset: 0.85 },
-        ]}
-      />
-      <Svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 390 240"
-        preserveAspectRatio="xMidYMid slice"
-        style={StyleSheet.absoluteFill}
-        pointerEvents="none"
-      >
-        <Circle cx={360} cy={30} r={110} fill="none" stroke="rgba(255,255,255,0.08)" />
-        <Circle cx={360} cy={30} r={170} fill="none" stroke="rgba(255,255,255,0.05)" />
-      </Svg>
+    <View
+      onLayout={(e) => setHeroHeight(e.nativeEvent.layout.height)}
+      style={{ paddingTop: insets.top + 14, paddingBottom: HERO_GAP + SETUP_HERO_OVERLAP }}
+    >
+      <HeroBackground height={backdropHeight} />
 
       <Rise delay={0} style={{ paddingHorizontal: 20 }}>
         <Text
