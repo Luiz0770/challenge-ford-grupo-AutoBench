@@ -11,6 +11,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.autobench.ford",
       "adaptiveIcon": {
         "backgroundColor": "#001A4D",
         "foregroundImage": "./assets/images/autobench-app-icon-a.png",
@@ -32,10 +33,17 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "404ea52e-e88b-4716-a61d-01ed6a36cdac"
+      }
     }
   }
 }
